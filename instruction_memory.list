@@ -1,0 +1,23 @@
+//Comments are allowed // This is in HEX
+11000000   // This is first address i.e 8'h00
+11100001   // This is second address i.e 8'h01
+11100002
+11100003
+11100004
+@5        // Jump to new address 8'h55
+55000005   // This is address 8'h55
+55000006   // This is address 8'h56
+55000007
+55000008
+55000009
+55000010
+55000011
+55000012
+55000013
+55000014
+55000015
+55000016
+55000017
+55000018
+55000019
+55000020
