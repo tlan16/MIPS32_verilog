@@ -1,0 +1,140 @@
+# Reading D:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do MIPS32_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module WB_MemtoReg_Mux
+# 
+# Top level modules:
+# 	WB_MemtoReg_Mux
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module MEM_WB_Pipeline_Stage
+# 
+# Top level modules:
+# 	MEM_WB_Pipeline_Stage
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module MEM_Branch_AND
+# 
+# Top level modules:
+# 	MEM_Branch_AND
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Reg.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module IF_PC_Reg
+# 
+# Top level modules:
+# 	IF_PC_Reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Mux.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module IF_PC_Mux
+# 
+# Top level modules:
+# 	IF_PC_Mux
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Add.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module IF_PC_Add
+# 
+# Top level modules:
+# 	IF_PC_Add
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_Pipeline_Stage.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module IF_ID_Pipeline_Stage
+# 
+# Top level modules:
+# 	IF_ID_Pipeline_Stage
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Sign_Extension.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module ID_Sign_Extension
+# 
+# Top level modules:
+# 	ID_Sign_Extension
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_EX_Pipeline_Stage.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module ID_EX_Pipeline_Stage
+# 
+# Top level modules:
+# 	ID_EX_Pipeline_Stage
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Control.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module ID_Control
+# 
+# Top level modules:
+# 	ID_Control
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_Shift_Left_2
+# 
+# Top level modules:
+# 	EX_Shift_Left_2
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_PC_Add
+# 
+# Top level modules:
+# 	EX_PC_Add
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_MEM_Pipeline_Stage
+# 
+# Top level modules:
+# 	EX_MEM_Pipeline_Stage
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_Dest_Mux
+# 
+# Top level modules:
+# 	EX_Dest_Mux
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_ALU_Mux
+# 
+# Top level modules:
+# 	EX_ALU_Mux
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_ALU_Control
+# 
+# Top level modules:
+# 	EX_ALU_Control
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module EX_ALU
+# 
+# Top level modules:
+# 	EX_ALU
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module MIPS32
+# 
+# Top level modules:
+# 	MIPS32
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module MEM_Data_Memory
+# 
+# Top level modules:
+# 	MEM_Data_Memory
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_Instruction_Memory.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module IF_Instruction_Memory
+# 
+# Top level modules:
+# 	IF_Instruction_Memory
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Registers.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module ID_Registers
+# 
+# Top level modules:
+# 	ID_Registers
+# 
+#  

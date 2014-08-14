@@ -1,0 +1,8 @@
+MIPS32
+IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|
+IF_PC_Add:IF_PC_Add|
+IF_PC_Mux:IF_PC_Mux|
+IF_PC_Reg:IF_PC_Reg|
+IF_Instruction_Memory:IF_Instruction_Memory|altsyncram:Instruction_Memory_rtl_0|altsyncram_e381:auto_generated|
+IF_Instruction_Memory:IF_Instruction_Memory|
+IF_Instruction_Memory:IF_Instruction_Memory|altsyncram:Instruction_Memory_rtl_0|

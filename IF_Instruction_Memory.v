@@ -13,7 +13,7 @@ module IF_Instruction_Memory(
 			$readmemh("instruction_memory.list", Instruction_Memory);
 		 end
 		 
-		 always@(posedge Clk) begin
+		 always@(negedge Clk) begin
 			Instruction_IF <= Instruction_Memory[PC_IF];
 		 end
    

@@ -20,7 +20,11 @@
 
 module MIPS32(
 		input CLOCK_50, // Global clock
-		output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
+		input PCSrc_MEM,
+		input [31:0] Branch_Dest_MEM,
+	   output [31:0] Instruction_ID,
+	   output [31:0] PC_Plus_4_ID
+		//output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
 		);
 
 	assign Clk = CLOCK_50;
@@ -28,17 +32,17 @@ module MIPS32(
    wire [31:0] 		Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
    wire [31:0] 		Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
    wire [31:0] 		PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
-   wire [31:0]		PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
-   
+   wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
+   /*
    // ID Origin Variables:
    wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
    wire			ALUSrc_ID;		// From ID_Control of ID_Control.v
    wire			Branch_ID;		// From ID_Control of ID_Control.v
-   wire [31:0]		Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+   //wire [31:0]		Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
    wire			MemRead_ID;		// From ID_Control of ID_Control.v
    wire			MemWrite_ID;		// From ID_Control of ID_Control.v
    wire			MemtoReg_ID;		// From ID_Control of ID_Control.v
-   wire [31:0]		PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+   //wire [31:0]		PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
    wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
    wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
    wire [31:0] 		Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
@@ -91,7 +95,7 @@ module MIPS32(
    wire			Read_Data_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
    wire [31:0]		Write_Data_WB;		// From WB_MemtoReg_Mux of WB_MemtoReg_Mux.v
    wire [4:0]		Write_Register_WB;	// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
-
+*/
    
 
    // IF_PC_Mux
@@ -146,7 +150,7 @@ module MIPS32(
    
 
 
-
+/*
    // ID_Registers
 
    // TODO by student: Assignment Partial Select from Instruction to Read_Address_1_ID and Read_Address_2_ID
@@ -360,5 +364,5 @@ module MIPS32(
 				   .MemtoReg_WB		(MemtoReg_WB));
    
    
-   
+   */
 endmodule // MIPS_Top

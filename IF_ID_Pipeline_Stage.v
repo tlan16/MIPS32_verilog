@@ -3,10 +3,10 @@
 
 module IF_ID_Pipeline_Stage(
 			     input [31:0]  Instruction_IF,
-			     input 	   PC_Plus_4_IF,
+			     input [31:0]	   PC_Plus_4_IF,
 
 			     output reg [31:0] Instruction_ID,
-			     output reg 	   PC_Plus_4_ID,
+			     output reg [31:0] PC_Plus_4_ID,
 			     input 	   Clk
 			     );
    
