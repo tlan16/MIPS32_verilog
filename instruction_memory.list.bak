@@ -1,5 +1,5 @@
 //Comments are allowed // This is in HEX
-00432000   // This is first address i.e 8'h00 , add $4, $2, $3
+11000000   // This is first address i.e 8'h00
 11100001   // This is second address i.e 8'h01
 11100002
 11100003

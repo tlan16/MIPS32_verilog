@@ -21,10 +21,30 @@
 module MIPS32(
 		input CLOCK_50, // Global clock
 		input PCSrc_MEM,
-		input [31:0] Branch_Dest_MEM,
-	   output [31:0] Instruction_ID,
-	   output [31:0] PC_Plus_4_ID
-		//output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
+		input [31:0] 	Branch_Dest_MEM,
+		input [4:0]   	Write_Register_WB,
+		input [31:0]  	Write_Data_WB,
+		input 	  		RegWrite_WB,
+	  output 	   	RegWrite_EX,
+	  output 	   	MemtoReg_EX,
+  
+	  output 	   	Branch_EX,
+	  output  	   	MemRead_EX,
+	  output  	   	MemWrite_EX,
+  
+	  output  	   	RegDst_EX,
+	  output  [1:0]  	ALUOp_EX,
+	  output  	   	ALUSrc_EX, 
+
+	  output  [31:0] 	PC_Plus_4_EX,
+	 
+	  output  [31:0] 	Read_Data_1_EX,
+	  output  [31:0] 	Read_Data_2_EX,
+	 
+	  output  [31:0] 	Sign_Extend_Instruction_EX,
+
+	  output  [31:0] 	Instruction_EX
+//output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
 		);
 
 	assign Clk = CLOCK_50;
@@ -33,24 +53,24 @@ module MIPS32(
    wire [31:0] 		Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
    wire [31:0] 		PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
    wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
-   /*
+   
    // ID Origin Variables:
    wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
    wire			ALUSrc_ID;		// From ID_Control of ID_Control.v
    wire			Branch_ID;		// From ID_Control of ID_Control.v
-   //wire [31:0]		Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+   wire [31:0]		Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
    wire			MemRead_ID;		// From ID_Control of ID_Control.v
    wire			MemWrite_ID;		// From ID_Control of ID_Control.v
    wire			MemtoReg_ID;		// From ID_Control of ID_Control.v
-   //wire [31:0]		PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
-   wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
-   wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
+   wire [31:0]		PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+   //wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
+   //wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
    wire [31:0] 		Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
    wire [31:0]		Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
    wire			RegDst_ID;		// From ID_Control of ID_Control.v
    wire			RegWrite_ID;		// From ID_Control of ID_Control.v
    wire [31:0] 		Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
-   
+   /*
    // EX origin variables:
    wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire			ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -148,22 +168,19 @@ module MIPS32(
 					     .PC_Plus_4_IF	(PC_Plus_4_IF),
 					     .Clk		(Clk));
    
-
-
-/*
    // ID_Registers
 
    // TODO by student: Assignment Partial Select from Instruction to Read_Address_1_ID and Read_Address_2_ID
-	assign Read_Address_1_ID = Instruction_ID[25:21];
-	assign Read_Data_2_ID	 = Instruction_ID[20:16];
+	//assign Read_Address_1_ID = Instruction_ID[25:21];
+	//assign Read_Address_2_ID = Instruction_ID[20:16];
 	
    ID_Registers ID_Registers (
 			      // Outputs
 			      .Read_Data_1_ID	(Read_Data_1_ID[31:0]),
 			      .Read_Data_2_ID	(Read_Data_2_ID[31:0]),
 			      // Inputs
-			      .Read_Address_1_ID(Read_Address_1_ID[4:0]),
-			      .Read_Address_2_ID(Read_Address_2_ID[4:0]),
+			      .Read_Address_1_ID(Instruction_ID[25:21]),
+			      .Read_Address_2_ID(Instruction_ID[20:16]),
 			      .Write_Register_WB(Write_Register_WB[4:0]),
 			      .Write_Data_WB	(Write_Data_WB[31:0]),
 			      .Clk		(Clk),
@@ -190,7 +207,7 @@ module MIPS32(
 			 .ALUOp_ID		(ALUOp_ID[1:0]),
 			 .ALUSrc_ID		(ALUSrc_ID),
 			 // Inputs
-			 .Instruction_ID	(Instruction_ID[31:0]));
+			 .Instruction_ID	(Instruction_ID[31:26]));
 
    // ID_EX_Pipeline_Stage
 
@@ -226,7 +243,7 @@ module MIPS32(
 					     .Clk		(Clk));
    
    
-   
+   /*
 
    
    // EX_Shift_Left_2

@@ -2,7 +2,7 @@
 // It is up to the student to document and describe the system.
 
 module ID_Control(
-		  input [5:0] Instruction_ID,
+		  input [31:0] Instruction_ID,
 		  output reg       RegWrite_ID,
 		  output reg       MemtoReg_ID,
 		  
@@ -16,7 +16,7 @@ module ID_Control(
 		  );
 
 	wire [5:0]opcode;
-	assign opcode = Instruction_ID;
+	assign opcode = Instruction_ID[5:0];
 	
 	parameter RTYPE	= 6'b000000; 
 	parameter LW		= 6'b100011;

@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="MIPS32">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0" CBX_FILE_NAME="altsyncram_ovh1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1" CBX_FILE_NAME="altsyncram_ovh1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|IF_Instruction_Memory:IF_Instruction_Memory|altsyncram:Instruction_Memory_rtl_0" CBX_FILE_NAME="altsyncram_e381.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

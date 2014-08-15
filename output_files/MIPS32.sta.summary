@@ -3,27 +3,51 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -3.425
-TNS   : -221.153
+Slack : -4.011
+TNS   : -738.431
+
+Type  : Slow Model Setup 'IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]'
+Slack : -1.254
+TNS   : -4.221
+
+Type  : Slow Model Hold 'IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]'
+Slack : -3.181
+TNS   : -19.913
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : 0.528
-TNS   : 0.000
+Slack : -2.092
+TNS   : -2.092
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
-Slack : -1.423
-TNS   : -201.988
+Slack : -1.880
+TNS   : -1048.876
 
-Type  : Fast Model Setup 'CLOCK_50'
-Slack : -1.479
-TNS   : -75.438
-
-Type  : Fast Model Hold 'CLOCK_50'
-Slack : 0.241
+Type  : Slow Model Minimum Pulse Width 'IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]'
+Slack : 0.500
 TNS   : 0.000
 
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.418
+TNS   : -344.455
+
+Type  : Fast Model Setup 'IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]'
+Slack : -0.182
+TNS   : -0.212
+
+Type  : Fast Model Hold 'IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]'
+Slack : -1.697
+TNS   : -11.049
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.398
+TNS   : -1.410
+
 Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
-Slack : -1.423
-TNS   : -201.988
+Slack : -1.880
+TNS   : -1048.876
+
+Type  : Fast Model Minimum Pulse Width 'IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]'
+Slack : 0.500
+TNS   : 0.000
 
 ------------------------------------------------------------
