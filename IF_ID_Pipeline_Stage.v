@@ -10,6 +10,11 @@ module IF_ID_Pipeline_Stage(
 			     input 	   Clk
 			     );
    
+   initial begin
+		Instruction_ID		<= 32'd0;
+		PC_Plus_4_ID		<= 32'd0;
+   end
+	
    always@(posedge Clk) begin
 		Instruction_ID<=Instruction_IF;
 		PC_Plus_4_ID<=PC_Plus_4_IF;

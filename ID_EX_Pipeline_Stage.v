@@ -48,6 +48,29 @@ module ID_EX_Pipeline_Stage(
 			     input 	   Clk
 			     );
    
+	initial 
+	begin
+		RegWrite_EX 	<= 0;
+		MemtoReg_EX 	<= 0;
+		
+		Branch_EX		<= 0;
+		MemRead_EX		<= 0;
+		MemWrite_EX		<= 0;
+		
+		RegDst_EX		<= 0;
+		ALUOp_EX			<= 2'd0;
+		ALUSrc_EX		<= 0;
+		
+		PC_Plus_4_EX	<= 32'd0;
+		
+		Read_Data_1_EX	<= 32'd0;
+		Read_Data_2_EX	<= 32'd0;
+		
+		Sign_Extend_Instruction_EX <= 32'd0;
+		
+		Instruction_EX	<= 32'd0;
+	end
+	
    always@(posedge Clk) begin
 		RegWrite_EX 	<= RegWrite_ID;
 		MemtoReg_EX 	<= MemtoReg_ID;

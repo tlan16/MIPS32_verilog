@@ -29,7 +29,7 @@ module ID_Registers(
 	end
 	
 	always@(negedge Clk) begin
-		if((RegWrite_WB==1) && (Write_Register_WB!=0)) begin
+		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
 	end //always

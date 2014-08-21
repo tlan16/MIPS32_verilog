@@ -24,6 +24,24 @@ module ID_Control(
 	parameter BEQ		= 6'b000100;
 	parameter NOP		= 6'b100000;	
 	
+	initial 
+	 begin
+		 /*  
+		     We assign decimal representation of 0 to our outpur REG's here. 
+		     Note the difference 
+		 */
+		RegDst_ID 		<= 0;
+		ALUOp_ID 		<= 2'd0;
+		ALUSrc_ID 		<= 0;
+		
+		Branch_ID		<= 0;
+		MemRead_ID		<= 0;
+		MemWrite_ID		<= 0;
+		
+		RegWrite_ID		<= 0;
+		MemtoReg_ID		<= 0;
+	end
+	
 	always@* begin
 		case(opcode)
 			RTYPE: begin
@@ -67,6 +85,16 @@ module ID_Control(
 				ALUSrc_ID	<= 1'b0;
 			end
 			NOP: begin
+				RegWrite_ID <= 1'b0;
+				MemtoReg_ID <= 1'b0;
+				Branch_ID	<= 1'b0;
+				MemRead_ID	<= 1'b0;
+				MemWrite_ID	<= 1'b0;
+				RegDst_ID	<= 1'b0;
+				ALUOp_ID		<= 2'b00;
+				ALUSrc_ID	<= 1'b0;
+			end
+			default: begin
 				RegWrite_ID <= 1'b0;
 				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b0;
