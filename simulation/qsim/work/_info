@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\tlan16\git\MIPS32_verilog\simulation\qsim
+vMIPS32
+Z1 I5;VIS5@OXI0R@ihU590_>3
+Z2 VEIPd<iU?c22_X<0Q^^L^d1
+Z3 dC:\Users\tlan16\git\MIPS32_verilog\simulation\qsim
+Z4 w1408682779
+Z5 8MIPS32.vo
+Z6 FMIPS32.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|MIPS32.vo|
+Z9 o-work work -O0
+Z10 n@m@i@p@s32
+!i10b 1
+Z11 !s100 _e3n[HkE>S_O>]2b;l<<02
+!s85 0
+Z12 !s108 1408682780.659000
+Z13 !s107 MIPS32.vo|
+!s101 -O0
+vMIPS32_vlg_check_tst
+!i10b 1
+Z14 !s100 f=U3eC31?[2UPRHazDzd>1
+Z15 IZ42Xe46kKm[iKfj32K4093
+Z16 V9IFAAmjX1dd[TKa_zF]<73
+R3
+R4
+Z17 8MIPS32.vt
+Z18 FMIPS32.vt
+L0 67
+R7
+r1
+!s85 0
+31
+Z19 !s108 1408682781.160000
+Z20 !s107 MIPS32.vt|
+Z21 !s90 -work|work|MIPS32.vt|
+!s101 -O0
+R9
+Z22 n@m@i@p@s32_vlg_check_tst
+vMIPS32_vlg_sample_tst
+!i10b 1
+Z23 !s100 DfPDQz]F1EZ]4DB>b5J`z3
+Z24 IT:QKLAFS[8QiNYXI_J18>1
+Z25 VBROCW<=4cX=]>CdQ^IScJ2
+R3
+R4
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+Z26 n@m@i@p@s32_vlg_sample_tst
+vMIPS32_vlg_vec_tst
+!i10b 1
+Z27 !s100 5H_2;a;E7_XkgPNU@m[4O0
+Z28 I[4PCEM8njeCfdVZ@17e;f1
+Z29 VTnk7;KV8LChF6gSL;el3d2
+R3
+R4
+R17
+R18
+Z30 L0 3288
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+Z31 n@m@i@p@s32_vlg_vec_tst
