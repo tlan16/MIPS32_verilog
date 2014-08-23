@@ -20,30 +20,22 @@
 
 module MIPS32(
 		input CLOCK_50, // Global clock
-		input PCSrc_MEM,
-		input [31:0] 	Branch_Dest_MEM,
 		input [4:0]   	Write_Register_WB,
 		input [31:0]  	Write_Data_WB,
 		input 	  		RegWrite_WB,
-	  output 	   	RegWrite_EX,
-	  output 	   	MemtoReg_EX,
+		input 			PCSrc_MEM,
+		
+	  output 	 	   RegWrite_MEM,
+	  output 	 	   MemtoReg_MEM,
   
-	  output 	   	Branch_EX,
-	  output  	   	MemRead_EX,
-	  output  	   	MemWrite_EX,
-  
-	  output  	   	RegDst_EX,
-	  output  [1:0]  	ALUOp_EX,
-	  output  	   	ALUSrc_EX, 
-
-	  output  [31:0] 	PC_Plus_4_EX,
-	 
-	  output  [31:0] 	Read_Data_1_EX,
-	  output  [31:0] 	Read_Data_2_EX,
-	 
-	  output  [31:0] 	Sign_Extend_Instruction_EX,
-
-	  output  [31:0] 	Instruction_EX
+	  output 	 	   Branch_MEM,
+	  output 	 	   MemRead_MEM,
+	  output 	 	   MemWrite_MEM,
+	  
+	  output 	 	   Zero_MEM,
+	  output [31:0] 	ALU_Result_MEM,
+	  output 	 	   Write_Data_MEM,
+	  output [4:0]  	Write_Register_MEM
 //output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
 		);
 
@@ -63,14 +55,14 @@ module MIPS32(
    wire			MemWrite_ID;		// From ID_Control of ID_Control.v
    wire			MemtoReg_ID;		// From ID_Control of ID_Control.v
    wire [31:0]		PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
-   //wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
-   //wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
+   wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
+   wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
    wire [31:0] 		Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
    wire [31:0]		Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
    wire			RegDst_ID;		// From ID_Control of ID_Control.v
    wire			RegWrite_ID;		// From ID_Control of ID_Control.v
    wire [31:0] 		Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
-   /*
+   
    // EX origin variables:
    wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire			ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -92,11 +84,11 @@ module MIPS32(
    wire [31:0] 		Sign_Extend_Instruction_EX;// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v   
    wire [4:0]		Write_Register_EX;	// To EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			Zero_EX;		// From EX_ALU of EX_ALU.v
-
+/*
    // MEM Origin Variables:
    wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+*/   wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+/*   wire			Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			MemRead_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			MemWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			MemtoReg_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
@@ -241,9 +233,6 @@ module MIPS32(
 					     .Sign_Extend_Instruction_ID(Sign_Extend_Instruction_ID[31:0]),
 					     .Instruction_ID	(Instruction_ID[31:0]),
 					     .Clk		(Clk));
-   
-   
-   /*
 
    
    // EX_Shift_Left_2
@@ -330,7 +319,7 @@ module MIPS32(
 					       .Clk		(Clk));
    
      
-     
+     /*
 
    // MEM_Branch_AND
    MEM_Branch_AND MEM_Branch_AND(

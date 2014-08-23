@@ -6,7 +6,7 @@
 module EX_ALU_Mux(
 		 input [31:0]  Read_Data_2_EX,
 		 input [31:0]  Sign_Extend_Instruction_EX,
-		 input [31:0]  ALUSrc_EX,
+		 input 			ALUSrc_EX,
 		 output [31:0] ALU_Data_2_EX
 		  
 		 );

@@ -1,4 +1,9 @@
 MIPS32
+EX_ALU:EX_ALU|
+EX_ALU_Control:EX_ALU_Control|
+EX_ALU_Mux:EX_ALU_Mux|
+EX_Dest_Mux:EX_Dest_Mux|
+EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|
 ID_Control:ID_Control|
 ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|
 ID_Registers:ID_Registers|
@@ -15,4 +20,6 @@ ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|
 IF_Instruction_Memory:IF_Instruction_Memory|altsyncram:Instruction_Memory_rtl_0|
 ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_ovh1:auto_generated|
 ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_ovh1:auto_generated|
+EX_PC_Add:EX_PC_Add|
+EX_Shift_Left_2:EX_Shift_Left_2|
 ID_Sign_Extension:ID_Sign_Extension|
