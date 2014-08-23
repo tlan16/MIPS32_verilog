@@ -25,6 +25,9 @@ module MIPS32(
 		input 	  		RegWrite_WB,
 		input 			PCSrc_MEM,
 		
+	  output [31:0]		PC_Plus_4_EX,
+	  output [31:0] 		Instruction_EX,
+		
 	  output 	 	   RegWrite_MEM,
 	  output 	 	   MemtoReg_MEM,
   
@@ -71,12 +74,12 @@ module MIPS32(
    wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
    wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
    wire			Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+   //wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
    wire			MemRead_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire			MemWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire			MemtoReg_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [31:0]		PC_Plus_4_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+   // wire [31:0]		PC_Plus_4_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire [31:0]		Read_Data_1_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire [31:0]		Read_Data_2_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
    wire			RegDst_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v

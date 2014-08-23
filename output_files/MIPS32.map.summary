@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Aug 23 22:06:06 2014
+Analysis & Synthesis Status : Successful - Sat Aug 23 23:29:01 2014
 Quartus II 64-Bit Version : 12.0 Build 178 05/31/2012 SJ Full Version
 Revision Name : MIPS32
 Top-level Entity Name : MIPS32
 Family : Cyclone II
-Total logic elements : 374
-    Total combinational functions : 309
-    Dedicated logic registers : 191
-Total registers : 191
-Total pins : 84
+Total logic elements : 540
+    Total combinational functions : 391
+    Dedicated logic registers : 348
+Total registers : 348
+Total pins : 148
 Total virtual pins : 0
-Total memory bits : 24,576
+Total memory bits : 10,240
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

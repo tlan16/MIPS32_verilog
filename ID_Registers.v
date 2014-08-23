@@ -28,7 +28,7 @@ module ID_Registers(
 		else Read_Data_2_ID = Register_File[Read_Address_2_ID];
 	end
 	
-	always@(negedge Clk) begin
+	always@(posedge Clk) begin
 		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
