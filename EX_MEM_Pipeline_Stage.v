@@ -13,7 +13,7 @@ module EX_MEM_Pipeline_Stage(
 
 			     input 	   Zero_EX, 
 			     input [31:0]  ALU_Result_EX,
-			     input 	   Read_Data_2_EX,
+			     input [31:0]   Read_Data_2_EX,
 			     input [4:0]   Write_Register_EX,
 
 			     
@@ -31,7 +31,7 @@ module EX_MEM_Pipeline_Stage(
 			     
 			     output reg 	   Zero_MEM,
 			     output reg [31:0] ALU_Result_MEM,
-			     output reg 	   Write_Data_MEM,
+			     output reg [31:0] Write_Data_MEM,
 			     output reg [4:0]  Write_Register_MEM
 			     );
    

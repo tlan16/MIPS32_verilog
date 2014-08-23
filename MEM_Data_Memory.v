@@ -3,7 +3,7 @@
 
 module MEM_Data_Memory(
 			     input [31:0]  ALU_Result_MEM,
-			     input 	   Write_Data_MEM,
+			     input [31:0]  Write_Data_MEM,
 			     output reg [31:0] Read_Data_MEM,
 			     input 	   MemRead_MEM,
 			     input 	   MemWrite_MEM,
@@ -12,7 +12,7 @@ module MEM_Data_Memory(
    
 	parameter BASE_ADDRESS = 25'd0; // address that applies to this memory - change if desired
 	
-	reg [31:0]Data_Memory[0:512];
+	reg [31:0]Data_Memory[0:1023];
 	initial begin
 		$readmemh("data_memory.list", Data_Memory);
 	end
@@ -36,7 +36,7 @@ module MEM_Data_Memory(
 	end //always
 	
 	// for WRITE operations
-	always@(posedge Clk) begin
+	always@(negedge Clk) begin
 		if(MemWrite_MEM==1 && address_select==1) begin
 			Data_Memory[mem_offset] <= Write_Data_MEM;
 		end //if

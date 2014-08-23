@@ -20,25 +20,20 @@
 
 module MIPS32(
 		input Clk, // Global clock
-		input [4:0]   	Write_Register_WB,
 		input [31:0]  	Write_Data_WB,
-		input 	  		RegWrite_WB,
-		input 			PCSrc_MEM,
 		
-	  output [31:0]		PC_Plus_4_EX,
-	  output [31:0] 		Instruction_EX,
+	  // probed output
+	  output [31:0]   PC_Plus_4_EX,
+	  output [31:0]   Instruction_EX,
 		
-	  output 	 	   RegWrite_MEM,
-	  output 	 	   MemtoReg_MEM,
-  
-	  output 	 	   Branch_MEM,
-	  output 	 	   MemRead_MEM,
-	  output 	 	   MemWrite_MEM,
-	  
-	  output 	 	   Zero_MEM,
-	  output [31:0] 	ALU_Result_MEM,
-	  output 	 	   Write_Data_MEM,
-	  output [4:0]  	Write_Register_MEM
+	  output 	 	   RegWrite_WB,
+	  output 	 	   MemtoReg_WB,
+	  output 	 	   Read_Data_WB, 
+	  output [31:0]   ALU_Result_WB,
+	  output [4:0]    Write_Register_WB
+	
+		
+		
 //output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
 		);
 
@@ -86,21 +81,21 @@ module MIPS32(
    wire [31:0] 		Sign_Extend_Instruction_EX;// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v   
    wire [4:0]		Write_Register_EX;	// To EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			Zero_EX;		// From EX_ALU of EX_ALU.v
-/*
+
    // MEM Origin Variables:
    wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-*/   wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-/*   wire			Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+   wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+   wire			Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			MemRead_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			MemWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			MemtoReg_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			PCSrc_MEM;		// From MEM_Branch_AND of MEM_Branch_AND.v
    wire [31:0]		Read_Data_MEM;		// From MEM_Data_Memory of MEM_Data_Memory.v
    wire			RegWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+   wire [31:0]	Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire [4:0]		Write_Register_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
    wire			Zero_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   
+/*
    // WB Origin Variables:
 
    wire [31:0]		ALU_Result_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
@@ -320,8 +315,6 @@ module MIPS32(
 					       .Write_Register_EX(Write_Register_EX[4:0]),
 					       .Clk		(Clk));
    
-     
-     /*
 
    // MEM_Branch_AND
    MEM_Branch_AND MEM_Branch_AND(
@@ -361,7 +354,7 @@ module MIPS32(
 					       .ALU_Result_MEM	(ALU_Result_MEM[31:0]),
 					       .Write_Register_MEM(Write_Register_MEM[4:0]));
 
-
+/*
    // WB_MemtoReg_Mux
    WB_MemtoReg_Mux WB_MemtoReg_Mux(
 				   // Outputs

@@ -6,7 +6,7 @@ module MEM_WB_Pipeline_Stage(
 			    
 			     input 	  RegWrite_MEM,
 			     input 	  MemtoReg_MEM,
-			     input 	  Read_Data_MEM, 
+			     input [31:0]	Read_Data_MEM, 
 			     input [31:0] ALU_Result_MEM,
 			     input [4:0]  Write_Register_MEM,
 
