@@ -19,7 +19,7 @@
 
 
 module MIPS32(
-		input CLOCK_50, // Global clock
+		input Clk, // Global clock
 		input [4:0]   	Write_Register_WB,
 		input [31:0]  	Write_Data_WB,
 		input 	  		RegWrite_WB,
@@ -42,7 +42,6 @@ module MIPS32(
 //output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
 		);
 
-	assign Clk = CLOCK_50;
    // IF Origin Variables:
    wire [31:0] 		Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
    wire [31:0] 		Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v

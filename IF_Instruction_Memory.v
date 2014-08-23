@@ -7,14 +7,15 @@ module IF_Instruction_Memory(
 		 input Clk
 		 );
 
-		 reg [31:0]Instruction_Memory[0:255];
+		 reg [31:0]Instruction_Memory[0:1023];
 		 
 		 initial begin
 			$readmemh("instruction_memory.list", Instruction_Memory);
 		 end
 		 
-		 always@(posedge Clk) begin
-			Instruction_IF <= Instruction_Memory[PC_IF];
+		 always@(PC_IF) begin
+			if(PC_IF>1023)		Instruction_IF <= 32'd0;
+			else					Instruction_IF <= Instruction_Memory[PC_IF];
 		 end
    
 endmodule // IF_Instruction_Memory

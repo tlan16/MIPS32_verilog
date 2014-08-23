@@ -19,16 +19,16 @@ module ID_Registers(
 	end
 	
 	always@(Read_Address_1_ID or Register_File[Read_Address_1_ID]) begin
-		if(Read_Address_1_ID==0)	Read_Data_1_ID = 32'd0;
-		else Read_Data_1_ID = Register_File[Read_Address_1_ID];
+		if(Read_Address_1_ID==0)	Read_Data_1_ID <= 32'd0;
+		else Read_Data_1_ID <= Register_File[Read_Address_1_ID];
 	end
 	
 	always@(Read_Address_2_ID or Register_File[Read_Address_2_ID]) begin
-		if(Read_Address_2_ID==0)	Read_Data_2_ID = 32'd0;
-		else Read_Data_2_ID = Register_File[Read_Address_2_ID];
+		if(Read_Address_2_ID==0)	Read_Data_2_ID <= 32'd0;
+		else Read_Data_2_ID <= Register_File[Read_Address_2_ID];
 	end
 	
-	always@(posedge Clk) begin
+	always@(negedge Clk) begin
 		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
