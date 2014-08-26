@@ -23,78 +23,105 @@ module MIPS32(
 		input [31:0]  	Write_Data_WB,
 		
 	  // probed output
+	  output [31:0]   PC_Plus_4_IF,
+	  output [31:0]   Instruction_IF,
+	  output [31:0] 	Next_PC_IF,
+	  
+	  output [31:0]   PC_Plus_4_ID,
+	  output [31:0]   Instruction_ID,
+	  output [4:0]		Read_Address_1_ID,
+	  output [4:0]		Read_Address_2_ID,
+	  output [31:0]	Read_Data_1_ID,
+	  output [31:0]	Read_Data_2_ID,
+	  output 			RegDst_ID,
+	  output	[1:0]		ALUOp_ID,
+	  output 			ALUSrc_ID,
+	  output				Branch_ID,
+	  output				MemRead_ID,
+	  output				MemWrite_ID,
+	  output				RegWrite_ID,
+	  output				MemtoReg_ID,
+	  output [31:0] 	Sign_Extend_Instruction_ID,
+	  
 	  output [31:0]   PC_Plus_4_EX,
 	  output [31:0]   Instruction_EX,
-		
+	  output [31:0]	ALU_Data_2_EX,
+	  output [3:0]		ALU_Control_EX,
+	  output [31:0]	ALU_Result_EX,
+	  output [31:0]	Branch_Dest_EX,
+	  output [4:0]		Write_Register_EX,
+	  output 			Zero_EX,
+	  
+	  output [31:0]	Write_Data_MEM,
+	  output				PCSrc_MEM,
+	  
+		//stage output
 	  output 	 	   RegWrite_WB,
 	  output 	 	   MemtoReg_WB,
 	  output 	 	   Read_Data_WB, 
 	  output [31:0]   ALU_Result_WB,
 	  output [4:0]    Write_Register_WB
-	
-		
-		
-//output [31:0] Registers_Write_Data_WB // Inorder of a design to compile into actual logic, the design must have an output. You may change this output to something more appropriate if desired.
+	  
 		);
 
    // IF Origin Variables:
-   wire [31:0] 		Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
-   wire [31:0] 		Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
-   wire [31:0] 		PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
-   wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
+		// probed wire [31:0] 	Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
+		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
+		// probed wire [31:0] 	PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
+		wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
    
    // ID Origin Variables:
-   wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
-   wire			ALUSrc_ID;		// From ID_Control of ID_Control.v
-   wire			Branch_ID;		// From ID_Control of ID_Control.v
-   wire [31:0]		Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
-   wire			MemRead_ID;		// From ID_Control of ID_Control.v
-   wire			MemWrite_ID;		// From ID_Control of ID_Control.v
-   wire			MemtoReg_ID;		// From ID_Control of ID_Control.v
-   wire [31:0]		PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
-   wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
-   wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
-   wire [31:0] 		Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
-   wire [31:0]		Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
-   wire			RegDst_ID;		// From ID_Control of ID_Control.v
-   wire			RegWrite_ID;		// From ID_Control of ID_Control.v
-   wire [31:0] 		Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
+		// probed wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
+		// probed wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
+		// probed wire				Branch_ID;		// From ID_Control of ID_Control.v
+		// probed wire [31:0]	Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+		// probed wire				MemRead_ID;		// From ID_Control of ID_Control.v
+		// probed wire				MemWrite_ID;		// From ID_Control of ID_Control.v
+		// probed wire				MemtoReg_ID;		// From ID_Control of ID_Control.v
+		// probed wire [31:0]	PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+		// probed wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
+		// probed wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
+		// probed wire [31:0] 	Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
+		// probed wire [31:0]	Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
+		// probed wire				RegDst_ID;		// From ID_Control of ID_Control.v
+		// probed wire				RegWrite_ID;		// From ID_Control of ID_Control.v
+		// probed wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
    
    // EX origin variables:
-   wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire			ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [3:0]		ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
-   wire [31:0]		ALU_Data_2_EX;		// From EX_ALU_Mux of EX_ALU_Mux.v
-   wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
-   wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
-   wire			Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   //wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
-   wire			MemRead_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire			MemWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire			MemtoReg_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   // wire [31:0]		PC_Plus_4_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [31:0]		Read_Data_1_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [31:0]		Read_Data_2_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire			RegDst_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire			RegWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-   wire [31:0] 		Sign_Extend_Instruction_EX;// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v   
-   wire [4:0]		Write_Register_EX;	// To EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			Zero_EX;		// From EX_ALU of EX_ALU.v
+		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire				ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		// probed wire [3:0]			ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
+		// probed wire [31:0]		ALU_Data_2_EX;		// From EX_ALU_Mux of EX_ALU_Mux.v
+		// probed wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
+		// probed wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
+		wire				Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		// probed wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
+		wire				MemRead_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire				MemWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire				MemtoReg_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		//probed  wire [31:0]		PC_Plus_4_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire [31:0]		Read_Data_1_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire [31:0]		Read_Data_2_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire				RegDst_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire				RegWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire [31:0] 	Sign_Extend_Instruction_EX;// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v   
+		// probed wire [4:0]			Write_Register_EX;	// To EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		// probed wire					Zero_EX;		// From EX_ALU of EX_ALU.v
 
    // MEM Origin Variables:
-   wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			MemRead_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			MemWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			MemtoReg_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			PCSrc_MEM;		// From MEM_Branch_AND of MEM_Branch_AND.v
-   wire [31:0]		Read_Data_MEM;		// From MEM_Data_Memory of MEM_Data_Memory.v
-   wire			RegWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire [31:0]	Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire [4:0]		Write_Register_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-   wire			Zero_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire				Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire				MemRead_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire				MemWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire				MemtoReg_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		// probed wire					PCSrc_MEM;		// From MEM_Branch_AND of MEM_Branch_AND.v
+		wire [31:0]		Read_Data_MEM;		// From MEM_Data_Memory of MEM_Data_Memory.v
+		wire				RegWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		// probed wire [31:0]		Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire [4:0]		Write_Register_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire				Zero_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 /*
    // WB Origin Variables:
 
@@ -274,7 +301,7 @@ module MIPS32(
 				 // Outputs
 				 .ALU_Control_EX	(ALU_Control_EX[3:0]),
 				 // Inputs
-				 .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]),
+				 .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[5:0]),
 				 .ALUOp_EX		(ALUOp_EX[1:0]));
    
    
@@ -284,7 +311,7 @@ module MIPS32(
 			   // Outputs
 			   .Write_Register_EX	(Write_Register_EX[4:0]),
 			   // Inputs
-			   .Instruction_EX	(Instruction_EX[31:0]),
+			   .Instruction_EX	(Instruction_EX[20:0]),
 			   .RegDst_EX		(RegDst_EX));
       
 

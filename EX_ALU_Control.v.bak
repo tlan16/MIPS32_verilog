@@ -2,7 +2,7 @@
 // It is up to the student to document and describe the system.
 
 module EX_ALU_Control(
-		      input [5:0] Sign_Extend_Instruction_EX, // Note: You only need 6 bits of this.
+		      input [31:0] Sign_Extend_Instruction_EX, // Note: You only need 6 bits of this.
 		      input [1:0]  ALUOp_EX,
 		      output reg [3:0] ALU_Control_EX
 		      );

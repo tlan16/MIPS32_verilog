@@ -4,7 +4,7 @@
 // condition ? if true : if false
 
 module EX_Dest_Mux(
-		 input [20:0] Instruction_EX,
+		 input [31:0] Instruction_EX,
 		 input RegDst_EX,
 		 output [4:0] Write_Register_EX
 		 );
