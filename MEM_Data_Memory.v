@@ -10,22 +10,23 @@ module MEM_Data_Memory(
 			     input 	   Clk
 			     );
    
-	parameter BASE_ADDRESS = 25'd0; // address that applies to this memory - change if desired
+	//parameter BASE_ADDRESS = 25'd0; // address that applies to this memory - change if desired
 	
-	reg [31:0]Data_Memory[0:1023];
+	reg [31:0]Data_Memory[0:512];
 	initial begin
 		$readmemh("data_memory.list", Data_Memory);
+		Read_Data_MEM <= 32'd0;
 	end
 	
-	wire [31:0]address;
-	assign address = ALU_Result_MEM[31:0];
+	//wire [31:0]address;
+	//assign address = ALU_Result_MEM[31:0];
 	
-	wire [4:0] mem_offset;
+	/* wire [4:0] mem_offset;
 	wire address_select;
 
 	assign mem_offset = address[6:2];  // drop 2 LSBs to get word offset
 	
-	//*****************************************************************************************//
+	//////////////////////////////////////////////////////////////////////////////////
 	always @(MemRead_MEM or address_select or mem_offset or Data_Memory[mem_offset]) begin
 		if(MemRead_MEM==1 && address_select==1) begin
 			if((address % 4) !=0) begin
@@ -41,6 +42,18 @@ module MEM_Data_Memory(
 			Data_Memory[mem_offset] <= Write_Data_MEM;
 		end //if
 	end //always
+	*/
+	
+	always@(posedge Clk) begin
+		if(MemRead_MEM) begin	// Read
+			if(ALU_Result_MEM == 0)
+				Read_Data_MEM <= 32'd0;
+			else
+				Read_Data_MEM = ALU_Result_MEM;
+			end //if
+		else if(MemWrite_MEM)	//Write
+			Data_Memory[ALU_Result_MEM] = Write_Data_MEM;
+		end
 	
 endmodule // MEM_Data_Memory
 

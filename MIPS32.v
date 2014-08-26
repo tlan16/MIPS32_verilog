@@ -58,7 +58,7 @@ module MIPS32(
 		//stage output
 	  output 	 	   RegWrite_WB,
 	  output 	 	   MemtoReg_WB,
-	  output 	 	   Read_Data_WB, 
+	  output [31:0]   Read_Data_WB, 
 	  output [31:0]   ALU_Result_WB,
 	  output [4:0]    Write_Register_WB
 	  
@@ -122,13 +122,13 @@ module MIPS32(
 		// probed wire [31:0]		Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire [4:0]		Write_Register_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire				Zero_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-/*
-   // WB Origin Variables:
 
+   // WB Origin Variables:
+/*
    wire [31:0]		ALU_Result_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
-   wire			MemtoReg_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
-   wire			RegWrite_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
-   wire			Read_Data_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
+   wire				MemtoReg_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
+   wire				RegWrite_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
+   wire [31:0]		Read_Data_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
    wire [31:0]		Write_Data_WB;		// From WB_MemtoReg_Mux of WB_MemtoReg_Mux.v
    wire [4:0]		Write_Register_WB;	// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 */
@@ -187,16 +187,16 @@ module MIPS32(
    // ID_Registers
 
    // TODO by student: Assignment Partial Select from Instruction to Read_Address_1_ID and Read_Address_2_ID
-	//assign Read_Address_1_ID = Instruction_ID[25:21];
-	//assign Read_Address_2_ID = Instruction_ID[20:16];
+	assign Read_Address_1_ID = Instruction_ID[25:21];
+	assign Read_Address_2_ID = Instruction_ID[20:16];
 	
    ID_Registers ID_Registers (
 			      // Outputs
 			      .Read_Data_1_ID	(Read_Data_1_ID[31:0]),
 			      .Read_Data_2_ID	(Read_Data_2_ID[31:0]),
 			      // Inputs
-			      .Read_Address_1_ID(Instruction_ID[25:21]),
-			      .Read_Address_2_ID(Instruction_ID[20:16]),
+			      .Read_Address_1_ID(Read_Address_1_ID),
+			      .Read_Address_2_ID(Read_Address_2_ID),
 			      .Write_Register_WB(Write_Register_WB[4:0]),
 			      .Write_Data_WB	(Write_Data_WB[31:0]),
 			      .Clk		(Clk),

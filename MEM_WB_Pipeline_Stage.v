@@ -12,7 +12,7 @@ module MEM_WB_Pipeline_Stage(
 
 			     output reg 	  RegWrite_WB,
 			     output reg 	  MemtoReg_WB,
-			     output reg 	  Read_Data_WB, 
+			     output reg [31:0] Read_Data_WB, 
 			     output reg [31:0] ALU_Result_WB,
 			     output reg [4:0]  Write_Register_WB
 			     );
