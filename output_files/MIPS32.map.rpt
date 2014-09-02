@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS32
-Tue Aug 26 23:40:27 2014
+Tue Sep 02 20:41:11 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -56,16 +56,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 26 23:40:27 2014     ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 02 20:41:11 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 315                                       ;
-;     Total combinational functions  ; 210                                       ;
-;     Dedicated logic registers      ; 234                                       ;
-; Total registers                    ; 234                                       ;
-; Total pins                         ; 582                                       ;
+; Total logic elements               ; 621                                       ;
+;     Total combinational functions  ; 428                                       ;
+;     Dedicated logic registers      ; 430                                       ;
+; Total registers                    ; 430                                       ;
+; Total pins                         ; 575                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 16,384                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
@@ -179,6 +179,7 @@ applicable agreement for further details.
 +----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                 ; Library ;
 +----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
+; WB_MemtoReg_Mux.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v                            ;         ;
 ; MIPS32.v                                     ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v                                     ;         ;
 ; MEM_WB_Pipeline_Stage.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v                      ;         ;
 ; MEM_Data_Memory.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v                            ;         ;
@@ -222,28 +223,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 315   ;
+; Estimated Total logic elements              ; 621   ;
 ;                                             ;       ;
-; Total combinational functions               ; 210   ;
+; Total combinational functions               ; 428   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 19    ;
-;     -- 3 input functions                    ; 33    ;
-;     -- <=2 input functions                  ; 158   ;
+;     -- 4 input functions                    ; 151   ;
+;     -- 3 input functions                    ; 149   ;
+;     -- <=2 input functions                  ; 128   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 124   ;
-;     -- arithmetic mode                      ; 86    ;
+;     -- normal mode                          ; 308   ;
+;     -- arithmetic mode                      ; 120   ;
 ;                                             ;       ;
-; Total registers                             ; 234   ;
-;     -- Dedicated logic registers            ; 234   ;
+; Total registers                             ; 430   ;
+;     -- Dedicated logic registers            ; 430   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 582   ;
+; I/O pins                                    ; 575   ;
 ; Total memory bits                           ; 16384 ;
 ; Maximum fan-out node                        ; Clk   ;
-; Maximum fan-out                             ; 298   ;
-; Total fan-out                               ; 1724  ;
-; Average fan-out                             ; 1.58  ;
+; Maximum fan-out                             ; 494   ;
+; Total fan-out                               ; 3508  ;
+; Average fan-out                             ; 2.34  ;
 +---------------------------------------------+-------+
 
 
@@ -252,25 +253,31 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
-; |MIPS32                                          ; 210 (1)           ; 234 (0)      ; 16384       ; 0            ; 0       ; 0         ; 582  ; 0            ; |MIPS32                                                                                                                     ;              ;
-;    |EX_ALU:EX_ALU|                               ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                                                       ;              ;
+; |MIPS32                                          ; 428 (1)           ; 430 (0)      ; 16384       ; 0            ; 0       ; 0         ; 575  ; 0            ; |MIPS32                                                                                                                     ;              ;
+;    |EX_ALU:EX_ALU|                               ; 165 (165)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                                                       ;              ;
+;    |EX_ALU_Control:EX_ALU_Control|               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Control:EX_ALU_Control                                                                                       ;              ;
 ;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                                               ;              ;
-;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                                             ;              ;
-;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 66 (66)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                                         ;              ;
-;    |EX_PC_Add:EX_PC_Add|                         ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                                                 ;              ;
-;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 1 (1)             ; 103 (103)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                                           ;              ;
-;    |ID_Registers:ID_Registers|                   ; 65 (65)           ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                                           ;              ;
+;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                                             ;              ;
+;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 103 (103)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                                         ;              ;
+;    |EX_PC_Add:EX_PC_Add|                         ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                                                 ;              ;
+;    |ID_Control:ID_Control|                       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                                               ;              ;
+;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 0 (0)             ; 121 (121)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                                           ;              ;
+;    |ID_Registers:ID_Registers|                   ; 69 (69)           ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                                           ;              ;
 ;       |altsyncram:Register_File_rtl_0|           ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0                                                            ;              ;
 ;          |altsyncram_fvh1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_fvh1:auto_generated                             ;              ;
 ;             |altsyncram_2pk1:altsyncram1|        ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_fvh1:auto_generated|altsyncram_2pk1:altsyncram1 ;              ;
 ;       |altsyncram:Register_File_rtl_1|           ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1                                                            ;              ;
 ;          |altsyncram_fvh1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_fvh1:auto_generated                             ;              ;
 ;             |altsyncram_2pk1:altsyncram1|        ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_fvh1:auto_generated|altsyncram_2pk1:altsyncram1 ;              ;
-;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                                           ;              ;
-;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_Instruction_Memory:IF_Instruction_Memory                                                                         ;              ;
+;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                                           ;              ;
+;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_Instruction_Memory:IF_Instruction_Memory                                                                         ;              ;
 ;    |IF_PC_Add:IF_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Add:IF_PC_Add                                                                                                 ;              ;
-;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Reg:IF_PC_Reg                                                                                                 ;              ;
-;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                                         ;              ;
+;    |IF_PC_Mux:IF_PC_Mux|                         ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Mux:IF_PC_Mux                                                                                                 ;              ;
+;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Reg:IF_PC_Reg                                                                                                 ;              ;
+;    |MEM_Branch_AND:MEM_Branch_AND|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Branch_AND:MEM_Branch_AND                                                                                       ;              ;
+;    |MEM_Data_Memory:MEM_Data_Memory|             ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                                                     ;              ;
+;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                                         ;              ;
+;    |WB_MemtoReg_Mux:WB_MemtoReg_Mux|             ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|WB_MemtoReg_Mux:WB_MemtoReg_Mux                                                                                     ;              ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -285,238 +292,72 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+----------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                         ;
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-; Register name                                                                              ; Reason for Removal                                                            ;
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[11]                   ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[12]                   ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[13]                   ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[14]                   ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[15..31]               ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Branch_EX                                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]             ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]             ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                                      ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX              ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemtoReg_MEM                                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM           ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                                  ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]         ;
-; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                               ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0..2,4..15,17,19..21,24,25,28,30] ; Stuck at GND due to stuck port data_in                                        ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[0..2,4..15,17,19..21,24,25,28,30] ; Stuck at GND due to stuck port data_in                                        ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0..2,4..10]           ; Stuck at GND due to stuck port data_in                                        ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]                                      ; Stuck at GND due to stuck port data_in                                        ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1,3,4]                      ; Stuck at GND due to stuck port data_in                                        ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_MEM                                     ; Stuck at GND due to stuck port data_in                                        ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Zero_MEM                                       ; Lost fanout                                                                   ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0,2..31]                       ; Lost fanout                                                                   ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1,3,4]                       ; Stuck at GND due to stuck port data_in                                        ;
-; IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                                               ; Stuck at GND due to stuck port data_in                                        ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]                                  ; Stuck at GND due to stuck port data_in                                        ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]                                  ; Stuck at GND due to stuck port data_in                                        ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[31]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[31]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[30]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[30]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[29]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[29]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[28]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[28]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[27]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[27]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[26]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[26]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[25]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[25]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[24]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[24]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[23]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[23]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[22]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[22]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[21]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[21]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[20]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[20]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[19]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[19]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[18]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[18]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[17]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[17]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[16]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[16]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[15]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[15]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[14]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[14]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[13]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[13]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[12]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[12]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[11]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[11]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[10]                                 ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[10]                                     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[9]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[9]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[8]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[8]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[7]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[7]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[6]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[6]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[5]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[5]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[4]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[4]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[3]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[3]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[2]                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[2]                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[16,18,22,23,26,27,29,31]          ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3]       ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3]                    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[16]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[18]                               ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[16]      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUSrc_EX                                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[16]      ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[2]                          ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[0] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2]                           ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[0]  ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX                                       ; Stuck at GND due to stuck port data_in                                        ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM                                    ; Stuck at GND due to stuck port data_in                                        ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[0..31]                                       ; Stuck at GND due to stuck port clock_enable                                   ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|MemtoReg_WB                                    ; Stuck at GND due to stuck port data_in                                        ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[0..31]                            ; Stuck at GND due to stuck port data_in                                        ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegWrite_EX                                      ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]             ;
-; Total Number of Removed Registers = 239                                                    ;                                                                               ;
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                           ;
++---------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+; Register name                                                                   ; Reason for Removal                                                         ;
++---------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[11]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[12]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[13]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[14]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[15..31]    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Branch_EX                             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]          ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]          ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                           ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX           ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemtoReg_MEM                        ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM        ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                  ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0] ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                       ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]      ;
+; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                    ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                   ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,4,6..10,13,15,20,30] ; Stuck at GND due to stuck port data_in                                     ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[0,4,6..10,13,15,20,30] ; Stuck at GND due to stuck port data_in                                     ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0,4,6..10] ; Stuck at GND due to stuck port data_in                                     ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]               ; Stuck at GND due to stuck port data_in                                     ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]                ; Stuck at GND due to stuck port data_in                                     ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[14,19,24]              ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[1]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[16]                    ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12]                    ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[11]   ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[23,29]                 ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]   ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26,27,31]              ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[22]   ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[28]                    ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]                    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[1]         ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]                    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]   ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3]         ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[16]   ;
+; Total Number of Removed Registers = 75                                          ;                                                                            ;
++---------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                          ;
-+--------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
-; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                                    ;
-+--------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[28] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[28],             ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0],                    ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_MEM,                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Zero_MEM,                     ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[2],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[3],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[4],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[5],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[6],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[7],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[8],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[9],           ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[10],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[11],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[12],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[13],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[14],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[15],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[16],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[17],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[18],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[19],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[20],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[21],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[22],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[23],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[24],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[25],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[26],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[27],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[28],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[29],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[30],          ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[31],          ;
-;                                                              ;                           ; IF_PC_Reg:IF_PC_Reg|PC_IF[0],                                             ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0],                ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0],                ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX,                     ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM,                  ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[16],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[17],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[18],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[19],                        ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[2],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[4],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[5],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[6],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[7],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[8],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[9],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[10],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[11],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[12],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[13],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[14],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[15],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[16],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[17],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[18],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[19],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[20],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[21],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[22],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[23]              ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[17],             ;
-;                                                              ; due to stuck port data_in ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[0],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[1],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[2],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[3],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[20],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[21],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[22],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[23],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[24],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[25],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[26],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[27],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[28],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[29],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[30],                        ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[31],                        ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[0],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[1],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[3],              ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[24],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[25],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[26],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[27],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[28],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[29],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[30],             ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Read_Data_WB[31]              ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[21] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21],             ;
-;                                                              ; due to stuck port data_in ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[4],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[5],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[6],                         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[7],                         ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|MemtoReg_WB                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12],             ;
-;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1],        ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1],         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[9]                          ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[14] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14],             ;
-;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[3],        ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3],         ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[8]                          ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[0],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0],  ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[15]                         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[2]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[2],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[2],  ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[14]                         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[4],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4],  ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[13]                         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[6]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[6],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[6],  ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[12]                         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[8]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[8],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[8],  ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[11]                         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[10] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[10],             ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[10], ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[10]                         ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[15] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15],             ;
-;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4],        ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]          ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[1]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[1],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[1]   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[5]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[5],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[7]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[7],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[7]   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[9]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[9],              ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[9]   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[11] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[24] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[25]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[30]              ;
-;                                                              ; due to stuck port data_in ;                                                                           ;
-+--------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                         ;
++--------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                                   ;
++--------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[15] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15],            ;
+;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4],       ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]         ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[0],             ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0]  ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[4],             ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4]  ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[6]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[6],             ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[6]  ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[7]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[7],             ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[7]  ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[8]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[8],             ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[8]  ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[9]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[9],             ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[9]  ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[10] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[10],            ;
+;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[10] ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]             ;
+;                                                              ; due to stuck port data_in ;                                                                          ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]             ;
+;                                                              ; due to stuck port data_in ;                                                                          ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[30]             ;
+;                                                              ; due to stuck port data_in ;                                                                          ;
++--------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -524,23 +365,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 234   ;
+; Total registers                              ; 430   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                 ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------+----------------------------+
-; 1:1                ; 96 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; |MIPS32|EX_ALU:EX_ALU|Add0 ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------+----------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                              ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |MIPS32|EX_ALU_Control:EX_ALU_Control|ALU_Control_EX[2] ;                            ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux5                              ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -800,7 +642,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Tue Aug 26 23:40:26 2014
+    Info: Processing started: Tue Sep 02 20:41:09 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
@@ -853,7 +695,7 @@ Info (12128): Elaborating entity "IF_PC_Mux" for hierarchy "IF_PC_Mux:IF_PC_Mux"
 Info (12128): Elaborating entity "IF_PC_Reg" for hierarchy "IF_PC_Reg:IF_PC_Reg"
 Info (12128): Elaborating entity "IF_PC_Add" for hierarchy "IF_PC_Add:IF_PC_Add"
 Info (12128): Elaborating entity "IF_Instruction_Memory" for hierarchy "IF_Instruction_Memory:IF_Instruction_Memory"
-Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(13): number of words (1) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(13): number of words (5) in memory file does not match the number of elements in the address range [0:1023]
 Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
@@ -883,6 +725,7 @@ Warning (10036): Verilog HDL or VHDL warning at MEM_Data_Memory.v(15): object "D
 Warning (10850): Verilog HDL warning at MEM_Data_Memory.v(17): number of words (461) in memory file does not match the number of elements in the address range [0:512]
 Warning (10855): Verilog HDL warning at MEM_Data_Memory.v(16): initial value for variable Data_Memory should be constant
 Info (12128): Elaborating entity "MEM_WB_Pipeline_Stage" for hierarchy "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
+Info (12128): Elaborating entity "WB_MemtoReg_Mux" for hierarchy "WB_MemtoReg_Mux:WB_MemtoReg_Mux"
 Warning (14026): LATCH primitive "EX_ALU_Control:EX_ALU_Control|ALU_Control_EX[0]" is permanently enabled
 Warning (14026): LATCH primitive "EX_ALU_Control:EX_ALU_Control|ALU_Control_EX[1]" is permanently enabled
 Warning (14026): LATCH primitive "EX_ALU_Control:EX_ALU_Control|ALU_Control_EX[2]" is permanently enabled
@@ -961,82 +804,37 @@ Info (12133): Instantiated megafunction "ID_Registers:ID_Registers|altsyncram:Re
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_ID_Registers_ada8f4a0.hdl.mif"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "PC_Plus_4_IF[0]" is stuck at GND
-    Warning (13410): Pin "PC_Plus_4_IF[1]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[0]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[1]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[2]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[4]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[5]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[6]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[7]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[8]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[9]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[10]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[11]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[12]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[13]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[14]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[15]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[17]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[19]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[20]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[21]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[24]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[25]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[28]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[30]" is stuck at GND
-    Warning (13410): Pin "Next_PC_IF[0]" is stuck at GND
-    Warning (13410): Pin "Next_PC_IF[1]" is stuck at GND
-    Warning (13410): Pin "PC_Plus_4_ID[0]" is stuck at GND
-    Warning (13410): Pin "PC_Plus_4_ID[1]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[0]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[1]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[2]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[4]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[5]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[6]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[7]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[8]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[9]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[10]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[11]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[12]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[13]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[14]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[15]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[17]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[19]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[20]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[21]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[24]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[25]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[28]" is stuck at GND
     Warning (13410): Pin "Instruction_ID[30]" is stuck at GND
-    Warning (13410): Pin "Read_Address_1_ID[0]" is stuck at GND
-    Warning (13410): Pin "Read_Address_1_ID[3]" is stuck at GND
-    Warning (13410): Pin "Read_Address_1_ID[4]" is stuck at GND
-    Warning (13410): Pin "Read_Address_2_ID[1]" is stuck at GND
-    Warning (13410): Pin "Read_Address_2_ID[3]" is stuck at GND
     Warning (13410): Pin "Read_Address_2_ID[4]" is stuck at GND
-    Warning (13410): Pin "ALUOp_ID[0]" is stuck at GND
-    Warning (13410): Pin "Branch_ID" is stuck at GND
-    Warning (13410): Pin "MemRead_ID" is stuck at GND
-    Warning (13410): Pin "MemtoReg_ID" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[0]" is stuck at GND
-    Warning (13410): Pin "Sign_Extend_Instruction_ID[1]" is stuck at GND
-    Warning (13410): Pin "Sign_Extend_Instruction_ID[2]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[4]" is stuck at GND
-    Warning (13410): Pin "Sign_Extend_Instruction_ID[5]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[6]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[7]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[8]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[9]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[10]" is stuck at GND
-    Warning (13410): Pin "Sign_Extend_Instruction_ID[11]" is stuck at GND
-    Warning (13410): Pin "Sign_Extend_Instruction_ID[12]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[13]" is stuck at GND
-    Warning (13410): Pin "Sign_Extend_Instruction_ID[14]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[15]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[16]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[17]" is stuck at GND
@@ -1054,89 +852,31 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[29]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[30]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[31]" is stuck at GND
-    Warning (13410): Pin "PC_Plus_4_EX[0]" is stuck at GND
-    Warning (13410): Pin "PC_Plus_4_EX[1]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[0]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[1]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[2]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[4]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[5]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[6]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[7]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[8]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[9]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[10]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[11]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[12]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[13]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[14]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[15]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[17]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[19]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[20]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[21]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[24]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[25]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[28]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[30]" is stuck at GND
-    Warning (13410): Pin "ALU_Control_EX[1]" is stuck at VCC
-    Warning (13410): Pin "ALU_Control_EX[2]" is stuck at GND
     Warning (13410): Pin "ALU_Control_EX[3]" is stuck at GND
-    Warning (13410): Pin "Branch_Dest_EX[0]" is stuck at GND
-    Warning (13410): Pin "Branch_Dest_EX[1]" is stuck at GND
-    Warning (13410): Pin "Write_Register_EX[1]" is stuck at GND
-    Warning (13410): Pin "Write_Register_EX[3]" is stuck at GND
     Warning (13410): Pin "Write_Register_EX[4]" is stuck at GND
-    Warning (13410): Pin "PCSrc_MEM" is stuck at GND
-    Warning (13410): Pin "MemtoReg_WB" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[0]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[1]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[2]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[3]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[4]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[5]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[6]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[7]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[8]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[9]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[10]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[11]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[12]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[13]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[14]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[15]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[16]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[17]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[18]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[19]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[20]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[21]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[22]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[23]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[24]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[25]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[26]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[27]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[28]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[29]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[30]" is stuck at GND
-    Warning (13410): Pin "Read_Data_WB[31]" is stuck at GND
-    Warning (13410): Pin "Write_Register_WB[1]" is stuck at GND
-    Warning (13410): Pin "Write_Register_WB[3]" is stuck at GND
-    Warning (13410): Pin "Write_Register_WB[4]" is stuck at GND
-Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1089 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 33 input pins
-    Info (21059): Implemented 549 output pins
-    Info (21061): Implemented 443 logic cells
+Info (21057): Implemented 1465 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 574 output pins
+    Info (21061): Implemented 826 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 182 warnings
-    Info: Peak virtual memory: 412 megabytes
-    Info: Processing ended: Tue Aug 26 23:40:27 2014
-    Info: Elapsed time: 00:00:01
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 431 megabytes
+    Info: Processing ended: Tue Sep 02 20:41:11 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -1,0 +1,62 @@
+Database Export report for MIPS32
+Fri Aug 29 13:55:48 2014
+Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Database Export Summary
+  3. Database Export Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Database Export Summary                                        ;
++------------------------+---------------------------------------+
+; Database Export Status ; Successful - Fri Aug 29 13:55:48 2014 ;
+; Revision Name          ; MIPS32                                ;
+; Top-level Entity Name  ; MIPS32                                ;
+; Family                 ; Cyclone II                            ;
+; Device                 ; EP2C70F896I8                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Database Export Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Database Export
+    Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
+    Info: Processing started: Fri Aug 29 13:55:45 2014
+Info: Command: quartus_cdb MIPS32 -c MIPS32 --export_database=export_db
+Info (39038): Successfully exported the post-synthesis black-box database
+Info (39038): Successfully exported the post-synthesis database
+Info (39038): Successfully exported the post-fitter database
+Info: Quartus II 64-Bit Database Export was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Fri Aug 29 13:55:48 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

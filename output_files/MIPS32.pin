@@ -69,43 +69,43 @@ CHIP  "MIPS32"  ASSIGNED TO AN: EP2C70F896I8
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
-Instruction_EX[15]           : A3        : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_WB[28]            : A3        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : A4        : power  :                   : 3.3V    : 3         :                
-Next_PC_IF[20]               : A5        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[27]               : A6        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[4]                : A7        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[24]             : A8        : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[14]           : A9        : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[14]            : A10       : input  : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_MEM[12]           : A11       : output : 3.3-V LVTTL       :         : 3         : N              
-ALU_Data_2_EX[28]            : A12       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : A5        :        :                   :         : 3         :                
+Sign_Extend_Instruction_ID[4] : A6        : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_EX[13]           : A7        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : A8        :        :                   :         : 3         :                
+Read_Data_2_ID[13]           : A9        : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_MEM[21]           : A10       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_1_ID[6]            : A11       : output : 3.3-V LVTTL       :         : 3         : N              
+Write_Data_MEM[30]           : A12       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : A13       : gnd    :                   :         :           :                
-Read_Data_2_ID[8]            : A14       : output : 3.3-V LVTTL       :         : 3         : N              
+Write_Data_MEM[2]            : A14       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : A15       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
-Write_Data_WB[5]             : A17       : input  : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[0]            : A17       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A18       : gnd    :                   :         :           :                
-ALU_Result_WB[18]            : A19       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Data_2_ID[11]           : A20       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Data_WB[29]             : A21       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_IF[14]           : A22       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[22]           : A23       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[16]           : A24       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_IF[6]            : A25       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_EX[4]            : A26       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Register_EX[2]         : A19       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_1_ID[23]           : A20       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_WB[6]             : A21       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_WB[7]             : A22       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_MEM[6]             : A23       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[5]            : A24       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[14]           : A25       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[29]           : A26       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : A27       : power  :                   : 3.3V    : 4         :                
-Write_Register_EX[4]         : A28       : output : 3.3-V LVTTL       :         : 4         : N              
+Sign_Extend_Instruction_ID[28] : A28       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A29       : gnd    :                   :         :           :                
-Write_Data_WB[23]            : AA1       : input  : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[19]            : AA2       : input  : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[13]            : AA3       : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[4]             : AA4       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[14]             : AA5       : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[14]               : AA6       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[29]             : AA7       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[16]           : AA8       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[18]           : AA9       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[3]            : AA10      : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[18]            : AA1       : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[25]            : AA2       : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[19]            : AA3       : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[12]            : AA4       : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[26]            : AA5       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[27]           : AA6       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[16]            : AA7       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[17]            : AA8       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[17]            : AA9       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[14]             : AA10      : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : AA11      : gnd    :                   :         :           :                
 GND                          : AA12      : gnd    :                   :         :           :                
 VCCINT                       : AA13      : power  :                   : 1.2V    :           :                
@@ -118,530 +118,530 @@ GND                          : AA19      : gnd    :                   :         
 GND                          : AA20      : gnd    :                   :         :           :                
 GND_PLL4                     : AA21      : gnd    :                   :         :           :                
 GND_PLL4                     : AA22      : gnd    :                   :         :           :                
-Sign_Extend_Instruction_ID[16] : AA23      : output : 3.3-V LVTTL       :         : 6         : N              
-Sign_Extend_Instruction_ID[13] : AA24      : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_WB[19]             : AA25      : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_EX[10]            : AA26      : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_MEM[4]            : AA27      : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_2_ID[6]            : AA28      : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_MEM[14]           : AA29      : output : 3.3-V LVTTL       :         : 6         : N              
-Zero_EX                      : AA30      : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_WB[11]            : AB1       : input  : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[0]             : AB2       : input  : 3.3-V LVTTL       :         : 1         : N              
+PC_Plus_4_IF[17]             : AA23      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[26]             : AA24      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[4]            : AA25      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[19]             : AA26      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[9]              : AA27      : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[9]                : AA28      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[6]              : AA29      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[8]              : AA30      : output : 3.3-V LVTTL       :         : 6         : N              
+Write_Data_WB[14]            : AB1       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[19]           : AB2       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : AB3       : power  :                   : 3.3V    : 1         :                
 GND                          : AB4       : gnd    :                   :         :           :                
-Next_PC_IF[29]               : AB5       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[3]              : AB6       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[26]           : AB7       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[15]             : AB5       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[17]             : AB6       : output : 3.3-V LVTTL       :         : 1         : N              
+Instruction_ID[17]           : AB7       : output : 3.3-V LVTTL       :         : 1         : N              
 GND_PLL1                     : AB8       : gnd    :                   :         :           :                
 VCCD_PLL1                    : AB9       : power  :                   : 1.2V    :           :                
 GND                          : AB10      : gnd    :                   :         :           :                
 VCCIO8                       : AB11      : power  :                   : 3.3V    : 8         :                
-ALU_Data_2_EX[20]            : AB12      : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_WB[20]            : AB13      : input  : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_WB[2]             : AB12      : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[18]           : AB13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AB14      : gnd    :                   :         :           :                
 VCCIO8                       : AB15      : power  :                   : 3.3V    : 8         :                
 VCCIO7                       : AB16      : power  :                   : 3.3V    : 7         :                
 GND                          : AB17      : gnd    :                   :         :           :                
-ALU_Result_WB[7]             : AB18      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[15]            : AB19      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_WB[11]            : AB18      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_WB[9]              : AB19      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AB20      : power  :                   : 3.3V    : 7         :                
 GND                          : AB21      : gnd    :                   :         :           :                
 VCCD_PLL4                    : AB22      : power  :                   : 1.2V    :           :                
-Read_Address_1_ID[3]         : AB23      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_IF[1]            : AB24      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_ID[0]            : AB25      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_IF[13]           : AB26      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[17]           : AB23      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[14]           : AB24      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[30]           : AB25      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[25]           : AB26      : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : AB27      : gnd    :                   :         :           :                
 VCCIO6                       : AB28      : power  :                   : 3.3V    : 6         :                
-ALU_Result_EX[5]             : AB29      : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_EX[0]             : AB30      : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_MEM[2]            : AC1       : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[24]            : AC2       : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[25]            : AC3       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_ID[4]              : AC4       : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[31]               : AC5       : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[3]                : AC6       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[31]           : AC7       : output : 3.3-V LVTTL       :         : 1         : N              
+PC_Plus_4_IF[2]              : AB29      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[4]              : AB30      : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Result_WB[25]            : AC1       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[18]            : AC2       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[29]            : AC3       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[26]            : AC4       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[17]           : AC5       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[15]            : AC6       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Address_2_ID[1]         : AC7       : output : 3.3-V LVTTL       :         : 1         : N              
 GND_PLL1                     : AC8       : gnd    :                   :         :           :                
 VCCA_PLL1                    : AC9       : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : AC10      : gnd    :                   :         :           :                
-Read_Data_2_ID[5]            : AC11      : output : 3.3-V LVTTL       :         : 8         : N              
-Instruction_EX[29]           : AC12      : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[25]           : AC13      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[22]            : AC14      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_2_ID[21]           : AC11      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[6]             : AC12      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[10]            : AC13      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[17]            : AC14      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AC15      :        :                   :         : 7         :                
-ALU_Result_EX[21]            : AC16      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Data_2_EX[18]            : AC17      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[30]            : AC18      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Data_MEM[10]           : AC19      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_EX[17]           : AC20      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_IF[9]            : AC21      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Control_EX[0]            : AC16      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_WB[21]             : AC17      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[13]            : AC18      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_MEM[13]            : AC19      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_IF[28]           : AC20      : output : 3.3-V LVTTL       :         : 7         : N              
+PC_Plus_4_IF[29]             : AC21      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCA_PLL4                    : AC22      : power  :                   : 1.2V    :           :                
-Instruction_ID[8]            : AC23      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_EX[7]            : AC24      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_EX[20]           : AC25      : output : 3.3-V LVTTL       :         : 6         : N              
-Next_PC_IF[0]                : AC26      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_EX[14]           : AC27      : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_WB[12]             : AC28      : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[25]            : AC29      : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[22]            : AC30      : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Register_WB[0]         : AD1       : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Register_WB[2]         : AD2       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_EX[4]              : AD3       : output : 3.3-V LVTTL       :         : 1         : N              
-Branch_Dest_EX[4]            : AD4       : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[22]               : AD5       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[22]           : AD6       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[27]           : AD7       : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_MEM[23]           : AD8       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[3]            : AD9       : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Data_2_EX[10]            : AD10      : output : 3.3-V LVTTL       :         : 8         : N              
-Instruction_EX[31]           : AD11      : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[20]           : AD12      : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[24]           : AD13      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Data_2_EX[15]            : AD14      : output : 3.3-V LVTTL       :         : 8         : N              
+Branch_Dest_EX[18]           : AC23      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[9]            : AC24      : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[6]                : AC25      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[24]           : AC26      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[21]             : AC27      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[24]             : AC28      : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[26]               : AC29      : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[27]               : AC30      : output : 3.3-V LVTTL       :         : 6         : N              
+Read_Data_WB[27]             : AD1       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[26]           : AD2       : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[27]            : AD3       : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[29]            : AD4       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[14]            : AD5       : output : 3.3-V LVTTL       :         : 1         : N              
+Instruction_EX[15]           : AD6       : output : 3.3-V LVTTL       :         : 1         : N              
+Instruction_EX[0]            : AD7       : output : 3.3-V LVTTL       :         : 1         : N              
+Sign_Extend_Instruction_ID[0] : AD8       : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[5]             : AD9       : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[4]            : AD10      : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[20]           : AD11      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[4]             : AD12      : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[21]           : AD13      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[26]           : AD14      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AD15      :        :                   :         : 7         :                
 ALU_Result_EX[25]            : AD16      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[31]            : AD17      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[17]            : AD18      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Data_MEM[29]           : AD19      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_EX[11]           : AD20      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Register_EX[3]         : AD21      : output : 3.3-V LVTTL       :         : 7         : N              
-Sign_Extend_Instruction_ID[2] : AD22      : output : 3.3-V LVTTL       :         : 7         : N              
+Zero_EX                      : AD17      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_1_ID[18]           : AD18      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_WB[13]             : AD19      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_EX[25]           : AD20      : output : 3.3-V LVTTL       :         : 7         : N              
+PC_Plus_4_IF[22]             : AD21      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_IF[25]           : AD22      : output : 3.3-V LVTTL       :         : 7         : N              
 GNDA_PLL4                    : AD23      : gnd    :                   :         :           :                
-Sign_Extend_Instruction_ID[27] : AD24      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[31]           : AD24      : output : 3.3-V LVTTL       :         : 6         : N              
 ~LVDS195p/nCEO~              : AD25      : output : 3.3-V LVTTL       :         : 6         : N              
-Sign_Extend_Instruction_ID[6] : AD26      : output : 3.3-V LVTTL       :         : 6         : N              
-PC_Plus_4_IF[0]              : AD27      : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : AD28      :        :                   :         : 6         :                
-Sign_Extend_Instruction_ID[8] : AD29      : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : AD30      :        :                   :         : 6         :                
-Next_PC_IF[15]               : AE1       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[10]             : AE2       : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[19]               : AE3       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[22]             : AE4       : output : 3.3-V LVTTL       :         : 1         : N              
+Next_PC_IF[7]                : AD26      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[28]           : AD27      : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[8]                : AD28      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[12]             : AD29      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[11]             : AD30      : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Result_WB[26]            : AE1       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[26]             : AE2       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[15]            : AE3       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[16]             : AE4       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : AE5       : power  :                   : 3.3V    : 1         :                
 GND                          : AE6       : gnd    :                   :         :           :                
-Next_PC_IF[11]               : AE7       : output : 3.3-V LVTTL       :         : 8         : N              
-PC_Plus_4_IF[11]             : AE8       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_EX[8]            : AE7       : output : 3.3-V LVTTL       :         : 8         : N              
+Sign_Extend_Instruction_ID[18] : AE8       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AE9       : gnd    :                   :         :           :                
 VCCIO8                       : AE10      : power  :                   : 3.3V    : 8         :                
-Write_Data_MEM[31]           : AE11      : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[29]           : AE12      : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_WB[27]            : AE13      : input  : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[29]           : AE11      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[22]            : AE12      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[16]            : AE13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AE14      : gnd    :                   :         :           :                
-ALU_Result_EX[23]            : AE15      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[15]            : AE16      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[1]             : AE17      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_EX[7]             : AE15      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[30]            : AE16      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[28]            : AE17      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AE18      : gnd    :                   :         :           :                
-ALU_Result_WB[14]            : AE19      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Address_1_ID[4]         : AE20      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_MEM[9]            : AE19      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_WB[9]             : AE20      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AE21      : power  :                   : 3.3V    : 7         :                
 GND                          : AE22      : gnd    :                   :         :           :                
-Sign_Extend_Instruction_ID[24] : AE23      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_ID[19]           : AE24      : output : 3.3-V LVTTL       :         : 7         : N              
+Next_PC_IF[18]               : AE23      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[15]           : AE24      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AE25      : gnd    :                   :         :           :                
 VCCIO6                       : AE26      : power  :                   : 3.3V    : 6         :                
-Read_Data_WB[6]              : AE27      : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_WB[30]             : AE28      : output : 3.3-V LVTTL       :         : 6         : N              
-PC_Plus_4_EX[1]              : AE29      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_IF[15]           : AE30      : output : 3.3-V LVTTL       :         : 6         : N              
-PC_Plus_4_IF[28]             : AF1       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[31]             : AF2       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[29]           : AF3       : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_IF[23]           : AF4       : output : 3.3-V LVTTL       :         : 1         : N              
+Next_PC_IF[31]               : AE27      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[16]           : AE28      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[14]             : AE29      : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[15]             : AE30      : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Result_MEM[15]           : AF1       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[14]           : AF2       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[16]            : AF3       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[14]            : AF4       : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : AF5       : gnd    :                   :         :           :                
 VCCIO8                       : AF6       : power  :                   : 3.3V    : 8         :                
-Read_Data_2_ID[31]           : AF7       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[13]           : AF8       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[30]           : AF9       : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Data_2_EX[27]            : AF10      : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[12]           : AF11      : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[17]           : AF12      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AF7       :        :                   :         : 8         :                
+ALU_Result_EX[13]            : AF8       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_IF[31]           : AF9       : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_2_ID[12]           : AF10      : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[14]           : AF11      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_WB[22]             : AF12      : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AF13      : power  :                   : 3.3V    : 8         :                
-ALU_Result_EX[28]            : AF14      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[14]            : AF15      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[20]            : AF16      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[3]             : AF17      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[28]            : AF18      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Data_2_EX[21]            : AF14      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[25]           : AF15      : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_WB[22]            : AF16      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_1_ID[21]           : AF17      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[9]             : AF18      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AF19      : power  :                   : 3.3V    : 7         :                
-ALU_Result_WB[13]            : AF20      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_EX[10]           : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_WB[3]              : AF22      : output : 3.3-V LVTTL       :         : 7         : N              
-ALUOp_ID[0]                  : AF23      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_WB[15]             : AF24      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_MEM[9]             : AF20      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_WB[10]            : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_IF[14]           : AF22      : output : 3.3-V LVTTL       :         : 7         : N              
+Next_PC_IF[14]               : AF23      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[5]            : AF24      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AF25      : power  :                   : 3.3V    : 7         :                
 GND                          : AF26      : gnd    :                   :         :           :                
-Instruction_ID[28]           : AF27      : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_WB[0]              : AF28      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_IF[24]           : AF29      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_EX[5]            : AF30      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[13]           : AF27      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[8]            : AF28      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[23]           : AF29      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[20]           : AF30      : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO1                       : AG1       : power  :                   : 3.3V    : 1         :                
-Next_PC_IF[28]               : AG2       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[19]             : AG3       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_EX[3]              : AG4       : output : 3.3-V LVTTL       :         : 8         : N              
-Branch_Dest_EX[3]            : AG5       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[29]           : AG6       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[0]            : AG7       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[26]           : AG8       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_WB[22]            : AG9       : input  : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[28]           : AG10      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_MEM[16]           : AG2       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[29]           : AG3       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AG4       :        :                   :         : 8         :                
+Sign_Extend_Instruction_ID[10] : AG5       : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AG6       :        :                   :         : 8         :                
+Instruction_IF[27]           : AG7       : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AG8       :        :                   :         : 8         :                
+Read_Data_1_ID[13]           : AG9       : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_WB[23]            : AG10      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AG11      : gnd    :                   :         :           :                
-ALU_Data_2_EX[29]            : AG12      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[4]             : AG13      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[6]             : AG14      : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[27]           : AG12      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Data_2_EX[29]            : AG13      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_2_ID[20]           : AG14      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AG15      :        :                   :         : 8         :                
-ALU_Result_EX[24]            : AG16      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[19]            : AG17      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[10]            : AG18      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Data_MEM[20]           : AG19      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[6]             : AG20      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Control_EX[1]            : AG16      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Data_2_EX[24]            : AG17      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_EX[23]           : AG18      : output : 3.3-V LVTTL       :         : 7         : N              
+ALUOp_ID[1]                  : AG19      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_WB[13]            : AG20      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AG21      : gnd    :                   :         :           :                
-ALU_Control_EX[1]            : AG22      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_EX[24]           : AG23      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_IF[4]            : AG24      : output : 3.3-V LVTTL       :         : 7         : N              
-MemtoReg_ID                  : AG25      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_WB[31]             : AG26      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_IF[28]           : AG27      : output : 3.3-V LVTTL       :         : 7         : N              
-Sign_Extend_Instruction_ID[17] : AG28      : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : AG29      :        :                   :         : 6         :                
+Instruction_IF[24]           : AG22      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_IF[1]            : AG23      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_IF[19]           : AG24      : output : 3.3-V LVTTL       :         : 7         : N              
+PC_Plus_4_IF[31]             : AG25      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[11]           : AG26      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[21]           : AG27      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[26]           : AG28      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[22]           : AG29      : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : AG30      : power  :                   : 3.3V    : 6         :                
-Next_PC_IF[6]                : AH1       : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[6]              : AH2       : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[5]                : AH3       : output : 3.3-V LVTTL       :         : 8         : N              
-Next_PC_IF[8]                : AH4       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[30]           : AH5       : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_WB[29]             : AH1       : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[27]            : AH2       : output : 3.3-V LVTTL       :         : 1         : N              
+Instruction_EX[10]           : AH3       : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AH4       :        :                   :         : 8         :                
+Instruction_ID[9]            : AH5       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AH6       : gnd    :                   :         :           :                
-Read_Data_1_ID[8]            : AH7       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_IF[22]           : AH7       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AH8       : power  :                   : 3.3V    : 8         :                
-Read_Data_2_ID[28]           : AH9       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[5]            : AH10      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[15]           : AH9       : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[27]           : AH10      : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AH11      : power  :                   : 3.3V    : 8         :                
-ALU_Data_2_EX[26]            : AH12      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Data_2_EX[17]            : AH13      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[0]            : AH12      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[29]            : AH13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND+                         : AH14      :        :                   :         : 8         :                
-ALU_Result_EX[27]            : AH15      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[7]             : AH16      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Data_MEM[11]           : AH17      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[29]            : AH18      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_2_ID[18]           : AH19      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[0]             : AH20      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Data_2_EX[28]            : AH15      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[24]            : AH16      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[21]            : AH17      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_EX[19]            : AH18      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_MEM[31]           : AH19      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_WB[11]             : AH20      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AH21      : power  :                   : 3.3V    : 7         :                
-Read_Data_WB[9]              : AH22      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_ID[28]           : AH22      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AH23      : power  :                   : 3.3V    : 7         :                
-Instruction_ID[15]           : AH24      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[19]           : AH24      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AH25      : gnd    :                   :         :           :                
-MemRead_ID                   : AH26      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_ID[2]            : AH27      : output : 3.3-V LVTTL       :         : 7         : N              
-Branch_Dest_EX[1]            : AH28      : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_EX[19]           : AH29      : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : AH30      :        :                   :         : 6         :                
+PC_Plus_4_IF[20]             : AH26      : output : 3.3-V LVTTL       :         : 7         : N              
+Next_PC_IF[10]               : AH27      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[3]            : AH28      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[27]           : AH29      : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[12]           : AH30      : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : AJ1       : gnd    :                   :         :           :                
-PC_Plus_4_IF[5]              : AJ2       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[22]           : AJ3       : output : 3.3-V LVTTL       :         : 8         : N              
-PC_Plus_4_IF[8]              : AJ4       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[26]           : AJ5       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[9]            : AJ6       : output : 3.3-V LVTTL       :         : 8         : N              
-Instruction_EX[22]           : AJ7       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[17]           : AJ8       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_WB[17]            : AJ9       : input  : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[28]           : AJ10      : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[27]           : AJ11      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[8]             : AJ12      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[30]            : AJ13      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[16]            : AJ14      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_WB[29]            : AJ15      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Result_EX[26]            : AJ16      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[17]            : AJ17      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_EX[11]            : AJ18      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_2_ID[14]           : AJ19      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Data_MEM[18]           : AJ20      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[26]            : AJ21      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[16]            : AJ22      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[24]            : AJ23      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_WB[16]             : AJ24      : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : AJ25      :        :                   :         : 7         :                
-Instruction_ID[12]           : AJ26      : output : 3.3-V LVTTL       :         : 7         : N              
-Sign_Extend_Instruction_ID[20] : AJ27      : output : 3.3-V LVTTL       :         : 7         : N              
-Sign_Extend_Instruction_ID[14] : AJ28      : output : 3.3-V LVTTL       :         : 7         : N              
-Instruction_ID[7]            : AJ29      : output : 3.3-V LVTTL       :         : 6         : N              
+Instruction_IF[8]            : AJ2       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_EX[4]            : AJ3       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_IF[0]            : AJ4       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_ID[30]           : AJ5       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_IF[26]           : AJ6       : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[3]             : AJ7       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_EX[21]           : AJ8       : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_MEM[23]           : AJ9       : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_MEM[21]            : AJ10      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[31]            : AJ11      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[14]           : AJ12      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_2_ID[29]           : AJ13      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Data_2_EX[27]            : AJ14      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Data_2_EX[22]            : AJ15      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Data_2_EX[1]             : AJ16      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[15]            : AJ17      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_MEM[22]            : AJ18      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_1_ID[16]           : AJ19      : output : 3.3-V LVTTL       :         : 7         : N              
+RegDst_ID                    : AJ20      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[11]            : AJ21      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_MEM[11]            : AJ22      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_MEM[13]           : AJ23      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_MEM[10]            : AJ24      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_ID[25]           : AJ25      : output : 3.3-V LVTTL       :         : 7         : N              
+PC_Plus_4_IF[16]             : AJ26      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[29]           : AJ27      : output : 3.3-V LVTTL       :         : 7         : N              
+PC_Plus_4_IF[5]              : AJ28      : output : 3.3-V LVTTL       :         : 7         : N              
+Branch_Dest_EX[6]            : AJ29      : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : AJ30      : gnd    :                   :         :           :                
 GND                          : AK2       : gnd    :                   :         :           :                
-Instruction_ID[17]           : AK3       : output : 3.3-V LVTTL       :         : 8         : N              
+Instruction_ID[6]            : AK3       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AK4       : power  :                   : 3.3V    : 8         :                
-Read_Data_1_ID[20]           : AK5       : output : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_2_ID[15]           : AK6       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_WB[21]            : AK7       : input  : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[26]           : AK8       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_MEM[27]           : AK9       : output : 3.3-V LVTTL       :         : 8         : N              
-Write_Data_WB[31]            : AK10      : input  : 3.3-V LVTTL       :         : 8         : N              
-Read_Data_1_ID[23]           : AK11      : output : 3.3-V LVTTL       :         : 8         : N              
-ALU_Data_2_EX[30]            : AK12      : output : 3.3-V LVTTL       :         : 8         : N              
+Sign_Extend_Instruction_ID[30] : AK5       : output : 3.3-V LVTTL       :         : 8         : N              
+Write_Data_MEM[19]           : AK6       : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_2_ID[27]           : AK7       : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[24]           : AK8       : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[1]             : AK9       : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[15]            : AK10      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[1]            : AK11      : output : 3.3-V LVTTL       :         : 8         : N              
+Read_Data_1_ID[4]            : AK12      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AK13      : gnd    :                   :         :           :                
-ALU_Data_2_EX[21]            : AK14      : output : 3.3-V LVTTL       :         : 8         : N              
+ALU_Result_EX[28]            : AK14      : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : AK15      : power  :                   : 3.3V    : 8         :                
 VCCIO7                       : AK16      : power  :                   : 3.3V    : 7         :                
-ALU_Result_EX[18]            : AK17      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Data_2_EX[9]             : AK17      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AK18      : gnd    :                   :         :           :                
-ALU_Data_2_EX[7]             : AK19      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_2_ID[2]            : AK20      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[31]            : AK21      : output : 3.3-V LVTTL       :         : 7         : N              
-ALU_Result_WB[19]            : AK22      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Data_MEM[30]           : AK23      : output : 3.3-V LVTTL       :         : 7         : N              
-Write_Register_WB[1]         : AK24      : output : 3.3-V LVTTL       :         : 7         : N              
-Read_Data_WB[27]             : AK25      : output : 3.3-V LVTTL       :         : 7         : N              
-Branch_ID                    : AK26      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_2_ID[6]            : AK19      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_WB[22]            : AK20      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_MEM[11]           : AK21      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Data_WB[10]             : AK22      : output : 3.3-V LVTTL       :         : 7         : N              
+Write_Data_WB[10]            : AK23      : output : 3.3-V LVTTL       :         : 7         : N              
+ALU_Result_MEM[10]           : AK24      : output : 3.3-V LVTTL       :         : 7         : N              
+Instruction_EX[28]           : AK25      : output : 3.3-V LVTTL       :         : 7         : N              
+Read_Address_1_ID[4]         : AK26      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AK27      : power  :                   : 3.3V    : 7         :                
-Instruction_IF[20]           : AK28      : output : 3.3-V LVTTL       :         : 7         : N              
+PC_Plus_4_IF[30]             : AK28      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AK29      : gnd    :                   :         :           :                
 GND                          : B1        : gnd    :                   :         :           :                
-PC_Plus_4_EX[19]             : B2        : output : 3.3-V LVTTL       :         : 2         : N              
-Instruction_ID[10]           : B3        : output : 3.3-V LVTTL       :         : 3         : N              
-Branch_Dest_EX[2]            : B4        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[20]             : B5        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[27]             : B6        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[4]              : B7        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[24]               : B8        : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[16]           : B9        : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[26]            : B10       : input  : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_2_ID[7]            : B11       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_2_ID[21]           : B12       : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[10]            : B13       : input  : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_MEM[9]            : B14       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[13]           : B15       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[1]            : B16       : output : 3.3-V LVTTL       :         : 4         : N              
-Write_Data_MEM[19]           : B17       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_EX[26]           : B18       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Data_1_ID[6]            : B19       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : B20       :        :                   :         : 4         :                
-Sign_Extend_Instruction_ID[23] : B21       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[4]            : B22       : output : 3.3-V LVTTL       :         : 4         : N              
-PC_Plus_4_IF[1]              : B23       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_IF[11]           : B24       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Data_WB[20]             : B25       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_EX[9]            : B26       : output : 3.3-V LVTTL       :         : 4         : N              
-RegWrite_ID                  : B27       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[29]           : B28       : output : 3.3-V LVTTL       :         : 4         : N              
-MemWrite_ID                  : B29       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Address_1_ID[1]         : B2        : output : 3.3-V LVTTL       :         : 2         : N              
+Sign_Extend_Instruction_ID[31] : B3        : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Control_EX[3]            : B4        : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Address_2_ID[4]         : B5        : output : 3.3-V LVTTL       :         : 3         : N              
+Sign_Extend_Instruction_ID[8] : B6        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : B7        :        :                   :         : 3         :                
+GND*                         : B8        :        :                   :         : 3         :                
+Read_Data_2_ID[10]           : B9        : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_2_ID[14]           : B10       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_2_ID[23]           : B11       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[16]            : B12       : output : 3.3-V LVTTL       :         : 3         : N              
+Write_Data_MEM[11]           : B13       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_2_ID[16]           : B14       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_1_ID[11]           : B15       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[19]            : B16       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[4]            : B17       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[9]            : B18       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[18]           : B19       : output : 3.3-V LVTTL       :         : 4         : N              
+MemWrite_ID                  : B20       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_WB[8]              : B21       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_MEM[6]            : B22       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_MEM[20]           : B23       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[11]           : B24       : output : 3.3-V LVTTL       :         : 4         : N              
+Sign_Extend_Instruction_ID[21] : B25       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[23]           : B26       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[3]            : B27       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[18]           : B28       : output : 3.3-V LVTTL       :         : 4         : N              
+Sign_Extend_Instruction_ID[9] : B29       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : B30       : gnd    :                   :         :           :                
-Branch_Dest_EX[6]            : C1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[9]              : C2        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[21]           : C3        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[2]              : C4        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[16]               : C5        : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_1_ID[30]           : C1        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[0]            : C2        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[31]           : C3        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : C4        :        :                   :         : 3         :                
+ALU_Result_MEM[0]            : C5        : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : C6        : gnd    :                   :         :           :                
-Read_Data_WB[24]             : C7        : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_WB[1]             : C7        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : C8        : power  :                   : 3.3V    : 3         :                
-PC_Plus_4_IF[18]             : C9        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[13]             : C10       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : C9        :        :                   :         : 3         :                
+Sign_Extend_Instruction_ID[7] : C10       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : C11       : power  :                   : 3.3V    : 3         :                
-Write_Data_WB[4]             : C12       : input  : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_MEM[1]            : C13       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[12]           : C14       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[2]            : C15       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[27]           : C16       : output : 3.3-V LVTTL       :         : 4         : N              
-ALU_Result_WB[1]             : C17       : output : 3.3-V LVTTL       :         : 4         : N              
-ALU_Data_2_EX[23]            : C18       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[3]            : C19       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[15]           : C12       : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_EX[24]           : C13       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[18]            : C14       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_EX[9]             : C15       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[14]            : C16       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_MEM[5]            : C17       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_1_ID[2]            : C18       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Register_EX[0]         : C19       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
-Instruction_ID[1]            : C21       : output : 3.3-V LVTTL       :         : 4         : N              
-MemtoReg_WB                  : C22       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_MEM[7]            : C21       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_WB[8]             : C22       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : C23       : power  :                   : 3.3V    : 4         :                
-Read_Address_1_ID[0]         : C24       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[7]            : C24       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : C25       : gnd    :                   :         :           :                
-Instruction_ID[26]           : C26       : output : 3.3-V LVTTL       :         : 4         : N              
-Sign_Extend_Instruction_ID[30] : C27       : output : 3.3-V LVTTL       :         : 4         : N              
-ALUOp_ID[1]                  : C28       : output : 3.3-V LVTTL       :         : 4         : N              
-Sign_Extend_Instruction_ID[9] : C29       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[3]            : C26       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Address_2_ID[2]         : C27       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[16]           : C28       : output : 3.3-V LVTTL       :         : 4         : N              
+Sign_Extend_Instruction_ID[6] : C29       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : C30       :        :                   :         : 5         :                
 VCCIO2                       : D1        : power  :                   : 3.3V    : 2         :                
-PC_Plus_4_EX[7]              : D2        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[12]           : D3        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[5]              : D4        : output : 3.3-V LVTTL       :         : 3         : N              
-Branch_Dest_EX[7]            : D5        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[26]             : D6        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[26]               : D7        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[7]              : D8        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[18]               : D9        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[12]             : D10       : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_ID[13]           : D2        : output : 3.3-V LVTTL       :         : 2         : N              
+Sign_Extend_Instruction_ID[19] : D3        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : D4        :        :                   :         : 3         :                
+Sign_Extend_Instruction_ID[24] : D5        : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_IF[15]           : D6        : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_IF[6]            : D7        : output : 3.3-V LVTTL       :         : 3         : N              
+Sign_Extend_Instruction_ID[20] : D8        : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_EX[9]            : D9        : output : 3.3-V LVTTL       :         : 3         : N              
+Sign_Extend_Instruction_ID[15] : D10       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : D11       : gnd    :                   :         :           :                
-Read_Data_2_ID[24]           : D12       : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[9]             : D13       : input  : 3.3-V LVTTL       :         : 3         : N              
+Write_Data_MEM[24]           : D12       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_2_ID[22]           : D13       : output : 3.3-V LVTTL       :         : 3         : N              
 Read_Data_1_ID[7]            : D14       : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_MEM[7]            : D15       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_1_ID[31]           : D15       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : D16       :        :                   :         : 4         :                
-Write_Data_MEM[3]            : D17       : output : 3.3-V LVTTL       :         : 4         : N              
-Write_Register_EX[2]         : D18       : output : 3.3-V LVTTL       :         : 4         : N              
-ALUSrc_ID                    : D19       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[2]            : D17       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[3]            : D18       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_WB[20]            : D19       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : D20       : gnd    :                   :         :           :                
-Read_Data_WB[17]             : D21       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Data_WB[18]             : D22       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Address_1_ID[2]         : D23       : output : 3.3-V LVTTL       :         : 4         : N              
-Sign_Extend_Instruction_ID[28] : D24       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : D25       :        :                   :         : 4         :                
-Read_Data_WB[2]              : D26       : output : 3.3-V LVTTL       :         : 4         : N              
-ALU_Control_EX[2]            : D27       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_IF[12]           : D28       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[5]            : D29       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Result_WB[6]             : D21       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_MEM[8]             : D22       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Control_EX[2]            : D23       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Address_1_ID[2]         : D24       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_IF[4]            : D25       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : D26       :        :                   :         : 4         :                
+Read_Address_2_ID[0]         : D27       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_IF[7]            : D28       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : D29       :        :                   :         : 5         :                
 VCCIO5                       : D30       : power  :                   : 3.3V    : 5         :                
-Branch_Dest_EX[8]            : E1        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[9]            : E2        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[25]           : E3        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[26]           : E4        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_1_ID[19]           : E1        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_WB[1]             : E2        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : E3        :        :                   :         : 2         :                
+Sign_Extend_Instruction_ID[25] : E4        : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : E5        : gnd    :                   :         :           :                
 VCCIO3                       : E6        : power  :                   : 3.3V    : 3         :                
-Branch_Dest_EX[15]           : E7        : output : 3.3-V LVTTL       :         : 3         : N              
-Sign_Extend_Instruction_ID[12] : E8        : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[7]                : E9        : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[2]              : E10       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_2_ID[22]           : E11       : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_MEM[24]           : E12       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[25]           : E13       : output : 3.3-V LVTTL       :         : 3         : N              
-ALU_Result_WB[2]             : E14       : output : 3.3-V LVTTL       :         : 3         : N              
-ALU_Result_WB[9]             : E15       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : E7        :        :                   :         : 3         :                
+Sign_Extend_Instruction_ID[13] : E8        : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_EX[30]           : E9        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : E10       :        :                   :         : 3         :                
+Read_Data_2_ID[25]           : E11       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_WB[21]            : E12       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_2_ID[19]           : E13       : output : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_1_ID[9]            : E14       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[10]            : E15       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : E16       :        :                   :         : 4         :                
-Write_Data_MEM[21]           : E17       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_1_ID[22]           : E17       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : E18       : power  :                   : 3.3V    : 4         :                
-Sign_Extend_Instruction_ID[29] : E19       : output : 3.3-V LVTTL       :         : 4         : N              
-Sign_Extend_Instruction_ID[25] : E20       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_EX[30]           : E21       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[13]           : E22       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Address_1_ID[1]         : E23       : output : 3.3-V LVTTL       :         : 4         : N              
-Sign_Extend_Instruction_ID[11] : E24       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_WB[8]             : E19       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_MEM[20]            : E20       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_WB[6]              : E21       : output : 3.3-V LVTTL       :         : 4         : N              
+Sign_Extend_Instruction_ID[14] : E22       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_IF[16]           : E23       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[20]           : E24       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : E25       : power  :                   : 3.3V    : 4         :                
 GND                          : E26       : gnd    :                   :         :           :                
-Write_Register_WB[4]         : E27       : output : 3.3-V LVTTL       :         : 5         : N              
-Sign_Extend_Instruction_ID[10] : E28       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[18]           : E29       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Address_2_ID[0]         : E30       : output : 3.3-V LVTTL       :         : 5         : N              
-Branch_Dest_EX[14]           : F1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[26]             : F2        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[5]            : F3        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[11]           : F4        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_IF[13]           : E27       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : E28       :        :                   :         : 5         :                
+Instruction_IF[10]           : E29       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : E30       :        :                   :         : 5         :                
+Write_Data_WB[30]            : F1        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[2]             : F2        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_EX[31]           : F3        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_EX[26]           : F4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : F5        : power  :                   : 3.3V    : 2         :                
 GND                          : F6        : gnd    :                   :         :           :                
-Next_PC_IF[1]                : F7        : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_WB[22]             : F8        : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_ID[4]            : F7        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : F8        :        :                   :         : 3         :                
 GND                          : F9        : gnd    :                   :         :           :                
 VCCIO3                       : F10       : power  :                   : 3.3V    : 3         :                
-Write_Data_WB[12]            : F11       : input  : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[2]             : F12       : input  : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_1_ID[11]           : F13       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_EX[8]             : F11       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_EX[20]            : F12       : output : 3.3-V LVTTL       :         : 3         : N              
+Write_Data_MEM[3]            : F13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : F14       : gnd    :                   :         :           :                
 VCCIO3                       : F15       : power  :                   : 3.3V    : 3         :                
-Write_Data_MEM[15]           : F16       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[30]           : F16       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : F17       : gnd    :                   :         :           :                
-Instruction_EX[3]            : F18       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_EX[12]           : F19       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_IF[25]           : F20       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_2_ID[1]            : F18       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_WB[7]             : F19       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_WB[7]              : F20       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : F21       : power  :                   : 3.3V    : 4         :                
 GND                          : F22       : gnd    :                   :         :           :                
-Instruction_IF[7]            : F23       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Address_2_ID[3]         : F24       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[24]           : F23       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[8]            : F24       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : F25       : gnd    :                   :         :           :                
 VCCIO5                       : F26       : power  :                   : 3.3V    : 5         :                
-Sign_Extend_Instruction_ID[21] : F27       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[10]             : F28       : output : 3.3-V LVTTL       :         : 5         : N              
-ALU_Control_EX[3]            : F29       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[25]             : F30       : output : 3.3-V LVTTL       :         : 5         : N              
-Branch_Dest_EX[19]           : G1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[25]             : G2        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[29]           : G3        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[27]           : G4        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[17]             : G5        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[10]             : G6        : output : 3.3-V LVTTL       :         : 2         : N              
+Sign_Extend_Instruction_ID[27] : F27       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Address_2_ID[3]         : F28       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[29] : F29       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_ID[11]           : F30       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Result_WB[2]             : G1        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[30]            : G2        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Register_EX[4]         : G3        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : G4        :        :                   :         : 2         :                
+Instruction_EX[22]           : G5        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_EX[27]           : G6        : output : 3.3-V LVTTL       :         : 2         : N              
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : G7        : input  : 3.3-V LVTTL       :         : 2         : N              
 GNDA_PLL3                    : G8        : gnd    :                   :         :           :                
-PC_Plus_4_IF[16]             : G9        : output : 3.3-V LVTTL       :         : 3         : N              
-Branch_Dest_EX[0]            : G10       : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[2]                : G11       : output : 3.3-V LVTTL       :         : 3         : N              
-PC_Plus_4_IF[30]             : G12       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_2_ID[25]           : G13       : output : 3.3-V LVTTL       :         : 3         : N              
-Read_Data_2_ID[23]           : G14       : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_ID[10]           : G9        : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : G10       :        :                   :         : 3         :                
+GND*                         : G11       :        :                   :         : 3         :                
+GND*                         : G12       :        :                   :         : 3         :                
+Write_Data_MEM[10]           : G13       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[13]            : G14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : G15       :        :                   :         : 3         :                
-ALU_Result_WB[4]             : G16       : output : 3.3-V LVTTL       :         : 4         : N              
-Write_Data_MEM[8]            : G17       : output : 3.3-V LVTTL       :         : 4         : N              
-Write_Register_EX[0]         : G18       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : G19       :        :                   :         : 4         :                
-Sign_Extend_Instruction_ID[0] : G20       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Address_2_ID[2]         : G21       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[20]           : G22       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_MEM[13]           : G16       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_EX[12]            : G17       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_WB[23]             : G18       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_WB[20]            : G19       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[19]           : G20       : output : 3.3-V LVTTL       :         : 4         : N              
+Sign_Extend_Instruction_ID[3] : G21       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_ID[1]            : G22       : output : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL2                    : G23       : gnd    :                   :         :           :                
-Instruction_EX[13]           : G24       : output : 3.3-V LVTTL       :         : 5         : N              
-Write_Register_EX[1]         : G25       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : G26       :        :                   :         : 5         :                
-Instruction_IF[30]           : G27       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[1]            : G28       : output : 3.3-V LVTTL       :         : 5         : N              
-Sign_Extend_Instruction_ID[7] : G29       : output : 3.3-V LVTTL       :         : 5         : N              
-Sign_Extend_Instruction_ID[4] : G30       : output : 3.3-V LVTTL       :         : 5         : N              
-Branch_Dest_EX[18]           : H1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[27]             : H2        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[16]           : H3        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[13]           : H4        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[17]           : H5        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[24]             : H6        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[15]             : H7        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[12]             : H8        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[15]           : G24       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[1] : G25       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_ID[14]           : G26       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[22] : G27       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : G28       :        :                   :         : 5         :                
+MemtoReg_ID                  : G29       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Address_1_ID[3]         : G30       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_WB[4]              : H1        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_WB[3]              : H2        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[0]             : H3        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[26]           : H4        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[27]           : H5        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : H6        :        :                   :         : 2         :                
+Sign_Extend_Instruction_ID[16] : H7        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[7]            : H8        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCA_PLL3                    : H9        : power  :                   : 1.2V    :           :                
-PC_Plus_4_EX[2]              : H10       : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[12]               : H11       : output : 3.3-V LVTTL       :         : 3         : N              
-Next_PC_IF[30]               : H12       : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[16]            : H13       : input  : 3.3-V LVTTL       :         : 3         : N              
-ALU_Control_EX[0]            : H14       : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_EX[7]            : H10       : output : 3.3-V LVTTL       :         : 3         : N              
+Instruction_EX[20]           : H11       : output : 3.3-V LVTTL       :         : 3         : N              
+Sign_Extend_Instruction_ID[23] : H12       : output : 3.3-V LVTTL       :         : 3         : N              
+Write_Data_MEM[23]           : H13       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Data_2_EX[25]            : H14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : H15       :        :                   :         : 3         :                
-Read_Data_2_ID[4]            : H16       : output : 3.3-V LVTTL       :         : 4         : N              
-Write_Data_MEM[22]           : H17       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[25]           : H18       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_ID[14]           : H19       : output : 3.3-V LVTTL       :         : 4         : N              
-Read_Data_WB[4]              : H20       : output : 3.3-V LVTTL       :         : 4         : N              
-Instruction_EX[28]           : H21       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Data_2_EX[7]             : H16       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Data_MEM[8]            : H17       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[1]            : H18       : output : 3.3-V LVTTL       :         : 4         : N              
+Read_Data_MEM[7]             : H19       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[12]           : H20       : output : 3.3-V LVTTL       :         : 4         : N              
+Write_Register_EX[3]         : H21       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCA_PLL2                    : H22       : power  :                   : 1.2V    :           :                
-Instruction_ID[21]           : H23       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_IF[8]            : H24       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[26]             : H25       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[11]           : H26       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[5]              : H27       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[7]              : H28       : output : 3.3-V LVTTL       :         : 5         : N              
-PCSrc_MEM                    : H29       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[30]           : H30       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[18]           : J1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[26]             : J2        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_IF[30]           : H23       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_EX[3]            : H24       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[20]           : H25       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[12] : H26       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : H27       :        :                   :         : 5         :                
+Sign_Extend_Instruction_ID[5] : H28       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_ID[12]           : H29       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[18]           : H30       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Result_MEM[5]            : J1        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[31]            : J2        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : J3        : power  :                   : 3.3V    : 2         :                
 GND                          : J4        : gnd    :                   :         :           :                
-Branch_Dest_EX[31]           : J5        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[10]           : J6        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[14]             : J7        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_WB[0]              : J5        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[22]           : J6        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : J7        :        :                   :         : 2         :                
 GND_PLL3                     : J8        : gnd    :                   :         :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
 GND                          : J10       : gnd    :                   :         :           :                
 VCCIO3                       : J11       : power  :                   : 3.3V    : 3         :                
-Next_PC_IF[13]               : J12       : output : 3.3-V LVTTL       :         : 3         : N              
-Write_Data_WB[7]             : J13       : input  : 3.3-V LVTTL       :         : 3         : N              
+Read_Data_WB[1]              : J12       : output : 3.3-V LVTTL       :         : 3         : N              
+ALU_Result_EX[11]            : J13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : J14       : gnd    :                   :         :           :                
 VCCIO3                       : J15       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : J16       : power  :                   : 3.3V    : 4         :                
 GND                          : J17       : gnd    :                   :         :           :                
-GND*                         : J18       :        :                   :         : 4         :                
-Read_Data_WB[14]             : J19       : output : 3.3-V LVTTL       :         : 4         : N              
+Instruction_EX[29]           : J18       : output : 3.3-V LVTTL       :         : 4         : N              
+ALU_Result_MEM[8]            : J19       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : J20       : power  :                   : 3.3V    : 4         :                
 GND                          : J21       : gnd    :                   :         :           :                
 VCCD_PLL2                    : J22       : power  :                   : 1.2V    :           :                
 VCCIO5                       : J23       : power  :                   : 3.3V    : 5         :                
-PC_Plus_4_EX[0]              : J24       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[2]            : J25       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : J26       :        :                   :         : 5         :                
+Sign_Extend_Instruction_ID[17] : J24       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_WB[20]             : J25       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[26] : J26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : J27       : gnd    :                   :         :           :                
 VCCIO5                       : J28       : power  :                   : 3.3V    : 5         :                
-Sign_Extend_Instruction_ID[5] : J29       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[6]            : J30       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_ID[23]             : K1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[19]             : K2        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[13]             : K3        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[14]             : K4        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[23]           : K5        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[30]           : K6        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[28]           : K7        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[22]           : K8        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_WB[0]             : J29       : output : 3.3-V LVTTL       :         : 5         : N              
+Write_Register_EX[1]         : J30       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_WB[2]              : K1        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[30]            : K2        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[3]             : K3        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[5]             : K4        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[1]            : K5        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[24]            : K6        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[1]             : K7        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_WB[28]             : K8        : output : 3.3-V LVTTL       :         : 2         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : K9        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : K10       : gnd    :                   :         :           :                
 GND                          : K11       : gnd    :                   :         :           :                
@@ -656,24 +656,24 @@ GND                          : K19       : gnd    :                   :         
 GND                          : K20       : gnd    :                   :         :           :                
 GND_PLL2                     : K21       : gnd    :                   :         :           :                
 GND_PLL2                     : K22       : gnd    :                   :         :           :                
-Sign_Extend_Instruction_ID[31] : K23       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : K24       :        :                   :         : 5         :                
-GND*                         : K25       :        :                   :         : 5         :                
-Instruction_ID[6]            : K26       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : K27       :        :                   :         : 5         :                
-GND*                         : K28       :        :                   :         : 5         :                
-Read_Data_WB[23]             : K29       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[21]           : K30       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_EX[11]             : L1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[28]             : L2        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[23]             : L3        : output : 3.3-V LVTTL       :         : 2         : N              
-Instruction_EX[16]           : L4        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[17]             : L5        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[16]             : L6        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[24]           : L7        : output : 3.3-V LVTTL       :         : 2         : N              
-Branch_Dest_EX[20]           : L8        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[30]             : L9        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[20]             : L10       : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_IF[29]           : K23       : output : 3.3-V LVTTL       :         : 5         : N              
+MemRead_ID                   : K24       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[11] : K25       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_ID[19]           : K26       : output : 3.3-V LVTTL       :         : 5         : N              
+Branch_Dest_EX[1]            : K27       : output : 3.3-V LVTTL       :         : 5         : N              
+Branch_Dest_EX[0]            : K28       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[30]               : K29       : output : 3.3-V LVTTL       :         : 5         : N              
+PCSrc_MEM                    : K30       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_WB[24]             : L1        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[5]             : L2        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[31]           : L3        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[30]           : L4        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_2_ID[11]           : L5        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_MEM[0]            : L6        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[28]            : L7        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[0]             : L8        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[28]           : L9        : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_EX[6]            : L10       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : L11       : power  :                   : 3.3V    : 2         :                
 GND                          : L12       : gnd    :                   :         :           :                
 VCCINT                       : L13       : power  :                   : 1.2V    :           :                
@@ -684,26 +684,26 @@ VCCINT                       : L17       : power  :                   : 1.2V    
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
 VCCINT                       : L19       : power  :                   : 1.2V    :           :                
 VCCIO5                       : L20       : power  :                   : 3.3V    : 5         :                
-GND*                         : L21       :        :                   :         : 5         :                
-Instruction_IF[10]           : L22       : output : 3.3-V LVTTL       :         : 5         : N              
+PC_Plus_4_IF[0]              : L21       : output : 3.3-V LVTTL       :         : 5         : N              
+PC_Plus_4_IF[1]              : L22       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : L23       : gnd    :                   :         :           :                
-Instruction_IF[5]            : L24       : output : 3.3-V LVTTL       :         : 5         : N              
-Sign_Extend_Instruction_ID[26] : L25       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[21]             : L26       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : L27       :        :                   :         : 5         :                
-Instruction_ID[27]           : L28       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_IF[17]           : L29       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[24]           : L30       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_ID[25]             : M1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[21]             : M2        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[29]             : M3        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[6]              : M4        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[8]              : M5        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[21]             : M6        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[24]             : M7        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[28]             : M8        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[6]              : M9        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[31]             : M10       : output : 3.3-V LVTTL       :         : 2         : N              
+Instruction_ID[5]            : L24       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[23]           : L25       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[11]           : L26       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[2]            : L27       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[2]                : L28       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[4]                : L29       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_EX[17]           : L30       : output : 3.3-V LVTTL       :         : 5         : N              
+Write_Data_MEM[15]           : M1        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[3]            : M2        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[4]            : M3        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[2]            : M4        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[31]            : M5        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[3]             : M6        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[24]            : M7        : output : 3.3-V LVTTL       :         : 2         : N              
+Branch_ID                    : M8        : output : 3.3-V LVTTL       :         : 2         : N              
+ALUOp_ID[0]                  : M9        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_MEM[24]           : M10       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : M11       : gnd    :                   :         :           :                
 VCCINT                       : M12       : power  :                   : 1.2V    :           :                
 VCCINT                       : M13       : power  :                   : 1.2V    :           :                
@@ -714,26 +714,26 @@ VCCINT                       : M17       : power  :                   : 1.2V    
 VCCINT                       : M18       : power  :                   : 1.2V    :           :                
 VCCINT                       : M19       : power  :                   : 1.2V    :           :                
 GND                          : M20       : gnd    :                   :         :           :                
-Sign_Extend_Instruction_ID[19] : M21       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : M22       :        :                   :         : 5         :                
-GND*                         : M23       :        :                   :         : 5         :                
-Instruction_IF[0]            : M24       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : M25       :        :                   :         : 5         :                
-Instruction_IF[19]           : M26       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[8]            : M27       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[0]            : M28       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Address_2_ID[4]         : M29       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Address_2_ID[1]         : M30       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[0]                : M21       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_ID[2]            : M22       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[1]                : M23       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[12]           : M24       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_2_ID[28]           : M25       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[9]            : M26       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_IF[5]            : M27       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_EX[2]            : M28       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[17]               : M29       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[19]               : M30       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N1        : gnd    :                   :         :           :                
-PC_Plus_4_ID[5]              : N2        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[20]             : N3        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[29]             : N4        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Data_2_EX[0]             : N2        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_WB[4]             : N3        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_1_ID[10]           : N4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : N5        : power  :                   : 3.3V    : 2         :                
 GND                          : N6        : gnd    :                   :         :           :                
-PC_Plus_4_ID[10]             : N7        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[18]             : N8        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[7]              : N9        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_EX[22]             : N10       : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_WB[31]             : N7        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_WB[30]             : N8        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_MEM[4]             : N9        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Result_WB[4]             : N10       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCINT                       : N11       : power  :                   : 1.2V    :           :                
 VCCINT                       : N12       : power  :                   : 1.2V    :           :                
 GND                          : N13       : gnd    :                   :         :           :                
@@ -744,25 +744,25 @@ GND                          : N17       : gnd    :                   :         
 GND                          : N18       : gnd    :                   :         :           :                
 VCCINT                       : N19       : power  :                   : 1.2V    :           :                
 VCCINT                       : N20       : power  :                   : 1.2V    :           :                
-Read_Data_WB[1]              : N21       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_EX[25]           : N22       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : N23       :        :                   :         : 5         :                
-Read_Data_WB[8]              : N24       : output : 3.3-V LVTTL       :         : 5         : N              
-Write_Register_WB[3]         : N25       : output : 3.3-V LVTTL       :         : 5         : N              
+Instruction_ID[21]           : N21       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Address_1_ID[0]         : N22       : output : 3.3-V LVTTL       :         : 5         : N              
+Sign_Extend_Instruction_ID[2] : N23       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[11]               : N24       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[20]               : N25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N26       : gnd    :                   :         :           :                
 VCCIO5                       : N27       : power  :                   : 3.3V    : 5         :                
-Read_Data_WB[28]             : N28       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[9]            : N29       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[5]                : N28       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[24]               : N29       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N30       : gnd    :                   :         :           :                
-PC_Plus_4_ID[27]             : P1        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[8]              : P2        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[22]             : P3        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[16]             : P4        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_MEM[17]           : P1        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Data_2_EX[17]            : P2        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Data_2_EX[23]            : P3        : output : 3.3-V LVTTL       :         : 2         : N              
+ALU_Data_2_EX[8]             : P4        : output : 3.3-V LVTTL       :         : 2         : N              
 TCK                          : P5        : input  :                   :         : 2         :                
-PC_Plus_4_ID[18]             : P6        : output : 3.3-V LVTTL       :         : 2         : N              
-PC_Plus_4_ID[11]             : P7        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_MEM[12]           : P6        : output : 3.3-V LVTTL       :         : 2         : N              
+Write_Data_WB[24]            : P7        : output : 3.3-V LVTTL       :         : 2         : N              
 TDI                          : P8        : input  :                   :         : 2         :                
-PC_Plus_4_ID[30]             : P9        : output : 3.3-V LVTTL       :         : 2         : N              
+Read_Data_WB[5]              : P9        : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : P10       : gnd    :                   :         :           :                
 VCCINT                       : P11       : power  :                   : 1.2V    :           :                
 VCCINT                       : P12       : power  :                   : 1.2V    :           :                
@@ -775,15 +775,15 @@ GND                          : P18       : gnd    :                   :         
 VCCINT                       : P19       : power  :                   : 1.2V    :           :                
 VCCINT                       : P20       : power  :                   : 1.2V    :           :                
 GND                          : P21       : gnd    :                   :         :           :                
-PC_Plus_4_ID[0]              : P22       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_IF[21]           : P23       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[13]             : P24       : output : 3.3-V LVTTL       :         : 5         : N              
-Sign_Extend_Instruction_ID[3] : P25       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[31]           : P26       : output : 3.3-V LVTTL       :         : 5         : N              
-RegDst_ID                    : P27       : output : 3.3-V LVTTL       :         : 5         : N              
-Instruction_ID[23]           : P28       : output : 3.3-V LVTTL       :         : 5         : N              
-Next_PC_IF[25]               : P29       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_IF[25]             : P30       : output : 3.3-V LVTTL       :         : 5         : N              
+Write_Data_MEM[6]            : P22       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[21]               : P23       : output : 3.3-V LVTTL       :         : 5         : N              
+Write_Data_WB[31]            : P24       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[25]               : P25       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_2_ID[26]           : P26       : output : 3.3-V LVTTL       :         : 5         : N              
+Write_Data_MEM[22]           : P27       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_2_ID[24]           : P28       : output : 3.3-V LVTTL       :         : 5         : N              
+RegWrite_ID                  : P29       : output : 3.3-V LVTTL       :         : 5         : N              
+Next_PC_IF[15]               : P30       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO2                       : R1        : power  :                   : 3.3V    : 2         :                
 GND+                         : R2        :        :                   :         : 2         :                
 GND+                         : R3        :        :                   :         : 2         :                
@@ -805,24 +805,24 @@ GND                          : R18       : gnd    :                   :         
 VCCINT                       : R19       : power  :                   : 1.2V    :           :                
 GND                          : R20       : gnd    :                   :         :           :                
 VCCIO5                       : R21       : power  :                   : 3.3V    : 5         :                
-Next_PC_IF[17]               : R22       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_IF[17]             : R23       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_IF[21]             : R24       : output : 3.3-V LVTTL       :         : 5         : N              
-Read_Data_WB[11]             : R25       : output : 3.3-V LVTTL       :         : 5         : N              
-PC_Plus_4_IF[9]              : R26       : output : 3.3-V LVTTL       :         : 5         : N              
-ALU_Result_WB[11]            : R27       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_2_ID[5]            : R22       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Data_2_EX[15]            : R23       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_1_ID[20]           : R24       : output : 3.3-V LVTTL       :         : 5         : N              
+Write_Data_MEM[1]            : R25       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Data_2_EX[26]            : R26       : output : 3.3-V LVTTL       :         : 5         : N              
+Read_Data_1_ID[5]            : R27       : output : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : R28       :        :                   :         : 5         :                
 GND+                         : R29       :        :                   :         : 5         :                
 VCCIO5                       : R30       : power  :                   : 3.3V    : 5         :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
 Clk                          : T2        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND+                         : T3        :        :                   :         : 1         :                
-PC_Plus_4_ID[12]             : T4        : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_ID[13]             : T5        : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_ID[9]              : T6        : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_ID[15]             : T7        : output : 3.3-V LVTTL       :         : 1         : N              
-Read_Data_1_ID[17]           : T8        : output : 3.3-V LVTTL       :         : 1         : N              
-Read_Data_1_ID[3]            : T9        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_2_ID[31]           : T4        : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[3]             : T5        : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[5]             : T6        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_1_ID[3]            : T7        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_2_ID[17]           : T8        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_2_ID[18]           : T9        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : T10       : power  :                   : 3.3V    : 1         :                
 GND                          : T11       : gnd    :                   :         :           :                
 VCCINT                       : T12       : power  :                   : 1.2V    :           :                
@@ -835,24 +835,24 @@ GND                          : T18       : gnd    :                   :         
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
 GND                          : T20       : gnd    :                   :         :           :                
 VCCIO6                       : T21       : power  :                   : 3.3V    : 6         :                
-Next_PC_IF[9]                : T22       : output : 3.3-V LVTTL       :         : 5         : N              
-Next_PC_IF[21]               : T23       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Data_2_EX[30]            : T22       : output : 3.3-V LVTTL       :         : 5         : N              
+ALU_Result_EX[27]            : T23       : output : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : T24       :        :                   :         : 6         :                
 GND+                         : T25       :        :                   :         : 6         :                
-Read_Data_1_ID[0]            : T26       : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_WB[8]             : T27       : input  : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[3]             : T28       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[5]             : T29       : output : 3.3-V LVTTL       :         : 6         : N              
+Read_Data_2_ID[8]            : T26       : output : 3.3-V LVTTL       :         : 6         : N              
+Write_Data_MEM[9]            : T27       : output : 3.3-V LVTTL       :         : 6         : N              
+Write_Data_MEM[7]            : T28       : output : 3.3-V LVTTL       :         : 6         : N              
+ALUSrc_ID                    : T29       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : T30       : power  :                   : 3.3V    : 6         :                
-PC_Plus_4_ID[31]             : U1        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_MEM[6]            : U2        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[12]            : U3        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[2]             : U4        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[1]             : U5        : input  : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[11]            : U6        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[9]             : U7        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[13]            : U8        : input  : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_MEM[13]           : U9        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[22]           : U1        : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_MEM[26]           : U2        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_EX[18]            : U3        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_EX[2]             : U4        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Data_2_EX[31]            : U5        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Data_2_EX[20]            : U6        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_EX[14]            : U7        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Data_2_EX[5]             : U8        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Data_2_EX[3]             : U9        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : U10       : gnd    :                   :         :           :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
 VCCINT                       : U12       : power  :                   : 1.2V    :           :                
@@ -866,24 +866,24 @@ VCCINT                       : U19       : power  :                   : 1.2V    
 VCCINT                       : U20       : power  :                   : 1.2V    :           :                
 GND                          : U21       : gnd    :                   :         :           :                
 MSEL0                        : U22       :        :                   :         : 6         :                
-Read_Data_1_ID[15]           : U23       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_1_ID[10]           : U24       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_1_ID[9]            : U25       : output : 3.3-V LVTTL       :         : 6         : N              
+Write_Data_MEM[16]           : U23       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Data_2_EX[4]             : U24       : output : 3.3-V LVTTL       :         : 6         : N              
+Instruction_EX[16]           : U25       : output : 3.3-V LVTTL       :         : 6         : N              
 nSTATUS                      : U26       :        :                   :         : 6         :                
 CONF_DONE                    : U27       :        :                   :         : 6         :                
 MSEL1                        : U28       :        :                   :         : 6         :                
-Read_Data_1_ID[5]            : U29       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_2_ID[0]            : U30       : output : 3.3-V LVTTL       :         : 6         : N              
+Instruction_IF[21]           : U29       : output : 3.3-V LVTTL       :         : 6         : N              
+Instruction_IF[17]           : U30       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : V1        : gnd    :                   :         :           :                
-Read_Data_1_ID[31]           : V2        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[22]            : V3        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[3]             : V4        : input  : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_MEM[28]           : V2        : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_MEM[25]           : V3        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_1_ID[28]           : V4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : V5        : power  :                   : 3.3V    : 1         :                
 GND                          : V6        : gnd    :                   :         :           :                
-ALU_Result_EX[9]             : V7        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Result_EX[12]            : V8        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[1]             : V9        : output : 3.3-V LVTTL       :         : 1         : N              
-Instruction_EX[23]           : V10       : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[12]            : V7        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[12]            : V8        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[18]            : V9        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[19]            : V10       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : V11       : power  :                   : 1.2V    :           :                
 VCCINT                       : V12       : power  :                   : 1.2V    :           :                
 GND                          : V13       : gnd    :                   :         :           :                
@@ -894,26 +894,26 @@ GND                          : V17       : gnd    :                   :         
 GND                          : V18       : gnd    :                   :         :           :                
 VCCINT                       : V19       : power  :                   : 1.2V    :           :                
 VCCINT                       : V20       : power  :                   : 1.2V    :           :                
-ALU_Data_2_EX[31]            : V21       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[12]            : V22       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Data_2_EX[5]             : V23       : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_EX[27]           : V24       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[3]              : V21       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[16]               : V22       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Result_EX[0]             : V23       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[13]               : V24       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : V25       : gnd    :                   :         :           :                
 VCCIO6                       : V26       : power  :                   : 3.3V    : 6         :                
-Read_Data_2_ID[16]           : V27       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_2_ID[10]           : V28       : output : 3.3-V LVTTL       :         : 6         : N              
-RegWrite_WB                  : V29       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Data_2_EX[6]             : V27       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Data_2_EX[2]             : V28       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Data_2_EX[12]            : V29       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : V30       : gnd    :                   :         :           :                
-Read_Data_1_ID[21]           : W1        : output : 3.3-V LVTTL       :         : 1         : N              
-Read_Data_1_ID[19]           : W2        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[6]             : W3        : input  : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[15]            : W4        : input  : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[8]             : W5        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[24]            : W6        : input  : 3.3-V LVTTL       :         : 1         : N              
-Read_Data_2_ID[1]            : W7        : output : 3.3-V LVTTL       :         : 1         : N              
-ALU_Result_EX[13]            : W8        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[25]            : W9        : input  : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[29]            : W10       : input  : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_EX[21]            : W1        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[23]            : W2        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_1_ID[12]           : W3        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_1_ID[29]           : W4        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[25]           : W5        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_1_ID[8]            : W6        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[12]             : W7        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[12]           : W8        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_MEM[18]           : W9        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[19]             : W10       : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : W11       : gnd    :                   :         :           :                
 VCCINT                       : W12       : power  :                   : 1.2V    :           :                
 VCCINT                       : W13       : power  :                   : 1.2V    :           :                
@@ -924,26 +924,26 @@ VCCINT                       : W17       : power  :                   : 1.2V    
 VCCINT                       : W18       : power  :                   : 1.2V    :           :                
 VCCINT                       : W19       : power  :                   : 1.2V    :           :                
 GND                          : W20       : gnd    :                   :         :           :                
-ALU_Result_WB[20]            : W21       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[21]            : W22       : output : 3.3-V LVTTL       :         : 6         : N              
-Sign_Extend_Instruction_ID[15] : W23       : output : 3.3-V LVTTL       :         : 6         : N              
-PC_Plus_4_ID[1]              : W24       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Data_2_EX[14]            : W25       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[23]            : W26       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_1_ID[18]           : W27       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Data_2_EX[16]            : W28       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Data_2_EX[6]             : W29       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_2_ID[19]           : W30       : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_WB[28]            : Y1        : input  : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[30]            : Y2        : input  : 3.3-V LVTTL       :         : 1         : N              
-ALU_Data_2_EX[0]             : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
-Write_Data_WB[18]            : Y4        : input  : 3.3-V LVTTL       :         : 1         : N              
-ALU_Result_EX[2]             : Y5        : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[23]               : Y6        : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[15]             : Y7        : output : 3.3-V LVTTL       :         : 1         : N              
-Next_PC_IF[10]               : Y8        : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_ID[3]              : Y9        : output : 3.3-V LVTTL       :         : 1         : N              
-PC_Plus_4_IF[23]             : Y10       : output : 3.3-V LVTTL       :         : 1         : N              
+Next_PC_IF[22]               : W21       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[23]               : W22       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[10]             : W23       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[13]             : W24       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[12]               : W25       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[27]             : W26       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[28]               : W27       : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[2]            : W28       : output : 3.3-V LVTTL       :         : 6         : N              
+Read_Data_1_ID[17]           : W29       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Data_2_EX[11]            : W30       : output : 3.3-V LVTTL       :         : 6         : N              
+ALU_Result_EX[23]            : Y1        : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[16]            : Y2        : output : 3.3-V LVTTL       :         : 1         : N              
+Write_Data_WB[17]            : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_EX[26]            : Y4        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[19]            : Y5        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_MEM[25]            : Y6        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[29]            : Y7        : output : 3.3-V LVTTL       :         : 1         : N              
+ALU_Result_WB[27]            : Y8        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[18]             : Y9        : output : 3.3-V LVTTL       :         : 1         : N              
+Read_Data_WB[25]             : Y10       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : Y11       : power  :                   : 3.3V    : 1         :                
 VCCINT                       : Y12       : power  :                   : 1.2V    :           :                
 VCCINT                       : Y13       : power  :                   : 1.2V    :           :                
@@ -954,13 +954,13 @@ VCCINT                       : Y17       : power  :                   : 1.2V    
 VCCINT                       : Y18       : power  :                   : 1.2V    :           :                
 GND                          : Y19       : gnd    :                   :         :           :                
 VCCIO6                       : Y20       : power  :                   : 3.3V    : 6         :                
-Sign_Extend_Instruction_ID[1] : Y21       : output : 3.3-V LVTTL       :         : 6         : N              
-Sign_Extend_Instruction_ID[18] : Y22       : output : 3.3-V LVTTL       :         : 6         : N              
-Sign_Extend_Instruction_ID[22] : Y23       : output : 3.3-V LVTTL       :         : 6         : N              
-Instruction_IF[2]            : Y24       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[27]            : Y25       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Data_2_EX[3]             : Y26       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Result_WB[8]             : Y27       : output : 3.3-V LVTTL       :         : 6         : N              
-Read_Data_1_ID[4]            : Y28       : output : 3.3-V LVTTL       :         : 6         : N              
-ALU_Data_2_EX[19]            : Y29       : output : 3.3-V LVTTL       :         : 6         : N              
-Write_Data_MEM[16]           : Y30       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[25]             : Y21       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[23]             : Y22       : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[10]           : Y23       : output : 3.3-V LVTTL       :         : 6         : N              
+Branch_Dest_EX[7]            : Y24       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[18]             : Y25       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[28]             : Y26       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[29]               : Y27       : output : 3.3-V LVTTL       :         : 6         : N              
+PC_Plus_4_IF[7]              : Y28       : output : 3.3-V LVTTL       :         : 6         : N              
+Next_PC_IF[3]                : Y29       : output : 3.3-V LVTTL       :         : 6         : N              
+Write_Data_WB[23]            : Y30       : output : 3.3-V LVTTL       :         : 6         : N              
