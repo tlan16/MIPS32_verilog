@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MIPS32
-Tue Sep 02 20:41:25 2014
+Wed Sep 03 17:37:18 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -80,16 +80,15 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 3           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-3 processors         ; < 0.1%      ;
-;     4-8 processors         ;   0.0%      ;
+;     2-4 processors         ; < 0.1%      ;
 +----------------------------+-------------+
 
 
@@ -4160,10 +4159,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Tue Sep 02 20:41:24 2014
+    Info: Processing started: Wed Sep 03 17:37:16 2014
 Info: Command: quartus_sta MIPS32 -c MIPS32
 Info: qsta_default_script.tcl version: #4
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is -40 degrees C
 Info (21077): High junction temperature is 125 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'MIPS32.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -4208,9 +4207,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 404 megabytes
-    Info: Processing ended: Tue Sep 02 20:41:25 2014
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 402 megabytes
+    Info: Processing ended: Wed Sep 03 17:37:18 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

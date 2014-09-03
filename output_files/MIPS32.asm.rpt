@@ -1,5 +1,5 @@
 Assembler report for MIPS32
-Tue Sep 02 20:41:27 2014
+Wed Sep 03 17:37:20 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof
-  6. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof
+  5. Assembler Device Options: C:/Users/Frank-Laptop/git/MIPS32_verilog/output_files/MIPS32.sof
+  6. Assembler Device Options: C:/Users/Frank-Laptop/git/MIPS32_verilog/output_files/MIPS32.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Sep 02 20:41:27 2014 ;
+; Assembler Status      ; Successful - Wed Sep 03 17:37:20 2014 ;
 ; Revision Name         ; MIPS32                                ;
 ; Top-level Entity Name ; MIPS32                                ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------------------+
-; Assembler Generated Files                                               ;
-+-------------------------------------------------------------------------+
-; File Name                                                               ;
-+-------------------------------------------------------------------------+
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof ;
-+-------------------------------------------------------------------------+
++------------------------------------------------------------------+
+; Assembler Generated Files                                        ;
++------------------------------------------------------------------+
+; File Name                                                        ;
++------------------------------------------------------------------+
+; C:/Users/Frank-Laptop/git/MIPS32_verilog/output_files/MIPS32.sof ;
+; C:/Users/Frank-Laptop/git/MIPS32_verilog/output_files/MIPS32.pof ;
++------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof ;
-+----------------+----------------------------------------------------------------------------------+
-; Option         ; Setting                                                                          ;
-+----------------+----------------------------------------------------------------------------------+
-; Device         ; EP2C70F896I8                                                                     ;
-; JTAG usercode  ; 0x006AEFE4                                                                       ;
-; Checksum       ; 0x006AEFE4                                                                       ;
-+----------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Frank-Laptop/git/MIPS32_verilog/output_files/MIPS32.sof ;
++----------------+---------------------------------------------------------------------------+
+; Option         ; Setting                                                                   ;
++----------------+---------------------------------------------------------------------------+
+; Device         ; EP2C70F896I8                                                              ;
+; JTAG usercode  ; 0x006AEFE4                                                                ;
+; Checksum       ; 0x006AEFE4                                                                ;
++----------------+---------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof ;
-+--------------------+------------------------------------------------------------------------------+
-; Option             ; Setting                                                                      ;
-+--------------------+------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                       ;
-; JTAG usercode      ; 0x00000000                                                                   ;
-; Checksum           ; 0x186BD8C1                                                                   ;
-; Compression Ratio  ; 3                                                                            ;
-+--------------------+------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Frank-Laptop/git/MIPS32_verilog/output_files/MIPS32.pof ;
++--------------------+-----------------------------------------------------------------------+
+; Option             ; Setting                                                               ;
++--------------------+-----------------------------------------------------------------------+
+; Device             ; EPCS16                                                                ;
+; JTAG usercode      ; 0x00000000                                                            ;
+; Checksum           ; 0x186BD8C1                                                            ;
+; Compression Ratio  ; 3                                                                     ;
++--------------------+-----------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Tue Sep 02 20:41:24 2014
+    Info: Processing started: Wed Sep 03 17:37:16 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 415 megabytes
-    Info: Processing ended: Tue Sep 02 20:41:27 2014
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Wed Sep 03 17:37:20 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

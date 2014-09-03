@@ -1,0 +1,42 @@
+Quartus II Archive log --	C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32.qarlog
+
+Archive:	C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32.qar
+Date:		Wed Sep 03 17:34:33 2014
+Quartus II 64-Bit		12.0 Build 178 05/31/2012 SJ Full Version
+
+	=========== Files Selected: ===========
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_ALU.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_ALU_Control.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_ALU_Mux.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_Dest_Mux.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_MEM_Pipeline_Stage.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_PC_Add.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/EX_Shift_Left_2.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/ID_Control.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/ID_EX_Pipeline_Stage.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/ID_Registers.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/ID_Sign_Extension.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf
+C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_ID_Pipeline_Stage.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_Instruction_Memory.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_PC_Add.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_PC_Mux.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_PC_Reg.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MEM_Branch_AND.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MEM_Data_Memory.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MEM_WB_Pipeline_Stage.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32.qpf
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32.qsf
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32_assignment_defaults.qdf
+C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS_Top.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/WB_MemtoReg_Mux.v
+C:/Users/Frank-Laptop/git/MIPS32_verilog/data_memory.list
+C:/Users/Frank-Laptop/git/MIPS32_verilog/db/MIPS32.sim.vwf
+C:/Users/Frank-Laptop/git/MIPS32_verilog/incremental_db/compiled_partitions/MIPS32.db_info
+C:/Users/Frank-Laptop/git/MIPS32_verilog/instruction_memory.list
+C:/Users/Frank-Laptop/git/MIPS32_verilog/register_file.list
+	======= Total: 31 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

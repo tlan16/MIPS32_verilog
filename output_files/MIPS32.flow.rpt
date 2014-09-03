@@ -1,5 +1,5 @@
 Flow report for MIPS32
-Tue Sep 02 20:41:28 2014
+Wed Sep 03 17:37:22 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 02 20:41:28 2014     ;
+; Flow Status                        ; Successful - Wed Sep 03 17:37:22 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/02/2014 20:41:09 ;
+; Start date & time ; 09/03/2014 17:36:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS32              ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+--------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value      ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+--------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 220314643107714.140965446953604       ; --                 ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 145170143279.140972981102480          ; --                 ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                    ; --                 ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --                 ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>             ; --          ; --             ;
@@ -97,12 +97,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 429 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:12     ; 2.6                     ; 680 MB              ; 00:00:19                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 404 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 415 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 360 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:24                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 441 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:20     ; 2.9                     ; 671 MB              ; 00:00:34                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 402 MB              ; 00:00:02                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 413 MB              ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 358 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:44                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,11 +111,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
