@@ -49,7 +49,7 @@ module MEM_Data_Memory(
 			if(ALU_Result_MEM == 0)
 				Read_Data_MEM <= 32'd0;
 			else
-				Read_Data_MEM <= ALU_Result_MEM;
+				Read_Data_MEM <= Data_Memory[ALU_Result_MEM];
 			end //if
 		else if(MemWrite_MEM)	//Write
 			Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;

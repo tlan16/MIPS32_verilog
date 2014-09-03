@@ -5342,21 +5342,6 @@ SIGNAL("Read_Data_MEM[0]")
 	PARENT = "Read_Data_MEM";
 }
 
-GROUP("Ex_Control")
-{
-	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
-}
-
-GROUP("Mem_Control")
-{
-	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
-}
-
-GROUP("WB_Control")
-{
-	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
-}
-
 SIGNAL("ALU_Result_WB")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -6015,6 +6000,21 @@ SIGNAL("Read_Data_WB[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "Read_Data_WB";
+}
+
+GROUP("Ex_Control")
+{
+	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
+}
+
+GROUP("Mem_Control")
+{
+	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
+}
+
+GROUP("WB_Control")
+{
+	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
 }
 
 TRANSITION_LIST("Clk")
@@ -16869,7 +16869,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 567;
 	TREE_LEVEL = 0;
 	CHILDREN = 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599;
@@ -16879,7 +16879,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[31]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 568;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16889,7 +16889,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[30]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 569;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16899,7 +16899,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[29]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 570;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16909,7 +16909,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[28]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 571;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16919,7 +16919,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[27]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 572;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16929,7 +16929,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[26]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 573;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16939,7 +16939,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[25]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 574;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16949,7 +16949,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[24]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 575;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16959,7 +16959,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[23]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 576;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16969,7 +16969,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[22]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 577;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16979,7 +16979,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[21]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 578;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16989,7 +16989,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[20]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 579;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -16999,7 +16999,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[19]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 580;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17009,7 +17009,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[18]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 581;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17019,7 +17019,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[17]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 582;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17029,7 +17029,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[16]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 583;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17039,7 +17039,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[15]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 584;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17049,7 +17049,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[14]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 585;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17059,7 +17059,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[13]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 586;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17069,7 +17069,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[12]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 587;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17079,7 +17079,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[11]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 588;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17089,7 +17089,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[10]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 589;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17099,7 +17099,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[9]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 590;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17109,7 +17109,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[8]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 591;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17119,7 +17119,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 592;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17129,7 +17129,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 593;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17139,7 +17139,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 594;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17149,7 +17149,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 595;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17159,7 +17159,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 596;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17169,7 +17169,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 597;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17179,7 +17179,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 598;
 	TREE_LEVEL = 1;
 	PARENT = 567;
@@ -17189,7 +17189,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Write_Data_WB[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Signed;
 	TREE_INDEX = 599;
 	TREE_LEVEL = 1;
 	PARENT = 567;
