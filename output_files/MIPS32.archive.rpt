@@ -1,5 +1,5 @@
 Archive Project report for MIPS32
-Wed Sep 03 17:34:33 2014
+Fri Sep 05 09:26:35 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Wed Sep 03 17:34:33 2014 ;
+; Archive Project Status ; Successful - Fri Sep 05 09:26:35 2014 ;
 ; Revision Name          ; MIPS32                                ;
 ; Top-level Entity Name  ; MIPS32                                ;
 ; Family                 ; Cyclone II                            ;
@@ -50,54 +50,65 @@ Info: File Set 'Source control' contains:
     Info: Automatically detected source files
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/Users/Frank-Laptop/git/MIPS32_verilog/MIPS32.qar'
+Info: Generated archive 'C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'MIPS32.archive.rpt'
-Info (23030): Evaluation of Tcl script c:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 292 megabytes
-    Info: Processing ended: Wed Sep 03 17:34:33 2014
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 294 megabytes
+    Info: Processing ended: Fri Sep 05 09:26:35 2014
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 
-+----------------------------------------------------------------------+
-; Files Archived                                                       ;
-+----------------------------------------------------------------------+
-; File Name                                                            ;
-+----------------------------------------------------------------------+
-; C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf ;
-; data_memory.list                                                     ;
-; db/MIPS32.sim.vwf                                                    ;
-; EX_ALU.v                                                             ;
-; EX_ALU_Control.v                                                     ;
-; EX_ALU_Mux.v                                                         ;
-; EX_Dest_Mux.v                                                        ;
-; EX_MEM_Pipeline_Stage.v                                              ;
-; EX_PC_Add.v                                                          ;
-; EX_Shift_Left_2.v                                                    ;
-; ID_Control.v                                                         ;
-; ID_EX_Pipeline_Stage.v                                               ;
-; ID_Registers.v                                                       ;
-; ID_Sign_Extension.v                                                  ;
-; IF_ID_Pipeline_Stage.v                                               ;
-; IF_Instruction_Memory.v                                              ;
-; IF_PC_Add.v                                                          ;
-; IF_PC_Mux.v                                                          ;
-; IF_PC_Reg.v                                                          ;
-; incremental_db/compiled_partitions/MIPS32.db_info                    ;
-; instruction_memory.list                                              ;
-; MEM_Branch_AND.v                                                     ;
-; MEM_Data_Memory.v                                                    ;
-; MEM_WB_Pipeline_Stage.v                                              ;
-; MIPS32.qpf                                                           ;
-; MIPS32.qsf                                                           ;
-; MIPS32.v                                                             ;
-; MIPS32_assignment_defaults.qdf                                       ;
-; MIPS_Top.v                                                           ;
-; register_file.list                                                   ;
-; WB_MemtoReg_Mux.v                                                    ;
-+----------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Files Archived                                                              ;
++-----------------------------------------------------------------------------+
+; File Name                                                                   ;
++-----------------------------------------------------------------------------+
+; ../../../Frank-Desktop/Documents/MIPS32_verilog/IF_ID_testing.vwf           ;
+; ../../../Frank-Desktop/Documents/MIPS32_verilog/IF_testing.vwf              ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_testing.vwf    ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_testing.vwf        ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_testing.vwf           ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_testing.vwf              ;
+; data_memory.list                                                            ;
+; db/MIPS32.sim.vwf                                                           ;
+; EX_ALU.v                                                                    ;
+; EX_ALU_Control.v                                                            ;
+; EX_ALU_Mux.v                                                                ;
+; EX_Dest_Mux.v                                                               ;
+; EX_MEM_Pipeline_Stage.v                                                     ;
+; EX_PC_Add.v                                                                 ;
+; EX_Shift_Left_2.v                                                           ;
+; ID_Control.v                                                                ;
+; ID_EX_Pipeline_Stage.v                                                      ;
+; ID_Registers.v                                                              ;
+; ID_Sign_Extension.v                                                         ;
+; IF_ID_EX_MEM_testing.vwf                                                    ;
+; IF_ID_EX_MEM_WB_testing.vwf                                                 ;
+; IF_ID_EX_testing.vwf                                                        ;
+; IF_ID_Pipeline_Stage.v                                                      ;
+; IF_ID_testing.vwf                                                           ;
+; IF_Instruction_Memory.v                                                     ;
+; IF_PC_Add.v                                                                 ;
+; IF_PC_Mux.v                                                                 ;
+; IF_PC_Reg.v                                                                 ;
+; IF_testing.vwf                                                              ;
+; incremental_db/compiled_partitions/MIPS32.db_info                           ;
+; instruction_memory.list                                                     ;
+; MEM_Branch_AND.v                                                            ;
+; MEM_Data_Memory.v                                                           ;
+; MEM_WB_Pipeline_Stage.v                                                     ;
+; MIPS32.qpf                                                                  ;
+; MIPS32.qsf                                                                  ;
+; MIPS32.v                                                                    ;
+; MIPS32_assignment_defaults.qdf                                              ;
+; MIPS_Top.v                                                                  ;
+; register_file.list                                                          ;
+; WB_MemtoReg_Mux.v                                                           ;
++-----------------------------------------------------------------------------+
 
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Mips">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_0" CBX_FILE_NAME="altsyncram_v5h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_1" CBX_FILE_NAME="altsyncram_v5h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|MEM_Data_Memory:MEM_Data_Memory|altsyncram:memory_rtl_0" CBX_FILE_NAME="altsyncram_2fh1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

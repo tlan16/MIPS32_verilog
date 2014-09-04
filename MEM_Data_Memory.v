@@ -12,7 +12,7 @@ module MEM_Data_Memory(
    
 	//parameter BASE_ADDRESS = 25'd0; // address that applies to this memory - change if desired
 	
-	reg [31:0]Data_Memory[0:512];
+	reg [31:0]Data_Memory[0:511];
 	initial begin
 		$readmemh("data_memory.list", Data_Memory);
 		Read_Data_MEM <= 32'd0;
@@ -44,15 +44,29 @@ module MEM_Data_Memory(
 	end //always
 	*/
 	
-	always@(posedge Clk) begin
-		if(MemRead_MEM) begin	// Read
-			if(ALU_Result_MEM == 0)
-				Read_Data_MEM <= 32'd0;
-			else
-				Read_Data_MEM <= Data_Memory[ALU_Result_MEM];
-			end //if
-		else if(MemWrite_MEM)	//Write
-			Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;
+	always@(*)
+		begin
+			if(MemRead_MEM)
+				begin
+					if(ALU_Result_MEM == 0 || ALU_Result_MEM > 32'd511)
+						begin
+							Read_Data_MEM <= 32'd0;
+						end
+					else
+						begin
+							Read_Data_MEM <= Data_Memory[ALU_Result_MEM];
+						end
+				end
+		end
+	
+	
+	
+	always@(posedge Clk) 
+		begin
+			if(MemWrite_MEM)
+				begin
+					Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;
+				end
 		end
 	
 endmodule // MEM_Data_Memory

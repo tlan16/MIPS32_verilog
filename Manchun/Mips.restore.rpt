@@ -1,0 +1,104 @@
+Restore Archived Project report for Mips
+Wed Sep 03 23:37:24 2014
+Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Wed Sep 03 23:37:24 2014 ;
+; Revision Name                   ; Mips                                  ;
+; Top-level Entity Name           ; Mips                                  ;
+; Family                          ; Cyclone II                            ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/Users/Frank-Desktop/AppData/Local/Temp/Mips.qar' into the 'C:\\Users\\Frank-Desktop\\Documents\\MIPS32_verilog\\Manchun/' directory
+Info: Generated report 'Mips.restore.rpt'
+Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 32-bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 220 megabytes
+    Info: Processing ended: Wed Sep 03 23:37:24 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-------------------------------------------------+
+; Files Restored                                  ;
++-------------------------------------------------+
+; File Name                                       ;
++-------------------------------------------------+
+; EX_ALU.v                                        ;
+; EX_ALU_Control.v                                ;
+; EX_ALU_Mux.v                                    ;
+; EX_Dest_Mux.v                                   ;
+; EX_MEM_Pipeline_Stage.v                         ;
+; EX_PC_Add.v                                     ;
+; EX_Shift_Left_2.v                               ;
+; ID_Control.v                                    ;
+; ID_EX_Pipeline_Stage.v                          ;
+; ID_Registers.v                                  ;
+; ID_Sign_Extension.v                             ;
+; IF_ID_EX_MEM_WB_testing.vwf                     ;
+; IF_ID_EX_MEM_testing.vwf                        ;
+; IF_ID_Pipeline_Stage.v                          ;
+; IF_Instruction_Memory.v                         ;
+; IF_PC_Add.v                                     ;
+; IF_PC_Mux.v                                     ;
+; IF_PC_Reg.v                                     ;
+; MEM_Branch_AND.v                                ;
+; MEM_Data_Memory.v                               ;
+; MEM_WB_Pipeline_Stage.v                         ;
+; Mips.qpf                                        ;
+; Mips.qsf                                        ;
+; Mips.v                                          ;
+; WB_MemtoReg_Mux.v                               ;
+; data_memory.list                                ;
+; db/Mips.sim.vwf                                 ;
+; incremental_db/compiled_partitions/Mips.db_info ;
+; instruction_memory.list                         ;
+; register_file.list                              ;
+; assignment_defaults.qdf                         ;
++-------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
