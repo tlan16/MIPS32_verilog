@@ -85,6 +85,8 @@ module MIPS32(
 		// probed wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
    
    // EX origin variables:
+		wire [1:0]		ForwardA_EX;
+		wire [1:0]		ForwardB_EX;
 		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire				ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		// probed wire [3:0]			ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
@@ -255,14 +257,27 @@ module MIPS32(
 					     .Instruction_ID	(Instruction_ID[31:0]),
 					     .Clk		(Clk));
 
+	// EX_Forward_Unit
+	EX_Forward_Unit EX_Forward_Unit(
+			// Outputs
+			.ForwardA_EX(ForwardA_EX[1:0]),
+			.ForwardB_EX(ForwardB_EX[1:0]),
+			// Inputs
+			.EX_MEM_RegWrite(),
+			.EX_MEM_Reg_Rd(),
+			.ID_EX_Reg_Rs(),
+			.ID_EX_Reg_Rt(),
+			.MEM_WB_RegWrite(),
+			.MEM_WB_Reg_Rd());
+						  
    
    // EX_Shift_Left_2
    EX_Shift_Left_2 EX_Shift_Left_2(
-				   // Outputs
-				   .Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]),
-				   // Inputs
-				   .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]));
-   
+			// Outputs
+			.Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]),
+			// Inputs
+			.Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]));
+
    // EX_PC_Add
    EX_PC_Add EX_PC_Add (
 			// Outputs

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MIPS32
-Fri Sep 05 09:54:07 2014
+Fri Sep 05 10:37:17 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -4826,7 +4826,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Fri Sep 05 09:54:05 2014
+    Info: Processing started: Fri Sep 05 10:37:15 2014
 Info: Command: quartus_sta MIPS32 -c MIPS32
 Info: qsta_default_script.tcl version: #4
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -4882,8 +4882,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 402 megabytes
-    Info: Processing ended: Fri Sep 05 09:54:07 2014
+    Info: Peak virtual memory: 403 megabytes
+    Info: Processing ended: Fri Sep 05 10:37:17 2014
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -15,6 +15,8 @@ module EX_MEM_Pipeline_Stage(
 			     input [31:0]  ALU_Result_EX,
 			     input [31:0]   Read_Data_2_EX,
 			     input [4:0]   Write_Register_EX,
+				  
+				  input [31:0]		Instruction_
 
 			     
 			    
