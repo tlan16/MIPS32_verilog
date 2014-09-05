@@ -3,51 +3,27 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'Clk'
-Slack : -10.254
-TNS   : -2298.184
-
-Type  : Slow Model Setup 'EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM'
-Slack : -8.554
-TNS   : -238.135
+Slack : -5.460
+TNS   : -927.862
 
 Type  : Slow Model Hold 'Clk'
-Slack : -0.339
-TNS   : -0.339
-
-Type  : Slow Model Hold 'EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM'
-Slack : 1.515
+Slack : 0.752
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'Clk'
 Slack : -2.567
-TNS   : -2323.533
-
-Type  : Slow Model Minimum Pulse Width 'EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM'
-Slack : 0.500
-TNS   : 0.000
-
-Type  : Fast Model Setup 'EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM'
-Slack : -3.088
-TNS   : -90.004
+TNS   : -1362.881
 
 Type  : Fast Model Setup 'Clk'
-Slack : -2.570
-TNS   : -531.603
+Slack : -1.528
+TNS   : -221.976
 
 Type  : Fast Model Hold 'Clk'
-Slack : -0.731
-TNS   : -0.731
-
-Type  : Fast Model Hold 'EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM'
-Slack : 1.187
+Slack : 0.230
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'Clk'
 Slack : -1.880
-TNS   : -1595.900
-
-Type  : Fast Model Minimum Pulse Width 'EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM'
-Slack : 0.500
-TNS   : 0.000
+TNS   : -977.340
 
 ------------------------------------------------------------

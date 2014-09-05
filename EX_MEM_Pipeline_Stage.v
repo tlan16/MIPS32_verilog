@@ -16,12 +16,9 @@ module EX_MEM_Pipeline_Stage(
 			     input [31:0]   Read_Data_2_EX,
 			     input [4:0]   Write_Register_EX,
 				  
-				  input [31:0]		Instruction_
+				  input [31:0]		Instruction_EX,
 
-			     
-			    
-			     input 	   Clk,
-			    
+				  
 			     output reg 	   RegWrite_MEM,
 			     output reg 	   MemtoReg_MEM,
 		  
@@ -34,9 +31,14 @@ module EX_MEM_Pipeline_Stage(
 			     output reg 	   Zero_MEM,
 			     output reg [31:0] ALU_Result_MEM,
 			     output reg [31:0] Write_Data_MEM,
-			     output reg [4:0]  Write_Register_MEM
+			     output reg [4:0]  Write_Register_MEM,
+				  
+				  output reg [4:0]		Instruction_Rd_MEM,
+				  
+			     input 	   Clk
 			     );
-   
+
+	
 	always@(posedge Clk) begin
 		RegWrite_MEM		<= RegWrite_EX;
 		MemtoReg_MEM		<= MemtoReg_EX;
@@ -51,6 +53,8 @@ module EX_MEM_Pipeline_Stage(
 		ALU_Result_MEM		<= ALU_Result_EX;
 		Write_Data_MEM		<= Read_Data_2_EX;
 		Write_Register_MEM<= Write_Register_EX;
+		
+		Instruction_Rd_MEM <= Instruction_EX[15:11];
 	end //always
 
 endmodule // EX_MEM_Pipeline_Stage

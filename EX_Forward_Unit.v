@@ -10,8 +10,8 @@ module EX_Forward_Unit(
 						input					MEM_WB_RegWrite,
 						input [31:0]		MEM_WB_Reg_Rd,
 						
-						output [1:0]		ForwardA_EX,
-						output [1:0]		ForwardB_EX
+						output reg [1:0]		ForwardA_EX,
+						output reg [1:0]		ForwardB_EX
 			     );
    
 	initial 

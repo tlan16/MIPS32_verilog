@@ -1,5 +1,5 @@
 Flow report for MIPS32
-Fri Sep 05 10:37:20 2014
+Fri Sep 05 15:09:48 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,20 +38,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 05 10:37:20 2014     ;
+; Flow Status                        ; Successful - Fri Sep 05 15:09:48 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
 ; Device                             ; EP2C70F896I8                              ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 641 / 68,416 ( < 1 % )                    ;
-;     Total combinational functions  ; 511 / 68,416 ( < 1 % )                    ;
-;     Dedicated logic registers      ; 402 / 68,416 ( < 1 % )                    ;
-; Total registers                    ; 402                                       ;
+; Total logic elements               ; 269 / 68,416 ( < 1 % )                    ;
+;     Total combinational functions  ; 185 / 68,416 ( < 1 % )                    ;
+;     Dedicated logic registers      ; 239 / 68,416 ( < 1 % )                    ;
+; Total registers                    ; 239                                       ;
 ; Total pins                         ; 575 / 622 ( 92 % )                        ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 32,768 / 1,152,000 ( 3 % )                ;
+; Total memory bits                  ; 16,384 / 1,152,000 ( 1 % )                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                           ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                             ;
 +------------------------------------+-------------------------------------------+
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/05/2014 10:36:48 ;
+; Start date & time ; 09/05/2014 15:09:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS32              ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+--------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value      ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+--------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 145170143279.140987740806608          ; --                 ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 145170143279.140989376206660          ; --                 ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                    ; --                 ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --                 ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>             ; --          ; --             ;
@@ -97,12 +97,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 430 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:21     ; 3.1                     ; 671 MB              ; 00:00:34                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 365 MB              ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 403 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:28     ; --                      ; --                  ; 00:00:40                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 430 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:16     ; 2.9                     ; 667 MB              ; 00:00:26                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; 352 MB              ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 400 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 356 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:30                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

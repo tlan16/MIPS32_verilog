@@ -1,5 +1,5 @@
 Assembler report for MIPS32
-Fri Sep 05 10:37:16 2014
+Fri Sep 05 15:09:44 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Sep 05 10:37:16 2014 ;
+; Assembler Status      ; Successful - Fri Sep 05 15:09:44 2014 ;
 ; Revision Name         ; MIPS32                                ;
 ; Top-level Entity Name ; MIPS32                                ;
 ; Family                ; Cyclone II                            ;
@@ -81,13 +81,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Fri Sep 05 10:37:15 2014
+    Info: Processing started: Fri Sep 05 15:09:44 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 Warning (292011): Can't generate programming files because you are currently using the Quartus II software in Evaluation Mode
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 376 megabytes
-    Info: Processing ended: Fri Sep 05 10:37:16 2014
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 363 megabytes
+    Info: Processing ended: Fri Sep 05 15:09:44 2014
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 
