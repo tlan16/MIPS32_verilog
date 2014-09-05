@@ -66,7 +66,7 @@ module ID_Control(
 			end
 			SW: begin
 				RegWrite_ID <= 1'b0;
-				MemtoReg_ID <= 1'bx;
+				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b0;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b1;
@@ -76,7 +76,7 @@ module ID_Control(
 			end
 			BEQ: begin
 				RegWrite_ID <= 1'b0;
-				MemtoReg_ID <= 1'bx;
+				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b1;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b0;

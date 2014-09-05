@@ -58,11 +58,11 @@ set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
-set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name FITTER_EFFORT "AUTO FIT"
 set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
 set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
-set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
+set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING "NORMAL COMPILATION"
+set_global_assignment -name SOURCE_FILE register_file_Monitor.list
 set_global_assignment -name VERILOG_FILE WB_MemtoReg_Mux.v
 set_global_assignment -name VERILOG_FILE MIPS32.v
 set_global_assignment -name VERILOG_FILE MIPS_Top.v
@@ -88,15 +88,16 @@ set_global_assignment -name VERILOG_FILE EX_ALU.v
 set_global_assignment -name SOURCE_FILE register_file.list
 set_global_assignment -name SOURCE_FILE instruction_memory.list
 set_global_assignment -name SOURCE_FILE data_memory.list
-set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "../../../Frank-Desktop/Documents/MIPS32_verilog/IF_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "../../../Frank-Desktop/Documents/MIPS32_verilog/IF_ID_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
-set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Laptop/git/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE IF_testing.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_testing.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_EX_testing.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_EX_MEM_testing.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_EX_MEM_WB_testing.vwf
 set_global_assignment -name VERILOG_FILE EX_Forward_Unit.v
 set_global_assignment -name VERILOG_FILE EX_Forward_A.v
 set_global_assignment -name VERILOG_FILE EX_Forward_B.v
+set_global_assignment -name SDC_FILE MIPS32.sdc
+set_global_assignment -name VERILOG_FILE MEM_to_MEM_Forward.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -10,7 +10,7 @@ module MEM_WB_Pipeline_Stage(
 			     input [31:0] ALU_Result_MEM,
 			     input [4:0]  Write_Register_MEM,
 				  
-				  input [4:0]	Instruction_Rd_MEM,
+				  input [31:0]	Instruction_MEM,
 
 			     output reg 	  RegWrite_WB,
 			     output reg 	  MemtoReg_WB,
@@ -18,7 +18,7 @@ module MEM_WB_Pipeline_Stage(
 			     output reg [31:0] ALU_Result_WB,
 			     output reg [4:0]  Write_Register_WB,
 				  
-				  output reg [4:0]	Instruction_Rd_WB
+				  output reg [31:0]	Instruction_WB
 			     );
 				  
    
@@ -29,7 +29,7 @@ module MEM_WB_Pipeline_Stage(
 		ALU_Result_WB		<= ALU_Result_MEM;
 		Write_Register_WB	<= Write_Register_MEM;
 		
-		Instruction_Rd_WB <= Instruction_Rd_MEM;
+		Instruction_WB <= Instruction_MEM;
 	end //always
 
 endmodule // MEM_WB_Pipeline_Stage

@@ -1,7 +1,7 @@
 Quartus II Archive log --	C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.qarlog
 
 Archive:	C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.qar
-Date:		Fri Sep 05 09:26:35 2014
+Date:		Sat Sep 06 00:08:06 2014
 Quartus II 64-Bit		12.0 Build 178 05/31/2012 SJ Full Version
 
 	=========== Files Selected: ===========
@@ -9,6 +9,9 @@ C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_B.v
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v
@@ -29,8 +32,11 @@ C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_testing.vwf
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.out.sdc
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.qpf
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.qsf
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.sdc
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32_assignment_defaults.qdf
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS_Top.v
@@ -40,7 +46,8 @@ C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.sim.vwf
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/incremental_db/compiled_partitions/MIPS32.db_info
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/instruction_memory.list
 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/register_file.list
-	======= Total: 35 files to archive =======
+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/register_file_Monitor.list
+	======= Total: 42 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.

@@ -41,7 +41,9 @@ module MIPS32(
 	  output				MemtoReg_ID,
 	  output [31:0] 	Sign_Extend_Instruction_ID,
 	  
-	  output [31:0]   Instruction_EX,
+	  output [1:0]		ForwardA_EX,
+	  output [1:0]		ForwardB_EX,
+	  output				Forward_Mem_to_Mem,
 	  output [31:0]	ALU_Data_2_EX,
 	  output [3:0]		ALU_Control_EX,
 	  output [31:0]	ALU_Result_EX,
@@ -53,11 +55,12 @@ module MIPS32(
 	  output [31:0]	Write_Data_MEM,
 	  output [31:0]	Read_Data_MEM,
 	  output				PCSrc_MEM,
+	  output [31:0]	Write_Data_MUX_MEM,
 	  
 	  output [31:0]	Read_Data_WB,
 	  output [31:0]	ALU_Result_WB,
-	  output [31:0]	Write_Data_WB
-	  
+	  output [31:0]	Write_Data_WB,
+	  output [4:0]		Write_Register_WB
 	  
 		);
 
@@ -85,8 +88,9 @@ module MIPS32(
 		// probed wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
    
    // EX origin variables:
-		wire [1:0]		ForwardA_EX;
-		wire [1:0]		ForwardB_EX;
+		// probed wire [1:0]		ForwardA_EX;
+		// probed wire [1:0]		ForwardB_EX;
+		// probed wire				Forward_Mem_to_Mem;
 		wire [31:0]	Read_Data_1_Mux_EX;
 		wire [31:0]	Read_Data_2_Mux_EX;
 		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -96,7 +100,7 @@ module MIPS32(
 		// probed wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
 		// probed wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
 		wire				Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-		// probed wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
+		wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
 		wire				MemRead_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire				MemWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -111,7 +115,8 @@ module MIPS32(
 		// probed wire					Zero_EX;		// From EX_ALU of EX_ALU.v
 
    // MEM Origin Variables:
-		wire [4:0]		Instruction_Rd_MEM;
+		//probed wire [31:0]		Write_Data_MUX_MEM;
+		wire [31:0]		Instruction_MEM;
 		// probed wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire				Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
@@ -126,13 +131,13 @@ module MIPS32(
 		wire				Zero_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 
    // WB Origin Variables:
-		wire [4:0]		Instruction_Rd_WB;
+		wire [31:0]		Instruction_WB;
 		// probed wire [31:0]		ALU_Result_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 		wire				MemtoReg_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 		wire				RegWrite_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 		// probed wire [31:0]		Read_Data_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 		// probed wire [31:0]		Write_Data_WB;		// From WB_MemtoReg_Mux of WB_MemtoReg_Mux.v
-		wire [4:0]		Write_Register_WB;	// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
+		// probed wire [4:0]		Write_Register_WB;	// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 
    
 
@@ -265,13 +270,18 @@ module MIPS32(
 			// Outputs
 			.ForwardA_EX(ForwardA_EX[1:0]),
 			.ForwardB_EX(ForwardB_EX[1:0]),
+			.Forward_Mem_to_Mem(Forward_Mem_to_Mem),
 			// Inputs
+			.MemWrite_MEM(MemWrite_MEM),
+			.MemtoReg_WB(MemtoReg_WB),
 			.EX_MEM_RegWrite(RegWrite_MEM),
-			.EX_MEM_Reg_Rd(Instruction_Rd_MEM[4:0]),
-			.ID_EX_Reg_Rs(Instruction_ID[25:21]),
-			.ID_EX_Reg_Rt(Instruction_ID[20:16]),
+			.EX_MEM_Reg_Rd(Instruction_MEM[15:11]),
+			.EX_MEM_Reg_Rt(Instruction_MEM[20:16]),
+			.ID_EX_Reg_Rs(Instruction_EX[25:21]),
+			.ID_EX_Reg_Rt(Instruction_EX[20:16]),
 			.MEM_WB_RegWrite(RegWrite_WB),
-			.MEM_WB_Reg_Rd(Instruction_Rd_WB[4:0]));
+			.MEM_WB_Reg_Rd(Instruction_WB[15:11]),
+			.MEM_WB_Reg_Rt(Instruction_WB[20:16]));
 						  
    // EX_Forward_A_MUX
 	EX_Forward_A EX_Forward_A(
@@ -353,7 +363,7 @@ module MIPS32(
 
    EX_MEM_Pipeline_Stage EX_MEM_Pipeline_Stage(
 					       // Outputs
-							 .Instruction_Rd_MEM (Instruction_Rd_MEM),
+							 .Instruction_MEM (Instruction_MEM),
 					       .RegWrite_MEM	(RegWrite_MEM),
 					       .MemtoReg_MEM	(MemtoReg_MEM),
 					       .Branch_MEM	(Branch_MEM),
@@ -380,6 +390,14 @@ module MIPS32(
    
 
    // MEM_Branch_AND
+	MEM_to_MEM_Forward MEM_to_MEM_Forward(
+				// Outputs
+				.Write_Data_MUX_MEM(Write_Data_MUX_MEM[31:0]),
+				// Inputs
+				.Write_Data_MEM(Write_Data_MEM[31:0]),
+				.Read_Data_WB(Read_Data_WB[31:0]),
+				.Forward_Mem_to_Mem(Forward_Mem_to_Mem));
+	
    MEM_Branch_AND MEM_Branch_AND(
 				 // Outputs
 				 .PCSrc_MEM		(PCSrc_MEM),
@@ -394,7 +412,7 @@ module MIPS32(
 				   .Read_Data_MEM	(Read_Data_MEM[31:0]),
 				   // Inputs
 				   .ALU_Result_MEM	(ALU_Result_MEM[31:0]),
-				   .Write_Data_MEM	(Write_Data_MEM),
+				   .Write_Data_MEM	(Write_Data_MUX_MEM[31:0]),
 				   .MemRead_MEM		(MemRead_MEM),
 				   .MemWrite_MEM	(MemWrite_MEM),
 				   .Clk			(Clk));
@@ -404,14 +422,14 @@ module MIPS32(
    // MEM_WB_Pipeline_Stage
    MEM_WB_Pipeline_Stage MEM_WB_Pipeline_Stage(
 					       // Outputs
-							 .Instruction_Rd_WB (Instruction_Rd_WB[4:0]),
+							 .Instruction_WB (Instruction_WB[31:0]),
 					       .RegWrite_WB	(RegWrite_WB),
 					       .MemtoReg_WB	(MemtoReg_WB),
 					       .Read_Data_WB	(Read_Data_WB),
 					       .ALU_Result_WB	(ALU_Result_WB[31:0]),
 					       .Write_Register_WB(Write_Register_WB[4:0]),
 					       // Inputs
-							 .Instruction_Rd_MEM (Instruction_Rd_MEM[4:0]),
+							 .Instruction_MEM (Instruction_MEM[31:0]),
 					       .Clk		(Clk),
 					       .RegWrite_MEM	(RegWrite_MEM),
 					       .MemtoReg_MEM	(MemtoReg_MEM),

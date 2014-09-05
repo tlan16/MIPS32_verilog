@@ -33,7 +33,7 @@ module EX_MEM_Pipeline_Stage(
 			     output reg [31:0] Write_Data_MEM,
 			     output reg [4:0]  Write_Register_MEM,
 				  
-				  output reg [4:0]		Instruction_Rd_MEM,
+				  output reg [31:0]		Instruction_MEM,
 				  
 			     input 	   Clk
 			     );
@@ -54,7 +54,7 @@ module EX_MEM_Pipeline_Stage(
 		Write_Data_MEM		<= Read_Data_2_EX;
 		Write_Register_MEM<= Write_Register_EX;
 		
-		Instruction_Rd_MEM <= Instruction_EX[15:11];
+		Instruction_MEM <= Instruction_EX[31:0];
 	end //always
 
 endmodule // EX_MEM_Pipeline_Stage

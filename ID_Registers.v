@@ -32,6 +32,7 @@ module ID_Registers(
 		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
+		
 	end //always
 
 endmodule // ID_Registers
