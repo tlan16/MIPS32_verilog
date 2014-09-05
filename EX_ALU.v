@@ -6,7 +6,7 @@ module EX_ALU(
 	      input [31:0]  ALU_Data_2_EX,
 	      input [3:0]   ALU_Control_EX,
 	      output reg [31:0] ALU_Result_EX,
-	      output wire Zero_EX
+	      output reg	  Zero_EX
 	      
 	      );
 
@@ -15,6 +15,12 @@ module EX_ALU(
 					ALUand		=	4'b000,//    Figure 3.2 in Lab Manual      
 					ALUor			=	4'b001,
 					ALUslt		=	4'b111;//
+					
+	initial
+		begin
+			ALU_Result_EX <= 32'd0;
+			Zero_EX		  <= 0;
+		end
 	
 	// Handles negative inputs
 	wire sign_mismatch;
@@ -29,9 +35,9 @@ module EX_ALU(
 			ALUslt:			ALU_Result_EX = Read_Data_1_EX < ALU_Data_2_EX ? (1 - sign_mismatch) : (0 + sign_mismatch);		
 			default:			ALU_Result_EX = 32'bX;	// control = ALUx | *
 		endcase
+		
+		Zero_EX = (ALU_Result_EX==0);
 	end //always
-	
-	assign Zero_EX =  ALU_Result_EX==0;
 	
 endmodule // EX_ALU
 

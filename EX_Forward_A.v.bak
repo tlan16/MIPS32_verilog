@@ -1,4 +1,4 @@
-module EX_Forward_Unit(
+module EX_Forward_A(
 						input 	   		EX_MEM_RegWrite,
 						input [31:0]	   EX_MEM_Reg_Rd,
 						input [31:0]		ID_EX_Reg_Rs,

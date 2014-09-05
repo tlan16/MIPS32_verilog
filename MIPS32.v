@@ -87,6 +87,8 @@ module MIPS32(
    // EX origin variables:
 		wire [1:0]		ForwardA_EX;
 		wire [1:0]		ForwardB_EX;
+		wire [31:0]	Read_Data_1_Mux_EX;
+		wire [31:0]	Read_Data_2_Mux_EX;
 		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire				ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		// probed wire [3:0]			ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
@@ -271,7 +273,26 @@ module MIPS32(
 			.MEM_WB_RegWrite(RegWrite_WB),
 			.MEM_WB_Reg_Rd(Instruction_Rd_WB[4:0]));
 						  
-   
+   // EX_Forward_A_MUX
+	EX_Forward_A EX_Forward_A(
+			// Outputs
+			.Read_Data_1_Mux_EX(Read_Data_1_Mux_EX[31:0]),
+			// Inputs
+			.Read_Data_1_EX(Read_Data_1_EX[31:0]),
+			.Write_Data_WB(Write_Data_WB[31:0]),
+			.ALU_Result_MEM(ALU_Result_MEM[31:0]),
+			.ForwardA_EX(ForwardA_EX[1:0]));
+			
+   // EX_Forward_B_MUX
+	EX_Forward_B EX_Forward_B(
+			// Outputs
+			.Read_Data_2_Mux_EX(Read_Data_2_Mux_EX[31:0]),
+			// Inputs
+			.Read_Data_2_EX(Read_Data_2_EX[31:0]),
+			.Write_Data_WB(Write_Data_WB[31:0]),
+			.ALU_Result_MEM(ALU_Result_MEM[31:0]),
+			.ForwardB_EX(ForwardB_EX[1:0]));
+			
    // EX_Shift_Left_2
    EX_Shift_Left_2 EX_Shift_Left_2(
 			// Outputs
@@ -294,7 +315,7 @@ module MIPS32(
 			 // Outputs
 			 .ALU_Data_2_EX		(ALU_Data_2_EX[31:0]),
 			 // Inputs
-			 .Read_Data_2_EX	(Read_Data_2_EX[31:0]),
+			 .Read_Data_2_EX	(Read_Data_2_Mux_EX[31:0]),
 			 .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]),
 			 .ALUSrc_EX		(ALUSrc_EX));
 
@@ -304,7 +325,7 @@ module MIPS32(
 		 .ALU_Result_EX		(ALU_Result_EX[31:0]),
 		 .Zero_EX		(Zero_EX),
 		 // Inputs
-		 .Read_Data_1_EX	(Read_Data_1_EX[31:0]),
+		 .Read_Data_1_EX	(Read_Data_1_Mux_EX[31:0]),
 		 .ALU_Data_2_EX		(ALU_Data_2_EX[31:0]),
 		 .ALU_Control_EX	(ALU_Control_EX[3:0]));
    
