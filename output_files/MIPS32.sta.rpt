@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MIPS32
-Sat Sep 06 00:06:58 2014
+Sat Sep 06 19:14:14 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -85,12 +85,12 @@ applicable agreement for further details.
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 3           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ; < 0.1%      ;
-;     5-8 processors         ;   0.0%      ;
+;     2-3 processors         ; < 0.1%      ;
+;     4-8 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -99,7 +99,7 @@ applicable agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; MIPS32.sdc    ; OK     ; Sat Sep 06 00:06:57 2014 ;
+; MIPS32.sdc    ; OK     ; Sat Sep 06 19:14:14 2014 ;
 +---------------+--------+--------------------------+
 
 
@@ -3852,7 +3852,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Sat Sep 06 00:06:55 2014
+    Info: Processing started: Sat Sep 06 19:14:11 2014
 Info: Command: quartus_sta MIPS32 -c MIPS32
 Info: qsta_default_script.tcl version: #4
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -3899,7 +3899,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 404 megabytes
-    Info: Processing ended: Sat Sep 06 00:06:58 2014
+    Info: Processing ended: Sat Sep 06 19:14:14 2014
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

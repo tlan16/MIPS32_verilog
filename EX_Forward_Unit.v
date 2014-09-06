@@ -4,6 +4,10 @@ module EX_Forward_Unit(
 						input					MemWrite_MEM,
 						input					MemtoReg_WB,
 						
+						input	[4:0]			IF_ID_Reg_Rs,
+						input	[4:0]			IF_ID_Reg_Rt,
+						
+						input					ID_EX_MemRead,
 						input [4:0]			ID_EX_Reg_Rs,
 						input [4:0]			ID_EX_Reg_Rt,
 						
@@ -33,6 +37,7 @@ module EX_Forward_Unit(
 	assign isSW_MEM = (MemWrite_MEM==1);
 	
    always@(*) begin
+	//// DATA HAZARD
 		if( (EX_MEM_RegWrite == 1) && (EX_MEM_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd == ID_EX_Reg_Rs) )
 			begin
 				ForwardA_EX <= 2'b10;
@@ -64,7 +69,7 @@ module EX_Forward_Unit(
 						ForwardB_EX <= 2'b00;
 					end
 			end
-	/////
+	//// MEM OT MEM COPY
 	if( (EX_MEM_Reg_Rt == MEM_WB_Reg_Rt) && (isLW_WB == 1) && (isSW_MEM == 1) )
 		begin
 			Forward_Mem_to_Mem <= 1;
@@ -73,7 +78,11 @@ module EX_Forward_Unit(
 		begin
 			Forward_Mem_to_Mem <= 0;
 		end
-	
+	//// LOAD-USE DATA HAZARD
+	if( (ID_EX_MemRead == 1) && ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) || (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ) )
+		begin
+			// TODO: stall
+		end
 	
 	end //always
 

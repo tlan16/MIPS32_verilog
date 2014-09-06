@@ -274,6 +274,9 @@ module MIPS32(
 			// Inputs
 			.MemWrite_MEM(MemWrite_MEM),
 			.MemtoReg_WB(MemtoReg_WB),
+			.IF_ID_Reg_Rs(Instruction_ID[25:21]),
+			.IF_ID_Reg_Rt(Instruction_ID[20:16]),
+			.ID_EX_MemRead(MemRead_EX),
 			.EX_MEM_RegWrite(RegWrite_MEM),
 			.EX_MEM_Reg_Rd(Instruction_MEM[15:11]),
 			.EX_MEM_Reg_Rt(Instruction_MEM[20:16]),
