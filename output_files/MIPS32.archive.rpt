@@ -1,5 +1,5 @@
 Archive Project report for MIPS32
-Sat Sep 06 00:08:06 2014
+Sun Sep 07 01:09:24 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Sat Sep 06 00:08:06 2014 ;
+; Archive Project Status ; Successful - Sun Sep 07 01:09:24 2014 ;
 ; Revision Name          ; MIPS32                                ;
 ; Top-level Entity Name  ; MIPS32                                ;
 ; Family                 ; Cyclone II                            ;
@@ -56,8 +56,8 @@ Info: ----------------------------------------------------------
 Info: Generated report 'MIPS32.archive.rpt'
 Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 294 megabytes
-    Info: Processing ended: Sat Sep 06 00:08:06 2014
+    Info: Peak virtual memory: 302 megabytes
+    Info: Processing ended: Sun Sep 07 01:09:24 2014
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

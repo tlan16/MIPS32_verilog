@@ -24,7 +24,8 @@ module EX_Forward_Unit(
 						output reg [1:0]		ForwardB_EX,
 						output reg 				Forward_Mem_to_Mem,
 						output reg				PC_Enable,
-						output reg				IF_ID_Pipeline_Enable
+						output reg				IF_ID_Pipeline_Enable,
+						output reg				ID_Control_NOP
 			     );
    
 	initial 
@@ -34,6 +35,7 @@ module EX_Forward_Unit(
 		Forward_Mem_to_Mem <= 0;
 		PC_Enable 	<=1;
 		IF_ID_Pipeline_Enable <= 1;
+		ID_Control_NOP <= 0;
 	end
 	
 	wire isLW_WB;
@@ -103,11 +105,13 @@ module EX_Forward_Unit(
 		begin
 			PC_Enable <= 0;
 			IF_ID_Pipeline_Enable <= 0;
+			ID_Control_NOP <= 1;
 		end
 	else
 		begin
 			PC_Enable <= 1;
 			IF_ID_Pipeline_Enable <= 1;
+			ID_Control_NOP <= 0;
 		end
 	
 	end //always

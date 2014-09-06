@@ -1,7 +1,7 @@
 <sld_project_info>
   <file_info>
-    <file checksum="0x00710760" device="EP2C70F896I8" path="MIPS32.sof" usercode="0x00710760"/>
-    <file checksum="0x185DB18F" device="EPCS16" path="MIPS32.pof" usercode="0x00000000"/>
+    <file checksum="0x0071301A" device="EP2C70F896I8" path="MIPS32.sof" usercode="0x0071301A"/>
+    <file checksum="0x18666F7B" device="EPCS16" path="MIPS32.pof" usercode="0x00000000"/>
   </file_info>
   <hub_info ir_width="0" node_count="0"/>
   <node_info/>

@@ -25,6 +25,7 @@ module MIPS32(
 	  output [31:0]   PC_Plus_4_IF,
 	  output [31:0]   Instruction_IF,
 	  output [31:0] 	Next_PC_IF,
+	  output				PC_Enable,
 	  
 	  output [31:0]   Instruction_ID,
 	  output [4:0]		Read_Address_1_ID,
@@ -40,6 +41,7 @@ module MIPS32(
 	  output				RegWrite_ID,
 	  output				MemtoReg_ID,
 	  output [31:0] 	Sign_Extend_Instruction_ID,
+	  output				ID_Control_NOP,
 	  
 	  output [1:0]		ForwardA_EX,
 	  output [1:0]		ForwardB_EX,
@@ -69,10 +71,11 @@ module MIPS32(
 		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
 		// probed wire [31:0] 	PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
 		wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
-		wire					PC_Enable;
+		// probed wire				PC_Enable;
 		wire					IF_ID_Pipeline_Enable;
    
    // ID Origin Variables:
+		// probed wire				ID_Control_NOP;
 		// probed wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
 		// probed wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
 		// probed wire				Branch_ID;		// From ID_Control of ID_Control.v
@@ -234,7 +237,8 @@ module MIPS32(
 			 .ALUOp_ID		(ALUOp_ID[1:0]),
 			 .ALUSrc_ID		(ALUSrc_ID),
 			 // Inputs
-			 .Instruction_ID	(Instruction_ID[31:26]));
+			 .Instruction_ID	(Instruction_ID[31:26]),
+			 .ID_Control_NOP  (ID_Control_NOP));
 
    // ID_EX_Pipeline_Stage
 
@@ -277,6 +281,7 @@ module MIPS32(
 			.Forward_Mem_to_Mem(Forward_Mem_to_Mem),
 			.PC_Enable(PC_Enable),
 			.IF_ID_Pipeline_Enable(IF_ID_Pipeline_Enable),
+			.ID_Control_NOP(ID_Control_NOP),
 			// Inputs
 			.MemWrite_MEM(MemWrite_MEM),
 			.MemtoReg_WB(MemtoReg_WB),

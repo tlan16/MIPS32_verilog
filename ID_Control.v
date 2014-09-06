@@ -1,8 +1,11 @@
 // Comments and desciption of modules have been deliberately ommitted.
 // It is up to the student to document and describe the system.
 
+// condition ? if true : if false
+
 module ID_Control(
 		  input [5:0] Instruction_ID,
+		  input		  ID_Control_NOP,
 		  output reg       RegWrite_ID,
 		  output reg       MemtoReg_ID,
 		  
@@ -14,15 +17,15 @@ module ID_Control(
 		  output reg [1:0] ALUOp_ID,
 		  output reg       ALUSrc_ID
 		  );
-
-	wire [5:0]opcode;
-	assign opcode = Instruction_ID;
 	
 	parameter RTYPE	= 6'b000000; 
 	parameter LW		= 6'b100011;
 	parameter SW		= 6'b101011;
 	parameter BEQ		= 6'b000100;
 	parameter NOP		= 6'b100000;	
+	
+	wire [5:0]opcode;
+	assign opcode = ID_Control_NOP ? 6'b100000 : Instruction_ID;
 	
 	initial 
 	 begin

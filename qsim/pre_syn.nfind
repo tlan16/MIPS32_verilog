@@ -214,7 +214,6 @@ Branch_EX,comb,user_entered
 Branch_ID,output,user_entered
 Branch_MEM,comb,user_entered
 Clk,input,user_entered
-Clk_Fast,input,user_entered
 ForwardA_EX,bus,user_entered
 ForwardA_EX[0],output,user_entered
 ForwardA_EX[1],output,user_entered
@@ -222,6 +221,7 @@ ForwardB_EX,bus,user_entered
 ForwardB_EX[0],output,user_entered
 ForwardB_EX[1],output,user_entered
 Forward_Mem_to_Mem,output,user_entered
+ID_Control_NOP,output,user_entered
 IF_ID_Pipeline_Enable,comb,user_entered
 Instruction_EX,bus,user_entered
 Instruction_EX[0],comb,user_entered
@@ -443,7 +443,7 @@ Next_PC_IF[29],output,user_entered
 Next_PC_IF[30],output,user_entered
 Next_PC_IF[31],output,user_entered
 PCSrc_MEM,output,user_entered
-PC_Enable,comb,user_entered
+PC_Enable,output,user_entered
 PC_IF,bus,user_entered
 PC_IF[0],comb,user_entered
 PC_IF[1],comb,user_entered
@@ -1712,6 +1712,7 @@ EX_Forward_Unit:EX_Forward_Unit|ForwardB_EX,bus,user_entered
 EX_Forward_Unit:EX_Forward_Unit|ForwardB_EX[0],comb,user_entered
 EX_Forward_Unit:EX_Forward_Unit|ForwardB_EX[1],comb,user_entered
 EX_Forward_Unit:EX_Forward_Unit|Forward_Mem_to_Mem,comb,user_entered
+EX_Forward_Unit:EX_Forward_Unit|ID_Control_NOP,comb,user_entered
 EX_Forward_Unit:EX_Forward_Unit|ID_EX_MemRead,comb,user_entered
 EX_Forward_Unit:EX_Forward_Unit|ID_EX_RegWrite,comb,user_entered
 EX_Forward_Unit:EX_Forward_Unit|ID_EX_Reg_Rs,bus,user_entered
@@ -2356,6 +2357,7 @@ ID_Control:ID_Control|ALUOp_ID[1],comb,user_entered
 ID_Control:ID_Control|ALUSrc_ID,comb,user_entered
 ID_Control:ID_Control|Branch_ID,comb,user_entered
 ID_Control:ID_Control|Decoder0,comb,user_entered
+ID_Control:ID_Control|ID_Control_NOP,comb,user_entered
 ID_Control:ID_Control|Instruction_ID,bus,user_entered
 ID_Control:ID_Control|Instruction_ID[0],comb,user_entered
 ID_Control:ID_Control|Instruction_ID[1],comb,user_entered
@@ -2369,6 +2371,12 @@ ID_Control:ID_Control|MemtoReg_ID,comb,user_entered
 ID_Control:ID_Control|RegDst_ID,comb,user_entered
 ID_Control:ID_Control|RegWrite_ID,comb,user_entered
 ID_Control:ID_Control|opcode,bus,user_entered
+ID_Control:ID_Control|opcode[0],comb,user_entered
+ID_Control:ID_Control|opcode[1],comb,user_entered
+ID_Control:ID_Control|opcode[2],comb,user_entered
+ID_Control:ID_Control|opcode[3],comb,user_entered
+ID_Control:ID_Control|opcode[4],comb,user_entered
+ID_Control:ID_Control|opcode[5],comb,user_entered
 ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX,bus,user_entered
 ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0],comb,user_entered
 ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]~reg0,reg,compiler_generated

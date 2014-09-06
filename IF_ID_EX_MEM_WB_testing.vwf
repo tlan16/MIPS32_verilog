@@ -6132,6 +6132,16 @@ SIGNAL("Write_Data_MUX_MEM[0]")
 	PARENT = "Write_Data_MUX_MEM";
 }
 
+SIGNAL("PC_Enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 GROUP("Ex_Control")
 {
 	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
@@ -6145,6 +6155,16 @@ GROUP("Mem_Control")
 GROUP("WB_Control")
 {
 	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
+}
+
+SIGNAL("ID_Control_NOP")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
 }
 
 TRANSITION_LIST("Clk")
@@ -11410,6 +11430,24 @@ TRANSITION_LIST("Write_Data_MUX_MEM[1]")
 }
 
 TRANSITION_LIST("Write_Data_MUX_MEM[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("PC_Enable")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ID_Control_NOP")
 {
 	NODE
 	{
@@ -17543,6 +17581,24 @@ DISPLAY_LINE
 	TREE_INDEX = 612;
 	TREE_LEVEL = 1;
 	PARENT = 580;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PC_Enable";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 613;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ID_Control_NOP";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 614;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

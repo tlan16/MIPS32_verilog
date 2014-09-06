@@ -96,6 +96,7 @@ Next_PC_IF[28] <= Next_PC_IF[28].DB_MAX_OUTPUT_PORT_TYPE
 Next_PC_IF[29] <= Next_PC_IF[29].DB_MAX_OUTPUT_PORT_TYPE
 Next_PC_IF[30] <= Next_PC_IF[30].DB_MAX_OUTPUT_PORT_TYPE
 Next_PC_IF[31] <= Next_PC_IF[31].DB_MAX_OUTPUT_PORT_TYPE
+PC_Enable <= PC_Enable.DB_MAX_OUTPUT_PORT_TYPE
 Instruction_ID[0] <= Instruction_ID[0].DB_MAX_OUTPUT_PORT_TYPE
 Instruction_ID[1] <= Instruction_ID[1].DB_MAX_OUTPUT_PORT_TYPE
 Instruction_ID[2] <= Instruction_ID[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -243,6 +244,7 @@ Sign_Extend_Instruction_ID[28] <= Sign_Extend_Instruction_ID[28].DB_MAX_OUTPUT_P
 Sign_Extend_Instruction_ID[29] <= Sign_Extend_Instruction_ID[29].DB_MAX_OUTPUT_PORT_TYPE
 Sign_Extend_Instruction_ID[30] <= Sign_Extend_Instruction_ID[30].DB_MAX_OUTPUT_PORT_TYPE
 Sign_Extend_Instruction_ID[31] <= Sign_Extend_Instruction_ID[31].DB_MAX_OUTPUT_PORT_TYPE
+ID_Control_NOP <= ID_Control_NOP.DB_MAX_OUTPUT_PORT_TYPE
 ForwardA_EX[0] <= ForwardA_EX[0].DB_MAX_OUTPUT_PORT_TYPE
 ForwardA_EX[1] <= ForwardA_EX[1].DB_MAX_OUTPUT_PORT_TYPE
 ForwardB_EX[0] <= ForwardB_EX[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -1529,12 +1531,18 @@ Sign_Extend_Instruction_ID[31] <= Instruction_ID[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS32|ID_Control:ID_Control
-Instruction_ID[0] => Decoder0.IN5
-Instruction_ID[1] => Decoder0.IN4
-Instruction_ID[2] => Decoder0.IN3
-Instruction_ID[3] => Decoder0.IN2
-Instruction_ID[4] => Decoder0.IN1
-Instruction_ID[5] => Decoder0.IN0
+Instruction_ID[0] => opcode[0].DATAA
+Instruction_ID[1] => opcode[1].DATAA
+Instruction_ID[2] => opcode[2].DATAA
+Instruction_ID[3] => opcode[3].DATAA
+Instruction_ID[4] => opcode[4].DATAA
+Instruction_ID[5] => opcode[5].DATAA
+ID_Control_NOP => opcode[5].OUTPUTSELECT
+ID_Control_NOP => opcode[4].OUTPUTSELECT
+ID_Control_NOP => opcode[3].OUTPUTSELECT
+ID_Control_NOP => opcode[2].OUTPUTSELECT
+ID_Control_NOP => opcode[1].OUTPUTSELECT
+ID_Control_NOP => opcode[0].OUTPUTSELECT
 RegWrite_ID <= RegWrite_ID.DB_MAX_OUTPUT_PORT_TYPE
 MemtoReg_ID <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 Branch_ID <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
@@ -2181,6 +2189,7 @@ ForwardB_EX[1] <= always0.DB_MAX_OUTPUT_PORT_TYPE
 Forward_Mem_to_Mem <= always0.DB_MAX_OUTPUT_PORT_TYPE
 PC_Enable <= always0.DB_MAX_OUTPUT_PORT_TYPE
 IF_ID_Pipeline_Enable <= always0.DB_MAX_OUTPUT_PORT_TYPE
+ID_Control_NOP <= always0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS32|EX_Forward_A:EX_Forward_A
