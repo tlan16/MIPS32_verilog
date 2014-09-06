@@ -20,7 +20,9 @@ module EX_Forward_Unit(
 						
 						output reg [1:0]		ForwardA_EX,
 						output reg [1:0]		ForwardB_EX,
-						output reg 				Forward_Mem_to_Mem
+						output reg 				Forward_Mem_to_Mem,
+						output reg				PC_Enable,
+						output reg				IF_ID_Pipeline_Enable
 			     );
    
 	initial 
@@ -28,6 +30,8 @@ module EX_Forward_Unit(
 		ForwardA_EX <= 2'd0;
 		ForwardB_EX <= 2'd0;
 		Forward_Mem_to_Mem <= 0;
+		PC_Enable 	<=1;
+		IF_ID_Pipeline_Enable <= 1;
 	end
 	
 	wire isLW_WB;
@@ -81,7 +85,13 @@ module EX_Forward_Unit(
 	//// LOAD-USE DATA HAZARD
 	if( (ID_EX_MemRead == 1) && ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) || (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ) )
 		begin
-			// TODO: stall
+			PC_Enable <= 0;
+			IF_ID_Pipeline_Enable <= 0;
+		end
+	else
+		begin
+			PC_Enable <= 1;
+			IF_ID_Pipeline_Enable <= 1;
 		end
 	
 	end //always

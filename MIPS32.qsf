@@ -99,5 +99,5 @@ set_global_assignment -name VERILOG_FILE EX_Forward_B.v
 set_global_assignment -name SDC_FILE MIPS32.sdc
 set_global_assignment -name VERILOG_FILE MEM_to_MEM_Forward.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"

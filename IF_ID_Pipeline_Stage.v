@@ -3,7 +3,8 @@
 
 module IF_ID_Pipeline_Stage(
 			     input [31:0]  Instruction_IF,
-			     input [31:0]	   PC_Plus_4_IF,
+			     input [31:0]	 PC_Plus_4_IF,
+				  input			 IF_ID_Pipeline_Enable,
 
 			     output reg [31:0] Instruction_ID,
 			     output reg [31:0] PC_Plus_4_ID,
@@ -16,8 +17,11 @@ module IF_ID_Pipeline_Stage(
    end
 	
    always@(posedge Clk) begin
-		Instruction_ID<=Instruction_IF;
-		PC_Plus_4_ID<=PC_Plus_4_IF;
+		if(IF_ID_Pipeline_Enable)
+			begin
+				Instruction_ID<=Instruction_IF;
+				PC_Plus_4_ID<=PC_Plus_4_IF;
+			end
 	end
 
 endmodule // IF_ID_Pipeline_Stage
