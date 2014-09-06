@@ -8,10 +8,12 @@ module EX_Forward_Unit(
 						input	[4:0]			IF_ID_Reg_Rt,
 						
 						input					ID_EX_MemRead,
+						input					ID_EX_RegWrite,
 						input [4:0]			ID_EX_Reg_Rs,
 						input [4:0]			ID_EX_Reg_Rt,
 						
 						input [4:0]	   	EX_MEM_Reg_Rd,
+						input [4:0]			EX_MEM_Reg_Rs,
 						input [4:0]	   	EX_MEM_Reg_Rt,
 						
 						input					MEM_WB_RegWrite,
@@ -54,7 +56,14 @@ module EX_Forward_Unit(
 					end
 				else
 					begin
-						ForwardA_EX <= 2'b00;
+						if( (isLW_WB == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rs) )
+							begin
+								ForwardA_EX <= 2'b01;
+							end
+						else
+							begin
+								ForwardA_EX <= 2'b00;
+							end
 					end
 			end
 		
@@ -70,7 +79,14 @@ module EX_Forward_Unit(
 					end
 				else
 					begin
-						ForwardB_EX <= 2'b00;
+						if( (isLW_WB == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rt) )
+							begin
+								ForwardB_EX <= 2'b01;
+							end
+						else
+							begin
+								ForwardB_EX <= 2'b00;
+							end
 					end
 			end
 	//// MEM OT MEM COPY

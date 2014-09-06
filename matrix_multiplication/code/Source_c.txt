@@ -36,7 +36,7 @@ int main()
   q=2;
  
   if ( n != p )
-    printf("Matrices with entered orders can't be multiplied with each other.\n");
+    //printf("Matrices with entered orders can't be multiplied with each other.\n");
   else
   {
 	/*

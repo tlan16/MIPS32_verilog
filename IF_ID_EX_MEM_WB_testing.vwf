@@ -5802,21 +5802,6 @@ SIGNAL("Forward_Mem_to_Mem")
 	PARENT = "";
 }
 
-GROUP("Ex_Control")
-{
-	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
-}
-
-GROUP("Mem_Control")
-{
-	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
-}
-
-GROUP("WB_Control")
-{
-	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
-}
-
 SIGNAL("Write_Data_MUX_MEM")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -6147,6 +6132,21 @@ SIGNAL("Write_Data_MUX_MEM[0]")
 	PARENT = "Write_Data_MUX_MEM";
 }
 
+GROUP("Ex_Control")
+{
+	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
+}
+
+GROUP("Mem_Control")
+{
+	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
+}
+
+GROUP("WB_Control")
+{
+	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
+}
+
 TRANSITION_LIST("Clk")
 {
 	NODE
@@ -6154,10 +6154,11 @@ TRANSITION_LIST("Clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 20;
-			LEVEL 0 FOR 25.0;
-			LEVEL 1 FOR 25.0;
+			REPEAT = 15;
+			LEVEL 0 FOR 33.333;
+			LEVEL 1 FOR 33.333;
 		}
+		LEVEL 0 FOR 0.01;
 	}
 }
 
