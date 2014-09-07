@@ -1,13 +1,12 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// condition ? if true : if false
 
 module ID_Registers(
 		    input [4:0]   Read_Address_1_ID,
 		    input [4:0]   Read_Address_2_ID, 
 		    input [4:0]   Write_Register_WB,
 		    input [31:0]  Write_Data_WB,
-		    output reg [31:0] Read_Data_1_ID,
-		    output reg [31:0] Read_Data_2_ID, 
+		    output  [31:0] Read_Data_1_ID,
+		    output  [31:0] Read_Data_2_ID, 
 		    input 	  Clk,
 		    input 	  RegWrite_WB,
 			 input [1:0]	ID_Register_Write_to_Read
@@ -17,10 +16,14 @@ module ID_Registers(
 	
 	initial begin
 		$readmemh("register_file.list", Register_File);
-		Read_Data_1_ID <= 32'd0;
-		Read_Data_2_ID <= 32'd0;
+		//Read_Data_1_ID <= 32'd0;
+		//Read_Data_2_ID <= 32'd0;
 	end
 	
+	assign Read_Data_1_ID = (Read_Address_1_ID==5'd0) ? 32'd0 : (ID_Register_Write_to_Read[0] ? Write_Data_WB : Register_File[Read_Address_1_ID]);
+	assign Read_Data_2_ID = (Read_Address_2_ID==5'd0) ? 32'd0 : (ID_Register_Write_to_Read[1] ? Write_Data_WB : Register_File[Read_Address_2_ID]);
+	
+/*
 	always@(Read_Address_1_ID or Register_File[Read_Address_1_ID] or ID_Register_Write_to_Read) begin
 		if(Read_Address_1_ID==5'd0)
 			begin
@@ -50,7 +53,7 @@ module ID_Registers(
 				endcase
 			end
 	end
-	
+*/
 	always@(posedge Clk) begin
 		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;

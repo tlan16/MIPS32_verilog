@@ -47,6 +47,8 @@ module MIPS32(
 	  output [1:0]		ForwardA_EX,
 	  output [1:0]		ForwardB_EX,
 	  output				Forward_Mem_to_Mem,
+	  output				ForwardC,
+	  output				ForwardD,
 	  output [31:0]	ALU_Data_2_EX,
 	  output [3:0]		ALU_Control_EX,
 	  output [31:0]	ALU_Result_EX,
@@ -98,6 +100,8 @@ module MIPS32(
 		// probed wire [1:0]		ForwardA_EX;
 		// probed wire [1:0]		ForwardB_EX;
 		// probed wire				Forward_Mem_to_Mem;
+		// probed wire				ForwardC;
+		// probed wire				ForwardD;
 		wire [31:0]	Read_Data_1_Mux_EX;
 		wire [31:0]	Read_Data_2_Mux_EX;
 		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -285,22 +289,25 @@ module MIPS32(
 			.IF_ID_Pipeline_Enable(IF_ID_Pipeline_Enable),
 			.ID_Control_NOP(ID_Control_NOP),
 			.ID_Register_Write_to_Read(ID_Register_Write_to_Read[1:0]),
+			.ForwardC(ForwardC),
+			.ForwardD(ForwardD),
 			// Inputs
-			.MemWrite_MEM(MemWrite_MEM),
-			.MemtoReg_WB(MemtoReg_WB),
 			.IF_ID_Reg_Rs(Instruction_ID[25:21]),
 			.IF_ID_Reg_Rt(Instruction_ID[20:16]),
+			.ID_Branch(Branch_ID),
 			.ID_EX_MemRead(MemRead_EX),
-			.EX_MEM_RegWrite(RegWrite_MEM),
-			.EX_MEM_Reg_Rd(Instruction_MEM[15:11]),
-			.EX_MEM_Reg_Rs(Instruction_MEM[25:21]),
-			.EX_MEM_Reg_Rt(Instruction_MEM[20:16]),
 			.ID_EX_RegWrite(RegWrite_EX),
 			.ID_EX_Reg_Rs(Instruction_EX[25:21]),
 			.ID_EX_Reg_Rt(Instruction_EX[20:16]),
+			.EX_MEM_RegWrite(RegWrite_MEM),
+			.EX_MEM_MemWrite(MemWrite_MEM),
+			.EX_MEM_Reg_Rs(Instruction_MEM[25:21]),
+			.EX_MEM_Reg_Rt(Instruction_MEM[20:16]),
+			.EX_MEM_Reg_Rd(Instruction_MEM[15:11]),
 			.MEM_WB_RegWrite(RegWrite_WB),
-			.MEM_WB_Reg_Rd(Instruction_WB[15:11]),
-			.MEM_WB_Reg_Rt(Instruction_WB[20:16]));
+			.MEM_WB_MemtoReg(MemtoReg_WB),
+			.MEM_WB_Reg_Rt(Instruction_WB[20:16]),
+			.MEM_WB_Reg_Rd(Instruction_WB[15:11]));
 						  
    // EX_Forward_A_MUX
 	EX_Forward_A EX_Forward_A(
@@ -311,7 +318,16 @@ module MIPS32(
 			.Write_Data_WB(Write_Data_WB[31:0]),
 			.ALU_Result_MEM(ALU_Result_MEM[31:0]),
 			.ForwardA_EX(ForwardA_EX[1:0]));
-			
+   // EX_Forward_B_MUX using dummy of A
+	EX_Forward_A EX_Forward_B(
+			// Outputs
+			.Read_Data_1_Mux_EX(Read_Data_2_Mux_EX[31:0]),
+			// Inputs
+			.Read_Data_1_EX(Read_Data_2_EX[31:0]),
+			.Write_Data_WB(Write_Data_WB[31:0]),
+			.ALU_Result_MEM(ALU_Result_MEM[31:0]),
+			.ForwardA_EX(ForwardB_EX[1:0]));
+/*	
    // EX_Forward_B_MUX
 	EX_Forward_B EX_Forward_B(
 			// Outputs
@@ -321,7 +337,7 @@ module MIPS32(
 			.Write_Data_WB(Write_Data_WB[31:0]),
 			.ALU_Result_MEM(ALU_Result_MEM[31:0]),
 			.ForwardB_EX(ForwardB_EX[1:0]));
-			
+*/
    // EX_Shift_Left_2
    EX_Shift_Left_2 EX_Shift_Left_2(
 			// Outputs

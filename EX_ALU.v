@@ -6,7 +6,7 @@ module EX_ALU(
 	      input [31:0]  ALU_Data_2_EX,
 	      input [3:0]   ALU_Control_EX,
 	      output reg [31:0] ALU_Result_EX,
-	      output reg	  Zero_EX
+	      output 	  Zero_EX
 	      
 	      );
 
@@ -19,7 +19,7 @@ module EX_ALU(
 	initial
 		begin
 			ALU_Result_EX <= 32'd0;
-			Zero_EX		  <= 0;
+			//Zero_EX		  <= 0;
 		end
 	
 	// Handles negative inputs
@@ -36,8 +36,10 @@ module EX_ALU(
 			default:			ALU_Result_EX <= 32'bX;	// control = ALUx | *
 		endcase
 		
-		Zero_EX <= (ALU_Result_EX==0);
+		//Zero_EX <= (ALU_Result_EX==0);
 	end //always
+	
+	assign Zero_EX = (ALU_Result_EX==0);
 	
 endmodule // EX_ALU
 

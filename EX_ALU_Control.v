@@ -36,7 +36,7 @@ module EX_ALU_Control(
 	end
 
 	always@* begin
-
+/*
 		if(ALUOp_EX == Rtype) begin
 			case(funct)
 				Radd:			ALU_Control_EX <= ALUadd;
@@ -61,8 +61,8 @@ module EX_ALU_Control(
 		end //else if
 		
 		else begin ALU_Control_EX <= ALU_Control_EX; end
+*/
 
-		/*
 		case(ALUOp_EX)
 			Rtype: begin
 				case(funct)
@@ -79,7 +79,7 @@ module EX_ALU_Control(
 			unknown: ALU_Control_EX	<= ALUx;
 			default: ALU_Control_EX <= ALU_Control_EX;
 		endcase
-		*/
+
 		
 	end //always
 			
