@@ -43,6 +43,7 @@ module MIPS32(
 	  output [31:0] 	Sign_Extend_Instruction_ID,
 	  output				ID_Control_NOP,
 	  output [1:0]		ID_Register_Write_to_Read,
+	  output				Comparetor_ID,
 	  
 	  output [1:0]		ForwardA_EX,
 	  output [1:0]		ForwardB_EX,
@@ -80,6 +81,7 @@ module MIPS32(
    // ID Origin Variables:
 		// probed wire				ID_Control_NOP;
 		// probed wire	[1:0]		ID_Register_Write_to_Read;
+		// probed wire				Comparetor_ID;
 		// probed wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
 		// probed wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
 		// probed wire				Branch_ID;		// From ID_Control of ID_Control.v
@@ -208,6 +210,16 @@ module MIPS32(
    // TODO by student: Assignment Partial Select from Instruction to Read_Address_1_ID and Read_Address_2_ID
 	assign Read_Address_1_ID = Instruction_ID[25:21];
 	assign Read_Address_2_ID = Instruction_ID[20:16];
+	
+	ID_Read_data_Mux ID_Read_data_Mux(
+					// Outputs
+					.Comparetor_ID(Comparetor_ID),
+					// Inputs
+					.Read_Data_1_ID(Read_Data_1_ID[31:0]),
+					.Read_Data_2_ID(Read_Data_2_ID[31:0]),
+					.Write_Data_WB(Write_Data_WB[31:0]),
+					.Forward_C_ID(ForwardC),
+					.Forward_D_ID(ForwardD));
 	
    ID_Registers ID_Registers (
 			      // Outputs

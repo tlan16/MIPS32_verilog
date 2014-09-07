@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS32
-Sun Sep 07 22:41:47 2014
+Sun Sep 07 22:49:26 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -62,16 +62,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 07 22:41:46 2014     ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 07 22:49:26 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 998                                       ;
-;     Total combinational functions  ; 699                                       ;
+; Total logic elements               ; 1,083                                     ;
+;     Total combinational functions  ; 784                                       ;
 ;     Dedicated logic registers      ; 569                                       ;
 ; Total registers                    ; 569                                       ;
-; Total pins                         ; 591                                       ;
+; Total pins                         ; 592                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 17,408                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
@@ -213,6 +213,7 @@ applicable agreement for further details.
 ; EX_Forward_Unit.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v                               ;         ;
 ; EX_Forward_A.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v                                  ;         ;
 ; MEM_to_MEM_Forward.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v                            ;         ;
+; ID_Read_data_Mux.v                              ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v                              ;         ;
 ; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altsyncram.tdf                                   ;         ;
 ; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/stratix_ram_block.inc                            ;         ;
 ; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_mux.inc                                      ;         ;
@@ -234,28 +235,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 998   ;
+; Estimated Total logic elements              ; 1,083 ;
 ;                                             ;       ;
-; Total combinational functions               ; 699   ;
+; Total combinational functions               ; 784   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 414   ;
-;     -- 3 input functions                    ; 213   ;
-;     -- <=2 input functions                  ; 72    ;
+;     -- 4 input functions                    ; 437   ;
+;     -- 3 input functions                    ; 277   ;
+;     -- <=2 input functions                  ; 70    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 548   ;
+;     -- normal mode                          ; 633   ;
 ;     -- arithmetic mode                      ; 151   ;
 ;                                             ;       ;
 ; Total registers                             ; 569   ;
 ;     -- Dedicated logic registers            ; 569   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 591   ;
+; I/O pins                                    ; 592   ;
 ; Total memory bits                           ; 17408 ;
 ; Maximum fan-out node                        ; Clk   ;
 ; Maximum fan-out                             ; 665   ;
-; Total fan-out                               ; 5500  ;
-; Average fan-out                             ; 2.81  ;
+; Total fan-out                               ; 5781  ;
+; Average fan-out                             ; 2.83  ;
 +---------------------------------------------+-------+
 
 
@@ -264,10 +265,10 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |MIPS32                                          ; 699 (1)           ; 569 (0)      ; 17408       ; 0            ; 0       ; 0         ; 591  ; 0            ; |MIPS32                                                                                             ;              ;
-;    |EX_ALU:EX_ALU|                               ; 177 (177)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                               ;              ;
+; |MIPS32                                          ; 784 (1)           ; 569 (0)      ; 17408       ; 0            ; 0       ; 0         ; 592  ; 0            ; |MIPS32                                                                                             ;              ;
+;    |EX_ALU:EX_ALU|                               ; 178 (178)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                               ;              ;
 ;    |EX_ALU_Control:EX_ALU_Control|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Control:EX_ALU_Control                                                               ;              ;
-;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 70 (70)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
+;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
 ;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                     ;              ;
 ;    |EX_Forward_A:EX_Forward_A|                   ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                   ;              ;
 ;    |EX_Forward_Unit:EX_Forward_Unit|             ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                             ;              ;
@@ -275,6 +276,7 @@ applicable agreement for further details.
 ;    |EX_PC_Add:EX_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                         ;              ;
 ;    |ID_Control:ID_Control|                       ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                       ;              ;
 ;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 0 (0)             ; 110 (110)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
+;    |ID_Read_data_Mux:ID_Read_data_Mux|           ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Read_data_Mux:ID_Read_data_Mux                                                           ;              ;
 ;    |ID_Registers:ID_Registers|                   ; 137 (137)         ; 145 (145)    ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                   ;              ;
 ;       |altsyncram:Register_File_rtl_0|           ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0                                    ;              ;
 ;          |altsyncram_ori1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_ori1:auto_generated     ;              ;
@@ -306,68 +308,70 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                 ;
-+-------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-; Register name                                                                       ; Reason for Removal                                                           ;
-+-------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[11]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[12]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[13]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[14]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[15..31]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Branch_EX                                 ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]            ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                                 ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]            ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                               ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX             ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                      ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0]   ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                           ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]        ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                           ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]        ;
-; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                        ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                     ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[11..16]                        ; Stuck at GND due to stuck port data_in                                       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[11..16]                        ; Stuck at GND due to stuck port data_in                                       ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4,6..10,15,20,24,25,29,30] ; Stuck at GND due to stuck port data_in                                       ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24,25]                     ; Stuck at GND due to stuck port data_in                                       ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4,6..10]       ; Stuck at GND due to stuck port data_in                                       ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]                        ; Stuck at GND due to stuck port data_in                                       ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX                               ; Stuck at GND due to stuck port data_in                                       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[8,10]                          ; Stuck at GND due to stuck port data_in                                       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[10]                            ; Stuck at GND due to stuck port data_in                                       ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]                        ; Stuck at GND due to stuck port data_in                                       ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15,20]                  ; Stuck at GND due to stuck port data_in                                       ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                            ; Stuck at GND due to stuck port data_in                                       ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]                   ; Stuck at GND due to stuck port data_in                                       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]                         ; Stuck at GND due to stuck port data_in                                       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1..18]                     ; Lost fanout                                                                  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15,20]                   ; Stuck at GND due to stuck port data_in                                       ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]                    ; Stuck at GND due to stuck port data_in                                       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[9]                             ; Stuck at GND due to stuck port data_in                                       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[9]                             ; Stuck at GND due to stuck port data_in                                       ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,14]                      ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13]                        ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12]                        ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0]             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[18]     ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[17]     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[5]                         ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[21]     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3,28]                      ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[23]     ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[27,31]                     ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]     ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19]                     ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14]  ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]     ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17]                     ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12]  ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3]             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[23]     ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18]                     ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13]  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]   ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]   ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]   ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[3]                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14]  ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1]                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12]  ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[2]                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13]  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3] ;
-; Total Number of Removed Registers = 121                                             ;                                                                              ;
-+-------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                ;
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; Register name                                                                       ; Reason for Removal                                                          ;
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[11]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[12]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[13]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[14]            ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[15..31]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Branch_EX                                 ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]           ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                                 ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]           ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                               ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX            ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                      ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0]  ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                           ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]       ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                           ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]       ;
+; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                        ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                    ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[11..16]                        ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[11..16]                        ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4,6..10,15,20,24,25,29,30] ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24,25]                     ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4,6..10]       ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]                        ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX                               ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[8,10]                          ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[10]                            ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]                        ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15]                     ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15]                      ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20]                     ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                            ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]                   ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]                         ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1..18]                     ; Lost fanout                                                                 ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]                      ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]                    ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[9]                             ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[9]                             ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,14]                      ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13]                        ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12]                        ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0]             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[18]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]                        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[17]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[5]                         ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[21]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3,28]                      ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[23]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[27,31]                     ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]    ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17]                     ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18]                     ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19]                     ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14] ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]                      ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]  ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3]             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[23]    ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1]                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[2]                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[3]                   ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14] ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1]                    ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2]                    ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3]                    ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]  ;
+; Total Number of Removed Registers = 121                                             ;                                                                             ;
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -394,8 +398,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[15] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15],            ;
 ;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15],         ;
 ;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]        ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[11]     ; Stuck at GND              ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20],          ;
-;                                                              ; due to stuck port data_in ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15]           ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[11]     ; Stuck at GND              ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15],          ;
+;                                                              ; due to stuck port data_in ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]           ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX,                   ;
 ;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                 ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[25]             ;
@@ -797,11 +801,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                      ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------+----------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |MIPS32|EX_Forward_A:EX_Forward_A|Mux7          ;                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |MIPS32|EX_Forward_A:EX_Forward_A|Mux5          ;                            ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |MIPS32|EX_ALU_Control:EX_ALU_Control|Mux1      ;                            ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[4]  ;                            ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[12] ;                            ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux24                     ;                            ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[25] ;                            ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[5]  ;                            ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux20                     ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------+----------------------------+
 
 
@@ -1160,7 +1164,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1170,7 +1174,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Sun Sep 07 22:41:43 2014
+    Info: Processing started: Sun Sep 07 22:49:22 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
@@ -1238,6 +1242,7 @@ Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(8) h
 Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(8) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(8) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "IF_ID_Pipeline_Stage" for hierarchy "IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage"
+Info (12128): Elaborating entity "ID_Read_data_Mux" for hierarchy "ID_Read_data_Mux:ID_Read_data_Mux"
 Info (12128): Elaborating entity "ID_Registers" for hierarchy "ID_Registers:ID_Registers"
 Warning (10850): Verilog HDL warning at ID_Registers.v(18): number of words (32) in memory file does not match the number of elements in the address range [0:255]
 Info (12128): Elaborating entity "ID_Sign_Extension" for hierarchy "ID_Sign_Extension:ID_Sign_Extension"
@@ -1433,14 +1438,14 @@ Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "ID_Register
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1955 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2041 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 590 output pins
-    Info (21061): Implemented 1268 logic cells
+    Info (21059): Implemented 591 output pins
+    Info (21061): Implemented 1353 logic cells
     Info (21064): Implemented 96 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 71 warnings
-    Info: Peak virtual memory: 444 megabytes
-    Info: Processing ended: Sun Sep 07 22:41:47 2014
+    Info: Peak virtual memory: 471 megabytes
+    Info: Processing ended: Sun Sep 07 22:49:26 2014
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
