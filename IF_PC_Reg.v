@@ -11,7 +11,9 @@ module IF_PC_Reg(
    always@(posedge Clk)
 		begin
 			if(PC_Enable)
-				PC_IF <= Next_PC_IF;
+				begin
+					PC_IF <= Next_PC_IF;
+				end
 		end
 
 endmodule // IF_PC_Reg

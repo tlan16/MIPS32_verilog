@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS32
-Sun Sep 07 01:51:13 2014
+Sun Sep 07 16:06:34 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -14,27 +14,27 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Added for RAM Pass-Through Logic
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_ori1:auto_generated
- 17. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_ori1:auto_generated
- 18. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated
- 19. Parameter Settings for User Entity Instance: ID_Control:ID_Control
- 20. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_A
- 21. Parameter Settings for User Entity Instance: EX_Forward_B:EX_Forward_B
- 22. Parameter Settings for User Entity Instance: EX_ALU:EX_ALU
- 23. Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control
- 24. Parameter Settings for User Entity Instance: MEM_to_MEM_Forward:MEM_to_MEM_Forward
- 25. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0
- 26. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1
- 27. Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0
- 28. altsyncram Parameter Settings by Entity Instance
- 29. Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Added for RAM Pass-Through Logic
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_ori1:auto_generated
+ 16. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_ori1:auto_generated
+ 17. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated
+ 18. Parameter Settings for User Entity Instance: ID_Control:ID_Control
+ 19. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_A
+ 20. Parameter Settings for User Entity Instance: EX_Forward_B:EX_Forward_B
+ 21. Parameter Settings for User Entity Instance: EX_ALU:EX_ALU
+ 22. Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control
+ 23. Parameter Settings for User Entity Instance: MEM_to_MEM_Forward:MEM_to_MEM_Forward
+ 24. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0
+ 25. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1
+ 26. Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
+ 29. Port Connectivity Checks: "EX_Forward_Unit:EX_Forward_Unit"
  30. Elapsed Time Per Partition
  31. Analysis & Synthesis Messages
  32. Analysis & Synthesis Suppressed Messages
@@ -63,16 +63,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 07 01:51:13 2014     ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 07 16:06:34 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 797                                       ;
-;     Total combinational functions  ; 642                                       ;
+; Total logic elements               ; 802                                       ;
+;     Total combinational functions  ; 647                                       ;
 ;     Dedicated logic registers      ; 360                                       ;
 ; Total registers                    ; 360                                       ;
-; Total pins                         ; 587                                       ;
+; Total pins                         ; 589                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 17,408                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
@@ -235,28 +235,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 797   ;
+; Estimated Total logic elements              ; 802   ;
 ;                                             ;       ;
-; Total combinational functions               ; 642   ;
+; Total combinational functions               ; 647   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 308   ;
-;     -- 3 input functions                    ; 266   ;
-;     -- <=2 input functions                  ; 68    ;
+;     -- 4 input functions                    ; 336   ;
+;     -- 3 input functions                    ; 241   ;
+;     -- <=2 input functions                  ; 70    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 521   ;
+;     -- normal mode                          ; 526   ;
 ;     -- arithmetic mode                      ; 121   ;
 ;                                             ;       ;
 ; Total registers                             ; 360   ;
 ;     -- Dedicated logic registers            ; 360   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 587   ;
+; I/O pins                                    ; 589   ;
 ; Total memory bits                           ; 17408 ;
 ; Maximum fan-out node                        ; Clk   ;
 ; Maximum fan-out                             ; 456   ;
-; Total fan-out                               ; 4807  ;
-; Average fan-out                             ; 2.85  ;
+; Total fan-out                               ; 4850  ;
+; Average fan-out                             ; 2.87  ;
 +---------------------------------------------+-------+
 
 
@@ -265,18 +265,18 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |MIPS32                                          ; 642 (1)           ; 360 (0)      ; 17408       ; 0            ; 0       ; 0         ; 587  ; 0            ; |MIPS32                                                                                             ;              ;
-;    |EX_ALU:EX_ALU|                               ; 174 (174)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                               ;              ;
+; |MIPS32                                          ; 647 (1)           ; 360 (0)      ; 17408       ; 0            ; 0       ; 0         ; 589  ; 0            ; |MIPS32                                                                                             ;              ;
+;    |EX_ALU:EX_ALU|                               ; 173 (173)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                               ;              ;
 ;    |EX_ALU_Control:EX_ALU_Control|               ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Control:EX_ALU_Control                                                               ;              ;
 ;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
 ;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                     ;              ;
-;    |EX_Forward_A:EX_Forward_A|                   ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                   ;              ;
-;    |EX_Forward_Unit:EX_Forward_Unit|             ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                             ;              ;
+;    |EX_Forward_A:EX_Forward_A|                   ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                   ;              ;
+;    |EX_Forward_Unit:EX_Forward_Unit|             ; 35 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                             ;              ;
 ;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                 ;              ;
 ;    |EX_PC_Add:EX_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                         ;              ;
 ;    |ID_Control:ID_Control|                       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                       ;              ;
 ;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 2 (2)             ; 107 (107)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
-;    |ID_Registers:ID_Registers|                   ; 73 (73)           ; 38 (38)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                   ;              ;
+;    |ID_Registers:ID_Registers|                   ; 137 (137)         ; 38 (38)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                   ;              ;
 ;       |altsyncram:Register_File_rtl_0|           ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0                                    ;              ;
 ;          |altsyncram_ori1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_ori1:auto_generated     ;              ;
 ;       |altsyncram:Register_File_rtl_1|           ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1                                    ;              ;
@@ -285,7 +285,7 @@ applicable agreement for further details.
 ;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_Instruction_Memory:IF_Instruction_Memory                                                 ;              ;
 ;    |IF_PC_Add:IF_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Add:IF_PC_Add                                                                         ;              ;
 ;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Reg:IF_PC_Reg                                                                         ;              ;
-;    |MEM_Data_Memory:MEM_Data_Memory|             ; 106 (106)         ; 32 (32)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                             ;              ;
+;    |MEM_Data_Memory:MEM_Data_Memory|             ; 43 (43)           ; 32 (32)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                             ;              ;
 ;       |altsyncram:Data_Memory_rtl_0|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0                                ;              ;
 ;          |altsyncram_gqg1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated ;              ;
 ;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                 ;              ;
@@ -305,48 +305,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                    ;
-+-----------------------------------------------------+---------------------------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                                     ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------------------------------------------+------------------------+
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[0]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[1]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[2]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[3]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[4]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[5]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[6]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[7]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[8]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[9]    ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[10]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[11]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[12]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[13]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[14]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[15]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[16]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[17]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[18]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[19]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[20]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[21]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[22]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[23]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[24]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[25]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[26]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[27]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[28]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[29]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[30]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; MEM_Data_Memory:MEM_Data_Memory|Read_Data_MEM[31]   ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM ; yes                    ;
-; Number of user-specified and inferred latches = 32  ;                                                         ;                        ;
-+-----------------------------------------------------+---------------------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                                     ;
 +-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -360,7 +318,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Branch_EX                                     ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]            ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                                     ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]            ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                                   ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX             ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemtoReg_MEM                                ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM          ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                          ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0]   ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                               ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]        ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                               ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]        ;
@@ -570,9 +527,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[75]                                ; Merged with ID_Registers:ID_Registers|Register_File_rtl_0_bypass[75]         ;
 ; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[77]                                ; Merged with ID_Registers:ID_Registers|Register_File_rtl_0_bypass[77]         ;
 ; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[79]                                ; Merged with ID_Registers:ID_Registers|Register_File_rtl_0_bypass[79]         ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]                 ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]     ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18]                         ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13]  ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19]                         ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14]  ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]                 ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]     ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17]                         ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12]  ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]                          ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]   ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]                          ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]   ;
@@ -583,7 +540,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]                          ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1] ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]                          ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2] ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]                          ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3] ;
-; Total Number of Removed Registers = 331                                                 ;                                                                              ;
+; Total Number of Removed Registers = 330                                                 ;                                                                              ;
 +-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 
@@ -954,16 +911,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------------+---------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                      ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------+----------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |MIPS32|EX_Forward_A:EX_Forward_A|Mux9          ;                            ;
-; 5:1                ; 24 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[26] ;                            ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[2]  ;                            ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux14                     ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------+----------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                     ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------+----------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |MIPS32|EX_Forward_A:EX_Forward_A|Mux0         ;                            ;
+; 5:1                ; 24 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[8] ;                            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[5] ;                            ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux29                    ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -1316,6 +1273,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EX_Forward_Unit:EX_Forward_Unit"                                                                                                                   ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                      ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; ID_RegWrite ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -1331,7 +1297,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Sun Sep 07 01:51:10 2014
+    Info: Processing started: Sun Sep 07 16:06:31 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
@@ -1392,15 +1358,17 @@ Info (12128): Elaborating entity "IF_PC_Mux" for hierarchy "IF_PC_Mux:IF_PC_Mux"
 Info (12128): Elaborating entity "IF_PC_Reg" for hierarchy "IF_PC_Reg:IF_PC_Reg"
 Info (12128): Elaborating entity "IF_PC_Add" for hierarchy "IF_PC_Add:IF_PC_Add"
 Info (12128): Elaborating entity "IF_Instruction_Memory" for hierarchy "IF_Instruction_Memory:IF_Instruction_Memory"
-Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(13): number of words (7) in memory file does not match the number of elements in the address range [0:1023]
-Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(12): number of words (7) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(9) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "IF_ID_Pipeline_Stage" for hierarchy "IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage"
 Info (12128): Elaborating entity "ID_Registers" for hierarchy "ID_Registers:ID_Registers"
-Warning (10850): Verilog HDL warning at ID_Registers.v(18): number of words (32) in memory file does not match the number of elements in the address range [0:255]
-Warning (10027): Verilog HDL or VHDL warning at the ID_Registers.v(21): index expression is not wide enough to address all of the elements in the array
-Warning (10027): Verilog HDL or VHDL warning at the ID_Registers.v(26): index expression is not wide enough to address all of the elements in the array
+Warning (10850): Verilog HDL warning at ID_Registers.v(19): number of words (32) in memory file does not match the number of elements in the address range [0:255]
+Warning (10027): Verilog HDL or VHDL warning at the ID_Registers.v(24): index expression is not wide enough to address all of the elements in the array
+Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(33): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10027): Verilog HDL or VHDL warning at the ID_Registers.v(39): index expression is not wide enough to address all of the elements in the array
+Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(48): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info (12128): Elaborating entity "ID_Sign_Extension" for hierarchy "ID_Sign_Extension:ID_Sign_Extension"
 Info (12128): Elaborating entity "ID_Control" for hierarchy "ID_Control:ID_Control"
 Info (12128): Elaborating entity "ID_EX_Pipeline_Stage" for hierarchy "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
@@ -1414,51 +1382,19 @@ Info (12128): Elaborating entity "EX_PC_Add" for hierarchy "EX_PC_Add:EX_PC_Add"
 Info (12128): Elaborating entity "EX_ALU_Mux" for hierarchy "EX_ALU_Mux:EX_ALU_Mux"
 Info (12128): Elaborating entity "EX_ALU" for hierarchy "EX_ALU:EX_ALU"
 Info (12128): Elaborating entity "EX_ALU_Control" for hierarchy "EX_ALU_Control:EX_ALU_Control"
-Warning (10240): Verilog HDL Always Construct warning at EX_ALU_Control.v(34): inferring latch(es) for variable "ALU_Control_EX", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "ALU_Control_EX[0]" at EX_ALU_Control.v(34)
-Info (10041): Inferred latch for "ALU_Control_EX[1]" at EX_ALU_Control.v(34)
-Info (10041): Inferred latch for "ALU_Control_EX[2]" at EX_ALU_Control.v(34)
-Info (10041): Inferred latch for "ALU_Control_EX[3]" at EX_ALU_Control.v(34)
+Warning (10240): Verilog HDL Always Construct warning at EX_ALU_Control.v(40): inferring latch(es) for variable "ALU_Control_EX", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "ALU_Control_EX[0]" at EX_ALU_Control.v(40)
+Info (10041): Inferred latch for "ALU_Control_EX[1]" at EX_ALU_Control.v(40)
+Info (10041): Inferred latch for "ALU_Control_EX[2]" at EX_ALU_Control.v(40)
+Info (10041): Inferred latch for "ALU_Control_EX[3]" at EX_ALU_Control.v(40)
 Info (12128): Elaborating entity "EX_Dest_Mux" for hierarchy "EX_Dest_Mux:EX_Dest_Mux"
 Info (12128): Elaborating entity "EX_MEM_Pipeline_Stage" for hierarchy "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
 Info (12128): Elaborating entity "MEM_to_MEM_Forward" for hierarchy "MEM_to_MEM_Forward:MEM_to_MEM_Forward"
-Warning (10855): Verilog HDL warning at MEM_to_MEM_Forward.v(11): initial value for variable Write_Data_MUX_MEM should be constant
 Info (12128): Elaborating entity "MEM_Branch_AND" for hierarchy "MEM_Branch_AND:MEM_Branch_AND"
 Info (12128): Elaborating entity "MEM_Data_Memory" for hierarchy "MEM_Data_Memory:MEM_Data_Memory"
-Warning (10850): Verilog HDL warning at MEM_Data_Memory.v(17): number of words (461) in memory file does not match the number of elements in the address range [0:511]
-Warning (10240): Verilog HDL Always Construct warning at MEM_Data_Memory.v(49): inferring latch(es) for variable "Read_Data_MEM", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "Read_Data_MEM[0]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[1]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[2]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[3]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[4]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[5]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[6]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[7]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[8]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[9]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[10]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[11]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[12]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[13]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[14]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[15]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[16]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[17]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[18]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[19]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[20]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[21]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[22]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[23]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[24]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[25]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[26]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[27]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[28]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[29]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[30]" at MEM_Data_Memory.v(49)
-Info (10041): Inferred latch for "Read_Data_MEM[31]" at MEM_Data_Memory.v(49)
+Warning (10850): Verilog HDL warning at MEM_Data_Memory.v(15): number of words (461) in memory file does not match the number of elements in the address range [0:511]
+Warning (10235): Verilog HDL Always Construct warning at MEM_Data_Memory.v(21): variable "ALU_Result_MEM" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MEM_Data_Memory.v(27): variable "ALU_Result_MEM" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info (12128): Elaborating entity "MEM_WB_Pipeline_Stage" for hierarchy "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
 Info (12128): Elaborating entity "WB_MemtoReg_Mux" for hierarchy "WB_MemtoReg_Mux:WB_MemtoReg_Mux"
 Warning (14026): LATCH primitive "EX_ALU_Control:EX_ALU_Control|ALU_Control_EX[0]" is permanently enabled
@@ -1575,6 +1511,7 @@ Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsync
     Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gqg1.tdf
     Info (12023): Found entity 1: altsyncram_gqg1
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "PC_Plus_4_IF[0]" is stuck at GND
     Warning (13410): Pin "PC_Plus_4_IF[1]" is stuck at GND
@@ -1654,14 +1591,14 @@ Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "ID_Register
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1683 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1690 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 586 output pins
-    Info (21061): Implemented 1000 logic cells
+    Info (21059): Implemented 588 output pins
+    Info (21061): Implemented 1005 logic cells
     Info (21064): Implemented 96 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 97 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 100 warnings
     Info: Peak virtual memory: 436 megabytes
-    Info: Processing ended: Sun Sep 07 01:51:13 2014
+    Info: Processing ended: Sun Sep 07 16:06:34 2014
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

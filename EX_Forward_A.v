@@ -19,10 +19,10 @@ module EX_Forward_A(
 					
    always@(*) begin
 		case(ForwardA_EX)
-				First: 	Read_Data_1_Mux_EX = Read_Data_1_EX;
-				Second: 	Read_Data_1_Mux_EX = Write_Data_WB;
-				Third:	Read_Data_1_Mux_EX = ALU_Result_MEM;
-				default: Read_Data_1_Mux_EX = Read_Data_1_EX;
+				First: 	Read_Data_1_Mux_EX <= Read_Data_1_EX;
+				Second: 	Read_Data_1_Mux_EX <= Write_Data_WB;
+				Third:	Read_Data_1_Mux_EX <= ALU_Result_MEM;
+				default: Read_Data_1_Mux_EX <= Read_Data_1_EX;
 		endcase
 			
 	end //always

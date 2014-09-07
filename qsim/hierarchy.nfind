@@ -7,6 +7,7 @@ EX_Forward_A:EX_Forward_A|
 EX_Forward_Unit:EX_Forward_Unit|
 EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|
 EX_PC_Add:EX_PC_Add|
+ID_Control:ID_Control|
 ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|
 ID_Registers:ID_Registers|
 IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|
@@ -24,7 +25,6 @@ ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|
 MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|
 EX_Forward_B:EX_Forward_B|
 EX_Shift_Left_2:EX_Shift_Left_2|
-ID_Control:ID_Control|
 ID_Sign_Extension:ID_Sign_Extension|
 IF_PC_Mux:IF_PC_Mux|
 MEM_Branch_AND:MEM_Branch_AND|

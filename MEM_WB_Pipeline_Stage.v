@@ -21,7 +21,16 @@ module MEM_WB_Pipeline_Stage(
 				  output reg [31:0]	Instruction_WB
 			     );
 				  
-   
+   initial begin
+		RegWrite_WB 		<= 0;
+		MemtoReg_WB 		<= 0;
+		Read_Data_WB 		<= 32'd0;
+		ALU_Result_WB		<= 32'd0;
+		Write_Register_WB	<= 5'd0;
+		
+		Instruction_WB		<= 32'd0;
+	end
+	
    always@(posedge Clk) begin
 		RegWrite_WB 		<= RegWrite_MEM;
 		MemtoReg_WB 		<= MemtoReg_MEM;

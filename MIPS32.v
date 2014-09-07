@@ -42,6 +42,7 @@ module MIPS32(
 	  output				MemtoReg_ID,
 	  output [31:0] 	Sign_Extend_Instruction_ID,
 	  output				ID_Control_NOP,
+	  output [1:0]		ID_Register_Write_to_Read,
 	  
 	  output [1:0]		ForwardA_EX,
 	  output [1:0]		ForwardB_EX,
@@ -76,6 +77,7 @@ module MIPS32(
    
    // ID Origin Variables:
 		// probed wire				ID_Control_NOP;
+		// probed wire	[1:0]		ID_Register_Write_to_Read;
 		// probed wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
 		// probed wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
 		// probed wire				Branch_ID;		// From ID_Control of ID_Control.v
@@ -182,8 +184,7 @@ module MIPS32(
 					       // Outputs
 					       .Instruction_IF	(Instruction_IF[31:0]),
 					       // Inputs
-					       .PC_IF		(PC_IF[31:0]),
-					       .Clk		(Clk));
+					       .PC_IF		(PC_IF[31:0]));
    
    
 
@@ -214,7 +215,8 @@ module MIPS32(
 			      .Write_Register_WB(Write_Register_WB[4:0]),
 			      .Write_Data_WB	(Write_Data_WB[31:0]),
 			      .Clk		(Clk),
-			      .RegWrite_WB	(RegWrite_WB));
+			      .RegWrite_WB	(RegWrite_WB),
+					.ID_Register_Write_to_Read(ID_Register_Write_to_Read[1:0]));
    
 
    // ID_Sign_Extension
@@ -282,6 +284,7 @@ module MIPS32(
 			.PC_Enable(PC_Enable),
 			.IF_ID_Pipeline_Enable(IF_ID_Pipeline_Enable),
 			.ID_Control_NOP(ID_Control_NOP),
+			.ID_Register_Write_to_Read(ID_Register_Write_to_Read[1:0]),
 			// Inputs
 			.MemWrite_MEM(MemWrite_MEM),
 			.MemtoReg_WB(MemtoReg_WB),
@@ -458,7 +461,6 @@ module MIPS32(
 				   // Outputs
 				   .Write_Data_WB	(Write_Data_WB[31:0]),
 				   // Inputs
-					.Clk (Clk),
 				   .ALU_Result_WB	(ALU_Result_WB[31:0]),
 				   .Read_Data_WB	(Read_Data_WB),
 				   .MemtoReg_WB		(MemtoReg_WB));

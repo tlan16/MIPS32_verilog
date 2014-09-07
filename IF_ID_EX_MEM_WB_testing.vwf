@@ -6142,6 +6142,16 @@ SIGNAL("PC_Enable")
 	PARENT = "";
 }
 
+SIGNAL("ID_Control_NOP")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 GROUP("Ex_Control")
 {
 	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
@@ -6157,14 +6167,34 @@ GROUP("WB_Control")
 	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
 }
 
-SIGNAL("ID_Control_NOP")
+SIGNAL("ID_Register_Write_to_Read")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ID_Register_Write_to_Read[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "";
+	PARENT = "ID_Register_Write_to_Read";
+}
+
+SIGNAL("ID_Register_Write_to_Read[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ID_Register_Write_to_Read";
 }
 
 TRANSITION_LIST("Clk")
@@ -11448,6 +11478,24 @@ TRANSITION_LIST("PC_Enable")
 }
 
 TRANSITION_LIST("ID_Control_NOP")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ID_Register_Write_to_Read[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ID_Register_Write_to_Read[0]")
 {
 	NODE
 	{
@@ -17599,6 +17647,36 @@ DISPLAY_LINE
 	RADIX = Binary;
 	TREE_INDEX = 614;
 	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ID_Register_Write_to_Read";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 615;
+	TREE_LEVEL = 0;
+	CHILDREN = 616, 617;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ID_Register_Write_to_Read[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 616;
+	TREE_LEVEL = 1;
+	PARENT = 615;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ID_Register_Write_to_Read[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 617;
+	TREE_LEVEL = 1;
+	PARENT = 615;
 }
 
 TIME_BAR

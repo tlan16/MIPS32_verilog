@@ -25,7 +25,7 @@ module ID_Control(
 	parameter NOP		= 6'b100000;	
 	
 	wire [5:0]opcode;
-	assign opcode = ID_Control_NOP ? 6'b100000 : Instruction_ID;
+	assign opcode = ID_Control_NOP ? NOP : Instruction_ID;
 	
 	initial 
 	 begin

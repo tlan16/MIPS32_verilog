@@ -4,6 +4,7 @@ module EX_Forward_Unit(
 						input					MemWrite_MEM,
 						input					MemtoReg_WB,
 						
+						input					ID_RegWrite,
 						input	[4:0]			IF_ID_Reg_Rs,
 						input	[4:0]			IF_ID_Reg_Rt,
 						
@@ -25,7 +26,8 @@ module EX_Forward_Unit(
 						output reg 				Forward_Mem_to_Mem,
 						output reg				PC_Enable,
 						output reg				IF_ID_Pipeline_Enable,
-						output reg				ID_Control_NOP
+						output reg				ID_Control_NOP,
+						output reg [1:0]		ID_Register_Write_to_Read
 			     );
    
 	initial 
@@ -36,6 +38,7 @@ module EX_Forward_Unit(
 		PC_Enable 	<=1;
 		IF_ID_Pipeline_Enable <= 1;
 		ID_Control_NOP <= 0;
+		ID_Register_Write_to_Read <= 2'b00;
 	end
 	
 	wire isLW_WB;
@@ -50,47 +53,30 @@ module EX_Forward_Unit(
 			begin
 				ForwardA_EX <= 2'b10;
 			end
+		else if( (MEM_WB_RegWrite == 1) && (MEM_WB_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd != ID_EX_Reg_Rs) && (MEM_WB_Reg_Rd == ID_EX_Reg_Rs) 
+						|| ( (isLW_WB == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rs) ) )
+			begin
+				ForwardA_EX <= 2'b01;
+			end
 		else
 			begin
-				if( (MEM_WB_RegWrite == 1) && (MEM_WB_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd != ID_EX_Reg_Rs) && (MEM_WB_Reg_Rd == ID_EX_Reg_Rs) )
-					begin
-						ForwardA_EX <= 2'b01;
-					end
-				else
-					begin
-						if( (isLW_WB == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rs) )
-							begin
-								ForwardA_EX <= 2'b01;
-							end
-						else
-							begin
-								ForwardA_EX <= 2'b00;
-							end
-					end
+				ForwardA_EX <= 2'b00;
 			end
 		
 		if( (EX_MEM_RegWrite == 1) && (EX_MEM_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd == ID_EX_Reg_Rt) )
 			begin
 				ForwardB_EX <= 2'b10;
 			end
+		else if( (MEM_WB_RegWrite == 1) && (MEM_WB_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd != ID_EX_Reg_Rt) && (MEM_WB_Reg_Rd == ID_EX_Reg_Rt) 
+						|| ( (isLW_WB == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rt) ) )
+			begin
+				ForwardB_EX <= 2'b01;
+			end
 		else
 			begin
-				if( (MEM_WB_RegWrite == 1) && (MEM_WB_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd != ID_EX_Reg_Rt) && (MEM_WB_Reg_Rd == ID_EX_Reg_Rt) )
-					begin
-						ForwardB_EX <= 2'b01;
-					end
-				else
-					begin
-						if( (isLW_WB == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rt) )
-							begin
-								ForwardB_EX <= 2'b01;
-							end
-						else
-							begin
-								ForwardB_EX <= 2'b00;
-							end
-					end
+				ForwardB_EX <= 2'b00;
 			end
+
 	//// MEM OT MEM COPY
 	if( (EX_MEM_Reg_Rt == MEM_WB_Reg_Rt) && (isLW_WB == 1) && (isSW_MEM == 1) )
 		begin
@@ -112,6 +98,19 @@ module EX_Forward_Unit(
 			PC_Enable <= 1;
 			IF_ID_Pipeline_Enable <= 1;
 			ID_Control_NOP <= 0;
+		end
+	
+	if( (isLW_WB == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == IF_ID_Reg_Rs) )
+		begin
+			ID_Register_Write_to_Read <= 2'b01;
+		end
+	else if ( (isLW_WB == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == IF_ID_Reg_Rt) )
+		begin
+			ID_Register_Write_to_Read <= 2'b10;
+		end
+	else
+		begin
+			ID_Register_Write_to_Read <= 2'b00;
 		end
 	
 	end //always

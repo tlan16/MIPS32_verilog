@@ -9,7 +9,7 @@ module MEM_to_MEM_Forward(
    
 	initial 
 	begin
-		Write_Data_MUX_MEM <= Write_Data_MEM;
+		Write_Data_MUX_MEM <= 32'd0;
 	end
 	
 	parameter	First		=	0,
@@ -17,9 +17,9 @@ module MEM_to_MEM_Forward(
 					
    always@(*) begin
 		case(Forward_Mem_to_Mem)
-				First: 	Write_Data_MUX_MEM = Write_Data_MEM;
-				Second: 	Write_Data_MUX_MEM = Read_Data_WB;
-				default: Write_Data_MUX_MEM = Write_Data_MEM;
+				First: 	Write_Data_MUX_MEM <= Write_Data_MEM;
+				Second: 	Write_Data_MUX_MEM <= Read_Data_WB;
+				default: Write_Data_MUX_MEM <= Write_Data_MEM;
 		endcase
 			
 	end //always

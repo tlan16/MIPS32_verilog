@@ -3,14 +3,14 @@
 
 module IF_Instruction_Memory(
 		 input [31:0]PC_IF,
-		 output reg [31:0]Instruction_IF,
-		 input Clk
+		 output reg [31:0]Instruction_IF
 		 );
 
 		 reg [31:0]Instruction_Memory[0:1023];
 		 
 		 initial begin
 			$readmemh("instruction_memory.list", Instruction_Memory);
+			Instruction_IF <= 32'd0;
 		 end
 		 
 		 always@(PC_IF) begin

@@ -6,8 +6,6 @@ module EX_ALU_Control(
 		      input [1:0]  ALUOp_EX,
 		      output reg [3:0] ALU_Control_EX
 		      );
-	wire [5:0]funct;
-	assign funct = Sign_Extend_Instruction_EX[5:0];
 				
 	parameter	Rtype 		=	2'b10,//this is a 2 bit paramter,
 					Radd			=	6'b100000,
@@ -30,7 +28,15 @@ module EX_ALU_Control(
 	parameter	unknown		=	2'b11,
 					ALUx			=	4'b0011;
 	
+	wire [5:0]funct;
+	assign funct = Sign_Extend_Instruction_EX[5:0];
+	
+	initial begin
+		ALU_Control_EX <= ALUx;
+	end
+
 	always@* begin
+
 		if(ALUOp_EX == Rtype) begin
 			case(funct)
 				Radd:			ALU_Control_EX <= ALUadd;
@@ -55,6 +61,26 @@ module EX_ALU_Control(
 		end //else if
 		
 		else begin ALU_Control_EX <= ALU_Control_EX; end
+
+		/*
+		case(ALUOp_EX)
+			Rtype: begin
+				case(funct)
+					Radd:			ALU_Control_EX <= ALUadd;
+					Rsub:			ALU_Control_EX <= ALUsub;
+					Rand:			ALU_Control_EX <= ALUand;
+					Ror:			ALU_Control_EX <= ALUor;
+					Rslt:			ALU_Control_EX <= ALUslt;
+					default:		ALU_Control_EX <= ALUx;
+				endcase
+			end
+			lwsw: ALU_Control_EX <= ALUadd;
+			Itype: ALU_Control_EX	<= ALUsub;
+			unknown: ALU_Control_EX	<= ALUx;
+			default: ALU_Control_EX <= ALU_Control_EX;
+		endcase
+		*/
+		
 	end //always
 			
 endmodule // EX_ALU_Control
