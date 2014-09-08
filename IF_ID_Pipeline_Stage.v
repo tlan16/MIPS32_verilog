@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// condition ? if true : if false
 
 module IF_ID_Pipeline_Stage(
 			     input [31:0]  Instruction_IF,
@@ -17,11 +16,15 @@ module IF_ID_Pipeline_Stage(
    end
 	
    always@(posedge Clk) begin
+		Instruction_ID = IF_ID_Pipeline_Enable ? Instruction_IF : Instruction_ID;
+		PC_Plus_4_ID = IF_ID_Pipeline_Enable ? PC_Plus_4_IF : PC_Plus_4_ID;
+		/*
 		if(IF_ID_Pipeline_Enable)
 			begin
 				Instruction_ID<=Instruction_IF;
 				PC_Plus_4_ID<=PC_Plus_4_IF;
 			end
+		*/
 	end
 
 endmodule // IF_ID_Pipeline_Stage

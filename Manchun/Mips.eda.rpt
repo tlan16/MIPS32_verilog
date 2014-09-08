@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Mips
-Mon Sep 08 11:32:01 2014
+Mon Sep 08 11:39:56 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Sep 08 11:32:01 2014 ;
+; EDA Netlist Writer Status ; Successful - Mon Sep 08 11:39:56 2014 ;
 ; Revision Name             ; Mips                                  ;
 ; Top-level Entity Name     ; Mips                                  ;
 ; Family                    ; Cyclone II                            ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Sep 08 11:32:00 2014
+    Info: Processing started: Mon Sep 08 11:39:55 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Mips -c Mips
 Info (204026): Generated files "Mips.vho", "Mips_fast.vho", "Mips_vhd.sdo" and "Mips_vhd_fast.sdo" in directory "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 373 megabytes
-    Info: Processing ended: Mon Sep 08 11:32:01 2014
+    Info: Peak virtual memory: 378 megabytes
+    Info: Processing ended: Mon Sep 08 11:39:56 2014
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

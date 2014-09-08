@@ -12,7 +12,7 @@ module ID_Registers(
 			 input [1:0]	ID_Register_Write_to_Read
 		    );
 
-   reg [31:0]Register_File[0:255];
+   reg [31:0]Register_File[0:31];
 	
 	initial begin
 		$readmemh("register_file.list", Register_File);
@@ -55,9 +55,12 @@ module ID_Registers(
 	end
 */
 	always@(posedge Clk) begin
+		/*
 		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
+		*/
+		Register_File[Write_Register_WB] <= ( RegWrite_WB & (Write_Register_WB!=4'd0)) ? Write_Data_WB : Register_File[Write_Register_WB];
 	end //always
 
 endmodule // ID_Registers

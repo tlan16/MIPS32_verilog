@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mips
-Mon Sep 08 11:31:36 2014
+Mon Sep 08 13:07:53 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -15,32 +15,33 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Added for RAM Pass-Through Logic
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for ID_Registers:ID_Registers|altsyncram:register_rtl_0|altsyncram_tki1:auto_generated
- 17. Source assignments for ID_Registers:ID_Registers|altsyncram:register_rtl_1|altsyncram_tki1:auto_generated
- 18. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_bng1:auto_generated
- 19. Parameter Settings for User Entity Instance: ID_Control:ID_Control
- 20. Parameter Settings for User Entity Instance: EX_ALU:EX_ALU
- 21. Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control
- 22. Parameter Settings for User Entity Instance: Data_forwarding_mux_A:Data_forwarding_mux_A
- 23. Parameter Settings for User Entity Instance: Data_forwarding_mux_B:Data_forwarding_mux_B
- 24. Parameter Settings for User Entity Instance: Data_forwarding_mux_MEM:Data_forwarding_mux_MEM
- 25. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:register_rtl_0
- 26. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:register_rtl_1
- 27. Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0
- 28. altsyncram Parameter Settings by Entity Instance
- 29. Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
- 30. Port Connectivity Checks: "Data_Forwarding_unit:Data_Forwarding_unit"
- 31. Port Connectivity Checks: "EX_Dest_Mux:EX_Dest_Mux"
- 32. Port Connectivity Checks: "EX_ALU_Control:EX_ALU_Control"
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Registers Added for RAM Pass-Through Logic
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for ID_Registers:ID_Registers|altsyncram:register_rtl_0|altsyncram_tki1:auto_generated
+ 18. Source assignments for ID_Registers:ID_Registers|altsyncram:register_rtl_1|altsyncram_tki1:auto_generated
+ 19. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_bng1:auto_generated
+ 20. Parameter Settings for User Entity Instance: ID_Control:ID_Control
+ 21. Parameter Settings for User Entity Instance: EX_ALU:EX_ALU
+ 22. Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control
+ 23. Parameter Settings for User Entity Instance: Data_forwarding_mux_A:Data_forwarding_mux_A
+ 24. Parameter Settings for User Entity Instance: Data_forwarding_mux_B:Data_forwarding_mux_B
+ 25. Parameter Settings for User Entity Instance: Data_forwarding_mux_MEM:Data_forwarding_mux_MEM
+ 26. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:register_rtl_0
+ 27. Parameter Settings for Inferred Entity Instance: ID_Registers:ID_Registers|altsyncram:register_rtl_1
+ 28. Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0
+ 29. altsyncram Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
+ 31. Port Connectivity Checks: "Data_Forwarding_unit:Data_Forwarding_unit"
+ 32. Port Connectivity Checks: "EX_Dest_Mux:EX_Dest_Mux"
+ 33. Port Connectivity Checks: "EX_ALU_Control:EX_ALU_Control"
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
+ 36. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -66,15 +67,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 08 11:31:36 2014     ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 08 13:07:53 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; Mips                                      ;
 ; Top-level Entity Name              ; Mips                                      ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 921                                       ;
-;     Total combinational functions  ; 794                                       ;
-;     Dedicated logic registers      ; 363                                       ;
-; Total registers                    ; 363                                       ;
+; Total logic elements               ; 1,020                                     ;
+;     Total combinational functions  ; 884                                       ;
+;     Dedicated logic registers      ; 437                                       ;
+; Total registers                    ; 437                                       ;
 ; Total pins                         ; 576                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 17,408                                    ;
@@ -230,9 +231,9 @@ applicable agreement for further details.
 ; altram.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altram.inc                                             ;         ;
 ; altdpram.inc                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altdpram.inc                                           ;         ;
 ; db/altsyncram_tki1.tdf                        ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/altsyncram_tki1.tdf                        ;         ;
-; db/Mips.ram0_ID_Registers_ada8f4a0.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/Mips.ram0_ID_Registers_ada8f4a0.hdl.mif    ;         ;
+; db/mips.ram0_id_registers_ada8f4a0.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/mips.ram0_id_registers_ada8f4a0.hdl.mif    ;         ;
 ; db/altsyncram_bng1.tdf                        ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/altsyncram_bng1.tdf                        ;         ;
-; db/Mips.ram0_MEM_Data_Memory_3250c012.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/Mips.ram0_MEM_Data_Memory_3250c012.hdl.mif ;         ;
+; db/mips.ram0_mem_data_memory_3250c012.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/mips.ram0_mem_data_memory_3250c012.hdl.mif ;         ;
 +-----------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -241,28 +242,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 921   ;
+; Estimated Total logic elements              ; 1,020 ;
 ;                                             ;       ;
-; Total combinational functions               ; 794   ;
+; Total combinational functions               ; 884   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 361   ;
-;     -- 3 input functions                    ; 361   ;
-;     -- <=2 input functions                  ; 72    ;
+;     -- 4 input functions                    ; 352   ;
+;     -- 3 input functions                    ; 470   ;
+;     -- <=2 input functions                  ; 62    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 673   ;
+;     -- normal mode                          ; 763   ;
 ;     -- arithmetic mode                      ; 121   ;
 ;                                             ;       ;
-; Total registers                             ; 363   ;
-;     -- Dedicated logic registers            ; 363   ;
+; Total registers                             ; 437   ;
+;     -- Dedicated logic registers            ; 437   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 576   ;
 ; Total memory bits                           ; 17408 ;
 ; Maximum fan-out node                        ; Clk   ;
-; Maximum fan-out                             ; 459   ;
-; Total fan-out                               ; 5333  ;
-; Average fan-out                             ; 2.92  ;
+; Maximum fan-out                             ; 533   ;
+; Total fan-out                               ; 5839  ;
+; Average fan-out                             ; 2.93  ;
 +---------------------------------------------+-------+
 
 
@@ -271,32 +272,36 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
-; |Mips                                            ; 794 (1)           ; 363 (0)      ; 17408       ; 0            ; 0       ; 0         ; 576  ; 0            ; |Mips                                                                                             ;              ;
-;    |Data_Forwarding_unit:Data_Forwarding_unit|   ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Data_Forwarding_unit:Data_Forwarding_unit                                                   ;              ;
+; |Mips                                            ; 884 (1)           ; 437 (0)      ; 17408       ; 0            ; 0       ; 0         ; 576  ; 0            ; |Mips                                                                                             ;              ;
+;    |Data_Forwarding_unit:Data_Forwarding_unit|   ; 37 (37)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Data_Forwarding_unit:Data_Forwarding_unit                                                   ;              ;
 ;    |Data_forwarding_mux_A:Data_forwarding_mux_A| ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Data_forwarding_mux_A:Data_forwarding_mux_A                                                 ;              ;
-;    |Data_forwarding_mux_B:Data_forwarding_mux_B| ; 106 (106)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Data_forwarding_mux_B:Data_forwarding_mux_B                                                 ;              ;
-;    |EX_ALU:EX_ALU|                               ; 176 (176)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_ALU:EX_ALU                                                                               ;              ;
-;    |EX_ALU_Control:EX_ALU_Control|               ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_ALU_Control:EX_ALU_Control                                                               ;              ;
-;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
+;    |Data_forwarding_mux_B:Data_forwarding_mux_B| ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Data_forwarding_mux_B:Data_forwarding_mux_B                                                 ;              ;
+;    |EX_ALU:EX_ALU|                               ; 180 (180)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_ALU:EX_ALU                                                                               ;              ;
+;    |EX_ALU_Control:EX_ALU_Control|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_ALU_Control:EX_ALU_Control                                                               ;              ;
+;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
 ;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_Dest_Mux:EX_Dest_Mux                                                                     ;              ;
-;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 71 (71)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                 ;              ;
+;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 103 (103)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                 ;              ;
 ;    |EX_PC_Add:EX_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|EX_PC_Add:EX_PC_Add                                                                         ;              ;
+;    |Forward_C_mux:Forward_C_mux|                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Forward_C_mux:Forward_C_mux                                                                 ;              ;
+;    |Forward_D_mux:Forward_D_mux|                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Forward_D_mux:Forward_D_mux                                                                 ;              ;
+;    |ID_Branch_AND:ID_Branch_AND|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Branch_AND:ID_Branch_AND                                                                 ;              ;
 ;    |ID_Comparator:ID_Comparator|                 ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Comparator:ID_Comparator                                                                 ;              ;
-;    |ID_Control:ID_Control|                       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Control:ID_Control                                                                       ;              ;
-;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 1 (1)             ; 113 (113)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
-;    |ID_Registers:ID_Registers|                   ; 135 (135)         ; 40 (40)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Registers:ID_Registers                                                                   ;              ;
+;    |ID_Control:ID_Control|                       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Control:ID_Control                                                                       ;              ;
+;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 0 (0)             ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
+;    |ID_Registers:ID_Registers|                   ; 136 (136)         ; 41 (41)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Registers:ID_Registers                                                                   ;              ;
 ;       |altsyncram:register_rtl_0|                ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_0                                         ;              ;
 ;          |altsyncram_tki1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_0|altsyncram_tki1:auto_generated          ;              ;
 ;       |altsyncram:register_rtl_1|                ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_1                                         ;              ;
 ;          |altsyncram_tki1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_1|altsyncram_tki1:auto_generated          ;              ;
-;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                   ;              ;
-;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_Instruction_Memory:IF_Instruction_Memory                                                 ;              ;
+;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                   ;              ;
+;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_Instruction_Memory:IF_Instruction_Memory                                                 ;              ;
 ;    |IF_PC_Add:IF_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_PC_Add:IF_PC_Add                                                                         ;              ;
-;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_PC_Reg:IF_PC_Reg                                                                         ;              ;
+;    |IF_PC_Mux:IF_PC_Mux|                         ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_PC_Mux:IF_PC_Mux                                                                         ;              ;
+;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|IF_PC_Reg:IF_PC_Reg                                                                         ;              ;
 ;    |MEM_Data_Memory:MEM_Data_Memory|             ; 106 (106)         ; 32 (32)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|MEM_Data_Memory:MEM_Data_Memory                                                             ;              ;
 ;       |altsyncram:Data_Memory_rtl_0|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0                                ;              ;
 ;          |altsyncram_bng1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_bng1:auto_generated ;              ;
-;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 71 (71)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                 ;              ;
+;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                 ;              ;
 ;    |WB_MemtoReg_Mux:WB_MemtoReg_Mux|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|WB_MemtoReg_Mux:WB_MemtoReg_Mux                                                             ;              ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -355,346 +360,280 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                            ;
-+---------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-; Register name                                                                   ; Reason for Removal                                                          ;
-+---------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[11]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[12]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[13]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[14]        ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[15..31]    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                             ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]           ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                           ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX            ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemtoReg_MEM                        ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM         ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                  ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0]  ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]       ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                       ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]       ;
-; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                    ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20,23..25]             ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]                    ; Stuck at GND due to stuck port data_in                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[28..30]                ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[23..25,28..30]         ; Stuck at GND due to stuck port data_in                                      ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20]                 ; Stuck at GND due to stuck port data_in                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3,4,6..11,15]          ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX                           ; Stuck at GND due to stuck port data_in                                      ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[6,8,10]                         ; Stuck at GND due to stuck port data_in                                      ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[10]                             ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]                  ; Stuck at GND due to stuck port data_in                                      ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0,2..31]            ; Lost fanout                                                                 ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[3,4,6..11,15]          ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3,4,6..10] ; Stuck at GND due to stuck port data_in                                      ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                        ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0]                           ; Stuck at GND due to stuck port data_in                                      ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]               ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]                     ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1..18]                 ; Lost fanout                                                                 ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[11,15]              ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[11,15]               ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]                ; Stuck at GND due to stuck port data_in                                      ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[9]                              ; Stuck at GND due to stuck port data_in                                      ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[9]                              ; Stuck at GND due to stuck port data_in                                      ;
-; IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                                    ; Stuck at GND due to stuck port data_in                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]                       ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]                       ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[82]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[76]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[76]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[74]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[74]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[72]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[72]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[70]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[70]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[68]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[68]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[66]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[66]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[64]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[64]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[62]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[62]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[60]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[60]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[58]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[58]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[56]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[56]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[54]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[54]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[52]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[52]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[50]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[50]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[48]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[48]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[46]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[46]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[44]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[44]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[42]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[42]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[40]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[40]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[38]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[38]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[36]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[36]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[34]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[34]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[32]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[32]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[30]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[30]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[28]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[28]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[26]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[26]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[24]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[24]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22]                    ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20]    ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20]                    ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[74]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[74]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[72]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[72]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[70]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[70]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[68]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[68]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[66]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[66]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[64]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[64]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[62]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[62]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[60]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[60]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[58]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[58]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[56]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[56]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[54]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[54]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[52]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[52]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[50]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[50]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[48]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[48]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[46]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[46]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[44]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[44]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[42]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[42]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[40]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[40]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[38]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[38]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[36]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[36]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[34]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[34]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[32]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[32]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[30]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[30]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[28]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[28]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[26]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[26]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[24]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[24]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[22]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[22]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[20]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[20]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[18]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[18]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[16]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[16]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[14]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[14]                             ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[12]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[12]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[74]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[74]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[72]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[72]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[70]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[70]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[68]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[68]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[66]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[66]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[64]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[64]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[62]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[62]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[60]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[60]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[58]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[58]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[56]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[56]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[54]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[54]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[52]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[52]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[50]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[50]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[48]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[48]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[46]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[46]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[44]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[44]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[42]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[42]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[40]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[40]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[38]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[38]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[36]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[36]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[34]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[34]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[32]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[32]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[30]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[30]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[28]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[28]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[26]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[26]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[24]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[24]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[22]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[22]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[20]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[20]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[18]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[18]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[16]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[16]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[14]             ;
-; ID_Registers:ID_Registers|register_rtl_0_bypass[14]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[12]             ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[31]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[31]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[30]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[30]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[29]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[29]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[28]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[28]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[27]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[27]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[26]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[26]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[25]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[25]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[24]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[24]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[23]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[23]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[22]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[22]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[21]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[21]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[20]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[20]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[19]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[19]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[18]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[18]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[17]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[17]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[16]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[16]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[15]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[15]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[14]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[14]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[13]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[13]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[12]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[12]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[11]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[11]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[10]                      ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[10]                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[9]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[9]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[8]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[8]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[7]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[7]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[6]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[6]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[5]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[5]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[4]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[4]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[3]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[3]                                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[2]                       ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[2]                                    ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[11]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[11]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[0]                              ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[0]              ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[1]                              ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[1]              ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[5,21]                  ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[2]              ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[3]                              ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[3]              ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[22,26,27,31]           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[4]              ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[5]                              ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[5]              ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[7]                              ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[7]              ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,14]                  ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[8]                              ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13]                    ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]    ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[6]                              ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12]                    ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]    ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[4]                              ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]    ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[2]                              ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[16]    ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[13]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[13]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[15]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[15]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[17]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[17]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[19]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[19]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[21]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[21]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[23]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[23]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[25]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[25]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[27]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[27]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[29]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[29]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[31]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[31]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[33]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[33]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[35]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[35]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[37]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[37]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[39]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[39]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[41]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[41]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[43]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[43]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[45]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[45]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[47]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[47]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[49]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[49]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[51]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[51]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[53]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[53]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[55]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[55]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[57]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[57]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[59]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[59]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[61]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[61]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[63]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[63]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[65]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[65]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[67]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[67]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[69]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[69]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[71]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[71]             ;
-; ID_Registers:ID_Registers|register_rtl_1_bypass[73]                             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[73]             ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0]         ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]                    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]                    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[18]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]                    ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[17]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]         ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]    ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17]                 ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12] ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18]                 ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13] ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19]                 ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]                  ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]                  ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]                  ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]  ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12] ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[2]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13] ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[3]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]  ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]  ;
-; Total Number of Removed Registers = 330                                         ;                                                                             ;
-+---------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; ID_Control:ID_Control|ALUOp_ID[0]~0                    ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                  ;
-+--------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
-; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                                            ;
-+--------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20],                     ;
-;                                                              ; due to stuck port data_in ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30],                     ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29],                     ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[28],                     ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[28],                     ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[29],                     ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[30],                     ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20],                  ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[15],                     ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[11],                     ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3],                      ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4],                      ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[6],                      ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[7],                      ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[8],                      ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[9],                      ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[10],                     ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX,                            ;
-;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[6],                               ;
-;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[8],                               ;
-;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[10],                              ;
-;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_1_bypass[10],                              ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[2],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[3],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[4],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[5],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[6],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[7],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[8],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[9],                   ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[10],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[11],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[12],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[13],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[14],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[15],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[16],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[17],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[18],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[19],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[20],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[21],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[22],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[23],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[24],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[25],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[26],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[27],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[28],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[29],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[30],                  ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[31],                  ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11],                     ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[3],                      ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[4],                      ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[6],                      ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[7],                      ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[8],                      ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[9],                      ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[10],                     ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3],          ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4],          ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[6],          ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[7],          ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[8],          ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[9],          ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[10],         ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM,                         ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[0],                            ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4],                ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[11],                  ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[11],                   ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4],                 ;
-;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[9],                               ;
-;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_1_bypass[9], IF_PC_Reg:IF_PC_Reg|PC_IF[0], ;
-;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0],                        ;
-;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]                         ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]  ; Stuck at GND              ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1],                      ;
-;                                                              ; due to stuck port data_in ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[2],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[3],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[4],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[5],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[6],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[7],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[8],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[9],                      ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[10],                     ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[11],                     ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[12],                     ;
-;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[13]                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15] ; Stuck at GND              ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15],                  ;
-;                                                              ; due to stuck port data_in ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15]                    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[25]                      ;
-;                                                              ; due to stuck port data_in ;                                                                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[24] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24]                      ;
-;                                                              ; due to stuck port data_in ;                                                                                   ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[23] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[23]                      ;
-;                                                              ; due to stuck port data_in ;                                                                                   ;
-+--------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                          ;
++-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; Register name                                                                 ; Reason for Removal                                                          ;
++-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[11]      ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[11]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[12]      ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[13]      ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[14]      ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[15..31]  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|RegDst_EX                           ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|ALUOp_EX[1]           ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemtoReg_EX                         ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemRead_EX            ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemtoReg_MEM                      ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemRead_MEM         ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[1]                ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Branch_Dest_MEM[0]  ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[1]                     ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|PC_Plus_4_EX[0]       ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                     ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]       ;
+; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20,24,25]            ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]                  ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29,30]               ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24,25,29,30]         ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20]               ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4,6..10,15]          ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX                         ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[8,10]                         ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[10]                           ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]                ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[4,6..10,15]          ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4,6..10] ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                      ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]             ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]                   ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1..18]               ; Lost fanout                                                                 ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15]               ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15]                ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]              ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[9]                            ; Stuck at GND due to stuck port data_in                                      ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[9]                            ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[82]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[76]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[76]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[74]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[74]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[72]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[72]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[70]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[70]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[68]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[68]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[66]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[66]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[64]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[64]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[62]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[62]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[60]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[60]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[58]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[58]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[56]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[56]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[54]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[54]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[52]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[52]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[50]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[50]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[48]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[48]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[46]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[46]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[44]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[44]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[42]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[42]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[40]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[40]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[38]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[38]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[36]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[36]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[34]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[34]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[32]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[32]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[30]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[30]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[28]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[28]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[26]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[26]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[24]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[24]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22]                  ; Merged with MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20]    ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20]                  ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[12]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[12]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[14]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[14]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[16]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[16]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[18]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[18]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[20]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[20]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[22]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[22]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[24]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[24]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[26]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[26]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[28]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[28]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[30]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[30]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[32]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[32]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[34]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[34]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[36]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[36]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[38]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[38]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[40]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[40]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[42]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[42]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[44]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[44]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[46]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[46]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[48]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[48]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[50]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[50]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[52]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[52]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[54]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[54]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[56]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[56]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[58]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[58]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[60]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[60]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[62]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[62]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[64]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[64]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[66]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[66]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[68]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[68]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[70]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[70]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[72]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[72]                           ; Merged with ID_Registers:ID_Registers|register_rtl_1_bypass[74]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[74]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[12]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[12]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[14]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[14]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[16]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[16]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[18]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[18]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[20]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[20]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[22]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[22]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[24]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[24]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[26]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[26]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[28]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[28]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[30]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[30]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[32]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[32]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[34]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[34]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[36]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[36]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[38]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[38]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[40]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[40]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[42]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[42]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[44]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[44]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[46]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[46]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[48]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[48]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[50]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[50]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[52]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[52]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[54]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[54]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[56]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[56]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[58]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[58]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[60]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[60]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[62]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[62]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[64]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[64]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[66]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[66]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[68]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[68]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[70]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[70]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[72]             ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[72]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[74]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[73]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[73]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[0]                            ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[0]              ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[1]                            ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[1]              ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[5,21]                ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[2]              ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[3]                            ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[3]              ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[22]                  ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[4]              ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[5]                            ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[5]              ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3,23,28]             ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[6]              ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[7]                            ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[7]              ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,14]                ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[8]                            ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13]                  ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]    ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[6]                            ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12]                  ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]    ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[4]                            ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]    ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[2]                            ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[16]    ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[71]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[71]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[69]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[69]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[67]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[67]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[65]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[65]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[63]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[63]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[61]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[61]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[59]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[59]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[57]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[57]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[55]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[55]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[53]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[53]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[51]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[51]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[49]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[49]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[47]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[47]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[45]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[45]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[43]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[43]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[41]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[41]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[39]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[39]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[37]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[37]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[35]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[35]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[33]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[33]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[31]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[31]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[29]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[29]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[27]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[27]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[25]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[25]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[23]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[23]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[21]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[21]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[19]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[19]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[17]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[17]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[15]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[15]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[13]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[13]             ;
+; ID_Registers:ID_Registers|register_rtl_1_bypass[11]                           ; Merged with ID_Registers:ID_Registers|register_rtl_0_bypass[11]             ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26,27]               ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[31]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0]       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[18]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[17]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]    ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3]       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[23]    ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17] ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]  ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[3]             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[2]             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18] ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1]             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17] ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3]              ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2]              ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]  ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1]              ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]  ;
+; Total Number of Removed Registers = 256                                       ;                                                                             ;
++-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                          ;
++--------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                                    ;
++--------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20],             ;
+;                                                              ; due to stuck port data_in ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30],             ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29],             ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[29],             ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[30],             ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20],          ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[15],             ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4],              ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[6],              ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[7],              ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[8],              ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[9],              ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[10],             ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX,                    ;
+;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[8],                       ;
+;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[10],                      ;
+;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_1_bypass[10],                      ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[4],              ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[6],              ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[7],              ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[8],              ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[9],              ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[10],             ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4],  ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[6],  ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[7],  ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[8],  ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[9],  ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[10], ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM,                 ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4],        ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15],           ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4],         ;
+;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_0_bypass[9],                       ;
+;                                                              ;                           ; ID_Registers:ID_Registers|register_rtl_1_bypass[9]                        ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]  ; Stuck at GND              ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1],              ;
+;                                                              ; due to stuck port data_in ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[2],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[3],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[4],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[5],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[6],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[7],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[8],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[9],              ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[10],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[11],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[12],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[13]              ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[25]              ;
+;                                                              ; due to stuck port data_in ;                                                                           ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[24] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24]              ;
+;                                                              ; due to stuck port data_in ;                                                                           ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15] ; Stuck at GND              ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15]           ;
+;                                                              ; due to stuck port data_in ;                                                                           ;
++--------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -702,12 +641,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 363   ;
+; Total registers                              ; 437   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 38    ;
+; Number of registers using Clock Enable       ; 73    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -717,7 +656,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------------+---------+
 ; Inverted Register                                   ; Fan out ;
 +-----------------------------------------------------+---------+
-; ID_Registers:ID_Registers|register_rtl_0_bypass[12] ; 34      ;
+; ID_Registers:ID_Registers|register_rtl_0_bypass[74] ; 34      ;
 ; Total number of inverted registers = 1              ;         ;
 +-----------------------------------------------------+---------+
 
@@ -968,9 +907,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                              ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |Mips|Data_forwarding_mux_B:Data_forwarding_mux_B|Mux26 ;                            ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |Mips|Data_forwarding_mux_A:Data_forwarding_mux_A|Mux20 ;                            ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |Mips|EX_ALU:EX_ALU|Mux30                               ;                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |Mips|Data_forwarding_mux_B:Data_forwarding_mux_B|Mux24 ;                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |Mips|Data_forwarding_mux_A:Data_forwarding_mux_A|Mux30 ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |Mips|EX_ALU_Control:EX_ALU_Control|ALU_Control_EX[0]   ;                            ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |Mips|EX_ALU:EX_ALU|Mux24                               ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
 
 
@@ -1358,7 +1298,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1368,7 +1308,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Sep 08 11:31:29 2014
+    Info: Processing started: Mon Sep 08 13:07:50 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mips -c Mips
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file forward_c_mux.v
@@ -1434,7 +1374,7 @@ Info (12128): Elaborating entity "IF_PC_Mux" for hierarchy "IF_PC_Mux:IF_PC_Mux"
 Info (12128): Elaborating entity "IF_PC_Reg" for hierarchy "IF_PC_Reg:IF_PC_Reg"
 Info (12128): Elaborating entity "IF_PC_Add" for hierarchy "IF_PC_Add:IF_PC_Add"
 Info (12128): Elaborating entity "IF_Instruction_Memory" for hierarchy "IF_Instruction_Memory:IF_Instruction_Memory"
-Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(11): number of words (4) in memory file does not match the number of elements in the address range [0:1024]
+Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(11): number of words (7) in memory file does not match the number of elements in the address range [0:1024]
 Warning (10030): Net "memory.data_a" at IF_Instruction_Memory.v(9) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "memory.waddr_a" at IF_Instruction_Memory.v(9) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "memory.we_a" at IF_Instruction_Memory.v(9) has no driver or initial value, using a default initial value '0'
@@ -1623,73 +1563,52 @@ Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsync
     Info (12134): Parameter "INIT_FILE" = "db/Mips.ram0_MEM_Data_Memory_3250c012.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_bng1.tdf
     Info (12023): Found entity 1: altsyncram_bng1
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/Mips.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/db/Mips.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "PC_Plus_4_IF[0]" is stuck at GND
-    Warning (13410): Pin "PC_Plus_4_IF[1]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[3]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[4]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[6]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[7]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[8]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[9]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[10]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[11]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[15]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[20]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[23]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[24]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[25]" is stuck at GND
-    Warning (13410): Pin "Instruction_IF[28]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[29]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[30]" is stuck at GND
-    Warning (13410): Pin "Next_PC_IF[0]" is stuck at GND
-    Warning (13410): Pin "Next_PC_IF[1]" is stuck at GND
-    Warning (13410): Pin "ALUOp_ID[0]" is stuck at GND
-    Warning (13410): Pin "Branch_ID" is stuck at GND
     Warning (13410): Pin "MemWrite_ID" is stuck at GND
-    Warning (13410): Pin "PCSrc_ID" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[3]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[4]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[6]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[7]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[8]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[9]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[10]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[11]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[15]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[20]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[23]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[24]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[25]" is stuck at GND
-    Warning (13410): Pin "Instruction_EX[28]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[29]" is stuck at GND
     Warning (13410): Pin "Instruction_EX[30]" is stuck at GND
     Warning (13410): Pin "ALU_Control_EX[3]" is stuck at GND
-    Warning (13410): Pin "Branch_Dest_EX[0]" is stuck at GND
-    Warning (13410): Pin "Branch_Dest_EX[1]" is stuck at GND
     Warning (13410): Pin "Write_Register_EX[4]" is stuck at GND
     Warning (13410): Pin "Forward_MEM" is stuck at GND
-    Warning (13410): Pin "Forward_C" is stuck at GND
-    Warning (13410): Pin "Forward_D" is stuck at GND
-Info (17049): 49 registers lost all their fanouts during netlist optimizations.
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ID_Registers:ID_Registers|altsyncram:register_rtl_0|altsyncram_tki1:auto_generated|ALTSYNCRAM"
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ID_Registers:ID_Registers|altsyncram:register_rtl_1|altsyncram_tki1:auto_generated|ALTSYNCRAM"
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1805 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1961 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 575 output pins
-    Info (21061): Implemented 1133 logic cells
+    Info (21061): Implemented 1289 logic cells
     Info (21064): Implemented 96 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 436 megabytes
-    Info: Processing ended: Mon Sep 08 11:31:36 2014
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 437 megabytes
+    Info: Processing ended: Mon Sep 08 13:07:53 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

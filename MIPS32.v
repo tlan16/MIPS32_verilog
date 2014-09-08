@@ -449,8 +449,8 @@ module MIPS32(
 				 // Outputs
 				 .PCSrc_MEM		(PCSrc_MEM),
 				 // Inputs
-				 .Branch_MEM		(Branch_MEM),
-				 .Zero_MEM		(Zero_MEM));
+				 .Branch_MEM		(Branch_ID),
+				 .Zero_MEM		(Comparetor_ID));
    
 
    // MEM_Data_Memory

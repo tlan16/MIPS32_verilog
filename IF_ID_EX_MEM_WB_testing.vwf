@@ -6152,21 +6152,6 @@ SIGNAL("ID_Control_NOP")
 	PARENT = "";
 }
 
-GROUP("Ex_Control")
-{
-	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
-}
-
-GROUP("Mem_Control")
-{
-	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
-}
-
-GROUP("WB_Control")
-{
-	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
-}
-
 SIGNAL("ID_Register_Write_to_Read")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -6195,6 +6180,51 @@ SIGNAL("ID_Register_Write_to_Read[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "ID_Register_Write_to_Read";
+}
+
+GROUP("Ex_Control")
+{
+	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
+}
+
+GROUP("Mem_Control")
+{
+	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
+}
+
+GROUP("WB_Control")
+{
+	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
+}
+
+SIGNAL("ForwardC")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ForwardD")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("Comparetor_ID")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
 }
 
 TRANSITION_LIST("Clk")
@@ -11496,6 +11526,33 @@ TRANSITION_LIST("ID_Register_Write_to_Read[1]")
 }
 
 TRANSITION_LIST("ID_Register_Write_to_Read[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ForwardC")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ForwardD")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Comparetor_ID")
 {
 	NODE
 	{
@@ -17677,6 +17734,33 @@ DISPLAY_LINE
 	TREE_INDEX = 617;
 	TREE_LEVEL = 1;
 	PARENT = 615;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ForwardC";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 618;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ForwardD";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 619;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Comparetor_ID";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 620;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

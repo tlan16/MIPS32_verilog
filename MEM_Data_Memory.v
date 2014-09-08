@@ -15,7 +15,7 @@ module MEM_Data_Memory(
 		//Read_Data_MEM <= 32'd0;
 	end
 	
-assign Read_Data_MEM = (ALU_Result_MEM == 0 || ALU_Result_MEM > 32'd511) ? 32'd0 : Data_Memory[ALU_Result_MEM];
+assign Read_Data_MEM = MemRead_MEM ? ( (ALU_Result_MEM == 0 || ALU_Result_MEM > 32'd511) ? 32'd0 : Data_Memory[ALU_Result_MEM]) : Read_Data_MEM;
 /*
 	always@(MemRead_MEM or Data_Memory[ALU_Result_MEM])
 		begin
@@ -31,10 +31,11 @@ assign Read_Data_MEM = (ALU_Result_MEM == 0 || ALU_Result_MEM > 32'd511) ? 32'd0
 */
 	always@(posedge Clk) 
 		begin
-			if(MemWrite_MEM)
-				begin
-					Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;
-				end
+			Data_Memory[ALU_Result_MEM] <= MemWrite_MEM? Write_Data_MEM : Data_Memory[ALU_Result_MEM];
+//			if(MemWrite_MEM)
+//				begin
+//					Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;
+//				end
 		end
 	
 endmodule // MEM_Data_Memory
