@@ -1,3 +1,7 @@
+//This module is used to handle memory to memory copies hazard
+//for example a lw then sw
+
+
 module Data_forwarding_mux_MEM(
 	input 		 	Forward_MEM,
 	input [31:0] 	Write_Data_MEM,

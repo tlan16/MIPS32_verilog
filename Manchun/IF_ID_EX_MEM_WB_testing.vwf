@@ -5642,21 +5642,6 @@ SIGNAL("Read_Data_1_ID[0]")
 	PARENT = "Read_Data_1_ID";
 }
 
-GROUP("Ex_Control")
-{
-	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
-}
-
-GROUP("Mem_Control")
-{
-	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
-}
-
-GROUP("WB_Control")
-{
-	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
-}
-
 SIGNAL("Forward_Reg_Delay")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -5687,6 +5672,21 @@ SIGNAL("Forward_Reg_Delay[0]")
 	PARENT = "Forward_Reg_Delay";
 }
 
+GROUP("Ex_Control")
+{
+	MEMBERS = "RegDst_ID", "ALUOp_ID", "ALUSrc_ID";
+}
+
+GROUP("Mem_Control")
+{
+	MEMBERS = "Branch_ID", "MemRead_ID", "MemWrite_ID";
+}
+
+GROUP("WB_Control")
+{
+	MEMBERS = "RegWrite_ID", "MemtoReg_ID";
+}
+
 TRANSITION_LIST("Clk")
 {
 	NODE
@@ -5694,9 +5694,9 @@ TRANSITION_LIST("Clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 10;
-			LEVEL 0 FOR 50.0;
-			LEVEL 1 FOR 50.0;
+			REPEAT = 20;
+			LEVEL 0 FOR 25.0;
+			LEVEL 1 FOR 25.0;
 		}
 	}
 }

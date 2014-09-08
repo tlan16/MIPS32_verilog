@@ -39,6 +39,7 @@ module Mips(
 //	  output				RegWrite_ID,
 	  output				MemtoReg_ID,
 //	  output [31:0] 	Sign_Extend_Instruction_ID,
+	  output				PCSrc_ID,
 	  
 	  output [31:0]   Instruction_EX,
 	  output [31:0]	ALU_Data_2_EX,
@@ -51,7 +52,7 @@ module Mips(
 	  output [31:0]	ALU_Result_MEM,
 	  output [31:0]	Write_Data_MEM,
 	  output [31:0]	Read_Data_MEM,
-	  output				PCSrc_MEM,
+//	  output				PCSrc_MEM,	//Deleted because moved to ID stage
 	  
 	  output [31:0]	Read_Data_WB,
 	  output [31:0]	ALU_Result_WB,
@@ -64,7 +65,12 @@ module Mips(
 	  output				IF_ID_pipeline_stall,
 	  output				pc_stall,
 	  output				ID_Control_Noop,
-	  output [1:0]		Forward_Reg_Delay
+	  output [1:0]		Forward_Reg_Delay,
+	  output				Forward_C,
+	  output				Forward_D,
+	  output	[31:0]	Forward_C_out,
+	  output [31:0]	Forward_D_out,
+	  output				Zero_ID
 		);
 
    // IF Origin Variables:
@@ -89,6 +95,11 @@ module Mips(
 		wire				RegDst_ID;		// From ID_Control of ID_Control.v
 		wire				RegWrite_ID;		// From ID_Control of ID_Control.v
 		wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
+//		wire 				PCSrc_ID;				// From ID_Branch_AND
+//		wire [31:0]		Forward_C_out;			// From Forward_C
+//		wire [31:0]		Forward_D_out;			// From Forward_D
+//		wire 				Zero_ID;
+
    
    // EX origin variables:
 		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -155,7 +166,7 @@ module Mips(
 		       // Inputs
 		       .PC_Plus_4_IF	(PC_Plus_4_IF[31:0]),
 		       .Branch_Dest_MEM	(Branch_Dest_MEM[31:0]),
-		       .PCSrc_MEM	(PCSrc_MEM));
+		       .PCSrc_ID	(PCSrc_ID));
    
    
 
@@ -242,7 +253,47 @@ module Mips(
 			 // Inputs
 			 .Instruction_ID	(Instruction_ID[31:0]),
 			 .ID_Control_Noop	(ID_Control_Noop));
+			 
+	// ID_Branch_AND
+   ID_Branch_AND ID_Branch_AND(
+				 // Outputs
+				 .PCSrc_ID		(PCSrc_ID),
+				 // Inputs
+				 .Branch_ID		(Branch_ID),
+				 .Zero_ID		(Zero_ID));
+				 
+				 
+	// ID_Comparator
+	ID_Comparator ID_Comparator(
+				// Outputs
+				.Zero_ID		(Zero_ID),
+				// Inputs
+				.Forward_C_out		(Forward_C_out),
+				.Forward_D_out		(Forward_D_out));
+				
+				
+	//Forward_C_mux
+	Forward_C_mux Forward_C_mux(
+				// Outputs
+				.Forward_C_out			(Forward_C_out),
+				// Inputs	
+				.Forward_C				(Forward_C),
+				.ALU_Result_MEM		(ALU_Result_MEM),
+				.Read_Data_1_ID		(Read_Data_1_ID)
+	);
 
+	//Forward_D_mux
+	Forward_D_mux Forward_D_mux(
+				// Outputs
+				.Forward_D_out			(Forward_D_out),
+				// Inputs	
+				.Forward_D				(Forward_D),
+				.ALU_Result_MEM		(ALU_Result_MEM),
+				.Read_Data_2_ID		(Read_Data_2_ID)
+	);
+
+	
+	
    // ID_EX_Pipeline_Stage
 
    ID_EX_Pipeline_Stage ID_EX_Pipeline_Stage(
@@ -342,6 +393,8 @@ module Mips(
 	.IF_ID_pipeline_stall	(IF_ID_pipeline_stall),
 	.ID_Control_Noop			(ID_Control_Noop),
 	.Forward_Reg_Delay	(Forward_Reg_Delay),
+	.Forward_C				(Forward_C),
+	.Forward_D				(Forward_D),
 	// Inputs
 	 .Instruction_MEM  	(Instruction_MEM),
 	 .Instruction_EX		(Instruction_EX),
@@ -349,9 +402,12 @@ module Mips(
 	 .Instruction_ID		(Instruction_ID),
 	 .RegWrite_MEM			(RegWrite_MEM),
 	 .RegWrite_WB			(RegWrite_WB),
+	 .RegWrite_EX			(RegWrite_EX),
 	 .MemWrite_MEM			(MemWrite_MEM),
 	 .MemtoReg_WB			(MemtoReg_WB),
-	 .MemRead_EX			(MemRead_EX)
+	 .MemtoReg_EX			(MemtoReg_EX),
+	 .MemRead_EX			(MemRead_EX),
+	 .Branch_ID				(Branch_ID)
 	);
 		
 	// Data_forwarding_mux_A
@@ -408,13 +464,13 @@ module Mips(
 					       .Clk		(Clk));
    
 
-   // MEM_Branch_AND
-   MEM_Branch_AND MEM_Branch_AND(
-				 // Outputs
-				 .PCSrc_MEM		(PCSrc_MEM),
-				 // Inputs
-				 .Branch_MEM		(Branch_MEM),
-				 .Zero_MEM		(Zero_MEM));
+//   // MEM_Branch_AND			// Deleted because moved to ID stage
+//   MEM_Branch_AND MEM_Branch_AND(
+//				 // Outputs
+//				 .PCSrc_MEM		(PCSrc_MEM),
+//				 // Inputs
+//				 .Branch_MEM		(Branch_MEM),
+//				 .Zero_MEM		(Zero_MEM));
    
 
    // MEM_Data_Memory

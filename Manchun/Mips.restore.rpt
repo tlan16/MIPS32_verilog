@@ -1,5 +1,5 @@
 Restore Archived Project report for Mips
-Sun Sep 07 16:26:58 2014
+Mon Sep 08 11:30:35 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Sun Sep 07 16:26:58 2014 ;
+; Restore Archived Project Status ; Successful - Mon Sep 08 11:30:35 2014 ;
 ; Revision Name                   ; Mips                                  ;
 ; Top-level Entity Name           ; Mips                                  ;
 ; Family                          ; Cyclone II                            ;
@@ -46,14 +46,14 @@ applicable agreement for further details.
 +-----------------------------------+
 ; Restore Archived Project Messages ;
 +-----------------------------------+
-Info: Successfully restored 'C:/Users/Frank-Desktop/Downloads/Mips_Load_use_hazard_with_Delay_forward_fix.qar' into the 'C:\\Users\\Frank-Desktop\\Documents\\MIPS32_verilog\\Manchun/' directory
+Info: Successfully restored 'C:/Users/Frank-Desktop/Downloads/Mips_ID_stage_Branch_Rtype_then_bne_not_tested.qar' into the 'C:\\Users\\Frank-Desktop\\Documents\\MIPS32_verilog\\Manchun/' directory
 Info: Generated report 'Mips.restore.rpt'
 Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 266 megabytes
-    Info: Processing ended: Sun Sep 07 16:26:58 2014
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Mon Sep 08 11:30:35 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +-------------------------------------------------+
@@ -72,6 +72,10 @@ Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
 ; EX_MEM_Pipeline_Stage.v                         ;
 ; EX_PC_Add.v                                     ;
 ; EX_Shift_Left_2.v                               ;
+; Forward_C_mux.v                                 ;
+; Forward_D_mux.v                                 ;
+; ID_Branch_AND.v                                 ;
+; ID_Comparator.v                                 ;
 ; ID_Control.v                                    ;
 ; ID_EX_Pipeline_Stage.v                          ;
 ; ID_Registers.v                                  ;
