@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="MIPS32">
-		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0" CBX_FILE_NAME="altsyncram_cfh1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1" CBX_FILE_NAME="altsyncram_4vl1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0" CBX_FILE_NAME="altsyncram_gqg1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

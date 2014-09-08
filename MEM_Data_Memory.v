@@ -31,11 +31,11 @@ assign Read_Data_MEM = MemRead_MEM ? ( (ALU_Result_MEM == 0 || ALU_Result_MEM > 
 */
 	always@(posedge Clk) 
 		begin
-			Data_Memory[ALU_Result_MEM] <= MemWrite_MEM? Write_Data_MEM : Data_Memory[ALU_Result_MEM];
-//			if(MemWrite_MEM)
-//				begin
-//					Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;
-//				end
+//			Data_Memory[ALU_Result_MEM] <= MemWrite_MEM? Write_Data_MEM : Data_Memory[ALU_Result_MEM];
+			if(MemWrite_MEM)
+				begin
+					Data_Memory[ALU_Result_MEM] <= Write_Data_MEM;
+				end
 		end
 	
 endmodule // MEM_Data_Memory

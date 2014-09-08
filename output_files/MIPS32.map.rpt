@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS32
-Mon Sep 08 22:32:47 2014
+Tue Sep 09 01:29:41 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -15,14 +15,14 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Added for RAM Pass-Through Logic
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_cfh1:auto_generated
- 17. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1|altsyncram_4vl1:auto_generated
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Registers Added for RAM Pass-Through Logic
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated
  18. Parameter Settings for User Entity Instance: ID_Control:ID_Control
  19. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_A
  20. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_B
@@ -30,14 +30,13 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
  22. Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control
  23. Parameter Settings for User Entity Instance: MEM_to_MEM_Forward:MEM_to_MEM_Forward
  24. Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0
- 25. Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1
- 26. altsyncram Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
- 28. Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
- 29. Port Connectivity Checks: "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
- 32. Analysis & Synthesis Suppressed Messages
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
+ 27. Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
+ 28. Port Connectivity Checks: "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -63,18 +62,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 08 22:32:47 2014     ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 09 01:29:41 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 2,369                                     ;
-;     Total combinational functions  ; 1,693                                     ;
-;     Dedicated logic registers      ; 974                                       ;
-; Total registers                    ; 974                                       ;
+; Total logic elements               ; 2,234                                     ;
+;     Total combinational functions  ; 1,624                                     ;
+;     Dedicated logic registers      ; 878                                       ;
+; Total registers                    ; 878                                       ;
 ; Total pins                         ; 592                                       ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 32,768                                    ;
+; Total memory bits                  ; 16,384                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
 ; Total PLLs                         ; 0                                         ;
 +------------------------------------+-------------------------------------------+
@@ -224,9 +223,8 @@ applicable agreement for further details.
 ; altrom.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
 ; altram.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altram.inc                                       ;         ;
 ; altdpram.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_cfh1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_cfh1.tdf                          ;         ;
+; db/altsyncram_gqg1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_gqg1.tdf                          ;         ;
 ; db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ;         ;
-; db/altsyncram_4vl1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_4vl1.tdf                          ;         ;
 +-------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
@@ -235,28 +233,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,369 ;
+; Estimated Total logic elements              ; 2,234 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1693  ;
+; Total combinational functions               ; 1624  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1227  ;
-;     -- 3 input functions                    ; 339   ;
-;     -- <=2 input functions                  ; 127   ;
+;     -- 4 input functions                    ; 1149  ;
+;     -- 3 input functions                    ; 378   ;
+;     -- <=2 input functions                  ; 97    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1542  ;
+;     -- normal mode                          ; 1473  ;
 ;     -- arithmetic mode                      ; 151   ;
 ;                                             ;       ;
-; Total registers                             ; 974   ;
-;     -- Dedicated logic registers            ; 974   ;
+; Total registers                             ; 878   ;
+;     -- Dedicated logic registers            ; 878   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 592   ;
-; Total memory bits                           ; 32768 ;
+; Total memory bits                           ; 16384 ;
 ; Maximum fan-out node                        ; Clk   ;
-; Maximum fan-out                             ; 1038  ;
-; Total fan-out                               ; 10432 ;
-; Average fan-out                             ; 3.14  ;
+; Maximum fan-out                             ; 910   ;
+; Total fan-out                               ; 9379  ;
+; Average fan-out                             ; 3.00  ;
 +---------------------------------------------+-------+
 
 
@@ -265,31 +263,29 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |MIPS32                                          ; 1693 (0)          ; 974 (0)      ; 32768       ; 0            ; 0       ; 0         ; 592  ; 0            ; |MIPS32                                                                                             ;              ;
+; |MIPS32                                          ; 1624 (0)          ; 878 (0)      ; 16384       ; 0            ; 0       ; 0         ; 592  ; 0            ; |MIPS32                                                                                             ;              ;
 ;    |EX_ALU:EX_ALU|                               ; 178 (178)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                               ;              ;
 ;    |EX_ALU_Control:EX_ALU_Control|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Control:EX_ALU_Control                                                               ;              ;
 ;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 70 (70)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
-;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                     ;              ;
+;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                     ;              ;
 ;    |EX_Forward_A:EX_Forward_A|                   ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                   ;              ;
-;    |EX_Forward_Unit:EX_Forward_Unit|             ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                             ;              ;
-;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                 ;              ;
+;    |EX_Forward_Unit:EX_Forward_Unit|             ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                             ;              ;
+;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                 ;              ;
 ;    |EX_PC_Add:EX_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                         ;              ;
-;    |ID_Control:ID_Control|                       ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                       ;              ;
-;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 0 (0)             ; 79 (79)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
+;    |ID_Control:ID_Control|                       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                       ;              ;
+;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 1 (1)             ; 80 (80)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
 ;    |ID_Read_data_Mux:ID_Read_data_Mux|           ; 75 (75)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Read_data_Mux:ID_Read_data_Mux                                                           ;              ;
 ;    |ID_Registers:ID_Registers|                   ; 943 (943)         ; 512 (512)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                   ;              ;
-;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                   ;              ;
+;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                   ;              ;
 ;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_Instruction_Memory:IF_Instruction_Memory                                                 ;              ;
 ;    |IF_PC_Add:IF_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Add:IF_PC_Add                                                                         ;              ;
 ;    |IF_PC_Mux:IF_PC_Mux|                         ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Mux:IF_PC_Mux                                                                         ;              ;
 ;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Reg:IF_PC_Reg                                                                         ;              ;
 ;    |MEM_Branch_AND:MEM_Branch_AND|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Branch_AND:MEM_Branch_AND                                                               ;              ;
-;    |MEM_Data_Memory:MEM_Data_Memory|             ; 151 (151)         ; 166 (166)    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                             ;              ;
+;    |MEM_Data_Memory:MEM_Data_Memory|             ; 75 (75)           ; 64 (64)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                             ;              ;
 ;       |altsyncram:Data_Memory_rtl_0|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0                                ;              ;
-;          |altsyncram_cfh1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_cfh1:auto_generated ;              ;
-;       |altsyncram:Data_Memory_rtl_1|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1                                ;              ;
-;          |altsyncram_4vl1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1|altsyncram_4vl1:auto_generated ;              ;
-;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                 ;              ;
+;          |altsyncram_gqg1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated ;              ;
+;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                 ;              ;
 ;    |WB_MemtoReg_Mux:WB_MemtoReg_Mux|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|WB_MemtoReg_Mux:WB_MemtoReg_Mux                                                             ;              ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -300,8 +296,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
 ; Name                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                             ;
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
-; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_cfh1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 512          ; 32           ; 512          ; 32           ; 16384 ; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ;
-; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1|altsyncram_4vl1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 512          ; 32           ; 512          ; 32           ; 16384 ; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ;
+; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 512          ; 32           ; 512          ; 32           ; 16384 ; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ;
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
 
 
@@ -347,6 +342,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; ID_Control:ID_Control|ALUOp_ID[0]~0                    ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                          ;
 +-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -363,18 +369,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[1]                     ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|PC_Plus_4_ID[0]       ;
 ; IF_PC_Reg:IF_PC_Reg|PC_IF[1]                                                  ; Merged with IF_PC_Reg:IF_PC_Reg|PC_IF[0]                                    ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4,6..10,15]          ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4,6..10] ; Stuck at GND due to stuck port data_in                                      ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15]                  ; Stuck at GND due to stuck port data_in                                      ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20,24,25,29,30]      ; Stuck at GND due to stuck port data_in                                      ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15]               ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15]                ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24,25]               ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29,30]               ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4,6..10] ; Stuck at GND due to stuck port data_in                                      ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX                         ; Stuck at GND due to stuck port data_in                                      ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20]                  ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[24,25]               ; Stuck at GND due to stuck port data_in                                      ;
+; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15]               ; Stuck at GND due to stuck port data_in                                      ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20]                  ; Stuck at GND due to stuck port data_in                                      ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20,24,25]            ; Stuck at GND due to stuck port data_in                                      ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20]               ; Stuck at GND due to stuck port data_in                                      ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                      ; Stuck at GND due to stuck port data_in                                      ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]             ; Stuck at GND due to stuck port data_in                                      ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]                ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]                   ; Stuck at GND due to stuck port data_in                                      ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1..18]               ; Lost fanout                                                                 ;
+; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15,20]             ; Stuck at GND due to stuck port data_in                                      ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]              ; Stuck at GND due to stuck port data_in                                      ;
 ; ID_Registers:ID_Registers|Register_File[16][31]                               ; Lost fanout                                                                 ;
 ; ID_Registers:ID_Registers|Register_File[17][31]                               ; Lost fanout                                                                 ;
@@ -890,29 +898,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ID_Registers:ID_Registers|Register_File[31][0]                                ; Lost fanout                                                                 ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[5]                   ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[21]    ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[3,28]                ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[23]    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26,27]               ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[31]    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,14]                ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[13]                  ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[18]    ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[12]                  ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[17]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[0,14]                ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[19]    ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[0]       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[14]                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[19]    ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[13]                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[18]    ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[12]                  ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[17]    ;
+; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[27,31]               ; Merged with IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[26]    ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[5]       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[21]    ;
 ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[3]       ; Merged with ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[23]    ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[12]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17] ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[13]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18] ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[14]               ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[12]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]  ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[13]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]  ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[14]                ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]  ;
-; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[1]             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[17] ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[2]             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[18] ;
 ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[3]             ; Merged with EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[19] ;
-; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[1]              ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[17]  ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[2]              ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[18]  ;
 ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[3]              ; Merged with MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[19]  ;
-; Total Number of Removed Registers = 595                                       ;                                                                             ;
+; Total Number of Removed Registers = 608                                       ;                                                                             ;
 +-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 
@@ -922,13 +924,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                                   ;
 +--------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[15] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[15],            ;
-;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15],         ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]        ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25] ; Stuck at GND              ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15],          ;
-;                                                              ; due to stuck port data_in ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[25],            ;
-;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]           ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX,                   ;
-;                                                              ; due to stuck port data_in ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                 ;
+;                                                              ; due to stuck port data_in ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29],            ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30],            ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[25],            ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[24],            ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15],         ;
+;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20],            ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20],            ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[25],            ;
+;                                                              ;                           ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24],            ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20],         ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4],       ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20],          ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15],          ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]         ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[0]  ; Stuck at GND              ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[1],             ;
+;                                                              ; due to stuck port data_in ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[2],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[3],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[4],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[5],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[6],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[7],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[8],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[9],             ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[10],            ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[11],            ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[12],            ;
+;                                                              ;                           ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[13]             ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[10] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[10] ;
 ;                                                              ; due to stuck port data_in ;                                                                          ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[9]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[9]  ;
@@ -941,11 +963,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;                                                              ; due to stuck port data_in ;                                                                          ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[4]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[4]  ;
 ;                                                              ; due to stuck port data_in ;                                                                          ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[24] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[24]             ;
-;                                                              ; due to stuck port data_in ;                                                                          ;
-; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[20] ; Stuck at GND              ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4]         ;
-;                                                              ; due to stuck port data_in ;                                                                          ;
-; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Instruction_EX[20] ; Stuck at GND              ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[20]          ;
+; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|MemWrite_EX        ; Stuck at GND              ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|MemWrite_MEM                 ;
 ;                                                              ; due to stuck port data_in ;                                                                          ;
 +--------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------+
 
@@ -955,12 +973,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 974   ;
+; Total registers                              ; 878   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 585   ;
+; Number of registers using Clock Enable       ; 586   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -970,33 +988,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------------+---------+
 ; Inverted Register                                            ; Fan out ;
 +--------------------------------------------------------------+---------+
-; ID_Registers:ID_Registers|Register_File[5][0]                ; 3       ;
 ; ID_Registers:ID_Registers|Register_File[9][0]                ; 2       ;
-; ID_Registers:ID_Registers|Register_File[1][0]                ; 3       ;
 ; ID_Registers:ID_Registers|Register_File[13][0]               ; 2       ;
-; ID_Registers:ID_Registers|Register_File[7][0]                ; 3       ;
-; ID_Registers:ID_Registers|Register_File[11][0]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[3][0]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[7][0]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[1][0]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[5][0]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[11][0]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[15][0]               ; 2       ;
-; ID_Registers:ID_Registers|Register_File[6][1]                ; 3       ;
-; ID_Registers:ID_Registers|Register_File[7][1]                ; 3       ;
-; ID_Registers:ID_Registers|Register_File[2][1]                ; 3       ;
 ; ID_Registers:ID_Registers|Register_File[3][1]                ; 3       ;
-; ID_Registers:ID_Registers|Register_File[13][1]               ; 2       ;
+; ID_Registers:ID_Registers|Register_File[6][1]                ; 3       ;
 ; ID_Registers:ID_Registers|Register_File[12][1]               ; 2       ;
+; ID_Registers:ID_Registers|Register_File[2][1]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[7][1]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[13][1]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[6][2]                ; 3       ;
-; ID_Registers:ID_Registers|Register_File[14][2]               ; 2       ;
-; ID_Registers:ID_Registers|Register_File[5][2]                ; 3       ;
-; ID_Registers:ID_Registers|Register_File[4][2]                ; 3       ;
 ; ID_Registers:ID_Registers|Register_File[7][2]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[4][2]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[5][2]                ; 3       ;
+; ID_Registers:ID_Registers|Register_File[14][2]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[15][2]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[9][3]                ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[8][3]                ; 2       ;
-; ID_Registers:ID_Registers|Register_File[13][4]               ; 2       ;
-; ID_Registers:ID_Registers|Register_File[10][4]               ; 2       ;
-; ID_Registers:ID_Registers|Register_File[14][4]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[12][4]               ; 2       ;
+; ID_Registers:ID_Registers|Register_File[13][4]               ; 2       ;
+; ID_Registers:ID_Registers|Register_File[14][4]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[11][4]               ; 2       ;
+; ID_Registers:ID_Registers|Register_File[10][4]               ; 2       ;
 ; ID_Registers:ID_Registers|Register_File[15][4]               ; 2       ;
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20] ; 1       ;
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22] ; 1       ;
@@ -1030,39 +1048,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78] ; 1       ;
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80] ; 1       ;
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[82] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[20] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[22] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[24] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[26] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[28] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[30] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[32] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[34] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[36] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[38] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[40] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[42] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[44] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[46] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[48] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[50] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[52] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[54] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[56] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[58] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[60] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[62] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[64] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[66] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[68] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[70] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[72] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[74] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[76] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[78] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[80] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[82] ; 1       ;
-; Total number of inverted registers = 92                      ;         ;
+; Total number of inverted registers = 60                      ;         ;
 +--------------------------------------------------------------+---------+
 
 
@@ -1154,89 +1140,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0 ;
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[81] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0 ;
 ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[82] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[0]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[1]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[2]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[3]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[4]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[5]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[6]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[7]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[8]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[9]  ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[10] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[11] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[12] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[13] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[14] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[15] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[16] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[17] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[18] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[19] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[20] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[21] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[22] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[23] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[24] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[25] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[26] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[27] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[28] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[29] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[30] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[31] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[32] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[33] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[34] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[35] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[36] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[37] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[38] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[39] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[40] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[41] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[42] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[43] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[44] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[45] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[46] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[47] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[48] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[49] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[50] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[51] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[52] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[53] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[54] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[55] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[56] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[57] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[58] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[59] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[60] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[61] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[62] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[63] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[64] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[65] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[66] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[67] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[68] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[69] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[70] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[71] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[72] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[73] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[74] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[75] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[76] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[77] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[78] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[79] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[80] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[81] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1_bypass[82] ; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1 ;
 +--------------------------------------------------------------+---------------------------------------------------+
 
 
@@ -1245,11 +1148,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                           ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------+----------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |MIPS32|EX_Forward_A:EX_Forward_A|Mux7               ;                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |MIPS32|EX_ALU_Control:EX_ALU_Control|Mux1           ;                            ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[18]      ;                            ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[2]       ;                            ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux11                          ;                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; |MIPS32|EX_Forward_A:EX_Forward_A|Mux4               ;                            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |MIPS32|EX_ALU_Control:EX_ALU_Control|Mux0           ;                            ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[9]       ;                            ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux|ALU_Data_2_EX[0]       ;                            ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; |MIPS32|EX_ALU:EX_ALU|Mux22                          ;                            ;
 ; 10:1               ; 32 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; |MIPS32|ID_Registers:ID_Registers|Read_Data_1_ID[28] ;                            ;
 ; 17:1               ; 32 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; |MIPS32|ID_Registers:ID_Registers|Register_File      ;                            ;
 ; 18:1               ; 32 bits   ; 384 LEs       ; 384 LEs              ; 0 LEs                  ; |MIPS32|ID_Registers:ID_Registers|Read_Data_2_ID[31] ;                            ;
@@ -1257,16 +1160,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_cfh1:auto_generated ;
-+---------------------------------+-------+------+-------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                ;
-+---------------------------------+-------+------+-------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; OFF   ; -    ; -                                                                 ;
-+---------------------------------+-------+------+-------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1|altsyncram_4vl1:auto_generated ;
+; Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated ;
 +---------------------------------+-------+------+-------------------------------------------------------------------+
 ; Assignment                      ; Value ; From ; To                                                                ;
 +---------------------------------+-------+------+-------------------------------------------------------------------+
@@ -1418,68 +1312,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                ;
 ; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                ;
 ; DEVICE_FAMILY                      ; Cyclone II                                      ; Untyped                ;
-; CBXI_PARAMETER                     ; altsyncram_cfh1                                 ; Untyped                ;
-+------------------------------------+-------------------------------------------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1 ;
-+------------------------------------+-------------------------------------------------+------------------------+
-; Parameter Name                     ; Value                                           ; Type                   ;
-+------------------------------------+-------------------------------------------------+------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped                ;
-; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE         ;
-; WIDTH_BYTEENA                      ; 1                                               ; Untyped                ;
-; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped                ;
-; WIDTH_A                            ; 32                                              ; Untyped                ;
-; WIDTHAD_A                          ; 9                                               ; Untyped                ;
-; NUMWORDS_A                         ; 512                                             ; Untyped                ;
-; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped                ;
-; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped                ;
-; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped                ;
-; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped                ;
-; INDATA_ACLR_A                      ; NONE                                            ; Untyped                ;
-; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped                ;
-; WIDTH_B                            ; 32                                              ; Untyped                ;
-; WIDTHAD_B                          ; 9                                               ; Untyped                ;
-; NUMWORDS_B                         ; 512                                             ; Untyped                ;
-; INDATA_REG_B                       ; CLOCK1                                          ; Untyped                ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped                ;
-; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped                ;
-; ADDRESS_REG_B                      ; CLOCK0                                          ; Untyped                ;
-; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped                ;
-; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped                ;
-; INDATA_ACLR_B                      ; NONE                                            ; Untyped                ;
-; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped                ;
-; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped                ;
-; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped                ;
-; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped                ;
-; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped                ;
-; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped                ;
-; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped                ;
-; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped                ;
-; BYTE_SIZE                          ; 8                                               ; Untyped                ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                        ; Untyped                ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped                ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped                ;
-; INIT_FILE                          ; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ; Untyped                ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped                ;
-; MAXIMUM_DEPTH                      ; 0                                               ; Untyped                ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped                ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped                ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped                ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped                ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped                ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped                ;
-; ENABLE_ECC                         ; FALSE                                           ; Untyped                ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                ;
-; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                ;
-; DEVICE_FAMILY                      ; Cyclone II                                      ; Untyped                ;
-; CBXI_PARAMETER                     ; altsyncram_4vl1                                 ; Untyped                ;
+; CBXI_PARAMETER                     ; altsyncram_gqg1                                 ; Untyped                ;
 +------------------------------------+-------------------------------------------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1489,7 +1322,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------------+
 ; Name                                      ; Value                                                        ;
 +-------------------------------------------+--------------------------------------------------------------+
-; Number of entity instances                ; 2                                                            ;
+; Number of entity instances                ; 1                                                            ;
 ; Entity Instance                           ; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0 ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
 ;     -- WIDTH_A                            ; 32                                                           ;
@@ -1501,17 +1334,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
-; Entity Instance                           ; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
-;     -- WIDTH_A                            ; 32                                                           ;
-;     -- NUMWORDS_A                         ; 512                                                          ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
-;     -- WIDTH_B                            ; 32                                                           ;
-;     -- NUMWORDS_B                         ; 512                                                          ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                                       ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                     ;
 +-------------------------------------------+--------------------------------------------------------------+
 
 
@@ -1549,7 +1371,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1559,7 +1381,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Sep 08 22:32:40 2014
+    Info: Processing started: Tue Sep 09 01:29:35 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
@@ -1681,11 +1503,9 @@ Info (12128): Elaborating entity "MEM_WB_Pipeline_Stage" for hierarchy "MEM_WB_P
 Info (12128): Elaborating entity "WB_MemtoReg_Mux" for hierarchy "WB_MemtoReg_Mux:WB_MemtoReg_Mux"
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (276020): Inferred RAM node "MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_IF_Instruction_Memory_5cd28467.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (286030): Timing-Driven Synthesis is running
-Info (19000): Inferred 2 megafunctions from design logic
+Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 32
@@ -1702,23 +1522,6 @@ Info (19000): Inferred 2 megafunctions from design logic
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_1" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 32
-        Info (286033): Parameter WIDTHAD_A set to 9
-        Info (286033): Parameter NUMWORDS_A set to 512
-        Info (286033): Parameter WIDTH_B set to 32
-        Info (286033): Parameter WIDTHAD_B set to 9
-        Info (286033): Parameter NUMWORDS_B set to 512
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif
-        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
 Info (12130): Elaborated megafunction instantiation "MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0"
 Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1736,28 +1539,8 @@ Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsync
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_cfh1.tdf
-    Info (12023): Found entity 1: altsyncram_cfh1
-Info (12130): Elaborated megafunction instantiation "MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1"
-Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "32"
-    Info (12134): Parameter "WIDTHAD_A" = "9"
-    Info (12134): Parameter "NUMWORDS_A" = "512"
-    Info (12134): Parameter "WIDTH_B" = "32"
-    Info (12134): Parameter "WIDTHAD_B" = "9"
-    Info (12134): Parameter "NUMWORDS_B" = "512"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4vl1.tdf
-    Info (12023): Found entity 1: altsyncram_4vl1
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gqg1.tdf
+    Info (12023): Found entity 1: altsyncram_gqg1
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Instruction_IF[4]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[6]" is stuck at GND
@@ -1814,19 +1597,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ALU_Control_EX[3]" is stuck at GND
     Warning (13410): Pin "Write_Register_EX[4]" is stuck at GND
     Warning (13410): Pin "Write_Register_WB[4]" is stuck at GND
-Info (17049): 512 registers lost all their fanouts during netlist optimizations.
+Info (17049): 530 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3295 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3097 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 591 output pins
-    Info (21061): Implemented 2639 logic cells
-    Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 453 megabytes
-    Info: Processing ended: Mon Sep 08 22:32:47 2014
-    Info: Elapsed time: 00:00:07
+    Info (21061): Implemented 2473 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 449 megabytes
+    Info: Processing ended: Tue Sep 09 01:29:41 2014
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
 

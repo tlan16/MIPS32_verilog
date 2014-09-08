@@ -5,8 +5,10 @@ module EX_Forward_Unit(
 						input					ID_Branch,
 						input					ID_EX_MemRead,
 						input					ID_EX_RegWrite,
+						input					ID_EX_MEMtoReg,
 						input [4:0]			ID_EX_Reg_Rs,
 						input [4:0]			ID_EX_Reg_Rt,
+						input [4:0]			ID_EX_Reg_Rd,
 						
 						input 	   		EX_MEM_RegWrite,
 						input					EX_MEM_MemWrite,
@@ -130,12 +132,16 @@ assign ForwardB_EX = { ( Data_Hazard_temp_1 & (EX_MEM_Reg_Rd == ID_EX_Reg_Rt) )
 assign Forward_Mem_to_Mem = ( (EX_MEM_Reg_Rt == MEM_WB_Reg_Rt) & MEM_WB_MemtoReg & EX_MEM_MemWrite );
 	
 // LOAD-USE DATA HAZARD
-assign PC_Enable = !( ID_EX_MemRead & ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) | (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ) );
+assign PC_Enable = !( (ID_EX_MemRead & ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) | (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ))
+								| ( ID_Branch & ID_EX_RegWrite & !ID_EX_MEMtoReg & ((ID_EX_Reg_Rd == IF_ID_Reg_Rs)|(ID_EX_Reg_Rd == IF_ID_Reg_Rt)) ) );
 assign IF_ID_Pipeline_Enable = PC_Enable;
 assign ID_Control_NOP = !(PC_Enable);
-wire Load_use_temp;
-assign Load_use_temp = ( MEM_WB_MemtoReg & (MEM_WB_Reg_Rt != 5'd0) );
-assign ID_Register_Write_to_Read = {(Load_use_temp & (MEM_WB_Reg_Rt == IF_ID_Reg_Rt)),(Load_use_temp & (MEM_WB_Reg_Rt == IF_ID_Reg_Rs))};
+wire Load_use_temp_1;
+wire Load_use_temp_2;
+assign Load_use_temp_1 = ( MEM_WB_MemtoReg & (MEM_WB_Reg_Rt != 5'd0) );
+assign Load_use_temp_2 = ( MEM_WB_RegWrite & !MEM_WB_MemtoReg );
+assign ID_Register_Write_to_Read = {( (Load_use_temp_1 & (MEM_WB_Reg_Rt == IF_ID_Reg_Rt)) | (Load_use_temp_2 & (MEM_WB_Reg_Rd == IF_ID_Reg_Rt)) )
+												,( (Load_use_temp_1 & (MEM_WB_Reg_Rt == IF_ID_Reg_Rs)) | (Load_use_temp_2 & (MEM_WB_Reg_Rd == IF_ID_Reg_Rs)) )};
 	
 // BRANCH HAZARD
 assign ForwardC = ( ID_Branch & EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) & (EX_MEM_Reg_Rd == IF_ID_Reg_Rs) );
