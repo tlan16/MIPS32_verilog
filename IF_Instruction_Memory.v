@@ -2,6 +2,7 @@
 
 module IF_Instruction_Memory(
 		 input [31:0]PC_IF,
+		 input		 IF_Flush,
 		 output [31:0]Instruction_IF
 		 );
 
@@ -17,7 +18,7 @@ module IF_Instruction_Memory(
 			else					Instruction_IF <= Instruction_Memory[PC_IF];
 		 end
 */
-		 assign Instruction_IF = (PC_IF>1023) ? 32'd0 : Instruction_Memory[PC_IF];
+		 assign Instruction_IF = ((PC_IF>32'd1023) | IF_Flush) ? 32'd0 : Instruction_Memory[PC_IF];
    
 endmodule // IF_Instruction_Memory
 

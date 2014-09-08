@@ -1,5 +1,5 @@
 Archive Project report for MIPS32
-Sun Sep 07 20:45:59 2014
+Mon Sep 08 22:34:22 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Sun Sep 07 20:45:59 2014 ;
+; Archive Project Status ; Successful - Mon Sep 08 22:34:22 2014 ;
 ; Revision Name          ; MIPS32                                ;
 ; Top-level Entity Name  ; MIPS32                                ;
 ; Family                 ; Cyclone II                            ;
@@ -56,9 +56,9 @@ Info: ----------------------------------------------------------
 Info: Generated report 'MIPS32.archive.rpt'
 Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 302 megabytes
-    Info: Processing ended: Sun Sep 07 20:45:59 2014
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 306 megabytes
+    Info: Processing ended: Mon Sep 08 22:34:22 2014
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -82,6 +82,7 @@ Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
 ; EX_Shift_Left_2.v                                                           ;
 ; ID_Control.v                                                                ;
 ; ID_EX_Pipeline_Stage.v                                                      ;
+; ID_Read_data_Mux.v                                                          ;
 ; ID_Registers.v                                                              ;
 ; ID_Sign_Extension.v                                                         ;
 ; IF_ID_EX_MEM_testing.vwf                                                    ;

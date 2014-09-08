@@ -42,9 +42,3 @@ module EX_ALU(
 	assign Zero_EX = (ALU_Result_EX==0);
 	
 endmodule // EX_ALU
-
-
-
-
-   
-   

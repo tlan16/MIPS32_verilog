@@ -1,5 +1,5 @@
 Flow report for MIPS32
-Mon Sep 08 13:10:11 2014
+Mon Sep 08 22:33:15 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 08 13:10:08 2014     ;
+; Flow Status                        ; Successful - Mon Sep 08 22:33:15 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
 ; Device                             ; EP2C70F896I8                              ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 2,093 / 68,416 ( 3 % )                    ;
+; Total logic elements               ; 2,074 / 68,416 ( 3 % )                    ;
 ;     Total combinational functions  ; 1,759 / 68,416 ( 3 % )                    ;
-;     Dedicated logic registers      ; 1,036 / 68,416 ( 2 % )                    ;
-; Total registers                    ; 1036                                      ;
+;     Dedicated logic registers      ; 974 / 68,416 ( 1 % )                      ;
+; Total registers                    ; 974                                       ;
 ; Total pins                         ; 592 / 622 ( 95 % )                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 32,768 / 1,152,000 ( 3 % )                ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/08/2014 13:09:45 ;
+; Start date & time ; 09/08/2014 22:32:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS32              ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+--------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value      ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+--------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 220314643107714.141014578520396       ; --                 ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 220314643107714.141017956030292       ; --                 ; --          ; --             ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE    ; Speed                                 ; Balanced           ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                    ; --                 ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --                 ; --          ; eda_simulation ;
@@ -99,10 +99,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 460 MB              ; 00:00:04                           ;
-; Fitter                    ; 00:00:18     ; 2.5                     ; 701 MB              ; 00:00:28                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 427 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:33                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 453 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:22     ; 3.0                     ; 707 MB              ; 00:00:34                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 426 MB              ; 00:00:02                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 411 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 389 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:46                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,6 +116,8 @@ applicable agreement for further details.
 ; Analysis & Synthesis      ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
 ; Fitter                    ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -123,6 +127,8 @@ applicable agreement for further details.
 quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 quartus_fit --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 quartus_sta MIPS32 -c MIPS32
+quartus_asm --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
+quartus_eda --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 
 
 

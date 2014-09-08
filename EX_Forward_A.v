@@ -10,7 +10,7 @@ module EX_Forward_A(
    
 	initial 
 	begin
-		Read_Data_1_Mux_EX <= Read_Data_1_EX;
+		Read_Data_1_Mux_EX <= 32'd0;
 	end
 	
 	parameter	First		=	2'b00,

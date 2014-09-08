@@ -1,5 +1,5 @@
 Assembler report for Mips
-Mon Sep 08 11:39:54 2014
+Mon Sep 08 21:33:59 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Sep 08 11:39:54 2014 ;
+; Assembler Status      ; Successful - Mon Sep 08 21:33:59 2014 ;
 ; Revision Name         ; Mips                                  ;
 ; Top-level Entity Name ; Mips                                  ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+---------------------------------------------------------------------------+
 ; Device         ; EP2C70F896I8                                                              ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                ;
-; Checksum       ; 0x00742923                                                                ;
+; Checksum       ; 0x00742DEA                                                                ;
 +----------------+---------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+-----------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                ;
 ; JTAG usercode      ; 0x00000000                                                            ;
-; Checksum           ; 0x185A32FC                                                            ;
+; Checksum           ; 0x1857E83B                                                            ;
 ; Compression Ratio  ; 3                                                                     ;
 +--------------------+-----------------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Sep 08 11:39:52 2014
+    Info: Processing started: Mon Sep 08 21:33:56 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Mips -c Mips
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 400 megabytes
-    Info: Processing ended: Mon Sep 08 11:39:54 2014
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 409 megabytes
+    Info: Processing ended: Mon Sep 08 21:33:59 2014
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

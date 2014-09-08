@@ -33,7 +33,7 @@ module EX_ALU(
 			ALUsub:	ALU_Result_EX <= Read_Data_forward_A_EX - ALU_Data_2_EX;
 			ALUand:	ALU_Result_EX <= Read_Data_forward_A_EX & ALU_Data_2_EX;
 			ALUor:	ALU_Result_EX <= Read_Data_forward_A_EX | ALU_Data_2_EX;
-			ALUslt:	ALU_Result_EX <= Read_Data_forward_A_EX < ALU_Data_2_EX ? (1 - sign_mismatch) : (0 + sign_mismatch);
+			ALUslt:	ALU_Result_EX <= Read_Data_forward_A_EX < ALU_Data_2_EX ? 1 - sign_mismatch : 0 + sign_mismatch;
 			
 			default:	ALU_Result_EX <= 32'bX;
 		endcase	//end case

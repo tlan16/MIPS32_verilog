@@ -4,12 +4,12 @@
 
 module IF_PC_Mux(
 		 input [31:0] PC_Plus_4_IF,
-		 input [31:0] Branch_Dest_MEM,
+		 input [31:0] Branch_Dest_ID,
 		 input PCSrc_ID,
 		 output [31:0]Next_PC_IF
 		 );
 
-assign Next_PC_IF = PCSrc_ID ? Branch_Dest_MEM : PC_Plus_4_IF;
+assign Next_PC_IF = PCSrc_ID ? Branch_Dest_ID : PC_Plus_4_IF;
 
 
 

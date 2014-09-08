@@ -160,7 +160,7 @@ module MIPS32(
 		       .Next_PC_IF	(Next_PC_IF[31:0]),
 		       // Inputs
 		       .PC_Plus_4_IF	(PC_Plus_4_IF[31:0]),
-		       .Branch_Dest_MEM	(Branch_Dest_MEM[31:0]),
+		       .Branch_Dest_MEM	(Branch_Dest_EX[31:0]),
 		       .PCSrc_MEM	(PCSrc_MEM));
    
    
@@ -190,7 +190,8 @@ module MIPS32(
 					       // Outputs
 					       .Instruction_IF	(Instruction_IF[31:0]),
 					       // Inputs
-					       .PC_IF		(PC_IF[31:0]));
+					       .PC_IF		(PC_IF[31:0]),
+							 .IF_Flush	(PCSrc_MEM));
    
    
 
@@ -355,14 +356,14 @@ module MIPS32(
 			// Outputs
 			.Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]),
 			// Inputs
-			.Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]));
+			.Sign_Extend_Instruction_EX(Sign_Extend_Instruction_ID[31:0]));
 
    // EX_PC_Add
    EX_PC_Add EX_PC_Add (
 			// Outputs
 			.Branch_Dest_EX	(Branch_Dest_EX[31:0]),
 			// Inputs
-			.PC_Plus_4_EX	(PC_Plus_4_EX[31:0]),
+			.PC_Plus_4_EX	(PC_Plus_4_ID[31:0]),
 			.Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]));
    
    
@@ -416,7 +417,7 @@ module MIPS32(
 					       .Branch_MEM	(Branch_MEM),
 					       .MemRead_MEM	(MemRead_MEM),
 					       .MemWrite_MEM	(MemWrite_MEM),
-					       .Branch_Dest_MEM	(Branch_Dest_MEM[31:0]),
+					       //.Branch_Dest_MEM	(Branch_Dest_MEM[31:0]),
 					       .Zero_MEM	(Zero_MEM),
 					       .ALU_Result_MEM	(ALU_Result_MEM[31:0]),
 					       .Write_Data_MEM	(Write_Data_MEM),
@@ -428,7 +429,7 @@ module MIPS32(
 					       .Branch_EX	(Branch_EX),
 					       .MemRead_EX	(MemRead_EX),
 					       .MemWrite_EX	(MemWrite_EX),
-					       .Branch_Dest_EX	(Branch_Dest_EX[31:0]),
+					       //.Branch_Dest_EX	(Branch_Dest_EX[31:0]),
 					       .Zero_EX		(Zero_EX),
 					       .ALU_Result_EX	(ALU_Result_EX[31:0]),
 					       .Read_Data_2_EX	(Read_Data_2_EX),

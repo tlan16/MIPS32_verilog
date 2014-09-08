@@ -26,7 +26,7 @@ module Mips(
 	  output [31:0] 	Next_PC_IF,
 	  
 //	  output [31:0]   Instruction_ID,
-//	  output [4:0]		Read_Address_1_ID,
+	  output [4:0]		Read_Address_1_ID,
 //	  output [4:0]		Read_Address_2_ID,
 	  output [31:0]	Read_Data_1_ID,
 //	  output [31:0]	Read_Data_2_ID,
@@ -88,7 +88,7 @@ module Mips(
 //		wire				MemWrite_ID;		// From ID_Control of ID_Control.v
 //		wire				MemtoReg_ID;		// From ID_Control of ID_Control.v
 		wire [31:0]	PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
-		wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
+//		wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
 		wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
 //		wire [31:0] 	Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
 		wire [31:0]		Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
@@ -99,6 +99,8 @@ module Mips(
 //		wire [31:0]		Forward_C_out;			// From Forward_C
 //		wire [31:0]		Forward_D_out;			// From Forward_D
 //		wire 				Zero_ID;
+		wire [31:0] 	Instruction_Shift_Left_2_ID;
+		wire [31:0]		Branch_Dest_ID;
 
    
    // EX origin variables:
@@ -107,10 +109,10 @@ module Mips(
 		// probed wire [3:0]			ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
 		// probed wire [31:0]		ALU_Data_2_EX;		// From EX_ALU_Mux of EX_ALU_Mux.v
 		// probed wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
-		// probed wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
+// deleted		// probed wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
 		wire				Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		// probed wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
-		wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
+// deleted		wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
 		wire				MemRead_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire				MemWrite_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire				MemtoReg_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -165,7 +167,7 @@ module Mips(
 		       .Next_PC_IF	(Next_PC_IF[31:0]),
 		       // Inputs
 		       .PC_Plus_4_IF	(PC_Plus_4_IF[31:0]),
-		       .Branch_Dest_MEM	(Branch_Dest_MEM[31:0]),
+		       .Branch_Dest_ID	(Branch_Dest_ID[31:0]),
 		       .PCSrc_ID	(PCSrc_ID));
    
    
@@ -292,7 +294,20 @@ module Mips(
 				.Read_Data_2_ID		(Read_Data_2_ID)
 	);
 
-	
+	// ID_Shift_Left_2
+   ID_Shift_Left_2 ID_Shift_Left_2(
+				   // Outputs
+				   .Instruction_Shift_Left_2_ID(Instruction_Shift_Left_2_ID[31:0]),
+				   // Inputs
+				   .Sign_Extend_Instruction_ID(Sign_Extend_Instruction_ID[31:0]));
+					
+	 // ID_PC_Add
+   ID_PC_Add ID_PC_Add (
+			// Outputs
+			.Branch_Dest_ID	(Branch_Dest_ID[31:0]),
+			// Inputs
+			.PC_Plus_4_ID	(PC_Plus_4_ID[31:0]),
+			.Instruction_Shift_Left_2_ID(Instruction_Shift_Left_2_ID[31:0]));
 	
    // ID_EX_Pipeline_Stage
 
@@ -328,20 +343,20 @@ module Mips(
 					     .Clk		(Clk));
 
    
-   // EX_Shift_Left_2
-   EX_Shift_Left_2 EX_Shift_Left_2(
-				   // Outputs
-				   .Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]),
-				   // Inputs
-				   .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]));
+//   // EX_Shift_Left_2			// Moved to ID stage to support ID stage Branch
+//   EX_Shift_Left_2 EX_Shift_Left_2(
+//				   // Outputs
+//				   .Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]),
+//				   // Inputs
+//				   .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]));
    
-   // EX_PC_Add
-   EX_PC_Add EX_PC_Add (
-			// Outputs
-			.Branch_Dest_EX	(Branch_Dest_EX[31:0]),
-			// Inputs
-			.PC_Plus_4_EX	(PC_Plus_4_EX[31:0]),
-			.Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]));
+//   // EX_PC_Add
+//   EX_PC_Add EX_PC_Add (
+//			// Outputs
+//			.Branch_Dest_EX	(Branch_Dest_EX[31:0]),
+//			// Inputs
+//			.PC_Plus_4_EX	(PC_Plus_4_EX[31:0]),
+//			.Instruction_Shift_Left_2_EX(Instruction_Shift_Left_2_EX[31:0]));
    
    
 

@@ -30,8 +30,8 @@ module Data_Forwarding_unit(
 				output reg			pc_stall,						//To stall the pc
 				output reg			ID_Control_Noop,			//Noop for stalling
 				output reg[1:0]	Forward_Reg_Delay,			//Control the mux for the write delay at Load use data hazard
-				output 				Forward_C,					//ID branch forwarding
-				output				Forward_D					//ID branch forwarding
+				output 			Forward_C,					//ID branch forwarding
+				output 			Forward_D					//ID branch forwarding
 
 );
 wire [4:0]IF_ID_Rd;
@@ -69,7 +69,7 @@ initial	begin
 	pc_stall <= 1'b0;
 	ID_Control_Noop <= 1'b0;
 	Forward_Reg_Delay <= 2'b00;
-	
+
 end
 
 //ID Branch Forwarding Issue

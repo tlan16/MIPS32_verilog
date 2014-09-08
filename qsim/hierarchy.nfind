@@ -20,8 +20,10 @@ MEM_Branch_AND:MEM_Branch_AND|
 MEM_Data_Memory:MEM_Data_Memory|
 MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|
 WB_MemtoReg_Mux:WB_MemtoReg_Mux|
-MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated|
+MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_cfh1:auto_generated|
+MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1|altsyncram_4vl1:auto_generated|
 MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|
+MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_1|
 EX_Forward_A:EX_Forward_B|
 EX_Shift_Left_2:EX_Shift_Left_2|
 ID_Sign_Extension:ID_Sign_Extension|
