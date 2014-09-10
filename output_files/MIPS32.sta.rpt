@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MIPS32
-Thu Sep 11 01:17:07 2014
+Thu Sep 11 01:29:28 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -101,7 +101,7 @@ applicable agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; MIPS32.sdc    ; OK     ; Thu Sep 11 01:17:07 2014 ;
+; MIPS32.sdc    ; OK     ; Thu Sep 11 01:29:27 2014 ;
 +---------------+--------+--------------------------+
 
 
@@ -2779,7 +2779,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Thu Sep 11 01:17:06 2014
+    Info: Processing started: Thu Sep 11 01:29:24 2014
 Info: Command: quartus_sta MIPS32 -c MIPS32
 Info: qsta_default_script.tcl version: #4
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -3206,8 +3206,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 425 megabytes
-    Info: Processing ended: Thu Sep 11 01:17:07 2014
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Sep 11 01:29:28 2014
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:01
 
 

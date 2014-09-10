@@ -1,0 +1,565 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Frank-Desktop\Desktop
+vEX_ALU
+Z1 !s100 dW<a?P>6IbLJ?XeQCon4n2
+Z2 Io4YZXZ[O<gOko?TGc136j3
+Z3 VB5Y:WM]T]97M8kbCTEkR`2
+Z4 dC:\Users\Frank-Desktop\Documents\MIPS32_verilog
+Z5 w1410352606
+Z6 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v
+Z7 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v
+L0 4
+Z8 OV;L;10.0d;49
+r1
+31
+Z9 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v|
+Z10 !s102 -nocovercells
+Z11 o-work MIPS32 -nocovercells -O0
+Z12 n@e@x_@a@l@u
+Z13 !s108 1410363724.277000
+Z14 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v|
+!s85 0
+!s101 -O0
+vEX_ALU_Control
+Z15 !s100 FDfHAcGY;dYFCnUM<3CKe1
+Z16 I:F0o@h^KbJNh_o:nHFe@33
+Z17 VONi_]Fhd4NiSejjd@hF4l0
+R4
+Z18 w1410355700
+Z19 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v
+Z20 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v
+L0 4
+R8
+r1
+31
+Z21 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v|
+R10
+R11
+Z22 n@e@x_@a@l@u_@control
+Z23 !s108 1410363724.297000
+Z24 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v|
+!s85 0
+!s101 -O0
+vEX_ALU_Mux
+Z25 !s100 Vak@e[7>^kjOB0UIdi[m`3
+Z26 IXAhbNh=zM>aZHRW5FBObY1
+Z27 VN2YJfB]GhY18KQoWWJIYa0
+R4
+Z28 w1409913666
+Z29 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v
+Z30 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v
+L0 6
+R8
+r1
+31
+Z31 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v|
+R10
+R11
+Z32 n@e@x_@a@l@u_@mux
+Z33 !s108 1410363724.312000
+Z34 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v|
+!s85 0
+!s101 -O0
+vEX_Dest_Mux
+Z35 !s100 [lPk:5d?Yfo`344Fja@^K0
+Z36 IWBcOmb9leOLcZdR9e`Yf>2
+Z37 VH>c2MeBJfdN?hmaFMD^6C3
+R4
+R28
+Z38 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v
+Z39 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v
+L0 6
+R8
+r1
+31
+Z40 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v|
+R10
+R11
+Z41 n@e@x_@dest_@mux
+Z42 !s108 1410363724.327000
+Z43 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v|
+!s85 0
+!s101 -O0
+vEX_Forward_A
+Z44 !s100 ]AMF4^ncQQGZfhSoojO=h0
+Z45 Ic:9Zo?J_F6KMZXORj=1I^3
+Z46 V5Snebo^;f?ZZ9D4l4>E[o1
+R4
+Z47 w1410176243
+Z48 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v
+Z49 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v
+L0 1
+R8
+r1
+31
+Z50 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v|
+R10
+R11
+Z51 n@e@x_@forward_@a
+Z52 !s108 1410363724.343000
+Z53 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v|
+!s85 0
+!s101 -O0
+vEX_Forward_B
+Z54 !s100 Dd]RDK3c^WoNM5PJa:=5B0
+Z55 IXGeEihRE>X`4AZb5`4k=H3
+Z56 VjfjfKGF4N7Fc4afY3lV>l1
+R4
+Z57 w1410067737
+Z58 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_B.v
+Z59 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_B.v
+L0 1
+R8
+r1
+31
+Z60 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_B.v|
+R10
+R11
+Z61 n@e@x_@forward_@b
+Z62 !s108 1410363724.357000
+Z63 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_B.v|
+!s85 0
+!s101 -O0
+vEX_Forward_Unit
+Z64 !s100 nLfAhH@FP@MCanh@;zkGU1
+Z65 IHc=mC>:IV0IV<XV[9FJ5S2
+Z66 VfjF?N@lFbW@mGo@i53NK`3
+R4
+Z67 w1410189573
+Z68 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v
+Z69 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v
+L0 1
+R8
+r1
+31
+Z70 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v|
+R10
+R11
+Z71 n@e@x_@forward_@unit
+Z72 !s108 1410363724.371000
+Z73 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v|
+!s85 0
+!s101 -O0
+vEX_MEM_Pipeline_Stage
+Z74 !s100 Q6M5AGjUGhB?`6;NRe>YG1
+Z75 IXmfdZA<lFic`:0UEW2GYC2
+Z76 VJCz>e`?<69SF3>oW2K48M3
+R4
+Z77 w1410176626
+Z78 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v
+Z79 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v
+L0 4
+R8
+r1
+31
+Z80 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v|
+R10
+R11
+Z81 n@e@x_@m@e@m_@pipeline_@stage
+Z82 !s108 1410363724.386000
+Z83 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v|
+!s85 0
+!s101 -O0
+vEX_PC_Add
+Z84 !s100 ozEF1>@La8N_OITmWYKP92
+Z85 INzdzF@025Bf]^GAljefAL1
+Z86 Vn9O14No5h9AKnST37^fGR3
+R4
+R28
+Z87 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v
+Z88 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v
+L0 4
+R8
+r1
+31
+Z89 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v|
+R10
+R11
+Z90 n@e@x_@p@c_@add
+Z91 !s108 1410363724.401000
+Z92 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v|
+!s85 0
+!s101 -O0
+vEX_Shift_Left_2
+Z93 !s100 FP`DP25eE>ABA08<L5GCA0
+Z94 IP3HedXTYifzIiE4NKDHOo3
+Z95 Vi:;K]T?PRf`QoUBfl:F]O1
+R4
+Z96 w1410179558
+Z97 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v
+Z98 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v
+L0 4
+R8
+r1
+31
+Z99 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v|
+R10
+R11
+Z100 n@e@x_@shift_@left_2
+Z101 !s108 1410363724.416000
+Z102 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v|
+!s85 0
+!s101 -O0
+vID_Control
+Z103 !s100 6b_MUT1PoKgk;RN^dD[<H1
+Z104 I7k7?_39BBPhC97dnURSL53
+Z105 VMWlTO_h;RD`kHJ6MJ9mcW1
+R4
+Z106 w1410351228
+Z107 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Control.v
+Z108 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Control.v
+L0 6
+R8
+r1
+31
+Z109 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Control.v|
+R10
+R11
+Z110 n@i@d_@control
+Z111 !s108 1410363724.430000
+Z112 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Control.v|
+!s85 0
+!s101 -O0
+vID_EX_Pipeline_Stage
+Z113 !s100 P2>?Z`@@oPRD^YfCL:[hT0
+Z114 I9DoQMf7loUT2kHJUPNWS>2
+Z115 VzL0ChKPI:fZj=oQ9L]R0^2
+R4
+R28
+Z116 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_EX_Pipeline_Stage.v
+Z117 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_EX_Pipeline_Stage.v
+L0 4
+R8
+r1
+31
+Z118 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_EX_Pipeline_Stage.v|
+R10
+R11
+Z119 n@i@d_@e@x_@pipeline_@stage
+Z120 !s108 1410363724.446000
+Z121 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_EX_Pipeline_Stage.v|
+!s85 0
+!s101 -O0
+vID_Jump
+Z122 !s100 h70VhB=KGZ;lCB8Kmh4VA2
+Z123 I8TMnozLQPM5bQQO@N^BK?0
+Z124 Ve<jG@4Q^gj`XH=2^OdLbz1
+R4
+Z125 w1410357132
+Z126 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Jump.v
+Z127 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Jump.v
+L0 3
+R8
+r1
+31
+Z128 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Jump.v|
+R10
+R11
+Z129 n@i@d_@jump
+Z130 !s108 1410363724.461000
+Z131 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Jump.v|
+!s85 0
+!s101 -O0
+vID_Read_data_Mux
+Z132 !s100 >96IUmGCXOZ2l_YdblMIT0
+Z133 Izn7^Q6TAVB1QgCNQiF]OT0
+Z134 VmEkC:EK@;nRMiQfLBIaBg3
+R4
+Z135 w1410092874
+Z136 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v
+Z137 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v
+L0 3
+R8
+r1
+31
+Z138 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v|
+R10
+R11
+Z139 n@i@d_@read_data_@mux
+Z140 !s108 1410363724.475000
+Z141 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v|
+!s85 0
+!s101 -O0
+vID_Registers
+Z142 !s100 5aAb3fYiOI409:di`Clmd3
+Z143 II<U^oVMldGPE[BB<EM?cU0
+Z144 Vj0cN_XC;`d:78j:6bWc1c0
+R4
+Z145 w1410354279
+Z146 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Registers.v
+Z147 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Registers.v
+L0 3
+R8
+r1
+31
+Z148 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Registers.v|
+R10
+R11
+Z149 n@i@d_@registers
+Z150 !s108 1410363724.490000
+Z151 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Registers.v|
+!s85 0
+!s101 -O0
+vID_Sign_Extension
+Z152 !s100 8^551en7TEH]<Hf824Oz82
+Z153 I<3M9]_aoCzQZM8nj3:[[m1
+Z154 Veb8zO?J?JM;5kmVbL2FA;0
+R4
+R28
+Z155 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Sign_Extension.v
+Z156 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Sign_Extension.v
+L0 4
+R8
+r1
+31
+Z157 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Sign_Extension.v|
+R10
+R11
+Z158 n@i@d_@sign_@extension
+Z159 !s108 1410363724.505000
+Z160 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Sign_Extension.v|
+!s85 0
+!s101 -O0
+vIF_ID_Pipeline_Stage
+Z161 !s100 hQee7KjQPEi1[E1mAkjl40
+Z162 ICi@g7[9GzeS2Yja:9PKo[0
+Z163 VL4z1<TghMY9;XlANC`=6_2
+R4
+Z164 w1410145178
+Z165 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_Pipeline_Stage.v
+Z166 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_Pipeline_Stage.v
+L0 3
+R8
+r1
+31
+Z167 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_Pipeline_Stage.v|
+R10
+R11
+Z168 n@i@f_@i@d_@pipeline_@stage
+Z169 !s108 1410363724.519000
+Z170 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_Pipeline_Stage.v|
+!s85 0
+!s101 -O0
+vIF_Instruction_Memory
+Z171 !s100 K>Y;RNdc]34J9m>RO1@0R1
+Z172 IRF?X15egU8NnO83JGRR502
+Z173 V=oj82Sjj]Ca?8TjF05eaA0
+R4
+Z174 w1410352222
+Z175 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_Instruction_Memory.v
+Z176 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_Instruction_Memory.v
+L0 3
+R8
+r1
+31
+Z177 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_Instruction_Memory.v|
+R10
+R11
+Z178 n@i@f_@instruction_@memory
+Z179 !s108 1410363724.533000
+Z180 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_Instruction_Memory.v|
+!s85 0
+!s101 -O0
+vIF_PC_Add
+Z181 !s100 kLa0:=jgb8U4J@QYVW51D1
+Z182 I^Mi3@FNC9<8ODAnG4T=Gi3
+Z183 VNkdIdml]]6eje0]Jn`?R[0
+R4
+Z184 w1410086155
+Z185 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Add.v
+Z186 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Add.v
+L0 4
+R8
+r1
+31
+Z187 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Add.v|
+R10
+R11
+Z188 n@i@f_@p@c_@add
+Z189 !s108 1410363724.547000
+Z190 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Add.v|
+!s85 0
+!s101 -O0
+vIF_PC_Mux
+Z191 !s100 d?PZ^7PEd_BQN`[8:L>j>3
+Z192 IkJWgE:7o]e5[H<Y]9WXkR3
+Z193 VW0n7cM]8_;6i^:G6YoeN]2
+R4
+Z194 w1410352802
+Z195 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Mux.v
+Z196 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Mux.v
+L0 6
+R8
+r1
+31
+Z197 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Mux.v|
+R10
+R11
+Z198 n@i@f_@p@c_@mux
+Z199 !s108 1410363724.561000
+Z200 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Mux.v|
+!s85 0
+!s101 -O0
+vIF_PC_Reg
+Z201 !s100 oLc9faTG_J2Bg6N1aA[Rz2
+Z202 IIkmnEPg]^oiIZLWUJ`f8j3
+Z203 V_eAGjWShDQTJhKSVENB:[2
+R4
+Z204 w1410086288
+Z205 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Reg.v
+Z206 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Reg.v
+L0 3
+R8
+r1
+31
+Z207 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Reg.v|
+R10
+R11
+Z208 n@i@f_@p@c_@reg
+Z209 !s108 1410363724.577000
+Z210 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Reg.v|
+!s85 0
+!s101 -O0
+vMEM_Branch_AND
+Z211 !s100 O4B7R]FVd9g>gFhZa;[YG3
+Z212 IWM`C@o6WLTP?Kc[lli^z32
+Z213 V4SY9Ug[9W_U[m<>6BMdXS0
+R4
+Z214 w1410068222
+Z215 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v
+Z216 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v
+L0 4
+R8
+r1
+31
+Z217 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v|
+R10
+R11
+Z218 n@m@e@m_@branch_@a@n@d
+Z219 !s108 1410363724.591000
+Z220 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v|
+!s85 0
+!s101 -O0
+vMEM_Data_Memory
+Z221 !s100 f?kSBojbi@M[_YRYhQhU50
+Z222 INod0c8>jk<]2z[J=eh[^=1
+Z223 V>HagPA4C7na;P?aShD5@z2
+R4
+Z224 w1410190173
+Z225 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v
+Z226 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v
+L0 3
+R8
+r1
+31
+Z227 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v|
+R10
+R11
+Z228 n@m@e@m_@data_@memory
+Z229 !s108 1410363724.608000
+Z230 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v|
+!s85 0
+!s101 -O0
+vMEM_to_MEM_Forward
+Z231 !s100 >36BFW;CQ;XMjhQfgnZjH2
+Z232 IFB1>M<J3Gf_ao66UBUkc>3
+Z233 V3?jS6dGUBVKVajQN]F9K22
+R4
+Z234 w1410068823
+Z235 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v
+Z236 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v
+L0 1
+R8
+r1
+31
+Z237 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v|
+R10
+R11
+Z238 n@m@e@m_to_@m@e@m_@forward
+Z239 !s108 1410363724.623000
+Z240 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v|
+!s85 0
+!s101 -O0
+vMEM_WB_Pipeline_Stage
+Z241 !s100 :4Vl8?l^CUMH1cHS7z1Rz3
+Z242 IV2@@henB:@i8<>S=Wmm;k0
+Z243 VC]f99J1TeXMN_1UJIf@US2
+R4
+Z244 w1410068773
+Z245 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v
+Z246 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v
+L0 4
+R8
+r1
+31
+Z247 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v|
+R10
+R11
+Z248 n@m@e@m_@w@b_@pipeline_@stage
+Z249 !s108 1410363724.640000
+Z250 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v|
+!s85 0
+!s101 -O0
+vMIPS32
+Z251 !s100 GPiCaZo;i933V6LDAndRo0
+Z252 I9QV]hDXW57e>Mgi?l?3M50
+Z253 VhG6G3Cg1;Z0GflMOh]IP21
+R4
+Z254 w1410362938
+Z255 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v
+Z256 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v
+L0 15
+R8
+r1
+31
+Z257 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v|
+R10
+R11
+Z258 n@m@i@p@s32
+!s85 0
+Z259 !s108 1410363724.672000
+Z260 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v|
+!s101 -O0
+vMIPS_Top
+Z261 !s100 Ve7^AI6_aLlK;?4:527R@2
+Z262 ICb5H5JC;4kc89nzNihZlE1
+Z263 VnkWSI2gPFYe^Zh0UWM>7^0
+R4
+Z264 w1409913667
+Z265 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS_Top.v
+Z266 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS_Top.v
+L0 21
+R8
+r1
+31
+Z267 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS_Top.v|
+R10
+R11
+Z268 n@m@i@p@s_@top
+Z269 !s108 1410363724.655000
+Z270 !s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS_Top.v|
+!s85 0
+!s101 -O0
+vWB_MemtoReg_Mux
+Z271 !s100 RCQ7;IUJk]Ah8@2lSQ>Z41
+Z272 II9ABD@Co2>U^Pn`V1oA3[2
+Z273 VCTooAL:]YVDL<dNoX`Qk_3
+R4
+Z274 w1410069409
+Z275 8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v
+Z276 FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v
+L0 6
+R8
+r1
+!s85 0
+31
+!s108 1410363724.691000
+!s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v|
+Z277 !s90 -reportprogress|300|-work|MIPS32|-nocovercells|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v|
+!s101 -O0
+R10
+R11
+Z278 n@w@b_@memto@reg_@mux

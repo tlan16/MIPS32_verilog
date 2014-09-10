@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 12.0 Build 178 05/31/2012 SJ Full Version"
 
-// DATE "09/11/2014 01:17:10"
+// DATE "09/11/2014 01:29:29"
 
 // 
 // Device: Altera EP2C70F672C6 Package FBGA672
@@ -3058,33 +3058,6 @@ wire \auto_hub|tdo~3_combout ;
 wire \auto_hub|tdo~regout ;
 wire \auto_hub|tdo~_wirecell_combout ;
 wire \altera_internal_jtag~TDO ;
-wire [0:0] \auto_signaltap_0|sld_signaltap_body|current_segment_delayed ;
-wire [6:0] \auto_signaltap_0|sld_signaltap_body|buffer_write_address_delayed ;
-wire [32:0] \auto_signaltap_0|sld_signaltap_body|acq_data_in_reg ;
-wire [98:0] \auto_signaltap_0|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs ;
-wire [6:0] \auto_signaltap_0|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig ;
-wire [6:0] \auto_signaltap_0|sld_signaltap_body|segment_offset_config_deserialize|dffs ;
-wire [14:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq ;
-wire [5:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|safe_q ;
-wire [32:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs ;
-wire [14:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs ;
-wire [0:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|safe_q ;
-wire [3:0] \auto_signaltap_0|sld_signaltap_body|crc_rom_sr|word_counter ;
-wire [8:0] \auto_hub|irsr_reg ;
-wire [2:0] \auto_hub|hub_mode_reg ;
-wire [15:0] \auto_hub|shadow_jsm|state ;
-wire [4:0] \auto_hub|hub_info_reg|word_counter ;
-wire [0:82] \MEM_Data_Memory|Data_Memory_rtl_0_bypass ;
-wire [0:74] \ID_Registers|Register_File_rtl_0_bypass ;
-wire [31:0] \IF_PC_Reg|PC_IF ;
-wire [31:0] \IF_ID_Pipeline_Stage|PC_Plus_4_ID ;
-wire [31:0] \ID_EX_Pipeline_Stage|Read_Data_2_EX ;
-wire [31:0] \ID_EX_Pipeline_Stage|Instruction_EX ;
-wire [31:0] \EX_MEM_Pipeline_Stage|Write_Data_MEM ;
-wire [31:0] \EX_MEM_Pipeline_Stage|ALU_Result_MEM ;
-wire [31:0] \MEM_Data_Memory|Read_Data_MEM ;
-wire [31:0] \MEM_WB_Pipeline_Stage|Read_Data_WB ;
-wire [31:0] \MEM_WB_Pipeline_Stage|ALU_Result_WB ;
 wire [6:0] \auto_signaltap_0|sld_signaltap_body|last_trigger_address_delayed ;
 wire [3:0] \auto_signaltap_0|sld_signaltap_body|condition_delay_reg ;
 wire [32:0] \auto_signaltap_0|sld_signaltap_body|acq_trigger_in_reg ;
@@ -3112,6 +3085,33 @@ wire [4:0] \EX_MEM_Pipeline_Stage|Write_Register_MEM ;
 wire [31:0] \EX_MEM_Pipeline_Stage|Instruction_MEM ;
 wire [4:0] \MEM_WB_Pipeline_Stage|Write_Register_WB ;
 wire [31:0] \MEM_WB_Pipeline_Stage|Instruction_WB ;
+wire [0:0] \auto_signaltap_0|sld_signaltap_body|current_segment_delayed ;
+wire [6:0] \auto_signaltap_0|sld_signaltap_body|buffer_write_address_delayed ;
+wire [32:0] \auto_signaltap_0|sld_signaltap_body|acq_data_in_reg ;
+wire [98:0] \auto_signaltap_0|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs ;
+wire [6:0] \auto_signaltap_0|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig ;
+wire [6:0] \auto_signaltap_0|sld_signaltap_body|segment_offset_config_deserialize|dffs ;
+wire [14:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq ;
+wire [5:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|safe_q ;
+wire [32:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs ;
+wire [14:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs ;
+wire [0:0] \auto_signaltap_0|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|safe_q ;
+wire [3:0] \auto_signaltap_0|sld_signaltap_body|crc_rom_sr|word_counter ;
+wire [8:0] \auto_hub|irsr_reg ;
+wire [2:0] \auto_hub|hub_mode_reg ;
+wire [15:0] \auto_hub|shadow_jsm|state ;
+wire [4:0] \auto_hub|hub_info_reg|word_counter ;
+wire [0:82] \MEM_Data_Memory|Data_Memory_rtl_0_bypass ;
+wire [0:74] \ID_Registers|Register_File_rtl_0_bypass ;
+wire [31:0] \IF_PC_Reg|PC_IF ;
+wire [31:0] \IF_ID_Pipeline_Stage|PC_Plus_4_ID ;
+wire [31:0] \ID_EX_Pipeline_Stage|Read_Data_2_EX ;
+wire [31:0] \ID_EX_Pipeline_Stage|Instruction_EX ;
+wire [31:0] \EX_MEM_Pipeline_Stage|Write_Data_MEM ;
+wire [31:0] \EX_MEM_Pipeline_Stage|ALU_Result_MEM ;
+wire [31:0] \MEM_Data_Memory|Read_Data_MEM ;
+wire [31:0] \MEM_WB_Pipeline_Stage|Read_Data_WB ;
+wire [31:0] \MEM_WB_Pipeline_Stage|ALU_Result_WB ;
 
 wire [31:0] \ID_Registers|Register_File_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus ;
 wire [31:0] \ID_Registers|Register_File_rtl_1|auto_generated|ram_block1a0_PORTBDATAOUT_bus ;

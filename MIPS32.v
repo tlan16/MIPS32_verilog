@@ -190,7 +190,7 @@ assign Clk = CLOCK_50;
 					       // Inputs
 					       .PC_IF		(PC_IF[31:0]),
 							 .Jump_Control_ID(Jump_Control_ID),
-							 .IF_Flush	(PCSrc_MEM),);
+							 .IF_Flush	(PCSrc_MEM));
    
    
 

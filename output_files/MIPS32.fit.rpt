@@ -1,5 +1,5 @@
 Fitter report for MIPS32
-Thu Sep 11 01:17:05 2014
+Thu Sep 11 01:29:23 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Fitter Summary                                                                 ;
 +------------------------------------+-------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 11 01:17:05 2014     ;
+; Fitter Status                      ; Successful - Thu Sep 11 01:29:23 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
@@ -141,13 +141,13 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.60        ;
+; Average used               ; 2.62        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;  22.2%      ;
-;     5-6 processors         ; < 0.1%      ;
+;     2-4 processors         ;  11.1%      ;
+;     5-6 processors         ;   5.6%      ;
 ;     7-8 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -3231,7 +3231,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Thu Sep 11 01:16:49 2014
+    Info: Processing started: Thu Sep 11 01:29:07 2014
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (119006): Selected device EP2C70F672C6 for design "MIPS32"
@@ -3688,7 +3688,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  53 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  50 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  46 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
@@ -4059,9 +4059,9 @@ Info (176045): Design uses memory blocks. Violating setup or hold times of memor
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 700 megabytes
-    Info: Processing ended: Thu Sep 11 01:17:05 2014
-    Info: Elapsed time: 00:00:16
+    Info: Peak virtual memory: 698 megabytes
+    Info: Processing ended: Thu Sep 11 01:29:24 2014
+    Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:26
 
 
