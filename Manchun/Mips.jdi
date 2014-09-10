@@ -1,8 +1,8 @@
 <sld_project_info>
+  <project>
+    <hash md5_digest_80b="2bd9a3902af891efa13c"/>
+  </project>
   <file_info>
-    <file checksum="0x00742DEA" device="EP2C70F896I8" path="Mips.sof" usercode="0xFFFFFFFF"/>
-    <file checksum="0x1857E83B" device="EPCS16" path="Mips.pof" usercode="0x00000000"/>
+    <file device="EP2C70F896I8" path="Mips.sof" usercode="0xFFFFFFFF"/>
   </file_info>
-  <hub_info ir_width="0" node_count="0"/>
-  <node_info/>
 </sld_project_info>

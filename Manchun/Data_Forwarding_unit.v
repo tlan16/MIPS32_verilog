@@ -87,7 +87,7 @@ always@(*) begin
 	if((RegWrite_MEM) && (EX_MEM_Rd != 5'b00000) && (EX_MEM_Rd == ID_EX_Rs))begin//EX_Forward_Unit
 		Forward_A <= 2'b10;
 		end
-	else if (((RegWrite_WB) && (EX_MEM_Rd != 5'b00000) && (EX_MEM_Rd != ID_EX_Rs) && (MEM_WB_Rd == ID_EX_Rs))
+	else if (((RegWrite_WB) && (MEM_WB_Rd != 5'b00000) && (EX_MEM_Rd != ID_EX_Rs) && (MEM_WB_Rd == ID_EX_Rs))
 	||((MemtoReg_WB) && (MEM_WB_Rt == ID_EX_Rs)))begin	//MEM_Forward_Unit
 		Forward_A <= 2'b01;
 		end
@@ -100,7 +100,7 @@ always@(*) begin
 	if((RegWrite_MEM) && (EX_MEM_Rd != 5'b00000) && (EX_MEM_Rd == ID_EX_Rt))begin //EX_Forward_Unit
 		Forward_B <= 2'b10;
 		end
-	else if (((RegWrite_WB) && (EX_MEM_Rd != 5'b00000) && (EX_MEM_Rd != ID_EX_Rs) && (MEM_WB_Rd == ID_EX_Rt))
+	else if (((RegWrite_WB) && (MEM_WB_Rd != 5'b00000) && (EX_MEM_Rd != ID_EX_Rt) && (MEM_WB_Rd == ID_EX_Rt))
 	|| ((MemtoReg_WB) && (MEM_WB_Rt == ID_EX_Rt)))begin	//MEM_Forward_Unit
 		Forward_B <= 2'b01;
 		end
@@ -120,7 +120,7 @@ always@(*) begin
 
 //ID hazard detection unit
 	if(((MemRead_EX) && ((ID_EX_Rt == IF_ID_Rs) || (ID_EX_Rt == IF_ID_Rt))) // Handle Load-use hazard
-	|| ((Branch_ID) && (RegWrite_EX) && (!MemtoReg_EX) && ((ID_EX_Rd == IF_ID_Rs) || (ID_EX_Rd == IF_ID_Rt)))) // Handle ID branch forwarding Rtype then bne
+	|| ((Branch_ID) &&  (RegWrite_EX)/* && (!MemtoReg_EX)*/ && ((ID_EX_Rd == IF_ID_Rs) || (ID_EX_Rd == IF_ID_Rt)))) // Handle ID branch forwarding Rtype then bne
 	begin
 	pc_stall <= 1'b1;
 	IF_ID_pipeline_stall <= 1'b1;
@@ -131,22 +131,39 @@ always@(*) begin
 	IF_ID_pipeline_stall <= 1'b0;
 	ID_Control_Noop	<= 1'b0;
 	end
+
 	
 //Forward_Reg_Delay
-	if(MemtoReg_WB)begin
+	if(MemtoReg_WB)begin // For lw delay
 			if (MEM_WB_Rt == IF_ID_Rt)
 			begin
-			Forward_Reg_Delay <= 2'b01;		//ReadData2 need a push
+			Forward_Reg_Delay <= 2'b10;		//ReadData2 need a push
 			end
 			else if(MEM_WB_Rt == IF_ID_Rs)
 			begin
-			Forward_Reg_Delay <= 2'b10;		//ReadData1 need a push
+			Forward_Reg_Delay <= 2'b01;		//ReadData1 need a push
 			end
 			else 
 			begin
 			Forward_Reg_Delay <= 2'b11;	//Don't know why the system don't work with 00
 			end
 	end		//end MemtoReg_WB
+	
+	else if(RegWrite_WB & !MemtoReg_WB)begin	//For rtype delay
+			if (MEM_WB_Rd == IF_ID_Rt)
+			begin
+			Forward_Reg_Delay <= 2'b10;		//ReadData2 need a push
+			end
+			else if(MEM_WB_Rd == IF_ID_Rs)
+			begin
+			Forward_Reg_Delay <= 2'b01;		//ReadData1 need a push
+			end
+			else 
+			begin
+			Forward_Reg_Delay <= 2'b11;	//Don't know why the system don't work with 00
+			end
+	end	//end rtype delay
+
 	else 
 	begin
 	Forward_Reg_Delay <= 2'b00;

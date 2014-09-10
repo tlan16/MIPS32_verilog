@@ -24,7 +24,7 @@ module ID_Registers(
 	
 	always@(register[Read_Address_1_ID] or Read_Address_1_ID)
 	begin
-		if (Forward_Reg_Delay == 2'b10)begin
+		if (Forward_Reg_Delay == 2'b01)begin
 		Read_Data_1_ID <= Write_Data_WB;
 		end
 		else begin
@@ -35,7 +35,7 @@ module ID_Registers(
 	
 	always@(register[Read_Address_2_ID] or Read_Address_2_ID)
 	begin
-		if (Forward_Reg_Delay == 2'b01)begin
+		if (Forward_Reg_Delay == 2'b10)begin
 		Read_Data_2_ID <= Write_Data_WB;
 		end
 		else begin

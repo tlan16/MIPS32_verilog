@@ -1,6 +1,6 @@
 Restore Archived Project report for Mips
-Mon Sep 08 21:33:33 2014
-Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+Wed Sep 10 17:19:18 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Mon Sep 08 21:33:33 2014 ;
+; Restore Archived Project Status ; Successful - Wed Sep 10 17:19:18 2014 ;
 ; Revision Name                   ; Mips                                  ;
 ; Top-level Entity Name           ; Mips                                  ;
 ; Family                          ; Cyclone II                            ;
@@ -46,14 +46,14 @@ applicable agreement for further details.
 +-----------------------------------+
 ; Restore Archived Project Messages ;
 +-----------------------------------+
-Info: Successfully restored 'C:/Users/Frank-Desktop/Downloads/Mips_ID_stage_Branch_not_good.qar' into the 'C:\\Users\\Frank-Desktop\\Documents\\MIPS32_verilog\\Manchun/' directory
+Info: Successfully restored 'E:/Mips_should_be_alright.qar' into the 'C:\\Users\\tlan16\\git\\MIPS32_verilog\\Manchun/' directory
 Info: Generated report 'Mips.restore.rpt'
-Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info (23030): Evaluation of Tcl script c:/altera/13.0sp1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 271 megabytes
-    Info: Processing ended: Mon Sep 08 21:33:33 2014
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 325 megabytes
+    Info: Processing ended: Wed Sep 10 17:19:18 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +-------------------------------------------------+
@@ -61,6 +61,8 @@ Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
 +-------------------------------------------------+
 ; File Name                                       ;
 +-------------------------------------------------+
+; IF_Flush_mux.v                                  ;
+; Jump_address_unit.v                             ;
 ; Data_Forwarding_unit.v                          ;
 ; Data_forwarding_mux_A.v                         ;
 ; Data_forwarding_mux_B.v                         ;

@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Mips
-Mon Sep 08 21:34:01 2014
-Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+Wed Sep 10 17:20:14 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Sep 08 21:34:01 2014 ;
+; EDA Netlist Writer Status ; Successful - Wed Sep 10 17:20:14 2014 ;
 ; Revision Name             ; Mips                                  ;
 ; Top-level Entity Name     ; Mips                                  ;
 ; Family                    ; Cyclone II                            ;
@@ -66,16 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                    ;
-+-----------------------------------------------------------------------------------------------+
-; Generated Files                                                                               ;
-+-----------------------------------------------------------------------------------------------+
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips.vho          ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips_fast.vho     ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips_vhd.sdo      ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips_vhd_fast.sdo ;
-+-----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Simulation Generated Files                                                       ;
++----------------------------------------------------------------------------------+
+; Generated Files                                                                  ;
++----------------------------------------------------------------------------------+
+; C:/Users/tlan16/git/MIPS32_verilog/Manchun/simulation/modelsim/Mips.vho          ;
+; C:/Users/tlan16/git/MIPS32_verilog/Manchun/simulation/modelsim/Mips_fast.vho     ;
+; C:/Users/tlan16/git/MIPS32_verilog/Manchun/simulation/modelsim/Mips_vhd.sdo      ;
+; C:/Users/tlan16/git/MIPS32_verilog/Manchun/simulation/modelsim/Mips_vhd_fast.sdo ;
++----------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -83,14 +83,14 @@ applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
-    Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Sep 08 21:34:00 2014
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Sep 10 17:20:12 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Mips -c Mips
-Info (204026): Generated files "Mips.vho", "Mips_fast.vho", "Mips_vhd.sdo" and "Mips_vhd_fast.sdo" in directory "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/" for EDA simulation tool
+Info (204026): Generated files "Mips.vho", "Mips_fast.vho", "Mips_vhd.sdo" and "Mips_vhd_fast.sdo" in directory "C:/Users/tlan16/git/MIPS32_verilog/Manchun/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 381 megabytes
-    Info: Processing ended: Mon Sep 08 21:34:01 2014
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 425 megabytes
+    Info: Processing ended: Wed Sep 10 17:20:14 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -13,17 +13,20 @@ module ID_Control(
 		  
 		  output  reg  	RegDst_ID,
 		  output  reg		[1:0] ALUOp_ID,
-		  output  reg     ALUSrc_ID
+		  output  reg     ALUSrc_ID,
+		  output  reg		Jump_control_ID
 		  );
 	wire [5:0]opcode;
-   assign opcode = ID_Control_Noop? 6'b100000 : Instruction_ID[31:26];
+
 	parameter RTYPE	= 6'b000000; 
 	parameter LW		= 6'b100011;
 	parameter SW		= 6'b101011;
 	parameter BEQ		= 6'b000100;
-	parameter NOP		= 6'b100000;	
+	parameter NOP		= 6'b100000;
+	parameter JUMP		= 6'b000010;
+	assign opcode = (ID_Control_Noop && (Instruction_ID[31:26]!=BEQ))? 6'b100000 : Instruction_ID[31:26];
 	
-	initial
+		initial
 		begin
 		RegWrite_ID 	<= 1'b0;
 		MemtoReg_ID 	<= 1'b0;
@@ -47,6 +50,7 @@ module ID_Control(
 					MemWrite_ID		<= 1'b0;
 					RegWrite_ID 	<= 1'b1;
 					MemtoReg_ID 	<= 1'b0;
+					Jump_control_ID <= 1'b0;
 				end // RTYPE
 			
 				LW: begin
@@ -58,6 +62,7 @@ module ID_Control(
 					MemWrite_ID		<= 1'b0;
 					RegWrite_ID 	<= 1'b1;
 					MemtoReg_ID 	<= 1'b1;
+					Jump_control_ID <= 1'b0;
 				end // LW
 		
 				SW: begin
@@ -69,6 +74,7 @@ module ID_Control(
 					MemWrite_ID		<= 1'b1;
 					RegWrite_ID 	<= 1'b0;
 					MemtoReg_ID 	<= 1'b0;
+					Jump_control_ID <= 1'b0;
 				end // SW
 		
 				BEQ: begin
@@ -80,8 +86,21 @@ module ID_Control(
 					MemWrite_ID		<= 1'b0;
 					RegWrite_ID 	<= 1'b0;
 					MemtoReg_ID 	<= 1'b0;
+					Jump_control_ID <= 1'b0;
 				end // BEQ
 		
+				JUMP: begin
+					RegDst_ID		<= 1'b0;
+					ALUOp_ID			<= 2'b00;
+					ALUSrc_ID		<= 1'b0;
+					Branch_ID		<= 1'b0;
+					MemRead_ID		<= 1'b0;
+					MemWrite_ID		<= 1'b0;
+					RegWrite_ID 	<= 1'b0;
+					MemtoReg_ID 	<= 1'b0;	
+					Jump_control_ID <= 1'b1;		
+				end //JUMP
+				
 				default: begin
 					RegDst_ID		<= 1'b0;
 					ALUOp_ID			<= 2'b00;
@@ -91,6 +110,7 @@ module ID_Control(
 					MemWrite_ID		<= 1'b0;
 					RegWrite_ID 	<= 1'b0;
 					MemtoReg_ID 	<= 1'b0;
+					Jump_control_ID <= 1'b0;
 				end //default
 			endcase
 		end

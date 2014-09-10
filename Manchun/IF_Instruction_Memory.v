@@ -3,7 +3,7 @@
 
 module IF_Instruction_Memory(
 		 input [31:0]PC_IF,
-		 output reg [31:0]Instruction_IF,
+		 output reg [31:0]Instruction_to_mux_IF,
 		 input Clk
 		 );
 	reg [31:0]memory[0:1024];
@@ -14,7 +14,7 @@ module IF_Instruction_Memory(
 	
 	always@(PC_IF) //modif from posedge clk to PC_IF
 		begin
-		Instruction_IF <= memory[PC_IF];
+		Instruction_to_mux_IF <= memory[PC_IF];
 		end
 
 endmodule // IF_Instruction_Memory

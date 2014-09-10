@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP2C70F896I8
 set_global_assignment -name TOP_LEVEL_ENTITY Mips
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:28:03  AUGUST 12, 2014"
-set_global_assignment -name LAST_QUARTUS_VERSION 12.0
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
@@ -61,6 +61,9 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
 set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
+set_global_assignment -name SOURCE_FILE register_file.list
+set_global_assignment -name SOURCE_FILE instruction_memory.list
+set_global_assignment -name SOURCE_FILE data_memory.list
 set_global_assignment -name VERILOG_FILE Forward_C_mux.v
 set_global_assignment -name VERILOG_FILE Mips.v
 set_global_assignment -name VERILOG_FILE IF_PC_Mux.v
@@ -95,5 +98,7 @@ set_global_assignment -name VERILOG_FILE ID_Comparator.v
 set_global_assignment -name VERILOG_FILE Forward_D_mux.v
 set_global_assignment -name VERILOG_FILE ID_Shift_Left_2.v
 set_global_assignment -name VERILOG_FILE ID_PC_Add.v
+set_global_assignment -name VERILOG_FILE IF_Flush_mux.v
+set_global_assignment -name VERILOG_FILE Jump_address_unit.v
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE IF_ID_EX_MEM_WB_testing.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

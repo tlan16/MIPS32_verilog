@@ -25,7 +25,7 @@ module Mips(
 	  output [31:0]   Instruction_IF,
 	  output [31:0] 	Next_PC_IF,
 	  
-//	  output [31:0]   Instruction_ID,
+	  output [31:0]   Instruction_ID,
 	  output [4:0]		Read_Address_1_ID,
 //	  output [4:0]		Read_Address_2_ID,
 	  output [31:0]	Read_Data_1_ID,
@@ -45,7 +45,7 @@ module Mips(
 	  output [31:0]	ALU_Data_2_EX,
 	  output [3:0]		ALU_Control_EX,
 	  output [31:0]	ALU_Result_EX,
-	  output [31:0]	Branch_Dest_EX,
+//	  output [31:0]	Branch_Dest_EX,
 	  output [4:0]		Write_Register_EX,
 	  output 			Zero_EX,
 	  
@@ -68,8 +68,8 @@ module Mips(
 	  output [1:0]		Forward_Reg_Delay,
 	  output				Forward_C,
 	  output				Forward_D,
-	  output	[31:0]	Forward_C_out,
-	  output [31:0]	Forward_D_out,
+//	  output	[31:0]	Forward_C_out,
+//	  output [31:0]	Forward_D_out,
 	  output				Zero_ID
 		);
 
@@ -78,12 +78,12 @@ module Mips(
 		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
 		// probed wire [31:0] 	PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
 		wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
-   
+      wire [31:0] 	Instruction_to_mux_IF;
    // ID Origin Variables:
 //		wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
 //		wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
 //	   wire				Branch_ID;		// From ID_Control of ID_Control.v
-		wire [31:0]	Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+//		wire [31:0]	Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
 //		wire				MemRead_ID;		// From ID_Control of ID_Control.v
 //		wire				MemWrite_ID;		// From ID_Control of ID_Control.v
 //		wire				MemtoReg_ID;		// From ID_Control of ID_Control.v
@@ -96,12 +96,13 @@ module Mips(
 		wire				RegWrite_ID;		// From ID_Control of ID_Control.v
 		wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
 //		wire 				PCSrc_ID;				// From ID_Branch_AND
-//		wire [31:0]		Forward_C_out;			// From Forward_C
-//		wire [31:0]		Forward_D_out;			// From Forward_D
+		wire [31:0]		Forward_C_out;			// From Forward_C
+		wire [31:0]		Forward_D_out;			// From Forward_D
 //		wire 				Zero_ID;
 		wire [31:0] 	Instruction_Shift_Left_2_ID;
 		wire [31:0]		Branch_Dest_ID;
-
+		wire [31:0]		Jump_dst_ID;
+	   wire 				Jump_control_ID;
    
    // EX origin variables:
 		wire [1:0]		ALUOp_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -109,7 +110,7 @@ module Mips(
 		// probed wire [3:0]			ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
 		// probed wire [31:0]		ALU_Data_2_EX;		// From EX_ALU_Mux of EX_ALU_Mux.v
 		// probed wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
-// deleted		// probed wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
+/* deleted		 probed*/ wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
 		wire				Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		// probed wire [31:0] 		Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 // deleted		wire [31:0]		Instruction_Shift_Left_2_EX;// From EX_Shift_Left_2 of EX_Shift_Left_2.v
@@ -168,9 +169,9 @@ module Mips(
 		       // Inputs
 		       .PC_Plus_4_IF	(PC_Plus_4_IF[31:0]),
 		       .Branch_Dest_ID	(Branch_Dest_ID[31:0]),
-		       .PCSrc_ID	(PCSrc_ID));
-   
-   
+		       .PCSrc_ID	(PCSrc_ID),
+				 .Jump_control_ID (Jump_control_ID),
+				 .Jump_dst_ID	(Jump_dst_ID));
 
    // IF_PC_Reg
    IF_PC_Reg IF_PC_Reg(
@@ -195,12 +196,21 @@ module Mips(
    // IF_Instruction_Memory
    IF_Instruction_Memory IF_Instruction_Memory(
 					       // Outputs
-					       .Instruction_IF	(Instruction_IF[31:0]),
+					       .Instruction_to_mux_IF	(Instruction_to_mux_IF[31:0]),
 					       // Inputs
 					       .PC_IF		(PC_IF[31:0]),
 					       .Clk		(Clk));
    
    
+	// IF_Flush_mux
+	IF_Flush_mux IF_Flush_mux(
+							// Output
+							.Instruction_IF (Instruction_IF[31:0]),
+							// Inputs
+							.Instruction_to_mux_IF	(Instruction_to_mux_IF),
+							.PCSrc_ID	(PCSrc_ID),
+							.Jump_control_ID (Jump_control_ID)
+				);
 
    // IF_ID_Pipeline_Stage
    IF_ID_Pipeline_Stage IF_ID_Pipeline_Stage(
@@ -212,6 +222,15 @@ module Mips(
 					     .Instruction_IF	(Instruction_IF[31:0]),
 					     .PC_Plus_4_IF	(PC_Plus_4_IF),
 					     .Clk		(Clk));
+	
+	// Jump_address_unit					  
+	Jump_address_unit Jump_address_unit(
+							// Outputs
+							.Jump_dst_ID	(Jump_dst_ID),
+							// Inputs
+							.Instruction_ID	(Instruction_ID),
+							.PC_Plus_4_ID		(PC_Plus_4_ID)
+	);
    
    // ID_Registers
 
@@ -252,6 +271,7 @@ module Mips(
 			 .RegDst_ID		(RegDst_ID),
 			 .ALUOp_ID		(ALUOp_ID[1:0]),
 			 .ALUSrc_ID		(ALUSrc_ID),
+			 .Jump_control_ID (Jump_control_ID),
 			 // Inputs
 			 .Instruction_ID	(Instruction_ID[31:0]),
 			 .ID_Control_Noop	(ID_Control_Noop));

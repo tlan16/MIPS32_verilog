@@ -21,22 +21,38 @@
 @1C
 00221820		//add R3, R1, R2
 
+@20
+08000010		// j 0000000
+
+@40
+00220821
+
+@44
+00220821
+
+@48
+00220821
+
+@4c
+00220821
 /*
+
 //Comments are allowed // This is in HEX
 @4
-00220820		//add R1, R1, R2
-
+00220821		//addu R1, R1, R2
+				// in our code, addu is a dummy of multiply
+				// This just save our time to convert every thing to mechine code
 @8
-00220820
+00220821
 
 @C
-00220820		//add R1, R1, R2
+00220821		//add R1, R1, R2
 
 @10
-00220820
+00220821
 
 @14
-00220820
+00220821
 
 @18
 00220820

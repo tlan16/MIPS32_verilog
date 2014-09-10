@@ -13,7 +13,8 @@ module EX_ALU_Control(
 					Rsub			=	6'b100010,
 					Rand			=	6'b100100,
 					Ror			=	6'b100101,
-					Rslt			=	6'b101010;
+					Rslt			=	6'b101010,
+					Rmul			=  6'b100001;	//this is a function code of addu but we treat it as mul.s
 	
 	parameter	lwsw			=	2'b00,		//since LW and SW use the same bit pattern, only way to store them as a paramter
 					Itype			=	2'b01,		// beq
@@ -24,7 +25,8 @@ module EX_ALU_Control(
 					ALUsub		=	4'b0110,
 					ALUand		=	4'b0000,
 					ALUor			=	4'b0001,
-					ALUslt		=	4'b0111;
+					ALUslt		=	4'b0111,
+					ALUmul		=	4'b1111;
 					
 	parameter	unknown		=	2'b11,
 					ALUx			=	4'b0011;
@@ -44,6 +46,7 @@ module EX_ALU_Control(
 				Rand:			ALU_Control_EX <= ALUand;
 				Ror:			ALU_Control_EX <= ALUor;
 				Rslt:			ALU_Control_EX <= ALUslt;
+				Rmul: 		ALU_Control_EX	<= ALUmul;
 				default:		ALU_Control_EX <= ALUx;
 			endcase
 	    end

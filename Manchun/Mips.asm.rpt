@@ -1,6 +1,6 @@
 Assembler report for Mips
-Mon Sep 08 21:33:59 2014
-Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+Wed Sep 10 17:20:07 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.sof
-  6. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.pof
+  5. Assembler Device Options: C:/Users/tlan16/git/MIPS32_verilog/Manchun/Mips.sof
+  6. Assembler Device Options: C:/Users/tlan16/git/MIPS32_verilog/Manchun/Mips.pof
   7. Assembler Messages
 
 
@@ -19,7 +19,7 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Sep 08 21:33:59 2014 ;
+; Assembler Status      ; Successful - Wed Sep 10 17:20:07 2014 ;
 ; Revision Name         ; Mips                                  ;
 ; Top-level Entity Name ; Mips                                  ;
 ; Family                ; Cyclone II                            ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 ; Clock source for configuration device                                       ; Internal ; Internal      ;
 ; Clock frequency of the configuration device                                 ; 10 MHZ   ; 10 MHz        ;
 ; Divide clock frequency by                                                   ; 1        ; 1             ;
-; Auto user code                                                              ; Off      ; Off           ;
+; Auto user code                                                              ; On       ; On            ;
 ; Use configuration device                                                    ; On       ; On            ;
 ; Configuration device                                                        ; Auto     ; Auto          ;
 ; Configuration device auto user code                                         ; Off      ; Off           ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------+
-; Assembler Generated Files                                        ;
-+------------------------------------------------------------------+
-; File Name                                                        ;
-+------------------------------------------------------------------+
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.sof ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.pof ;
-+------------------------------------------------------------------+
++-----------------------------------------------------+
+; Assembler Generated Files                           ;
++-----------------------------------------------------+
+; File Name                                           ;
++-----------------------------------------------------+
+; C:/Users/tlan16/git/MIPS32_verilog/Manchun/Mips.sof ;
+; C:/Users/tlan16/git/MIPS32_verilog/Manchun/Mips.pof ;
++-----------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.sof ;
-+----------------+---------------------------------------------------------------------------+
-; Option         ; Setting                                                                   ;
-+----------------+---------------------------------------------------------------------------+
-; Device         ; EP2C70F896I8                                                              ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                ;
-; Checksum       ; 0x00742DEA                                                                ;
-+----------------+---------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/tlan16/git/MIPS32_verilog/Manchun/Mips.sof ;
++----------------+--------------------------------------------------------------+
+; Option         ; Setting                                                      ;
++----------------+--------------------------------------------------------------+
+; Device         ; EP2C70F896I8                                                 ;
+; JTAG usercode  ; 0x007478BA                                                   ;
+; Checksum       ; 0x007478BA                                                   ;
++----------------+--------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.pof ;
-+--------------------+-----------------------------------------------------------------------+
-; Option             ; Setting                                                               ;
-+--------------------+-----------------------------------------------------------------------+
-; Device             ; EPCS16                                                                ;
-; JTAG usercode      ; 0x00000000                                                            ;
-; Checksum           ; 0x1857E83B                                                            ;
-; Compression Ratio  ; 3                                                                     ;
-+--------------------+-----------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/tlan16/git/MIPS32_verilog/Manchun/Mips.pof ;
++--------------------+----------------------------------------------------------+
+; Option             ; Setting                                                  ;
++--------------------+----------------------------------------------------------+
+; Device             ; EPCS16                                                   ;
+; JTAG usercode      ; 0x00000000                                               ;
+; Checksum           ; 0x1857CB15                                               ;
+; Compression Ratio  ; 3                                                        ;
++--------------------+----------------------------------------------------------+
 
 
 +--------------------+
@@ -116,15 +116,15 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
-    Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Mon Sep 08 21:33:56 2014
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Sep 10 17:20:03 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Mips -c Mips
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 409 megabytes
-    Info: Processing ended: Mon Sep 08 21:33:59 2014
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 466 megabytes
+    Info: Processing ended: Wed Sep 10 17:20:07 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
