@@ -1,25 +1,19 @@
-// Module Name: MIPS_Top
-// Author: Damien Browne
-// Description: This is a template module for use in ECE4074 to help students get started and manage their assignment.
-// The connectivity and sub modules described below are based on the architechture presented in "Computer Organization and Design" by Patterson and Hennsey, page 362.
-// This does not include advanced structures such as (but not limited to) branch prediction, data forwarding, stalling and pipline flushing.
-// The student will decide on the appropriate location of HI and LO registers for multiplication.
-// Warning: Placement of these registers (HI and/Or LO) is usually critical to a high clock frequency design, you should spend some time thinkings about the implications of your placement.
-// The design assumes a single common clock that drives all syncrhonous components. Variable names are suffixed with the pipeline stage that is their origin. Modules are prefixed with their pipeline stage.
-// This is not intended to be used as a complete architectural solution. Add all template files to your project to get started.
-// Partial selection of many muti-bit variables will need to be updated manually by the student.
-// The architecture presented here will require the executed code to contain many no-ops and hence may be very ineffecient.
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
-// Advice: Keep it simple, divide and conquer.
-// Use the verilog crash course lecture slides.
-// Simulate each module as you write them.
-// Memory described below is asynchronous, you should use synchronous memory as the FPGAs will then operate faster (See verilog crash course lecture slides).
-// Using synchronous memory will mean you will need the memory address/addresses one clock cycle earlier and data may be availiable one clock cycle late. (Hint: A pipline stage delays bits in the same way)
+// Module Name: MIPS32
+// Author: Tianxiang Lan
+// Date: 12 Sept 2014
+// Lecturer: Damien Browne
+//	Description: This is a five stage pipelined 32 bit Mips. 
+//	Instruction set:
+//		R type: add, sub, and, or, slt, mul
+//		I type: lw, sw, beq
+//		J type: j
+//	Hazard handled: Data hazard, Mem-to-mem copy, Load-use hazard, branch hazard, jump hazard
+//	Functional aim: Successfully and efficiently perform 15-by-15 matrix integer multiplication
 
+//	This is the top module of MIPS32
 
 module MIPS32(
-		input Clk, // Global clock
+		input CLOCK_50, // Global clock
 		
 	  // probed output
 	  output [31:0]   PC_Plus_4_IF,
@@ -27,11 +21,11 @@ module MIPS32(
 	  output [31:0] 	Next_PC_IF,
 	  output				PC_Enable,
 	  
-	  output [31:0]   Instruction_ID,
-	  output [4:0]		Read_Address_1_ID,
-	  output [4:0]		Read_Address_2_ID,
-	  output [31:0]	Read_Data_1_ID,
-	  output [31:0]	Read_Data_2_ID,
+	  //output [31:0]   Instruction_ID,
+	  //output [4:0]		Read_Address_1_ID,
+	  //output [4:0]		Read_Address_2_ID,
+	  //output [31:0]	Read_Data_1_ID,
+	  //output [31:0]	Read_Data_2_ID,
 	  output 			RegDst_ID,
 	  output	[1:0]		ALUOp_ID,
 	  output 			ALUSrc_ID,
@@ -57,19 +51,20 @@ module MIPS32(
 	  output [4:0]		Write_Register_EX,
 	  output 			Zero_EX,
 	  
-	  output [31:0]	ALU_Result_MEM,
-	  output [31:0]	Write_Data_MEM,
+	  //output [31:0]	ALU_Result_MEM,
+	  //output [31:0]	Write_Data_MEM,
 	  output [31:0]	Read_Data_MEM,
 	  output				PCSrc_MEM,
 	  output [31:0]	Write_Data_MUX_MEM,
 	  
-	  output [31:0]	Read_Data_WB,
-	  output [31:0]	ALU_Result_WB,
-	  output [31:0]	Write_Data_WB,
-	  output [4:0]		Write_Register_WB
+	  //output [31:0]	Read_Data_WB,
+	  output [31:0]	ALU_Result_WB
+	  //output [31:0]	Write_Data_WB,
+	  //output [4:0]		Write_Register_WB
 	  
 		);
-
+wire Clk;
+assign Clk = CLOCK_50;
    // IF Origin Variables:
 		// probed wire [31:0] 	Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
 		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
@@ -85,15 +80,15 @@ module MIPS32(
 		// probed wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
 		// probed wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
 		// probed wire				Branch_ID;		// From ID_Control of ID_Control.v
-		// probed wire [31:0]	Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
+		wire [31:0]	Instruction_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
 		// probed wire				MemRead_ID;		// From ID_Control of ID_Control.v
 		// probed wire				MemWrite_ID;		// From ID_Control of ID_Control.v
 		// probed wire				MemtoReg_ID;		// From ID_Control of ID_Control.v
 		wire [31:0]	PC_Plus_4_ID;		// From IF_ID_Pipeline_Stage of IF_ID_Pipeline_Stage.v
-		// probed wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
-		// probed wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
-		// probed wire [31:0] 	Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
-		// probed wire [31:0]	Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
+		wire [4:0]		Read_Address_1_ID;	// To ID_Registers of ID_Registers.v
+		wire [4:0]		Read_Address_2_ID;	// To ID_Registers of ID_Registers.v
+		wire [31:0] 	Read_Data_1_ID;		// From ID_Registers of ID_Registers.v
+		wire [31:0]		Read_Data_2_ID;		// From ID_Registers of ID_Registers.v
 		// probed wire				RegDst_ID;		// From ID_Control of ID_Control.v
 		// probed wire				RegWrite_ID;		// From ID_Control of ID_Control.v
 		// probed wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
@@ -131,7 +126,7 @@ module MIPS32(
    // MEM Origin Variables:
 		//probed wire [31:0]		Write_Data_MUX_MEM;
 		wire [31:0]		Instruction_MEM;
-		// probed wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire				Branch_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire				MemRead_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
@@ -140,7 +135,7 @@ module MIPS32(
 		// probed wire					PCSrc_MEM;		// From MEM_Branch_AND of MEM_Branch_AND.v
 		// probed wire [31:0]		Read_Data_MEM;		// From MEM_Data_Memory of MEM_Data_Memory.v
 		wire				RegWrite_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
-		// probed wire [31:0]		Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
+		wire [31:0]		Write_Data_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire [4:0]		Write_Register_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire				Zero_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 
@@ -149,9 +144,9 @@ module MIPS32(
 		// probed wire [31:0]		ALU_Result_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 		wire				MemtoReg_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 		wire				RegWrite_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
-		// probed wire [31:0]		Read_Data_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
-		// probed wire [31:0]		Write_Data_WB;		// From WB_MemtoReg_Mux of WB_MemtoReg_Mux.v
-		// probed wire [4:0]		Write_Register_WB;	// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
+		wire [31:0]		Read_Data_WB;		// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
+		wire [31:0]		Write_Data_WB;		// From WB_MemtoReg_Mux of WB_MemtoReg_Mux.v
+		wire [4:0]		Write_Register_WB;	// From MEM_WB_Pipeline_Stage of MEM_WB_Pipeline_Stage.v
 
    
 

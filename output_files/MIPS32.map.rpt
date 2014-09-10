@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS32
-Wed Sep 10 23:58:18 2014
+Thu Sep 11 01:16:48 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -23,9 +23,9 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
  15. Inverted Register Statistics
  16. Registers Added for RAM Pass-Through Logic
  17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_2oi1:auto_generated
- 19. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_2oi1:auto_generated
- 20. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated
+ 18. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_boi1:auto_generated
+ 19. Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_boi1:auto_generated
+ 20. Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_pqg1:auto_generated
  21. Parameter Settings for User Entity Instance: ID_Control:ID_Control
  22. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_A
  23. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_B
@@ -41,9 +41,11 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
  33. Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
  34. Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
  35. Port Connectivity Checks: "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
- 38. Analysis & Synthesis Suppressed Messages
+ 36. SignalTap II Logic Analyzer Settings
+ 37. Elapsed Time Per Partition
+ 38. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 39. Analysis & Synthesis Messages
+ 40. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -69,105 +71,105 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 10 23:58:18 2014     ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 11 01:16:48 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 1,194                                     ;
-;     Total combinational functions  ; 922                                       ;
-;     Dedicated logic registers      ; 516                                       ;
-; Total registers                    ; 516                                       ;
-; Total pins                         ; 592                                       ;
+; Total logic elements               ; 2,042                                     ;
+;     Total combinational functions  ; 1,342                                     ;
+;     Dedicated logic registers      ; 1,197                                     ;
+; Total registers                    ; 1197                                      ;
+; Total pins                         ; 353                                       ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 17,408                                    ;
+; Total memory bits                  ; 21,632                                    ;
 ; Embedded Multiplier 9-bit elements ; 6                                         ;
 ; Total PLLs                         ; 0                                         ;
 +------------------------------------+-------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                  ;
-+----------------------------------------------------------------------------+--------------+--------------------+
-; Option                                                                     ; Setting      ; Default Value      ;
-+----------------------------------------------------------------------------+--------------+--------------------+
-; Device                                                                     ; EP2C70F896I8 ;                    ;
-; Top-level entity name                                                      ; MIPS32       ; MIPS32             ;
-; Family name                                                                ; Cyclone II   ; Cyclone IV GX      ;
-; Optimization Technique                                                     ; Speed        ; Balanced           ;
-; Timing-Driven Synthesis                                                    ; On           ; Off                ;
-; PowerPlay Power Optimization                                               ; Off          ; Normal compilation ;
-; Use smart compilation                                                      ; Off          ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On           ; On                 ;
-; Enable compact report table                                                ; Off          ; Off                ;
-; Restructure Multiplexers                                                   ; Auto         ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off          ; Off                ;
-; Preserve fewer node names                                                  ; On           ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off          ; Off                ;
-; Verilog Version                                                            ; Verilog_2001 ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993    ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto         ; Auto               ;
-; Safe State Machine                                                         ; Off          ; Off                ;
-; Extract Verilog State Machines                                             ; On           ; On                 ;
-; Extract VHDL State Machines                                                ; On           ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off          ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000         ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250          ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On           ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On           ; On                 ;
-; Parallel Synthesis                                                         ; On           ; On                 ;
-; DSP Block Balancing                                                        ; Auto         ; Auto               ;
-; NOT Gate Push-Back                                                         ; On           ; On                 ;
-; Power-Up Don't Care                                                        ; On           ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off          ; Off                ;
-; Remove Duplicate Registers                                                 ; On           ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off          ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off          ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off          ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off          ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off          ; Off                ;
-; Ignore SOFT Buffers                                                        ; On           ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off          ; Off                ;
-; Carry Chain Length                                                         ; 70           ; 70                 ;
-; Auto Carry Chains                                                          ; On           ; On                 ;
-; Auto Open-Drain Pins                                                       ; On           ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off          ; Off                ;
-; Auto ROM Replacement                                                       ; On           ; On                 ;
-; Auto RAM Replacement                                                       ; On           ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto         ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto         ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On           ; On                 ;
-; Strict RAM Replacement                                                     ; Off          ; Off                ;
-; Allow Synchronous Control Signals                                          ; On           ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off          ; Off                ;
-; Auto RAM to Logic Cell Conversion                                          ; Off          ; Off                ;
-; Auto Resource Sharing                                                      ; Off          ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off          ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off          ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off          ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On           ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off          ; Off                ;
-; Report Parameter Settings                                                  ; On           ; On                 ;
-; Report Source Assignments                                                  ; On           ; On                 ;
-; Report Connectivity Checks                                                 ; On           ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off          ; Off                ;
-; Synchronization Register Chain Length                                      ; 2            ; 2                  ;
-; HDL message level                                                          ; Level2       ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off          ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000         ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000         ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100          ; 100                ;
-; Clock MUX Protection                                                       ; On           ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off          ; Off                ;
-; Block Design Naming                                                        ; Auto         ; Auto               ;
-; SDC constraint protection                                                  ; Off          ; Off                ;
-; Synthesis Effort                                                           ; Auto         ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On           ; On                 ;
-; Analysis & Synthesis Message Level                                         ; Medium       ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto         ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On           ; On                 ;
-; Synthesis Seed                                                             ; 1            ; 1                  ;
-+----------------------------------------------------------------------------+--------------+--------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F672C6       ;                    ;
+; Top-level entity name                                                      ; MIPS32             ; MIPS32             ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Optimization Technique                                                     ; Speed              ; Balanced           ;
+; Timing-Driven Synthesis                                                    ; On                 ; Off                ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -222,107 +224,210 @@ applicable agreement for further details.
 ; MEM_to_MEM_Forward.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v                            ;         ;
 ; ID_Read_data_Mux.v                              ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v                              ;         ;
 ; ID_Jump.v                                       ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Jump.v                                       ;         ;
+; sld_signaltap.vhd                               ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_signaltap.vhd                                ;         ;
+; sld_ela_control.vhd                             ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_ela_control.vhd                              ;         ;
+; lpm_shiftreg.tdf                                ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                 ;         ;
+; lpm_constant.inc                                ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_constant.inc                                 ;         ;
+; dffeea.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/dffeea.inc                                       ;         ;
+; aglobal120.inc                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/aglobal120.inc                                   ;         ;
+; sld_mbpmg.vhd                                   ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                                    ;         ;
+; sld_ela_trigger_flow_mgr.vhd                    ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                     ;         ;
+; sld_buffer_manager.vhd                          ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd                           ;         ;
 ; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altsyncram.tdf                                   ;         ;
 ; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/stratix_ram_block.inc                            ;         ;
 ; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_mux.inc                                      ;         ;
 ; lpm_decode.inc                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_decode.inc                                   ;         ;
-; aglobal120.inc                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/aglobal120.inc                                   ;         ;
 ; a_rdenreg.inc                                   ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/a_rdenreg.inc                                    ;         ;
 ; altrom.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
 ; altram.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altram.inc                                       ;         ;
 ; altdpram.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_2oi1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_2oi1.tdf                          ;         ;
-; db/mips32.ram0_id_registers_ada8f4a0.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_id_registers_ada8f4a0.hdl.mif    ;         ;
-; db/altsyncram_gqg1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_gqg1.tdf                          ;         ;
-; db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ;         ;
-; lpm_mult.tdf                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_mult.tdf                                     ;         ;
-; lpm_add_sub.inc                                 ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                  ;         ;
-; multcore.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/multcore.inc                                     ;         ;
+; db/altsyncram_qp14.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_qp14.tdf                          ;         ;
+; altdpram.tdf                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altdpram.tdf                                     ;         ;
+; memmodes.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/others/maxplus2/memmodes.inc                                   ;         ;
+; a_hdffe.inc                                     ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/a_hdffe.inc                                      ;         ;
+; alt_le_rden_reg.inc                             ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc                              ;         ;
+; altsyncram.inc                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altsyncram.inc                                   ;         ;
+; lpm_mux.tdf                                     ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_mux.tdf                                      ;         ;
+; muxlut.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/muxlut.inc                                       ;         ;
 ; bypassff.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/bypassff.inc                                     ;         ;
 ; altshift.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/altshift.inc                                     ;         ;
+; db/mux_aoc.tdf                                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mux_aoc.tdf                                  ;         ;
+; lpm_decode.tdf                                  ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_decode.tdf                                   ;         ;
+; declut.inc                                      ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/declut.inc                                       ;         ;
+; lpm_compare.inc                                 ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_compare.inc                                  ;         ;
+; db/decode_rqf.tdf                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/decode_rqf.tdf                               ;         ;
+; lpm_counter.tdf                                 ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_counter.tdf                                  ;         ;
+; lpm_add_sub.inc                                 ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                  ;         ;
+; cmpconst.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/cmpconst.inc                                     ;         ;
+; lpm_counter.inc                                 ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_counter.inc                                  ;         ;
+; alt_counter_stratix.inc                         ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/alt_counter_stratix.inc                          ;         ;
+; db/cntr_ubi.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cntr_ubi.tdf                                 ;         ;
+; db/cmpr_acc.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cmpr_acc.tdf                                 ;         ;
+; db/cntr_02j.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cntr_02j.tdf                                 ;         ;
+; db/cntr_tbi.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cntr_tbi.tdf                                 ;         ;
+; db/cmpr_8cc.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cmpr_8cc.tdf                                 ;         ;
+; db/cntr_gui.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cntr_gui.tdf                                 ;         ;
+; db/cmpr_5cc.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/cmpr_5cc.tdf                                 ;         ;
+; sld_rom_sr.vhd                                  ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                                   ;         ;
+; sld_hub.vhd                                     ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_hub.vhd                                      ;         ;
+; db/altsyncram_boi1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_boi1.tdf                          ;         ;
+; db/mips32.ram0_id_registers_ada8f4a0.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_id_registers_ada8f4a0.hdl.mif    ;         ;
+; db/altsyncram_pqg1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_pqg1.tdf                          ;         ;
+; db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ;         ;
+; lpm_mult.tdf                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_mult.tdf                                     ;         ;
+; multcore.inc                                    ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/multcore.inc                                     ;         ;
 ; db/mult_l8t.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mult_l8t.tdf                                 ;         ;
 +-------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,194 ;
-;                                             ;       ;
-; Total combinational functions               ; 922   ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 506   ;
-;     -- 3 input functions                    ; 340   ;
-;     -- <=2 input functions                  ; 76    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 745   ;
-;     -- arithmetic mode                      ; 177   ;
-;                                             ;       ;
-; Total registers                             ; 516   ;
-;     -- Dedicated logic registers            ; 516   ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 592   ;
-; Total memory bits                           ; 17408 ;
-; Embedded Multiplier 9-bit elements          ; 6     ;
-; Maximum fan-out node                        ; Clk   ;
-; Maximum fan-out                             ; 612   ;
-; Total fan-out                               ; 6265  ;
-; Average fan-out                             ; 2.94  ;
-+---------------------------------------------+-------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 2,042    ;
+;                                             ;          ;
+; Total combinational functions               ; 1342     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 688      ;
+;     -- 3 input functions                    ; 489      ;
+;     -- <=2 input functions                  ; 165      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 1125     ;
+;     -- arithmetic mode                      ; 217      ;
+;                                             ;          ;
+; Total registers                             ; 1197     ;
+;     -- Dedicated logic registers            ; 1197     ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 353      ;
+; Total memory bits                           ; 21632    ;
+; Embedded Multiplier 9-bit elements          ; 6        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 1009     ;
+; Total fan-out                               ; 9967     ;
+; Average fan-out                             ; 3.29     ;
++---------------------------------------------+----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
-+--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
-+--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |MIPS32                                          ; 922 (1)           ; 516 (0)      ; 17408       ; 6            ; 0       ; 3         ; 592  ; 0            ; |MIPS32                                                                                             ;              ;
-;    |EX_ALU:EX_ALU|                               ; 239 (211)         ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                               ;              ;
-;       |lpm_mult:Mult0|                           ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU|lpm_mult:Mult0                                                                ;              ;
-;          |mult_l8t:auto_generated|               ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU|lpm_mult:Mult0|mult_l8t:auto_generated                                        ;              ;
-;    |EX_ALU_Control:EX_ALU_Control|               ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Control:EX_ALU_Control                                                               ;              ;
-;    |EX_ALU_Mux:EX_ALU_Mux|                       ; 71 (71)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                       ;              ;
-;    |EX_Dest_Mux:EX_Dest_Mux|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                     ;              ;
-;    |EX_Forward_A:EX_Forward_A|                   ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                   ;              ;
-;    |EX_Forward_Unit:EX_Forward_Unit|             ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                             ;              ;
-;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage| ; 0 (0)             ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                 ;              ;
-;    |EX_PC_Add:EX_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                         ;              ;
-;    |ID_Control:ID_Control|                       ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                       ;              ;
-;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|   ; 1 (1)             ; 82 (82)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                   ;              ;
-;    |ID_Read_data_Mux:ID_Read_data_Mux|           ; 75 (75)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Read_data_Mux:ID_Read_data_Mux                                                           ;              ;
-;    |ID_Registers:ID_Registers|                   ; 137 (137)         ; 145 (145)    ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                   ;              ;
-;       |altsyncram:Register_File_rtl_0|           ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0                                    ;              ;
-;          |altsyncram_2oi1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_2oi1:auto_generated     ;              ;
-;       |altsyncram:Register_File_rtl_1|           ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1                                    ;              ;
-;          |altsyncram_2oi1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_2oi1:auto_generated     ;              ;
-;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|   ; 0 (0)             ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                   ;              ;
-;    |IF_Instruction_Memory:IF_Instruction_Memory| ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_Instruction_Memory:IF_Instruction_Memory                                                 ;              ;
-;    |IF_PC_Add:IF_PC_Add|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Add:IF_PC_Add                                                                         ;              ;
-;    |IF_PC_Mux:IF_PC_Mux|                         ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Mux:IF_PC_Mux                                                                         ;              ;
-;    |IF_PC_Reg:IF_PC_Reg|                         ; 0 (0)             ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Reg:IF_PC_Reg                                                                         ;              ;
-;    |MEM_Branch_AND:MEM_Branch_AND|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Branch_AND:MEM_Branch_AND                                                               ;              ;
-;    |MEM_Data_Memory:MEM_Data_Memory|             ; 75 (75)           ; 64 (64)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                             ;              ;
-;       |altsyncram:Data_Memory_rtl_0|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0                                ;              ;
-;          |altsyncram_gqg1:auto_generated|        ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated ;              ;
-;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage| ; 0 (0)             ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                 ;              ;
-;    |WB_MemtoReg_Mux:WB_MemtoReg_Mux|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|WB_MemtoReg_Mux:WB_MemtoReg_Mux                                                             ;              ;
-+--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
++------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                                                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                   ; Library Name ;
++------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |MIPS32                                                                                              ; 1342 (1)          ; 1197 (0)     ; 21632       ; 6            ; 0       ; 3         ; 353  ; 0            ; |MIPS32                                                                                                                                                                                                                                                                                               ;              ;
+;    |EX_ALU:EX_ALU|                                                                                   ; 239 (211)         ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU                                                                                                                                                                                                                                                                                 ;              ;
+;       |lpm_mult:Mult0|                                                                               ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU|lpm_mult:Mult0                                                                                                                                                                                                                                                                  ;              ;
+;          |mult_l8t:auto_generated|                                                                   ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |MIPS32|EX_ALU:EX_ALU|lpm_mult:Mult0|mult_l8t:auto_generated                                                                                                                                                                                                                                          ;              ;
+;    |EX_ALU_Control:EX_ALU_Control|                                                                   ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Control:EX_ALU_Control                                                                                                                                                                                                                                                                 ;              ;
+;    |EX_ALU_Mux:EX_ALU_Mux|                                                                           ; 71 (71)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                                                                                                                                                                                                                         ;              ;
+;    |EX_Dest_Mux:EX_Dest_Mux|                                                                         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                                                                                                                                                                                                                       ;              ;
+;    |EX_Forward_A:EX_Forward_A|                                                                       ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                                                                                                                                                                                                                     ;              ;
+;    |EX_Forward_Unit:EX_Forward_Unit|                                                                 ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                                                                                                                                                                                                                               ;              ;
+;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|                                                     ; 0 (0)             ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                                                                                                                                                                                                                   ;              ;
+;    |EX_PC_Add:EX_PC_Add|                                                                             ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                                                                                                                                                                                                                           ;              ;
+;    |ID_Control:ID_Control|                                                                           ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                                                                                                                                                                                                                         ;              ;
+;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|                                                       ; 1 (1)             ; 82 (82)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                                                                                                                                                                                                                     ;              ;
+;    |ID_Read_data_Mux:ID_Read_data_Mux|                                                               ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Read_data_Mux:ID_Read_data_Mux                                                                                                                                                                                                                                                             ;              ;
+;    |ID_Registers:ID_Registers|                                                                       ; 137 (137)         ; 145 (145)    ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers                                                                                                                                                                                                                                                                     ;              ;
+;       |altsyncram:Register_File_rtl_0|                                                               ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0                                                                                                                                                                                                                                      ;              ;
+;          |altsyncram_boi1:auto_generated|                                                            ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_boi1:auto_generated                                                                                                                                                                                                       ;              ;
+;       |altsyncram:Register_File_rtl_1|                                                               ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1                                                                                                                                                                                                                                      ;              ;
+;          |altsyncram_boi1:auto_generated|                                                            ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_boi1:auto_generated                                                                                                                                                                                                       ;              ;
+;    |IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|                                                       ; 0 (0)             ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage                                                                                                                                                                                                                                                     ;              ;
+;    |IF_Instruction_Memory:IF_Instruction_Memory|                                                     ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_Instruction_Memory:IF_Instruction_Memory                                                                                                                                                                                                                                                   ;              ;
+;    |IF_PC_Add:IF_PC_Add|                                                                             ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Add:IF_PC_Add                                                                                                                                                                                                                                                                           ;              ;
+;    |IF_PC_Mux:IF_PC_Mux|                                                                             ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Mux:IF_PC_Mux                                                                                                                                                                                                                                                                           ;              ;
+;    |IF_PC_Reg:IF_PC_Reg|                                                                             ; 0 (0)             ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|IF_PC_Reg:IF_PC_Reg                                                                                                                                                                                                                                                                           ;              ;
+;    |MEM_Branch_AND:MEM_Branch_AND|                                                                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Branch_AND:MEM_Branch_AND                                                                                                                                                                                                                                                                 ;              ;
+;    |MEM_Data_Memory:MEM_Data_Memory|                                                                 ; 75 (75)           ; 64 (64)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory                                                                                                                                                                                                                                                               ;              ;
+;       |altsyncram:Data_Memory_rtl_0|                                                                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0                                                                                                                                                                                                                                  ;              ;
+;          |altsyncram_pqg1:auto_generated|                                                            ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_pqg1:auto_generated                                                                                                                                                                                                   ;              ;
+;    |MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|                                                     ; 0 (0)             ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage                                                                                                                                                                                                                                                   ;              ;
+;    |WB_MemtoReg_Mux:WB_MemtoReg_Mux|                                                                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|WB_MemtoReg_Mux:WB_MemtoReg_Mux                                                                                                                                                                                                                                                               ;              ;
+;    |sld_hub:auto_hub|                                                                                ; 103 (65)          ; 73 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_hub:auto_hub                                                                                                                                                                                                                                                                              ;              ;
+;       |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_hub:auto_hub|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                      ;              ;
+;       |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_hub:auto_hub|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                                    ;              ;
+;    |sld_signaltap:auto_signaltap_0|                                                                  ; 307 (1)           ; 608 (0)      ; 4224        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                ;              ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                        ; 306 (18)          ; 608 (224)    ; 4224        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                          ;              ;
+;          |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                            ; 17 (0)            ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                           ;              ;
+;             |lpm_decode:wdecoder|                                                                    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                       ;              ;
+;                |decode_rqf:auto_generated|                                                           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_rqf:auto_generated                                                                                                             ;              ;
+;             |lpm_mux:mux|                                                                            ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux                                                                                                                                               ;              ;
+;                |mux_aoc:auto_generated|                                                              ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux|mux_aoc:auto_generated                                                                                                                        ;              ;
+;          |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                           ; 0 (0)             ; 0 (0)        ; 4224        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                          ;              ;
+;             |altsyncram_qp14:auto_generated|                                                         ; 0 (0)             ; 0 (0)        ; 4224        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_qp14:auto_generated                                                                                                                                           ;              ;
+;          |lpm_shiftreg:segment_offset_config_deserialize|                                            ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                           ;              ;
+;          |lpm_shiftreg:status_register|                                                              ; 17 (17)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                             ;              ;
+;          |sld_buffer_manager:sld_buffer_manager_inst|                                                ; 59 (59)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                               ;              ;
+;          |sld_ela_control:ela_control|                                                               ; 79 (1)            ; 181 (1)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                              ;              ;
+;             |lpm_shiftreg:trigger_config_deserialize|                                                ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                      ;              ;
+;             |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm| ; 66 (0)            ; 165 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                       ;              ;
+;                |lpm_shiftreg:trigger_condition_deserialize|                                          ; 0 (0)             ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                            ;              ;
+;                |sld_mbpmg:\trigger_modules_gen:0:trigger_match|                                      ; 66 (0)            ; 66 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match                                                        ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:10:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:10:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:11:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:11:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:12:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:12:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:13:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:13:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:14:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:14:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:15:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:15:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:16:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:16:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:17:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:17:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:18:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:18:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:19:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:19:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:20:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:20:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:21:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:21:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:22:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:22:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:23:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:23:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:24:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:24:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:25:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:25:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:26:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:26:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:27:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:27:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:28:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:28:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:29:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:29:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:30:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:30:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:31:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:31:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:32:sm1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:32:sm1 ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:8:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:8:sm1  ;              ;
+;                   |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:9:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:9:sm1  ;              ;
+;             |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                          ; 12 (12)           ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                                ;              ;
+;                |lpm_shiftreg:trigger_config_deserialize|                                             ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                        ;              ;
+;          |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|          ; 97 (9)            ; 81 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                         ;              ;
+;             |lpm_counter:\adv_point_3_and_more:advance_pointer_counter|                              ; 8 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter                                                                               ;              ;
+;                |cntr_ubi:auto_generated|                                                             ; 8 (8)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_ubi:auto_generated                                                       ;              ;
+;             |lpm_counter:read_pointer_counter|                                                       ; 7 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                        ;              ;
+;                |cntr_02j:auto_generated|                                                             ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_02j:auto_generated                                                                                ;              ;
+;             |lpm_counter:status_advance_pointer_counter|                                             ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                              ;              ;
+;                |cntr_tbi:auto_generated|                                                             ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_tbi:auto_generated                                                                      ;              ;
+;             |lpm_counter:status_read_pointer_counter|                                                ; 4 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                 ;              ;
+;                |cntr_gui:auto_generated|                                                             ; 4 (4)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_gui:auto_generated                                                                         ;              ;
+;             |lpm_shiftreg:info_data_shift_out|                                                       ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                        ;              ;
+;             |lpm_shiftreg:ram_data_shift_out|                                                        ; 33 (33)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                         ;              ;
+;             |lpm_shiftreg:status_data_shift_out|                                                     ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                      ;              ;
+;          |sld_rom_sr:crc_rom_sr|                                                                     ; 19 (19)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                    ;              ;
++------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                       ;
-+--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
-; Name                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                             ;
-+--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
-; ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_2oi1:auto_generated|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/MIPS32.ram0_ID_Registers_ada8f4a0.hdl.mif    ;
-; ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_2oi1:auto_generated|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/MIPS32.ram0_ID_Registers_ada8f4a0.hdl.mif    ;
-; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 512          ; 32           ; 512          ; 32           ; 16384 ; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ;
-+--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                               ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; Name                                                                                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                             ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_boi1:auto_generated|ALTSYNCRAM                                                             ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/MIPS32.ram0_ID_Registers_ada8f4a0.hdl.mif    ;
+; ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_boi1:auto_generated|ALTSYNCRAM                                                             ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/MIPS32.ram0_ID_Registers_ada8f4a0.hdl.mif    ;
+; MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_pqg1:auto_generated|ALTSYNCRAM                                                         ; AUTO ; Simple Dual Port ; 512          ; 32           ; 512          ; 32           ; 16384 ; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_qp14:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 33           ; 128          ; 33           ; 4224  ; None                                            ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -475,12 +580,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                                              ; due to stuck port data_in ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[29],            ;
 ;                                                              ;                           ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[30],            ;
 ;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[15],         ;
-;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4]        ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[10]     ; Stuck at GND              ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4],        ;
-;                                                              ; due to stuck port data_in ; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[9],                 ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15],          ;
+;                                                              ;                           ; EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Write_Register_MEM[4],       ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20],          ;
+;                                                              ;                           ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Write_Register_WB[4],        ;
+;                                                              ;                           ; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[9],                 ;
 ;                                                              ;                           ; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[9]                  ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[8]      ; Stuck at GND              ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[15],          ;
-;                                                              ; due to stuck port data_in ; MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage|Instruction_WB[20]           ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[10] ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[10] ;
 ;                                                              ; due to stuck port data_in ;                                                                          ;
 ; IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage|Instruction_ID[9]  ; Stuck at GND              ; ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|Sign_Extend_Instruction_EX[9]  ;
@@ -507,119 +612,124 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 516   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 1197  ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 19    ;
+; Number of registers using Asynchronous Clear ; 272   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Clock Enable       ; 371   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------+
-; Inverted Register Statistics                                           ;
-+--------------------------------------------------------------+---------+
-; Inverted Register                                            ; Fan out ;
-+--------------------------------------------------------------+---------+
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[12]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[12]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[14]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[14]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[16]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[16]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[18]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[18]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[20]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[20]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[22]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[22]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[24]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[24]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[26]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[26]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[28]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[28]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[30]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[30]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[32]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[32]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[34]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[34]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[36]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[36]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[38]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[38]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[40]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[40]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[42]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[42]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[44]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[44]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[46]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[46]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[48]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[48]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[50]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[50]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[52]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[54]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[54]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[52]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[56]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[56]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[58]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[58]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[60]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[60]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[62]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[62]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[64]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[64]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[66]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[66]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[68]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[68]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[70]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[70]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[72]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[72]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[74]     ; 1       ;
-; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[74]     ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[24] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[26] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[28] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[30] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[32] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[34] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[36] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[38] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[40] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[42] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[44] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[46] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[48] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[50] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[52] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[54] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[56] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[58] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[60] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[62] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[64] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[66] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[68] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[70] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[72] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[74] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[76] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80] ; 1       ;
-; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[82] ; 1       ;
-; Total number of inverted registers = 96                      ;         ;
-+--------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                     ;
++----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                      ; Fan out ;
++----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[12]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[14]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[14]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[12]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[16]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[18]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[18]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[16]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[20]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[22]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[22]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[20]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[24]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[26]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[26]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[24]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[28]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[30]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[30]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[28]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[32]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[34]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[34]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[32]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[36]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[38]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[38]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[36]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[40]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[42]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[42]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[40]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[44]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[46]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[46]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[44]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[48]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[50]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[50]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[48]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[52]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[54]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[54]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[52]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[56]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[58]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[58]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[56]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[60]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[62]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[62]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[60]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[64]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[66]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[66]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[64]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[68]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[70]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[70]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[68]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[72]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_0_bypass[74]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[74]                                                                               ; 1       ;
+; ID_Registers:ID_Registers|Register_File_rtl_1_bypass[72]                                                                               ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[20]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[22]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[24]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[26]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[28]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[30]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[32]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[34]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[36]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[38]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[40]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[42]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[44]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[46]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[48]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[50]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[52]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[54]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[56]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[58]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[60]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[62]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[64]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[66]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[68]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[70]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[72]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[74]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[76]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[78]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[80]                                                                           ; 1       ;
+; MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0_bypass[82]                                                                           ; 1       ;
+; sld_hub:auto_hub|tdo                                                                                                                   ; 2       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3] ; 1       ;
+; Total number of inverted registers = 105*                                                                                              ;         ;
++----------------------------------------------------------------------------------------------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -879,30 +989,30 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_2oi1:auto_generated ;
-+---------------------------------+-------+------+---------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                            ;
-+---------------------------------+-------+------+---------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; OFF   ; -    ; -                                                             ;
-+---------------------------------+-------+------+---------------------------------------------------------------+
+; Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_boi1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_2oi1:auto_generated ;
-+---------------------------------+-------+------+---------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                            ;
-+---------------------------------+-------+------+---------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; OFF   ; -    ; -                                                             ;
-+---------------------------------+-------+------+---------------------------------------------------------------+
+; Source assignments for ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_boi1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_gqg1:auto_generated ;
-+---------------------------------+-------+------+-------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                ;
-+---------------------------------+-------+------+-------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; OFF   ; -    ; -                                                                 ;
-+---------------------------------+-------+------+-------------------------------------------------------------------+
+; Source assignments for MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0|altsyncram_pqg1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
 
 
 +--------------------------------------------------------------------+
@@ -1053,7 +1163,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                        ; Untyped               ;
 ; WIDTH_ECCSTATUS                    ; 3                                            ; Untyped               ;
 ; DEVICE_FAMILY                      ; Cyclone II                                   ; Untyped               ;
-; CBXI_PARAMETER                     ; altsyncram_2oi1                              ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_boi1                              ; Untyped               ;
 +------------------------------------+----------------------------------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1114,7 +1224,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                        ; Untyped               ;
 ; WIDTH_ECCSTATUS                    ; 3                                            ; Untyped               ;
 ; DEVICE_FAMILY                      ; Cyclone II                                   ; Untyped               ;
-; CBXI_PARAMETER                     ; altsyncram_2oi1                              ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_boi1                              ; Untyped               ;
 +------------------------------------+----------------------------------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1175,7 +1285,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                ;
 ; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                ;
 ; DEVICE_FAMILY                      ; Cyclone II                                      ; Untyped                ;
-; CBXI_PARAMETER                     ; altsyncram_gqg1                                 ; Untyped                ;
+; CBXI_PARAMETER                     ; altsyncram_pqg1                                 ; Untyped                ;
 +------------------------------------+-------------------------------------------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1306,6 +1416,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 33                  ; 33               ; 128          ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -1315,18 +1434,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                          ;
++----------------+---------------+-----------+----------------+-------------------+-----------------------------+---------+
+; Name           ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection           ; Details ;
++----------------+---------------+-----------+----------------+-------------------+-----------------------------+---------+
+; CLOCK_50       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLOCK_50                    ; N/A     ;
+; Next_PC_IF[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux31~0 ; N/A     ;
+; Next_PC_IF[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux31~0 ; N/A     ;
+; Next_PC_IF[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux21~0 ; N/A     ;
+; Next_PC_IF[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux21~0 ; N/A     ;
+; Next_PC_IF[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux20~0 ; N/A     ;
+; Next_PC_IF[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux20~0 ; N/A     ;
+; Next_PC_IF[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux19~0 ; N/A     ;
+; Next_PC_IF[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux19~0 ; N/A     ;
+; Next_PC_IF[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux18~1 ; N/A     ;
+; Next_PC_IF[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux18~1 ; N/A     ;
+; Next_PC_IF[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux17~1 ; N/A     ;
+; Next_PC_IF[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux17~1 ; N/A     ;
+; Next_PC_IF[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux16~1 ; N/A     ;
+; Next_PC_IF[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux16~1 ; N/A     ;
+; Next_PC_IF[16] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux15~1 ; N/A     ;
+; Next_PC_IF[16] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux15~1 ; N/A     ;
+; Next_PC_IF[17] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux14~0 ; N/A     ;
+; Next_PC_IF[17] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux14~0 ; N/A     ;
+; Next_PC_IF[18] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux13~1 ; N/A     ;
+; Next_PC_IF[18] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux13~1 ; N/A     ;
+; Next_PC_IF[19] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux12~1 ; N/A     ;
+; Next_PC_IF[19] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux12~1 ; N/A     ;
+; Next_PC_IF[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux31~0 ; N/A     ;
+; Next_PC_IF[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux31~0 ; N/A     ;
+; Next_PC_IF[20] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux11~1 ; N/A     ;
+; Next_PC_IF[20] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux11~1 ; N/A     ;
+; Next_PC_IF[21] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux10~1 ; N/A     ;
+; Next_PC_IF[21] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux10~1 ; N/A     ;
+; Next_PC_IF[22] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux9~0  ; N/A     ;
+; Next_PC_IF[22] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux9~0  ; N/A     ;
+; Next_PC_IF[23] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux8~1  ; N/A     ;
+; Next_PC_IF[23] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux8~1  ; N/A     ;
+; Next_PC_IF[24] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux7~1  ; N/A     ;
+; Next_PC_IF[24] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux7~1  ; N/A     ;
+; Next_PC_IF[25] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux6~1  ; N/A     ;
+; Next_PC_IF[25] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux6~1  ; N/A     ;
+; Next_PC_IF[26] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux5~0  ; N/A     ;
+; Next_PC_IF[26] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux5~0  ; N/A     ;
+; Next_PC_IF[27] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux4~0  ; N/A     ;
+; Next_PC_IF[27] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux4~0  ; N/A     ;
+; Next_PC_IF[28] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux3~1  ; N/A     ;
+; Next_PC_IF[28] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux3~1  ; N/A     ;
+; Next_PC_IF[29] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux2~1  ; N/A     ;
+; Next_PC_IF[29] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux2~1  ; N/A     ;
+; Next_PC_IF[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux29~1 ; N/A     ;
+; Next_PC_IF[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux29~1 ; N/A     ;
+; Next_PC_IF[30] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux1~1  ; N/A     ;
+; Next_PC_IF[30] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux1~1  ; N/A     ;
+; Next_PC_IF[31] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux0~1  ; N/A     ;
+; Next_PC_IF[31] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux0~1  ; N/A     ;
+; Next_PC_IF[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux28~1 ; N/A     ;
+; Next_PC_IF[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux28~1 ; N/A     ;
+; Next_PC_IF[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux27~1 ; N/A     ;
+; Next_PC_IF[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux27~1 ; N/A     ;
+; Next_PC_IF[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux26~1 ; N/A     ;
+; Next_PC_IF[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux26~1 ; N/A     ;
+; Next_PC_IF[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux25~1 ; N/A     ;
+; Next_PC_IF[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux25~1 ; N/A     ;
+; Next_PC_IF[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux24~1 ; N/A     ;
+; Next_PC_IF[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux24~1 ; N/A     ;
+; Next_PC_IF[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux23~0 ; N/A     ;
+; Next_PC_IF[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux23~0 ; N/A     ;
+; Next_PC_IF[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux22~0 ; N/A     ;
+; Next_PC_IF[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; IF_PC_Mux:IF_PC_Mux|Mux22~0 ; N/A     ;
+; Zero_EX        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; EX_ALU:EX_ALU|Equal0~10     ; N/A     ;
+; Zero_EX        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; EX_ALU:EX_ALU|Equal0~10     ; N/A     ;
++----------------+---------------+-----------+----------------+-------------------+-----------------------------+---------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Wed Sep 10 23:58:13 2014
+    Info: Processing started: Thu Sep 11 01:16:41 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
     Info (12023): Found entity 1: WB_MemtoReg_Mux
-Warning (10275): Verilog HDL Module Instantiation warning at MIPS32.v(198): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at MIPS32.v(193): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file mips32.v
     Info (12023): Found entity 1: MIPS32
 Info (12021): Found 1 design units, including 1 entities, in source file mips_top.v
@@ -1447,12 +1641,33 @@ Info (10041): Inferred latch for "Read_Data_MEM[30]" at MEM_Data_Memory.v(18)
 Info (10041): Inferred latch for "Read_Data_MEM[31]" at MEM_Data_Memory.v(18)
 Info (12128): Elaborating entity "MEM_WB_Pipeline_Stage" for hierarchy "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
 Info (12128): Elaborating entity "WB_MemtoReg_Mux" for hierarchy "WB_MemtoReg_Mux:WB_MemtoReg_Mux"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qp14.tdf
+    Info (12023): Found entity 1: altsyncram_qp14
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_aoc.tdf
+    Info (12023): Found entity 1: mux_aoc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rqf.tdf
+    Info (12023): Found entity 1: decode_rqf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ubi.tdf
+    Info (12023): Found entity 1: cntr_ubi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_acc.tdf
+    Info (12023): Found entity 1: cmpr_acc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_02j.tdf
+    Info (12023): Found entity 1: cntr_02j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_tbi.tdf
+    Info (12023): Found entity 1: cntr_tbi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_8cc.tdf
+    Info (12023): Found entity 1: cmpr_8cc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_gui.tdf
+    Info (12023): Found entity 1: cntr_gui
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5cc.tdf
+    Info (12023): Found entity 1: cmpr_5cc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Warning (276020): Inferred RAM node "ID_Registers:ID_Registers|Register_File_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "ID_Registers:ID_Registers|Register_File_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "MEM_Data_Memory:MEM_Data_Memory|Data_Memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_IF_Instruction_Memory_5cd28467.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Info (286030): Timing-Driven Synthesis is running
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (19000): Inferred 3 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ID_Registers:ID_Registers|Register_File_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -1521,8 +1736,8 @@ Info (12133): Instantiated megafunction "ID_Registers:ID_Registers|altsyncram:Re
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_ID_Registers_ada8f4a0.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2oi1.tdf
-    Info (12023): Found entity 1: altsyncram_2oi1
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_boi1.tdf
+    Info (12023): Found entity 1: altsyncram_boi1
 Info (12130): Elaborated megafunction instantiation "ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1"
 Info (12133): Instantiated megafunction "ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1557,8 +1772,8 @@ Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsync
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gqg1.tdf
-    Info (12023): Found entity 1: altsyncram_gqg1
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pqg1.tdf
+    Info (12023): Found entity 1: altsyncram_pqg1
 Info (12130): Elaborated megafunction instantiation "EX_ALU:EX_ALU|lpm_mult:Mult0"
 Info (12133): Instantiated megafunction "EX_ALU:EX_ALU|lpm_mult:Mult0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "32"
@@ -1590,20 +1805,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Instruction_IF[25]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[29]" is stuck at GND
     Warning (13410): Pin "Instruction_IF[30]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[6]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[7]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[8]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[9]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[10]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[15]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[20]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[24]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[25]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[29]" is stuck at GND
-    Warning (13410): Pin "Instruction_ID[30]" is stuck at GND
-    Warning (13410): Pin "Read_Address_1_ID[3]" is stuck at GND
-    Warning (13410): Pin "Read_Address_1_ID[4]" is stuck at GND
-    Warning (13410): Pin "Read_Address_2_ID[4]" is stuck at GND
     Warning (13410): Pin "MemWrite_ID" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[6]" is stuck at GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[7]" is stuck at GND
@@ -1629,24 +1830,24 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Sign_Extend_Instruction_ID[31]" is stuck at GND
     Warning (13410): Pin "Forward_Mem_to_Mem" is stuck at GND
     Warning (13410): Pin "Write_Register_EX[4]" is stuck at GND
-    Warning (13410): Pin "Write_Register_WB[4]" is stuck at GND
 Info (17049): 18 registers lost all their fanouts during netlist optimizations.
-Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_2oi1:auto_generated|ALTSYNCRAM"
-Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_2oi1:auto_generated|ALTSYNCRAM"
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0|altsyncram_boi1:auto_generated|ALTSYNCRAM"
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1|altsyncram_boi1:auto_generated|ALTSYNCRAM"
 Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.map.smsg
+Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 67 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2131 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 591 output pins
-    Info (21061): Implemented 1437 logic cells
-    Info (21064): Implemented 96 RAM segments
+Info (21057): Implemented 2791 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 353 output pins
+    Info (21061): Implemented 2298 logic cells
+    Info (21064): Implemented 129 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 464 megabytes
-    Info: Processing ended: Wed Sep 10 23:58:18 2014
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 538 megabytes
+    Info: Processing ended: Thu Sep 11 01:16:48 2014
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+

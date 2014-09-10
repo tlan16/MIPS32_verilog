@@ -1,9 +1,16 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="MIPS32">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0" CBX_FILE_NAME="altsyncram_boi1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_rqf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_gui.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1" CBX_FILE_NAME="altsyncram_boi1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_aoc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_ubi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_02j.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|EX_ALU:EX_ALU|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_0" CBX_FILE_NAME="altsyncram_2oi1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|ID_Registers:ID_Registers|altsyncram:Register_File_rtl_1" CBX_FILE_NAME="altsyncram_2oi1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0" CBX_FILE_NAME="altsyncram_gqg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0" CBX_FILE_NAME="altsyncram_pqg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_qp14.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS32|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_tbi.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

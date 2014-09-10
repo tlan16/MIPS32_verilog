@@ -1,5 +1,5 @@
 Assembler report for MIPS32
-Wed Sep 10 23:58:39 2014
+Thu Sep 11 01:17:09 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -9,10 +9,11 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof
-  6. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof
-  7. Assembler Messages
+  4. Assembler Encrypted IP Cores Summary
+  5. Assembler Generated Files
+  6. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof
+  7. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof
+  8. Assembler Messages
 
 
 
@@ -38,11 +39,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Sep 10 23:58:39 2014 ;
+; Assembler Status      ; Successful - Thu Sep 11 01:17:09 2014 ;
 ; Revision Name         ; MIPS32                                ;
 ; Top-level Entity Name ; MIPS32                                ;
 ; Family                ; Cyclone II                            ;
-; Device                ; EP2C70F896I8                          ;
+; Device                ; EP2C70F672C6                          ;
 +-----------------------+---------------------------------------+
 
 
@@ -78,6 +79,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
+
+
 +-------------------------------------------------------------------------+
 ; Assembler Generated Files                                               ;
 +-------------------------------------------------------------------------+
@@ -93,9 +104,9 @@ applicable agreement for further details.
 +----------------+----------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                          ;
 +----------------+----------------------------------------------------------------------------------+
-; Device         ; EP2C70F896I8                                                                     ;
-; JTAG usercode  ; 0x0075680F                                                                       ;
-; Checksum       ; 0x0075680F                                                                       ;
+; Device         ; EP2C70F672C6                                                                     ;
+; JTAG usercode  ; 0x007957EF                                                                       ;
+; Checksum       ; 0x007957EF                                                                       ;
 +----------------+----------------------------------------------------------------------------------+
 
 
@@ -106,7 +117,7 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                       ;
 ; JTAG usercode      ; 0x00000000                                                                   ;
-; Checksum           ; 0x1854AED0                                                                   ;
+; Checksum           ; 0x18588458                                                                   ;
 ; Compression Ratio  ; 3                                                                            ;
 +--------------------+------------------------------------------------------------------------------+
 
@@ -117,13 +128,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Wed Sep 10 23:58:36 2014
+    Info: Processing started: Thu Sep 11 01:17:06 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 397 megabytes
-    Info: Processing ended: Wed Sep 10 23:58:39 2014
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Thu Sep 11 01:17:09 2014
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
