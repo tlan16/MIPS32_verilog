@@ -10,6 +10,7 @@ module ID_Control(
 		  output reg       MemtoReg_ID,
 		  
 		  output reg       Branch_ID,
+		  output reg 		 Jump_Control_ID,
 		  output reg       MemRead_ID,
 		  output reg       MemWrite_ID,
 		  
@@ -23,6 +24,7 @@ module ID_Control(
 	parameter SW		= 6'b101011;
 	parameter BEQ		= 6'b000100;
 	parameter NOP		= 6'b100000;	
+	parameter JUMP		= 6'b000010;
 	
 	wire [5:0]opcode;
 	assign opcode = (ID_Control_NOP & Instruction_ID != BEQ) ? NOP : Instruction_ID;
@@ -38,6 +40,7 @@ module ID_Control(
 		ALUSrc_ID 		<= 0;
 		
 		Branch_ID		<= 0;
+		Jump_Control_ID<= 0;
 		MemRead_ID		<= 0;
 		MemWrite_ID		<= 0;
 		
@@ -51,56 +54,73 @@ module ID_Control(
 				RegWrite_ID <= 1'b1;
 				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b0;
+				Jump_Control_ID<= 1'b0;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b0;
 				RegDst_ID	<= 1'b1;
 				ALUOp_ID		<= 2'b10;
 				ALUSrc_ID	<= 1'b0;
-			end
+			end //RTYPE
 			LW: begin
 				RegWrite_ID <= 1'b1;
 				MemtoReg_ID <= 1'b1;
 				Branch_ID	<= 1'b0;
+				Jump_Control_ID<= 1'b0;
 				MemRead_ID	<= 1'b1;
 				MemWrite_ID	<= 1'b0;
 				RegDst_ID	<= 1'b0;
 				ALUOp_ID		<= 2'b00;
 				ALUSrc_ID	<= 1'b1;
-			end
+			end //LW
 			SW: begin
 				RegWrite_ID <= 1'b0;
 				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b0;
+				Jump_Control_ID<= 1'b0;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b1;
 				RegDst_ID	<= 1'bx;
 				ALUOp_ID		<= 2'b00;
 				ALUSrc_ID	<= 1'b1;
-			end
+			end //SW
 			BEQ: begin
 				RegWrite_ID <= 1'b0;
 				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b1;
+				Jump_Control_ID<= 1'b0;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b0;
 				RegDst_ID	<= 1'bx;
 				ALUOp_ID		<= 2'b01;
 				ALUSrc_ID	<= 1'b0;
-			end
+			end //BEQ
 			NOP: begin
 				RegWrite_ID <= 1'b0;
 				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b0;
+				Jump_Control_ID<= 1'b0;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b0;
 				RegDst_ID	<= 1'b0;
 				ALUOp_ID		<= 2'b00;
 				ALUSrc_ID	<= 1'b0;
-			end
+			end //NOP
+			JUMP: begin
+				RegDst_ID		<= 1'b0;
+				ALUOp_ID			<= 2'b00;
+				ALUSrc_ID		<= 1'b0;
+				Branch_ID		<= 1'b0;
+				Jump_Control_ID <= 1'b1;	
+				MemRead_ID		<= 1'b0;
+				MemWrite_ID		<= 1'b0;
+				RegWrite_ID 	<= 1'b0;
+				MemtoReg_ID 	<= 1'b0;	
+			end //JUMP
 			default: begin
 				RegWrite_ID <= 1'b0;
 				MemtoReg_ID <= 1'b0;
 				Branch_ID	<= 1'b0;
+				Jump_Control_ID<= 1'b0;
 				MemRead_ID	<= 1'b0;
 				MemWrite_ID	<= 1'b0;
 				RegDst_ID	<= 1'b0;

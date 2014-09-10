@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP2C70F896I8
 set_global_assignment -name TOP_LEVEL_ENTITY Mips
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:28:03  AUGUST 12, 2014"
-set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION 12.0
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top

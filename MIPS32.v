@@ -97,7 +97,8 @@ module MIPS32(
 		// probed wire				RegDst_ID;		// From ID_Control of ID_Control.v
 		// probed wire				RegWrite_ID;		// From ID_Control of ID_Control.v
 		// probed wire [31:0] 	Sign_Extend_Instruction_ID;// From ID_Sign_Extension of ID_Sign_Extension.v
-   
+		wire [31:0] Jump_Dest_ID;
+		wire			Jump_Control_ID;
    // EX origin variables:
 		// probed wire [1:0]		ForwardA_EX;
 		// probed wire [1:0]		ForwardB_EX;
@@ -161,7 +162,9 @@ module MIPS32(
 		       // Inputs
 		       .PC_Plus_4_IF	(PC_Plus_4_IF[31:0]),
 		       .Branch_Dest_MEM	(Branch_Dest_EX[31:0]),
-		       .PCSrc_MEM	(PCSrc_MEM));
+				 .Jump_Dest_ID(Jump_Dest_ID[31:0]),
+		       .PCSrc_MEM	(PCSrc_MEM),
+				 .Jump_Control_ID(Jump_Control_ID));
    
    
 
@@ -191,7 +194,8 @@ module MIPS32(
 					       .Instruction_IF	(Instruction_IF[31:0]),
 					       // Inputs
 					       .PC_IF		(PC_IF[31:0]),
-							 .IF_Flush	(PCSrc_MEM));
+							 .Jump_Control_ID(Jump_Control_ID),
+							 .IF_Flush	(PCSrc_MEM),);
    
    
 
@@ -211,6 +215,13 @@ module MIPS32(
    // TODO by student: Assignment Partial Select from Instruction to Read_Address_1_ID and Read_Address_2_ID
 	assign Read_Address_1_ID = Instruction_ID[25:21];
 	assign Read_Address_2_ID = Instruction_ID[20:16];
+	
+	ID_Jump ID_Jump(
+					// Outputs
+					.Jump_Dest_ID(Jump_Dest_ID),
+					// Inputs
+					.Instruction_ID(Instruction_ID[31:0]),
+					.PC_Plus_4_ID(PC_Plus_4_ID));
 	
 	ID_Read_data_Mux ID_Read_data_Mux(
 					// Outputs
@@ -250,6 +261,7 @@ module MIPS32(
 			 .RegWrite_ID		(RegWrite_ID),
 			 .MemtoReg_ID		(MemtoReg_ID),
 			 .Branch_ID		(Branch_ID),
+			 .Jump_Control_ID(Jump_Control_ID),
 			 .MemRead_ID		(MemRead_ID),
 			 .MemWrite_ID		(MemWrite_ID),
 			 .RegDst_ID		(RegDst_ID),
@@ -262,35 +274,35 @@ module MIPS32(
    // ID_EX_Pipeline_Stage
 
    ID_EX_Pipeline_Stage ID_EX_Pipeline_Stage(
-					     // Outputs
-					     .RegWrite_EX	(RegWrite_EX),
-					     .MemtoReg_EX	(MemtoReg_EX),
-					     .Branch_EX		(Branch_EX),
-					     .MemRead_EX	(MemRead_EX),
-					     .MemWrite_EX	(MemWrite_EX),
-					     .RegDst_EX		(RegDst_EX),
-					     .ALUOp_EX		(ALUOp_EX[1:0]),
-					     .ALUSrc_EX		(ALUSrc_EX),
-					     .PC_Plus_4_EX	(PC_Plus_4_EX[31:0]),
-					     .Read_Data_1_EX	(Read_Data_1_EX[31:0]),
-					     .Read_Data_2_EX	(Read_Data_2_EX[31:0]),
-					     .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]),
-					     .Instruction_EX	(Instruction_EX[31:0]),
-					     // Inputs
-					     .RegWrite_ID	(RegWrite_ID),
-					     .MemtoReg_ID	(MemtoReg_ID),
-					     .Branch_ID		(Branch_ID),
-					     .MemRead_ID	(MemRead_ID),
-					     .MemWrite_ID	(MemWrite_ID),
-					     .RegDst_ID		(RegDst_ID),
-					     .ALUOp_ID		(ALUOp_ID[1:0]),
-					     .ALUSrc_ID		(ALUSrc_ID),
-					     .PC_Plus_4_ID	(PC_Plus_4_ID[31:0]),
-					     .Read_Data_1_ID	(Read_Data_1_ID[31:0]),
-					     .Read_Data_2_ID	(Read_Data_2_ID[31:0]),
-					     .Sign_Extend_Instruction_ID(Sign_Extend_Instruction_ID[31:0]),
-					     .Instruction_ID	(Instruction_ID[31:0]),
-					     .Clk		(Clk));
+		  // Outputs
+		  .RegWrite_EX	(RegWrite_EX),
+		  .MemtoReg_EX	(MemtoReg_EX),
+		  .Branch_EX		(Branch_EX),
+		  .MemRead_EX	(MemRead_EX),
+		  .MemWrite_EX	(MemWrite_EX),
+		  .RegDst_EX		(RegDst_EX),
+		  .ALUOp_EX		(ALUOp_EX[1:0]),
+		  .ALUSrc_EX		(ALUSrc_EX),
+		  .PC_Plus_4_EX	(PC_Plus_4_EX[31:0]),
+		  .Read_Data_1_EX	(Read_Data_1_EX[31:0]),
+		  .Read_Data_2_EX	(Read_Data_2_EX[31:0]),
+		  .Sign_Extend_Instruction_EX(Sign_Extend_Instruction_EX[31:0]),
+		  .Instruction_EX	(Instruction_EX[31:0]),
+		  // Inputs
+		  .RegWrite_ID	(RegWrite_ID),
+		  .MemtoReg_ID	(MemtoReg_ID),
+		  .Branch_ID		(Branch_ID),
+		  .MemRead_ID	(MemRead_ID),
+		  .MemWrite_ID	(MemWrite_ID),
+		  .RegDst_ID		(RegDst_ID),
+		  .ALUOp_ID		(ALUOp_ID[1:0]),
+		  .ALUSrc_ID		(ALUSrc_ID),
+		  .PC_Plus_4_ID	(PC_Plus_4_ID[31:0]),
+		  .Read_Data_1_ID	(Read_Data_1_ID[31:0]),
+		  .Read_Data_2_ID	(Read_Data_2_ID[31:0]),
+		  .Sign_Extend_Instruction_ID(Sign_Extend_Instruction_ID[31:0]),
+		  .Instruction_ID	(Instruction_ID[31:0]),
+		  .Clk		(Clk));
 
 	// EX_Forward_Unit
 	EX_Forward_Unit EX_Forward_Unit(

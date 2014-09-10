@@ -14,7 +14,8 @@ module EX_ALU(
 					ALUsub		=	4'b110,  
 					ALUand		=	4'b000,//    Figure 3.2 in Lab Manual      
 					ALUor			=	4'b001,
-					ALUslt		=	4'b111;//
+					ALUslt		=	4'b111,//
+					ALUmul		= 	4'b1111;
 					
 	initial
 		begin
@@ -33,7 +34,8 @@ module EX_ALU(
 			ALUand:			ALU_Result_EX <= Read_Data_1_EX & ALU_Data_2_EX;
 			ALUor:			ALU_Result_EX <= Read_Data_1_EX | ALU_Data_2_EX;
 			ALUslt:			ALU_Result_EX <= Read_Data_1_EX < ALU_Data_2_EX ? (1 - sign_mismatch) : (0 + sign_mismatch);		
-			default:			ALU_Result_EX <= 32'bX;	// control = ALUx | *
+			ALUmul: 			ALU_Result_EX <= Read_Data_1_EX * ALU_Data_2_EX;
+			default:			ALU_Result_EX <= 32'bx;	// control = ALUx | *
 		endcase
 		
 		//Zero_EX <= (ALU_Result_EX==0);
