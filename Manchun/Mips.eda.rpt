@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Mips
-Wed Sep 10 23:13:18 2014
+Thu Sep 11 18:33:21 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -36,46 +36,50 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Sep 10 23:13:18 2014 ;
+; EDA Netlist Writer Status ; Successful - Thu Sep 11 18:33:21 2014 ;
 ; Revision Name             ; Mips                                  ;
 ; Top-level Entity Name     ; Mips                                  ;
-; Family                    ; Cyclone II                            ;
+; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate netlist for functional simulation only                                                   ; Off                    ;
-; Time scale                                                                                        ; 1 ps                   ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate netlist for functional simulation only                                                   ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                    ;
-+-----------------------------------------------------------------------------------------------+
-; Generated Files                                                                               ;
-+-----------------------------------------------------------------------------------------------+
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips.vho          ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips_fast.vho     ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips_vhd.sdo      ;
-; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/Mips_vhd_fast.sdo ;
-+-----------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                                  ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_7_1200mv_85c_slow.vo     ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_7_1200mv_0c_slow.vo      ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_min_1200mv_0c_fast.vo    ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips.vo                       ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_7_1200mv_85c_v_slow.sdo  ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_7_1200mv_0c_v_slow.sdo   ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/Mips_v.sdo                    ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -84,13 +88,20 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Wed Sep 10 23:13:17 2014
+    Info: Processing started: Thu Sep 11 18:33:18 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Mips -c Mips
-Info (204026): Generated files "Mips.vho", "Mips_fast.vho", "Mips_vhd.sdo" and "Mips_vhd_fast.sdo" in directory "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_7_1200mv_85c_slow.vo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_7_1200mv_0c_slow.vo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_min_1200mv_0c_fast.vo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips.vo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_7_1200mv_85c_v_slow.sdo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_7_1200mv_0c_v_slow.sdo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_min_1200mv_0c_v_fast.sdo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Mips_v.sdo in folder "C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 386 megabytes
-    Info: Processing ended: Wed Sep 10 23:13:18 2014
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 394 megabytes
+    Info: Processing ended: Thu Sep 11 18:33:21 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

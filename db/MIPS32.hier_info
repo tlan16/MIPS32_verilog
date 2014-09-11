@@ -141,7 +141,7 @@ Sign_Extend_Instruction_ID[31] <= Sign_Extend_Instruction_ID[31].DB_MAX_OUTPUT_P
 ID_Control_NOP <= ID_Control_NOP.DB_MAX_OUTPUT_PORT_TYPE
 ID_Register_Write_to_Read[0] <= ID_Register_Write_to_Read[0].DB_MAX_OUTPUT_PORT_TYPE
 ID_Register_Write_to_Read[1] <= ID_Register_Write_to_Read[1].DB_MAX_OUTPUT_PORT_TYPE
-Comparetor_ID <= Comparetor_ID.DB_MAX_OUTPUT_PORT_TYPE
+Zero_ID <= Zero_ID.DB_MAX_OUTPUT_PORT_TYPE
 ForwardA_EX[0] <= ForwardA_EX[0].DB_MAX_OUTPUT_PORT_TYPE
 ForwardA_EX[1] <= ForwardA_EX[1].DB_MAX_OUTPUT_PORT_TYPE
 ForwardB_EX[0] <= ForwardB_EX[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -1216,7 +1216,7 @@ Jump_Dest_ID[30] <= PC_Plus_4_ID[30].DB_MAX_OUTPUT_PORT_TYPE
 Jump_Dest_ID[31] <= PC_Plus_4_ID[31].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS32|ID_Read_data_Mux:ID_Read_data_Mux
+|MIPS32|ID_Reg_Read_Data_Comparetor:ID_Reg_Read_Data_Comparetor
 Read_Data_1_ID[0] => Read_Data_1_MUX_ID[0].DATAA
 Read_Data_1_ID[1] => Read_Data_1_MUX_ID[1].DATAA
 Read_Data_1_ID[2] => Read_Data_1_MUX_ID[2].DATAA
@@ -1409,7 +1409,7 @@ Forward_D_ID => Read_Data_2_MUX_ID[3].OUTPUTSELECT
 Forward_D_ID => Read_Data_2_MUX_ID[2].OUTPUTSELECT
 Forward_D_ID => Read_Data_2_MUX_ID[1].OUTPUTSELECT
 Forward_D_ID => Read_Data_2_MUX_ID[0].OUTPUTSELECT
-Comparetor_ID <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+Zero_ID <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS32|ID_Registers:ID_Registers
@@ -1811,6 +1811,12 @@ Sign_Extend_Instruction_ID[28] <= Instruction_ID[15].DB_MAX_OUTPUT_PORT_TYPE
 Sign_Extend_Instruction_ID[29] <= Instruction_ID[15].DB_MAX_OUTPUT_PORT_TYPE
 Sign_Extend_Instruction_ID[30] <= Instruction_ID[15].DB_MAX_OUTPUT_PORT_TYPE
 Sign_Extend_Instruction_ID[31] <= Instruction_ID[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS32|ID_Branch_AND:ID_Branch_AND
+Branch_MEM => PCSrc_MEM.IN0
+Zero_ID => PCSrc_MEM.IN1
+PCSrc_MEM <= PCSrc_MEM.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS32|ID_Control:ID_Control
@@ -2349,7 +2355,7 @@ Clk => MemtoReg_EX~reg0.CLK
 Clk => RegWrite_EX~reg0.CLK
 
 
-|MIPS32|EX_Forward_Unit:EX_Forward_Unit
+|MIPS32|Hazard_Unit:Hazard_Unit
 IF_ID_Reg_Rs[0] => Equal10.IN4
 IF_ID_Reg_Rs[0] => Equal12.IN4
 IF_ID_Reg_Rs[0] => Equal16.IN4
@@ -2569,7 +2575,7 @@ ForwardC <= ForwardC.DB_MAX_OUTPUT_PORT_TYPE
 ForwardD <= ForwardD.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS32|EX_Forward_A:EX_Forward_A
+|MIPS32|EX_Reg_Read_Data_Forwarding:EX_Reg_Read_Data_Forwarding_A
 Read_Data_1_EX[0] => Mux31.IN0
 Read_Data_1_EX[0] => Mux31.IN1
 Read_Data_1_EX[1] => Mux30.IN0
@@ -2796,7 +2802,7 @@ Read_Data_1_Mux_EX[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 Read_Data_1_Mux_EX[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS32|EX_Forward_A:EX_Forward_B
+|MIPS32|EX_Reg_Read_Data_Forwarding:EX_Reg_Read_Data_Forwarding_B
 Read_Data_1_EX[0] => Mux31.IN0
 Read_Data_1_EX[0] => Mux31.IN1
 Read_Data_1_EX[1] => Mux30.IN0
@@ -4345,12 +4351,6 @@ Write_Data_MUX_MEM[28] <= Write_Data_MUX_MEM.DB_MAX_OUTPUT_PORT_TYPE
 Write_Data_MUX_MEM[29] <= Write_Data_MUX_MEM.DB_MAX_OUTPUT_PORT_TYPE
 Write_Data_MUX_MEM[30] <= Write_Data_MUX_MEM.DB_MAX_OUTPUT_PORT_TYPE
 Write_Data_MUX_MEM[31] <= Write_Data_MUX_MEM.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MIPS32|MEM_Branch_AND:MEM_Branch_AND
-Branch_MEM => PCSrc_MEM.IN0
-Zero_MEM => PCSrc_MEM.IN1
-PCSrc_MEM <= PCSrc_MEM.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS32|MEM_Data_Memory:MEM_Data_Memory

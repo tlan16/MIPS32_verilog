@@ -7,6 +7,6 @@ module IF_Flush_mux(
 				output [31:0] Instruction_IF
 );
 
-assign Instruction_IF = PCSrc_ID ? 32'b0: Instruction_to_mux_IF;
+assign Instruction_IF = (PCSrc_ID || Jump_control_ID) ? 32'b0: Instruction_to_mux_IF;
 
 endmodule

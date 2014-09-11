@@ -1,0 +1,241 @@
+Archive Project report for Mips
+Thu Sep 11 19:11:46 2014
+Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Thu Sep 11 19:11:46 2014 ;
+; Revision Name          ; Mips                                  ;
+; Top-level Entity Name  ; Mips                                  ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: Running Export Database to generate version compatible database
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Database Export
+    Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
+    Info: Processing started: Thu Sep 11 19:11:41 2014
+Info: Command: quartus_cdb Mips -c Mips --export_database=export_db
+Info (39038): Successfully exported the post-synthesis black-box database
+Info (39038): Successfully exported the post-synthesis database
+Info (39038): Successfully exported the post-fitter database
+Info: Quartus II 64-Bit Database Export was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 424 megabytes
+    Info: Processing ended: Thu Sep 11 19:11:44 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+Info: File Set 'Custom' contains:
+    Info: Programming output files
+    Info: Incremental compilation database files
+    Info: Automatically detected source files
+    Info: Report files
+    Info: Project source and settings files
+    Info: Megafunction and IP library files
+    Info: Version compatible database files
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'L:/Manchun_final05.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'Mips.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 64-Bit Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 315 megabytes
+    Info: Processing ended: Thu Sep 11 19:11:46 2014
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++-------------------------------------------------------------------------+
+; Files Archived                                                          ;
++-------------------------------------------------------------------------+
+; File Name                                                               ;
++-------------------------------------------------------------------------+
+; assignment_defaults.qdf                                                 ;
+; C:/altera/12.0/quartus/libraries/megafunctions/a_rdenreg.inc            ;
+; C:/altera/12.0/quartus/libraries/megafunctions/aglobal120.inc           ;
+; C:/altera/12.0/quartus/libraries/megafunctions/altdpram.inc             ;
+; C:/altera/12.0/quartus/libraries/megafunctions/altram.inc               ;
+; C:/altera/12.0/quartus/libraries/megafunctions/altrom.inc               ;
+; C:/altera/12.0/quartus/libraries/megafunctions/altshift.inc             ;
+; C:/altera/12.0/quartus/libraries/megafunctions/altsyncram.tdf           ;
+; C:/altera/12.0/quartus/libraries/megafunctions/bypassff.inc             ;
+; C:/altera/12.0/quartus/libraries/megafunctions/cbx.lst                  ;
+; C:/altera/12.0/quartus/libraries/megafunctions/lpm_add_sub.inc          ;
+; C:/altera/12.0/quartus/libraries/megafunctions/lpm_decode.inc           ;
+; C:/altera/12.0/quartus/libraries/megafunctions/lpm_mult.tdf             ;
+; C:/altera/12.0/quartus/libraries/megafunctions/lpm_mux.inc              ;
+; C:/altera/12.0/quartus/libraries/megafunctions/multcore.inc             ;
+; C:/altera/12.0/quartus/libraries/megafunctions/stratix_ram_block.inc    ;
+; Data_forwarding_mux_A.v                                                 ;
+; Data_forwarding_mux_B.v                                                 ;
+; Data_forwarding_mux_MEM.v                                               ;
+; Data_Forwarding_unit.v                                                  ;
+; data_memory.list                                                        ;
+; db/altsyncram_fpi1.tdf                                                  ;
+; db/altsyncram_pgh1.tdf                                                  ;
+; db/Mips.cbx.xml                                                         ;
+; db/Mips.ram0_ID_Registers_ada8f4a0.hdl.mif                              ;
+; db/Mips.ram0_MEM_Data_Memory_3250c012.hdl.mif                           ;
+; db/mult_7dt.tdf                                                         ;
+; EX_ALU.v                                                                ;
+; EX_ALU_Control.v                                                        ;
+; EX_ALU_Mux.v                                                            ;
+; EX_Dest_Mux.v                                                           ;
+; EX_MEM_Pipeline_Stage.v                                                 ;
+; EX_PC_Add.v                                                             ;
+; EX_Shift_Left_2.v                                                       ;
+; export_db/Mips.archive.qmsg                                             ;
+; export_db/Mips.asm.qmsg                                                 ;
+; export_db/Mips.cmp.atm                                                  ;
+; export_db/Mips.cmp.bpm                                                  ;
+; export_db/Mips.cmp.hdbx                                                 ;
+; export_db/Mips.cmp.kpt                                                  ;
+; export_db/Mips.cmp.logdb                                                ;
+; export_db/Mips.cmp.rcf                                                  ;
+; export_db/Mips.cmp.sci                                                  ;
+; export_db/Mips.cmp.scidsc                                               ;
+; export_db/Mips.cmp.xml                                                  ;
+; export_db/Mips.cmp_merge.kpt                                            ;
+; export_db/Mips.db_export.qmsg                                           ;
+; export_db/Mips.db_info                                                  ;
+; export_db/Mips.eda.qmsg                                                 ;
+; export_db/Mips.export_db_files                                          ;
+; export_db/Mips.export_db_post_map_files                                 ;
+; export_db/Mips.export_db_report_files                                   ;
+; export_db/Mips.fit.qmsg                                                 ;
+; export_db/Mips.hier_info                                                ;
+; export_db/Mips.map.atm                                                  ;
+; export_db/Mips.map.bpm                                                  ;
+; export_db/Mips.map.hdbx                                                 ;
+; export_db/Mips.map.kpt                                                  ;
+; export_db/Mips.map.logdb                                                ;
+; export_db/Mips.map.qmsg                                                 ;
+; export_db/Mips.map.sci                                                  ;
+; export_db/Mips.map.scidsc                                               ;
+; export_db/Mips.map_bb.atm                                               ;
+; export_db/Mips.map_bb.hdbx                                              ;
+; export_db/Mips.map_bb.logdb                                             ;
+; export_db/Mips.map_bb.sci                                               ;
+; export_db/Mips.map_bb.scidsc                                            ;
+; export_db/Mips.pre_map.hdbx                                             ;
+; export_db/Mips.restore.qmsg                                             ;
+; export_db/Mips.root_partition.cmp.atm                                   ;
+; export_db/Mips.root_partition.cmp.dfp                                   ;
+; export_db/Mips.root_partition.cmp.hdbx                                  ;
+; export_db/Mips.root_partition.cmp.kpt                                   ;
+; export_db/Mips.root_partition.cmp.logdb                                 ;
+; export_db/Mips.root_partition.cmp.rcf                                   ;
+; export_db/Mips.root_partition.map.atm                                   ;
+; export_db/Mips.root_partition.map.dpi                                   ;
+; export_db/Mips.root_partition.map.hbdb.atm                              ;
+; export_db/Mips.root_partition.map.hbdb.hb_info                          ;
+; export_db/Mips.root_partition.map.hbdb.hdbx                             ;
+; export_db/Mips.root_partition.map.hbdb.sig                              ;
+; export_db/Mips.root_partition.map.hdbx                                  ;
+; export_db/Mips.root_partition.map.kpt                                   ;
+; export_db/Mips.rpp.qmsg                                                 ;
+; export_db/Mips.sim.qmsg                                                 ;
+; export_db/Mips.sim.vwf                                                  ;
+; export_db/Mips.sta.qmsg                                                 ;
+; export_db/Mips.syn_hier_info                                            ;
+; Forward_C_mux.v                                                         ;
+; Forward_D_mux.v                                                         ;
+; ID_Branch_AND.v                                                         ;
+; ID_Comparator.v                                                         ;
+; ID_Control.v                                                            ;
+; ID_EX_Pipeline_Stage.v                                                  ;
+; ID_PC_Add.v                                                             ;
+; ID_Registers.v                                                          ;
+; ID_Shift_Left_2.v                                                       ;
+; ID_Sign_Extension.v                                                     ;
+; IF_Flush_mux.v                                                          ;
+; IF_ID_EX_MEM_testing.vwf                                                ;
+; IF_ID_EX_MEM_WB_testing.vwf                                             ;
+; IF_ID_Pipeline_Stage.v                                                  ;
+; IF_Instruction_Memory.v                                                 ;
+; IF_PC_Add.v                                                             ;
+; IF_PC_Mux.v                                                             ;
+; IF_PC_Reg.v                                                             ;
+; incremental_db/compiled_partitions/Mips.db_info                         ;
+; incremental_db/compiled_partitions/Mips.root_partition.cmp.cdb          ;
+; incremental_db/compiled_partitions/Mips.root_partition.cmp.dfp          ;
+; incremental_db/compiled_partitions/Mips.root_partition.cmp.hdb          ;
+; incremental_db/compiled_partitions/Mips.root_partition.cmp.kpt          ;
+; incremental_db/compiled_partitions/Mips.root_partition.cmp.logdb        ;
+; incremental_db/compiled_partitions/Mips.root_partition.cmp.rcfdb        ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.cdb          ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.dpi          ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.hbdb.cdb     ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.hbdb.hb_info ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.hbdb.hdb     ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.hbdb.sig     ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.hdb          ;
+; incremental_db/compiled_partitions/Mips.root_partition.map.kpt          ;
+; instruction_memory.list                                                 ;
+; Jump_address_unit.v                                                     ;
+; MEM_Branch_AND.v                                                        ;
+; MEM_Data_Memory.v                                                       ;
+; MEM_WB_Pipeline_Stage.v                                                 ;
+; Mips.asm.rpt                                                            ;
+; Mips.db_export.rpt                                                      ;
+; Mips.eda.rpt                                                            ;
+; Mips.fit.rpt                                                            ;
+; Mips.fit.smsg                                                           ;
+; Mips.fit.summary                                                        ;
+; Mips.flow.rpt                                                           ;
+; Mips.jdi                                                                ;
+; Mips.map.rpt                                                            ;
+; Mips.map.smsg                                                           ;
+; Mips.map.summary                                                        ;
+; Mips.pin                                                                ;
+; Mips.pof                                                                ;
+; Mips.qpf                                                                ;
+; Mips.qsf                                                                ;
+; Mips.restore.rpt                                                        ;
+; Mips.sdc                                                                ;
+; Mips.sim.rpt                                                            ;
+; Mips.sof                                                                ;
+; Mips.sta.rpt                                                            ;
+; Mips.sta.summary                                                        ;
+; Mips.v                                                                  ;
+; register_file.list                                                      ;
+; WB_MemtoReg_Mux.v                                                       ;
++-------------------------------------------------------------------------+
+
+

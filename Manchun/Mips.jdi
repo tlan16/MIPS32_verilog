@@ -1,7 +1,6 @@
 <sld_project_info>
   <file_info>
-    <file checksum="0x0074690E" device="EP2C70F896I8" path="Mips.sof" usercode="0x0074690E"/>
-    <file checksum="0x1860C8B7" device="EPCS16" path="Mips.pof" usercode="0x00000000"/>
+    <file checksum="0x006BA39B" device="EP4CE115F29C7" path="Mips.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info ir_width="0" node_count="0"/>
   <node_info/>

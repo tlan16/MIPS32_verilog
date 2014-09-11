@@ -1,0 +1,3 @@
+FUNCTION altram(we, data[WIDTH-1..0], address[AD_WIDTH-1..0], clocki, clocko, be)
+	WITH (WIDTH, AD_WIDTH, NUMWORDS, FILE, REGISTERINPUTMODE, MAXIMUM_DEPTH)
+	RETURNS (q[WIDTH-1..0]);

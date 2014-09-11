@@ -20,8 +20,9 @@
 
 module Mips(
 		input Clk, // Global clock
+		output reg [5:0] clkout,
 	  // probed output
-	  output [31:0]   PC_Plus_4_IF,
+//	  output [31:0]   PC_Plus_4_IF,
 	  output [31:0]   Instruction_IF,
 	  output [31:0] 	Next_PC_IF,
 	  
@@ -72,11 +73,14 @@ module Mips(
 //	  output [31:0]	Forward_D_out,
 	  output				Zero_ID
 		);
-
+always@(posedge Clk)begin		
+  clkout <= clkout+1;
+end 
+ 
    // IF Origin Variables:
 		// probed wire [31:0] 	Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
 		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
-		// probed wire [31:0] 	PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
+		wire [31:0] 	PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
 		wire [31:0]		   PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
       wire [31:0] 	Instruction_to_mux_IF;
    // ID Origin Variables:

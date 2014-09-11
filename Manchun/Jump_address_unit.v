@@ -7,6 +7,6 @@ module Jump_address_unit(
 				output [31:0] 		Jump_dst_ID
 );
 
-assign Jump_dst_ID = {{PC_Plus_4_ID[31:28]},{Instruction_ID[26:0] << 2}};
+assign Jump_dst_ID = {{PC_Plus_4_ID[31:28]},{Instruction_ID[27:0] << 2}};
 
 endmodule

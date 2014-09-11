@@ -1,5 +1,6 @@
-set tool_name "ModelSim-Altera (VHDL)"
+set tool_name "ModelSim-Altera (Verilog)"
 set corner_file_list {
-	{{"Slow Model"} {Mips.vho Mips_vhd.sdo}}
-	{{"Fast Model"} {Mips_fast.vho Mips_vhd_fast.sdo}}
+	{{"Slow -7 1.2V 85 Model"} {Mips_7_1200mv_85c_slow.vo Mips_7_1200mv_85c_v_slow.sdo}}
+	{{"Slow -7 1.2V 0 Model"} {Mips_7_1200mv_0c_slow.vo Mips_7_1200mv_0c_v_slow.sdo}}
+	{{"Fast -M 1.2V 0 Model"} {Mips_min_1200mv_0c_fast.vo Mips_min_1200mv_0c_v_fast.sdo}}
 }

@@ -37,7 +37,7 @@ module MIPS32(
 	  output [31:0] 	Sign_Extend_Instruction_ID,
 	  output				ID_Control_NOP,
 	  output [1:0]		ID_Register_Write_to_Read,
-	  output				Comparetor_ID,
+	  output				Zero_ID,
 	  
 	  output [1:0]		ForwardA_EX,
 	  output [1:0]		ForwardB_EX,
@@ -76,7 +76,7 @@ module MIPS32(
    // ID Origin Variables:
 		// probed wire				ID_Control_NOP;
 		// probed wire	[1:0]		ID_Register_Write_to_Read;
-		// probed wire				Comparetor_ID;
+		// probed wire				Zero_ID;
 		// probed wire [1:0]		ALUOp_ID;		// From ID_Control of ID_Control.v
 		// probed wire				ALUSrc_ID;		// From ID_Control of ID_Control.v
 		// probed wire				Branch_ID;		// From ID_Control of ID_Control.v
@@ -218,9 +218,9 @@ module MIPS32(
 					.Instruction_ID(Instruction_ID[31:0]),
 					.PC_Plus_4_ID(PC_Plus_4_ID));
 	
-	ID_Read_data_Mux ID_Read_data_Mux(
+	ID_Reg_Read_Data_Comparetor ID_Reg_Read_Data_Comparetor(
 					// Outputs
-					.Comparetor_ID(Comparetor_ID),
+					.Zero_ID(Zero_ID),
 					// Inputs
 					.Read_Data_1_ID(Read_Data_1_ID[31:0]),
 					.Read_Data_2_ID(Read_Data_2_ID[31:0]),
@@ -248,7 +248,13 @@ module MIPS32(
 				       .Sign_Extend_Instruction_ID(Sign_Extend_Instruction_ID[31:0]),
 				       // Inputs
 				       .Instruction_ID	(Instruction_ID[15:0]));
-   
+	// ID_Branch_AND
+   ID_Branch_AND ID_Branch_AND(
+				 // Outputs
+				 .PCSrc_MEM		(PCSrc_MEM),
+				 // Inputs
+				 .Branch_MEM		(Branch_ID),
+				 .Zero_ID		(Zero_ID));
 
    // ID_Control
    ID_Control ID_Control(
@@ -299,8 +305,8 @@ module MIPS32(
 		  .Instruction_ID	(Instruction_ID[31:0]),
 		  .Clk		(Clk));
 
-	// EX_Forward_Unit
-	EX_Forward_Unit EX_Forward_Unit(
+	// Hazard_Unit
+	Hazard_Unit Hazard_Unit(
 			// Outputs
 			.ForwardA_EX(ForwardA_EX[1:0]),
 			.ForwardB_EX(ForwardB_EX[1:0]),
@@ -332,7 +338,7 @@ module MIPS32(
 			.MEM_WB_Reg_Rd(Instruction_WB[15:11]));
 						  
    // EX_Forward_A_MUX
-	EX_Forward_A EX_Forward_A(
+	EX_Reg_Read_Data_Forwarding EX_Reg_Read_Data_Forwarding_A(
 			// Outputs
 			.Read_Data_1_Mux_EX(Read_Data_1_Mux_EX[31:0]),
 			// Inputs
@@ -341,7 +347,7 @@ module MIPS32(
 			.ALU_Result_MEM(ALU_Result_MEM[31:0]),
 			.ForwardA_EX(ForwardA_EX[1:0]));
    // EX_Forward_B_MUX using dummy of A
-	EX_Forward_A EX_Forward_B(
+	EX_Reg_Read_Data_Forwarding EX_Reg_Read_Data_Forwarding_B(
 			// Outputs
 			.Read_Data_1_Mux_EX(Read_Data_2_Mux_EX[31:0]),
 			// Inputs
@@ -446,7 +452,6 @@ module MIPS32(
 					       .Clk		(Clk));
    
 
-   // MEM_Branch_AND
 	MEM_to_MEM_Forward MEM_to_MEM_Forward(
 				// Outputs
 				.Write_Data_MUX_MEM(Write_Data_MUX_MEM[31:0]),
@@ -454,13 +459,6 @@ module MIPS32(
 				.Write_Data_MEM(Write_Data_MEM[31:0]),
 				.Read_Data_WB(Read_Data_WB[31:0]),
 				.Forward_Mem_to_Mem(Forward_Mem_to_Mem));
-	
-   MEM_Branch_AND MEM_Branch_AND(
-				 // Outputs
-				 .PCSrc_MEM		(PCSrc_MEM),
-				 // Inputs
-				 .Branch_MEM		(Branch_ID),
-				 .Zero_MEM		(Comparetor_ID));
    
 
    // MEM_Data_Memory

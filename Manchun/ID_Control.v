@@ -101,6 +101,18 @@ module ID_Control(
 					Jump_control_ID <= 1'b1;		
 				end //JUMP
 				
+				NOP: begin
+					RegDst_ID		<= 1'b0;
+					ALUOp_ID			<= 2'b00;
+					ALUSrc_ID		<= 1'b0;
+					Branch_ID		<= 1'b0;
+					MemRead_ID		<= 1'b0;
+					MemWrite_ID		<= 1'b0;
+					RegWrite_ID 	<= 1'b0;
+					MemtoReg_ID 	<= 1'b0;
+					Jump_control_ID <= 1'b0;
+				end //NOP
+				
 				default: begin
 					RegDst_ID		<= 1'b0;
 					ALUOp_ID			<= 2'b00;

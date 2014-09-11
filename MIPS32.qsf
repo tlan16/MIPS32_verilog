@@ -68,7 +68,6 @@ set_global_assignment -name VERILOG_FILE MIPS32.v
 set_global_assignment -name VERILOG_FILE MIPS_Top.v
 set_global_assignment -name VERILOG_FILE MEM_WB_Pipeline_Stage.v
 set_global_assignment -name VERILOG_FILE MEM_Data_Memory.v
-set_global_assignment -name VERILOG_FILE MEM_Branch_AND.v
 set_global_assignment -name VERILOG_FILE IF_PC_Reg.v
 set_global_assignment -name VERILOG_FILE IF_PC_Mux.v
 set_global_assignment -name VERILOG_FILE IF_PC_Add.v
@@ -93,9 +92,6 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_testing.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_EX_testing.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_EX_MEM_testing.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE IF_ID_EX_MEM_WB_testing.vwf
-set_global_assignment -name VERILOG_FILE EX_Forward_Unit.v
-set_global_assignment -name VERILOG_FILE EX_Forward_A.v
-set_global_assignment -name VERILOG_FILE EX_Forward_B.v
 set_global_assignment -name SDC_FILE MIPS32.sdc
 set_global_assignment -name VERILOG_FILE MEM_to_MEM_Forward.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
@@ -103,7 +99,6 @@ set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name TIMEQUEST_DO_REPORT_TIMING ON
 set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL OFF
 set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
-set_global_assignment -name VERILOG_FILE ID_Read_data_Mux.v
 set_global_assignment -name VERILOG_FILE ID_Jump.v
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_EX_MEM_WB_testing.vwf"
 set_global_assignment -name ENABLE_SIGNALTAP ON
@@ -208,4 +203,8 @@ set_global_assignment -name EDA_TEST_BENCH_NAME testbench -section_id eda_simula
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/testbench.v -section_id testbench
+set_global_assignment -name VERILOG_FILE Hazard_Unit.v
+set_global_assignment -name VERILOG_FILE EX_Reg_Read_Data_Forwarding.v
+set_global_assignment -name VERILOG_FILE ID_Reg_Read_Data_Comparetor.v
+set_global_assignment -name VERILOG_FILE ID_Branch_AND.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
