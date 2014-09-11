@@ -1,140 +1,71 @@
-# Reading D:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
-# do MIPS32_run_msim_rtl_verilog.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
+# Reading C:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do MIPS32_run_msim_gate_verilog.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
 # }
-# vlib rtl_work
-# vmap work rtl_work
-# Copying d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied C:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/WB_MemtoReg_Mux.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module WB_MemtoReg_Mux
-# 
-# Top level modules:
-# 	WB_MemtoReg_Mux
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_WB_Pipeline_Stage.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module MEM_WB_Pipeline_Stage
-# 
-# Top level modules:
-# 	MEM_WB_Pipeline_Stage
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Branch_AND.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module MEM_Branch_AND
-# 
-# Top level modules:
-# 	MEM_Branch_AND
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Reg.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module IF_PC_Reg
-# 
-# Top level modules:
-# 	IF_PC_Reg
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Mux.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module IF_PC_Mux
-# 
-# Top level modules:
-# 	IF_PC_Mux
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_PC_Add.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module IF_PC_Add
-# 
-# Top level modules:
-# 	IF_PC_Add
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_ID_Pipeline_Stage.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module IF_ID_Pipeline_Stage
-# 
-# Top level modules:
-# 	IF_ID_Pipeline_Stage
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Sign_Extension.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module ID_Sign_Extension
-# 
-# Top level modules:
-# 	ID_Sign_Extension
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_EX_Pipeline_Stage.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module ID_EX_Pipeline_Stage
-# 
-# Top level modules:
-# 	ID_EX_Pipeline_Stage
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Control.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module ID_Control
-# 
-# Top level modules:
-# 	ID_Control
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Shift_Left_2.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_Shift_Left_2
-# 
-# Top level modules:
-# 	EX_Shift_Left_2
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_PC_Add.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_PC_Add
-# 
-# Top level modules:
-# 	EX_PC_Add
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_MEM_Pipeline_Stage.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_MEM_Pipeline_Stage
-# 
-# Top level modules:
-# 	EX_MEM_Pipeline_Stage
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Dest_Mux.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_Dest_Mux
-# 
-# Top level modules:
-# 	EX_Dest_Mux
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Mux.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_ALU_Mux
-# 
-# Top level modules:
-# 	EX_ALU_Mux
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU_Control.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_ALU_Control
-# 
-# Top level modules:
-# 	EX_ALU_Control
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_ALU.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module EX_ALU
-# 
-# Top level modules:
-# 	EX_ALU
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v}
+# vlog -vlog01compat -work work +incdir+. {MIPS32.vo}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module MIPS32
 # 
 # Top level modules:
 # 	MIPS32
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_Data_Memory.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim {C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module MEM_Data_Memory
+# -- Compiling module testbench
 # 
 # Top level modules:
-# 	MEM_Data_Memory
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/IF_Instruction_Memory.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module IF_Instruction_Memory
+# 	testbench
 # 
-# Top level modules:
-# 	IF_Instruction_Memory
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Registers.v}
-# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
-# -- Compiling module ID_Registers
+# vsim -t 1ps -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  testbench
+# vsim -L cycloneii_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps testbench 
+# Loading work.testbench
+# Loading work.MIPS32
+# Loading cycloneii_ver.cycloneii_ram_block
+# Loading cycloneii_ver.cycloneii_ram_register
+# Loading cycloneii_ver.cycloneii_ram_pulse_generator
+# Loading cycloneii_ver.cycloneii_mac_out
+# Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.cycloneii_lcell_ff
+# Loading cycloneii_ver.cycloneii_jtag
+# Loading cycloneii_ver.cycloneii_clkctrl
+# Loading cycloneii_ver.cycloneii_mux41
+# Loading cycloneii_ver.cycloneii_ena_reg
+# Loading cycloneii_ver.cycloneii_io
+# Loading cycloneii_ver.cycloneii_mux21
+# Loading cycloneii_ver.cycloneii_dffe
+# Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_mac_mult
+# Loading cycloneii_ver.cycloneii_mac_data_reg
+# Loading cycloneii_ver.cycloneii_mac_sign_reg
+# Loading cycloneii_ver.cycloneii_mac_mult_internal
+# ** Warning: (vsim-3017) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Too few port connections. Expected 36, found 32.
+#         Region: /testbench/DUT
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
 # 
-# Top level modules:
-# 	ID_Registers
-# 
-#  
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module testbench at C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 88
+# Simulation Breakpoint: Break in Module testbench at C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 88
+# MACRO ./MIPS32_run_msim_gate_verilog.do PAUSED at line 17

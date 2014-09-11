@@ -9,6 +9,7 @@ entity ID_Registers is
         Read_Data_1_ID  : out    vl_logic_vector(31 downto 0);
         Read_Data_2_ID  : out    vl_logic_vector(31 downto 0);
         Clk             : in     vl_logic;
-        RegWrite_WB     : in     vl_logic
+        RegWrite_WB     : in     vl_logic;
+        ID_Register_Write_to_Read: in     vl_logic_vector(1 downto 0)
     );
 end ID_Registers;

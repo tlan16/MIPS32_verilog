@@ -13,7 +13,7 @@
 //	This is the top module of MIPS32
 
 module MIPS32(
-		input CLOCK_50, // Global clock
+		input Clk, // Global clock
 		
 	  // probed output
 	  output [31:0]   PC_Plus_4_IF,
@@ -63,8 +63,8 @@ module MIPS32(
 	  //output [4:0]		Write_Register_WB
 	  
 		);
-wire Clk;
-assign Clk = CLOCK_50;
+//wire Clk;
+//assign Clk = CLOCK_50;
    // IF Origin Variables:
 		// probed wire [31:0] 	Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
 		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v

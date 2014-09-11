@@ -8,6 +8,7 @@ entity EX_ALU_Control is
         Rand            : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi0, Hi1, Hi0, Hi0);
         \Ror\           : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi0, Hi1, Hi0, Hi1);
         Rslt            : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi0, Hi1, Hi0);
+        Rmul            : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi0, Hi0, Hi0, Hi1);
         lwsw            : vl_logic_vector(0 to 1) := (Hi0, Hi0);
         Itype           : vl_logic_vector(0 to 1) := (Hi0, Hi1);
         xis             : vl_logic_vector(0 to 5) := (HiX, HiX, HiX, HiX, HiX, HiX);
@@ -16,11 +17,12 @@ entity EX_ALU_Control is
         ALUand          : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
         ALUor           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi1);
         ALUslt          : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi1, Hi1);
+        ALUmul          : vl_logic_vector(0 to 3) := (Hi1, Hi1, Hi1, Hi1);
         unknown         : vl_logic_vector(0 to 1) := (Hi1, Hi1);
         ALUx            : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi1, Hi1)
     );
     port(
-        Sign_Extend_Instruction_EX: in     vl_logic_vector(31 downto 0);
+        Sign_Extend_Instruction_EX: in     vl_logic_vector(5 downto 0);
         ALUOp_EX        : in     vl_logic_vector(1 downto 0);
         ALU_Control_EX  : out    vl_logic_vector(3 downto 0)
     );
@@ -31,6 +33,7 @@ entity EX_ALU_Control is
     attribute mti_svvh_generic_type of Rand : constant is 1;
     attribute mti_svvh_generic_type of \Ror\ : constant is 1;
     attribute mti_svvh_generic_type of Rslt : constant is 1;
+    attribute mti_svvh_generic_type of Rmul : constant is 1;
     attribute mti_svvh_generic_type of lwsw : constant is 1;
     attribute mti_svvh_generic_type of Itype : constant is 1;
     attribute mti_svvh_generic_type of xis : constant is 1;
@@ -39,6 +42,7 @@ entity EX_ALU_Control is
     attribute mti_svvh_generic_type of ALUand : constant is 1;
     attribute mti_svvh_generic_type of ALUor : constant is 1;
     attribute mti_svvh_generic_type of ALUslt : constant is 1;
+    attribute mti_svvh_generic_type of ALUmul : constant is 1;
     attribute mti_svvh_generic_type of unknown : constant is 1;
     attribute mti_svvh_generic_type of ALUx : constant is 1;
 end EX_ALU_Control;
