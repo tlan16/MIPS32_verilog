@@ -30,7 +30,14 @@ module ID_Registers(
 			end
 		else 
 			begin
-				Read_Data_1_ID <= ID_Register_Write_to_Read[0] ? Write_Data_WB : Register_File[Read_Address_1_ID];
+				if(ID_Register_Write_to_Read == 2'b01)
+					begin
+						Read_Data_1_ID <= Write_Data_WB;
+					end
+				else
+					begin
+						Read_Data_1_ID <= Register_File[Read_Address_1_ID];
+					end
 //				case(ID_Register_Write_to_Read)
 //					2'b00: Read_Data_1_ID <= Register_File[Read_Address_1_ID];
 //					2'b01: Read_Data_1_ID <= Write_Data_WB;
@@ -46,7 +53,15 @@ module ID_Registers(
 			end
 		else 
 			begin
-				Read_Data_2_ID <= ID_Register_Write_to_Read[1] ? Write_Data_WB : Register_File[Read_Address_2_ID];
+				//Read_Data_2_ID <= ID_Register_Write_to_Read[1] ? Write_Data_WB : Register_File[Read_Address_2_ID];
+				if(ID_Register_Write_to_Read == 2'b10)
+					begin
+						Read_Data_2_ID <= Write_Data_WB;
+					end
+				else
+					begin
+						Read_Data_2_ID <= Register_File[Read_Address_2_ID];
+					end
 //				case(ID_Register_Write_to_Read)
 //					2'b00: Read_Data_2_ID <= Register_File[Read_Address_2_ID];
 //					2'b10: Read_Data_2_ID <= Write_Data_WB;
@@ -56,7 +71,7 @@ module ID_Registers(
 	end
 
 	always@(posedge Clk) begin
-		if((RegWrite_WB==1) && (Write_Register_WB!=4'd0)) begin
+		if( RegWrite_WB & (Write_Register_WB != 5'd0) ) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
 		//Register_File[Write_Register_WB] <= ( RegWrite_WB & (Write_Register_WB!=4'd0)) ? Write_Data_WB : Register_File[Write_Register_WB];

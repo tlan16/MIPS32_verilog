@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Mips
-Thu Sep 11 18:33:17 2014
+Fri Sep 12 01:58:32 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -117,7 +117,7 @@ applicable agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; Mips.sdc      ; OK     ; Thu Sep 11 18:33:13 2014 ;
+; Mips.sdc      ; OK     ; Fri Sep 12 01:58:28 2014 ;
 +---------------+--------+--------------------------+
 
 
@@ -7205,7 +7205,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Thu Sep 11 18:33:12 2014
+    Info: Processing started: Fri Sep 12 01:58:25 2014
 Info: Command: quartus_sta Mips -c Mips
 Info: qsta_default_script.tcl version: #4
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -7273,9 +7273,9 @@ Info (332146): Worst-case minimum pulse width slack is 19.202
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 511 megabytes
-    Info: Processing ended: Thu Sep 11 18:33:17 2014
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 506 megabytes
+    Info: Processing ended: Fri Sep 12 01:58:32 2014
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 

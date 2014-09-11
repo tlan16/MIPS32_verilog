@@ -9,13 +9,13 @@ module IF_PC_Reg(
 		 
    always@(posedge Clk)
 		begin
-			/*
+
 			if(PC_Enable)
 				begin
 					PC_IF <= Next_PC_IF;
 				end
-			*/
-			PC_IF <= PC_Enable ? Next_PC_IF : PC_IF;
+
+			//PC_IF <= PC_Enable ? Next_PC_IF : PC_IF;
 		end
 
 endmodule // IF_PC_Reg

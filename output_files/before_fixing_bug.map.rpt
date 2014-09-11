@@ -1,0 +1,445 @@
+Analysis & Synthesis report for before_fixing_bug
+Fri Sep 12 01:11:40 2014
+Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Parameter Settings for User Entity Instance: ID_Control:ID_Control
+  6. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_A
+  7. Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_B
+  8. Parameter Settings for User Entity Instance: EX_ALU:EX_ALU
+  9. Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control
+ 10. Parameter Settings for User Entity Instance: MEM_to_MEM_Forward:MEM_to_MEM_Forward
+ 11. Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
+ 12. Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
+ 13. Port Connectivity Checks: "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
+ 14. Port Connectivity Checks: "ID_Registers:ID_Registers"
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Sep 12 01:11:40 2014         ;
+; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
+; Revision Name                      ; before_fixing_bug                         ;
+; Top-level Entity Name              ; MIPS32                                    ;
+; Family                             ; Cyclone II                                ;
+; Total logic elements               ; N/A until Partition Merge                 ;
+;     Total combinational functions  ; N/A until Partition Merge                 ;
+;     Dedicated logic registers      ; N/A until Partition Merge                 ;
+; Total registers                    ; N/A until Partition Merge                 ;
+; Total pins                         ; N/A until Partition Merge                 ;
+; Total virtual pins                 ; N/A until Partition Merge                 ;
+; Total memory bits                  ; N/A until Partition Merge                 ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                 ;
+; Total PLLs                         ; N/A until Partition Merge                 ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F896I8       ;                    ;
+; Top-level entity name                                                      ; MIPS32             ; before_fixing_bug  ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Optimization Technique                                                     ; Speed              ; Balanced           ;
+; Timing-Driven Synthesis                                                    ; On                 ; Off                ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_Control:ID_Control ;
++----------------+--------+------------------------------------------+
+; Parameter Name ; Value  ; Type                                     ;
++----------------+--------+------------------------------------------+
+; RTYPE          ; 000000 ; Unsigned Binary                          ;
+; LW             ; 100011 ; Unsigned Binary                          ;
+; SW             ; 101011 ; Unsigned Binary                          ;
+; BEQ            ; 000100 ; Unsigned Binary                          ;
+; NOP            ; 100000 ; Unsigned Binary                          ;
+; JUMP           ; 000010 ; Unsigned Binary                          ;
++----------------+--------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_A ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; First          ; 00    ; Unsigned Binary                               ;
+; Second         ; 01    ; Unsigned Binary                               ;
+; Third          ; 10    ; Unsigned Binary                               ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_Forward_A:EX_Forward_B ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; First          ; 00    ; Unsigned Binary                               ;
+; Second         ; 01    ; Unsigned Binary                               ;
+; Third          ; 10    ; Unsigned Binary                               ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_ALU:EX_ALU ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; ALUadd         ; 0010  ; Unsigned Binary                   ;
+; ALUsub         ; 0110  ; Unsigned Binary                   ;
+; ALUand         ; 0000  ; Unsigned Binary                   ;
+; ALUor          ; 0001  ; Unsigned Binary                   ;
+; ALUslt         ; 0111  ; Unsigned Binary                   ;
+; ALUmul         ; 1111  ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EX_ALU_Control:EX_ALU_Control ;
++----------------+--------+--------------------------------------------------+
+; Parameter Name ; Value  ; Type                                             ;
++----------------+--------+--------------------------------------------------+
+; Rtype          ; 10     ; Unsigned Binary                                  ;
+; Radd           ; 100000 ; Unsigned Binary                                  ;
+; Rsub           ; 100010 ; Unsigned Binary                                  ;
+; Rand           ; 100100 ; Unsigned Binary                                  ;
+; Ror            ; 100101 ; Unsigned Binary                                  ;
+; Rslt           ; 101010 ; Unsigned Binary                                  ;
+; Rmul           ; 100001 ; Unsigned Binary                                  ;
+; lwsw           ; 00     ; Unsigned Binary                                  ;
+; Itype          ; 01     ; Unsigned Binary                                  ;
+; xis            ; XXXXXX ; Unsigned Binary                                  ;
+; ALUadd         ; 0010   ; Unsigned Binary                                  ;
+; ALUsub         ; 0110   ; Unsigned Binary                                  ;
+; ALUand         ; 0000   ; Unsigned Binary                                  ;
+; ALUor          ; 0001   ; Unsigned Binary                                  ;
+; ALUslt         ; 0111   ; Unsigned Binary                                  ;
+; ALUmul         ; 1111   ; Unsigned Binary                                  ;
+; unknown        ; 11     ; Unsigned Binary                                  ;
+; ALUx           ; 0011   ; Unsigned Binary                                  ;
++----------------+--------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM_to_MEM_Forward:MEM_to_MEM_Forward ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; First          ; 0     ; Signed Integer                                            ;
+; Second         ; 1     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"                                                          ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                   ; Type   ; Severity ; Details                                                                             ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Instruction_WB[31..21] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Instruction_WB[10..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Branch_MEM ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Zero_MEM   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"                                                  ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; PC_Plus_4_EX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_Registers:ID_Registers"                                                                                                                                      ;
++----------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type    ; Severity         ; Details                                                                                                                                      ;
++----------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; ALU_Result_MEM ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; Write_Data_WB  ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
+    Info: Processing started: Fri Sep 12 01:11:39 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c before_fixing_bug
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
+    Info (12023): Found entity 1: WB_MemtoReg_Mux
+Info (12021): Found 1 design units, including 1 entities, in source file mips32.v
+    Info (12023): Found entity 1: MIPS32
+Info (12021): Found 1 design units, including 1 entities, in source file mem_wb_pipeline_stage.v
+    Info (12023): Found entity 1: MEM_WB_Pipeline_Stage
+Info (12021): Found 1 design units, including 1 entities, in source file mem_data_memory.v
+    Info (12023): Found entity 1: MEM_Data_Memory
+Info (12021): Found 1 design units, including 1 entities, in source file mem_branch_and.v
+    Info (12023): Found entity 1: MEM_Branch_AND
+Info (12021): Found 1 design units, including 1 entities, in source file if_pc_reg.v
+    Info (12023): Found entity 1: IF_PC_Reg
+Info (12021): Found 1 design units, including 1 entities, in source file if_pc_mux.v
+    Info (12023): Found entity 1: IF_PC_Mux
+Info (12021): Found 1 design units, including 1 entities, in source file if_pc_add.v
+    Info (12023): Found entity 1: IF_PC_Add
+Info (12021): Found 1 design units, including 1 entities, in source file if_instruction_memory.v
+    Info (12023): Found entity 1: IF_Instruction_Memory
+Info (12021): Found 1 design units, including 1 entities, in source file if_id_pipeline_stage.v
+    Info (12023): Found entity 1: IF_ID_Pipeline_Stage
+Info (12021): Found 1 design units, including 1 entities, in source file id_sign_extension.v
+    Info (12023): Found entity 1: ID_Sign_Extension
+Info (12021): Found 1 design units, including 1 entities, in source file id_registers.v
+    Info (12023): Found entity 1: ID_Registers
+Info (12021): Found 1 design units, including 1 entities, in source file id_ex_pipeline_stage.v
+    Info (12023): Found entity 1: ID_EX_Pipeline_Stage
+Info (12021): Found 1 design units, including 1 entities, in source file id_control.v
+    Info (12023): Found entity 1: ID_Control
+Info (12021): Found 1 design units, including 1 entities, in source file ex_shift_left_2.v
+    Info (12023): Found entity 1: EX_Shift_Left_2
+Info (12021): Found 1 design units, including 1 entities, in source file ex_pc_add.v
+    Info (12023): Found entity 1: EX_PC_Add
+Info (12021): Found 1 design units, including 1 entities, in source file ex_mem_pipeline_stage.v
+    Info (12023): Found entity 1: EX_MEM_Pipeline_Stage
+Info (12021): Found 1 design units, including 1 entities, in source file ex_dest_mux.v
+    Info (12023): Found entity 1: EX_Dest_Mux
+Info (12021): Found 1 design units, including 1 entities, in source file ex_alu_mux.v
+    Info (12023): Found entity 1: EX_ALU_Mux
+Info (12021): Found 1 design units, including 1 entities, in source file ex_alu_control.v
+    Info (12023): Found entity 1: EX_ALU_Control
+Info (12021): Found 1 design units, including 1 entities, in source file ex_alu.v
+    Info (12023): Found entity 1: EX_ALU
+Info (12021): Found 1 design units, including 1 entities, in source file ex_forward_unit.v
+    Info (12023): Found entity 1: EX_Forward_Unit
+Info (12021): Found 1 design units, including 1 entities, in source file ex_forward_a.v
+    Info (12023): Found entity 1: EX_Forward_A
+Info (12021): Found 1 design units, including 1 entities, in source file ex_forward_b.v
+    Info (12023): Found entity 1: EX_Forward_B
+Info (12021): Found 1 design units, including 1 entities, in source file mem_to_mem_forward.v
+    Info (12023): Found entity 1: MEM_to_MEM_Forward
+Info (12021): Found 1 design units, including 1 entities, in source file id_read_data_mux.v
+    Info (12023): Found entity 1: ID_Read_data_Mux
+Info (12021): Found 1 design units, including 1 entities, in source file id_jump.v
+    Info (12023): Found entity 1: ID_Jump
+Info (12021): Found 1 design units, including 1 entities, in source file simulation/modelsim/testbench.v
+    Info (12023): Found entity 1: testbench
+Info (12127): Elaborating entity "MIPS32" for the top level hierarchy
+Info (12128): Elaborating entity "IF_PC_Mux" for hierarchy "IF_PC_Mux:IF_PC_Mux"
+Info (12128): Elaborating entity "IF_PC_Reg" for hierarchy "IF_PC_Reg:IF_PC_Reg"
+Info (12128): Elaborating entity "IF_PC_Add" for hierarchy "IF_PC_Add:IF_PC_Add"
+Info (12128): Elaborating entity "IF_Instruction_Memory" for hierarchy "IF_Instruction_Memory:IF_Instruction_Memory"
+Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(13): number of words (104) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "IF_ID_Pipeline_Stage" for hierarchy "IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage"
+Info (12128): Elaborating entity "ID_Jump" for hierarchy "ID_Jump:ID_Jump"
+Info (12128): Elaborating entity "ID_Read_data_Mux" for hierarchy "ID_Read_data_Mux:ID_Read_data_Mux"
+Info (12128): Elaborating entity "ID_Registers" for hierarchy "ID_Registers:ID_Registers"
+Warning (10850): Verilog HDL warning at ID_Registers.v(18): number of words (33) in memory file does not match the number of elements in the address range [0:31]
+Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(33): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(49): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "ID_Sign_Extension" for hierarchy "ID_Sign_Extension:ID_Sign_Extension"
+Info (12128): Elaborating entity "ID_Control" for hierarchy "ID_Control:ID_Control"
+Info (12128): Elaborating entity "ID_EX_Pipeline_Stage" for hierarchy "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
+Info (12128): Elaborating entity "EX_Forward_Unit" for hierarchy "EX_Forward_Unit:EX_Forward_Unit"
+Info (12128): Elaborating entity "EX_Forward_A" for hierarchy "EX_Forward_A:EX_Forward_A"
+Info (12128): Elaborating entity "EX_Shift_Left_2" for hierarchy "EX_Shift_Left_2:EX_Shift_Left_2"
+Info (12128): Elaborating entity "EX_PC_Add" for hierarchy "EX_PC_Add:EX_PC_Add"
+Info (12128): Elaborating entity "EX_ALU_Mux" for hierarchy "EX_ALU_Mux:EX_ALU_Mux"
+Info (12128): Elaborating entity "EX_ALU" for hierarchy "EX_ALU:EX_ALU"
+Info (12128): Elaborating entity "EX_ALU_Control" for hierarchy "EX_ALU_Control:EX_ALU_Control"
+Info (12128): Elaborating entity "EX_Dest_Mux" for hierarchy "EX_Dest_Mux:EX_Dest_Mux"
+Info (12128): Elaborating entity "EX_MEM_Pipeline_Stage" for hierarchy "EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage"
+Info (12128): Elaborating entity "MEM_to_MEM_Forward" for hierarchy "MEM_to_MEM_Forward:MEM_to_MEM_Forward"
+Info (12128): Elaborating entity "MEM_Branch_AND" for hierarchy "MEM_Branch_AND:MEM_Branch_AND"
+Info (12128): Elaborating entity "MEM_Data_Memory" for hierarchy "MEM_Data_Memory:MEM_Data_Memory"
+Warning (10850): Verilog HDL warning at MEM_Data_Memory.v(14): number of words (450) in memory file does not match the number of elements in the address range [0:511]
+Info (10041): Inferred latch for "Read_Data_MEM[0]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[1]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[2]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[3]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[4]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[5]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[6]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[7]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[8]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[9]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[10]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[11]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[12]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[13]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[14]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[15]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[16]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[17]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[18]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[19]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[20]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[21]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[22]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[23]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[24]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[25]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[26]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[27]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[28]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[29]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[30]" at MEM_Data_Memory.v(18)
+Info (10041): Inferred latch for "Read_Data_MEM[31]" at MEM_Data_Memory.v(18)
+Info (12128): Elaborating entity "MEM_WB_Pipeline_Stage" for hierarchy "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
+Info (12128): Elaborating entity "WB_MemtoReg_Mux" for hierarchy "WB_MemtoReg_Mux:WB_MemtoReg_Mux"
+Error (12002): Port "ALU_Result_MEM" does not exist in macrofunction "ID_Registers" File: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MIPS32.v Line: 242
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/before_fixing_bug.map.smsg
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 9 warnings
+    Error: Peak virtual memory: 415 megabytes
+    Error: Processing ended: Fri Sep 12 01:11:40 2014
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/before_fixing_bug.map.smsg.
+
+

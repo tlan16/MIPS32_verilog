@@ -2,8 +2,8 @@
 // It is up to the student to document and describe the system.
 
 module EX_ALU(
-	      input [31:0]  Read_Data_1_EX,
-	      input [31:0]  ALU_Data_2_EX,
+	      input signed [31:0]  Read_Data_1_EX,
+	      input signed [31:0]  ALU_Data_2_EX,
 	      input [3:0]   ALU_Control_EX,
 	      output reg [31:0] ALU_Result_EX,
 	      output 	  Zero_EX

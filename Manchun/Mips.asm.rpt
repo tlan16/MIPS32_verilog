@@ -1,5 +1,5 @@
 Assembler report for Mips
-Thu Sep 11 18:33:17 2014
+Fri Sep 12 01:58:29 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/Mips.sof
+  5. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Sep 11 18:33:17 2014 ;
+; Assembler Status      ; Successful - Fri Sep 12 01:58:29 2014 ;
 ; Revision Name         ; Mips                                  ;
 ; Top-level Entity Name ; Mips                                  ;
 ; Family                ; Cyclone IV E                          ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                               ;
-+-------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                               ;
-+-------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/Mips.sof ;
-+-------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------+
+; Assembler Generated Files                                        ;
++------------------------------------------------------------------+
+; File Name                                                        ;
++------------------------------------------------------------------+
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.sof ;
++------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/DS/OneDrive/2014_Semester/ECE4074_Advanced_computer_architecture/Lab1/Mips_should_be_alright_restored/Mips.sof ;
-+----------------+----------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                          ;
-+----------------+----------------------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP4CE115F29C7                                                                                                                    ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                                                                       ;
-; Checksum       ; 0x006BA39B                                                                                                                       ;
-+----------------+----------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/Mips.sof ;
++----------------+---------------------------------------------------------------------------+
+; Option         ; Setting                                                                   ;
++----------------+---------------------------------------------------------------------------+
+; Device         ; EP4CE115F29C7                                                             ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                ;
+; Checksum       ; 0x006BA3AB                                                                ;
++----------------+---------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Thu Sep 11 18:33:12 2014
+    Info: Processing started: Fri Sep 12 01:58:25 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Mips -c Mips
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 398 megabytes
-    Info: Processing ended: Thu Sep 11 18:33:17 2014
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 395 megabytes
+    Info: Processing ended: Fri Sep 12 01:58:29 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

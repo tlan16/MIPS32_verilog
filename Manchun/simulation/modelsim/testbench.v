@@ -85,7 +85,7 @@ module testbench  ;
 // Start Time = 0 ns, End Time = 1 us, Period = 100 ns
   initial
   begin
-   repeat(10000)
+   repeat(2500)
    begin
 	   Clk  = 1'b1  ;
 	  #50  Clk  = 1'b0  ;

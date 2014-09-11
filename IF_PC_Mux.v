@@ -9,11 +9,11 @@ module IF_PC_Mux(
 		 input [31:0] Jump_Dest_ID,
 		 input 		  PCSrc_MEM,
 		 input 		  Jump_Control_ID,
-		 output reg [31:0]Next_PC_IF
+		 output [31:0]Next_PC_IF
 		 );
 	
-   //assign Next_PC_IF = PCSrc_MEM ? Branch_Dest_MEM : PC_Plus_4_IF;
-	
+   assign Next_PC_IF = Jump_Control_ID ? Jump_Dest_ID : (PCSrc_MEM ? Branch_Dest_MEM : PC_Plus_4_IF);
+/*
 initial
 	begin
 		Next_PC_IF <= 32'd0;
@@ -31,6 +31,7 @@ always@(*)
 			default: Next_PC_IF <= PC_Plus_4_IF;
 		endcase
 	end
+*/
 endmodule // IF_PC_Mux
 
 

@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Frank-Desktop\Documents\MIPS32_verilog\Manchun\simulation\modelsim
+vMips
+I0gnj;8l9FjG@?obHK<A_m1
+V[7K^XZ3>1G_^eUD7f@==F2
+Z1 dC:\Users\Frank-Desktop\Documents\MIPS32_verilog\Manchun\simulation\modelsim
+w1410451113
+8Mips_7_1200mv_85c_slow.vo
+FMips_7_1200mv_85c_slow.vo
+L0 31
+Z2 OV;L;10.0d;49
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@mips
+!s100 _0_ZXYYTTY:o9FNhKY10G0
+!s85 0
+!s108 1410452108.389000
+!s107 Mips_7_1200mv_85c_slow.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Mips_7_1200mv_85c_slow.vo|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+vtestbench
+!s100 SQN2z>KGFTihO9QTj_;KB2
+I4l<ffoL]H^B6jfUdM6_k]2
+VhGfW:390DM[oDMzegDH9`2
+R1
+w1410431221
+8C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v
+FC:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1410452108.687000
+!s107 C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim|C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim -O0

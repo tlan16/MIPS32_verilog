@@ -27,14 +27,10 @@ module ID_Control(
 	parameter JUMP		= 6'b000010;
 	
 	wire [5:0]opcode;
-	assign opcode = (ID_Control_NOP & Instruction_ID != BEQ) ? NOP : Instruction_ID;
+	assign opcode = (ID_Control_NOP & (Instruction_ID != BEQ)) ? NOP : Instruction_ID;
 	
 	initial 
 	 begin
-		 /*  
-		     We assign decimal representation of 0 to our outpur REG's here. 
-		     Note the difference 
-		 */
 		RegDst_ID 		<= 0;
 		ALUOp_ID 		<= 2'd0;
 		ALUSrc_ID 		<= 0;

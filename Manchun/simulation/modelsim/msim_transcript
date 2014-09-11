@@ -1,0 +1,132 @@
+# Reading D:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do Mips_run_msim_gate_verilog.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+. {Mips_7_1200mv_85c_slow.vo}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module Mips
+# 
+# Top level modules:
+# 	Mips
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v}
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L cycloneive_ver -L gate_work -L work -voptargs="+acc"  testbench
+# vsim +transport_int_delays +transport_path_delays -L altera_ver -L cycloneive_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps testbench 
+# Loading work.testbench
+# Loading work.Mips
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading instances from Mips_7_1200mv_85c_v_slow.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# Loading timing data from Mips_7_1200mv_85c_v_slow.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2357 ps, asdata:2373 ps, 186 ps );
+#    Time: 2373 ps  Iteration: 0  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Instruction_EX[12] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2359 ps, asdata:2375 ps, 186 ps );
+#    Time: 2375 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0_bypass[41] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2360 ps, asdata:2376 ps, 186 ps );
+#    Time: 2376 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0_bypass[17] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2360 ps, asdata:2377 ps, 186 ps );
+#    Time: 2377 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_1_bypass[17] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2359 ps, asdata:2379 ps, 186 ps );
+#    Time: 2379 ps  Iteration: 1  Instance: /testbench/DUT/\ID_Registers|register_rtl_1_bypass[41] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2358 ps, asdata:2399 ps, 186 ps );
+#    Time: 2399 ps  Iteration: 1  Instance: /testbench/DUT/\ID_Registers|register_rtl_1_bypass[51] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2358 ps, asdata:2401 ps, 186 ps );
+#    Time: 2401 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0_bypass[51] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2353 ps, asdata:2417 ps, 186 ps );
+#    Time: 2417 ps  Iteration: 1  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Instruction_EX[11] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2356 ps, asdata:2449 ps, 186 ps );
+#    Time: 2449 ps  Iteration: 0  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Read_Data_2_EX[18] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(282): $hold( posedge clk &&& nosloadsclr:2359 ps, d:2459 ps, 186 ps );
+#    Time: 2459 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_1_bypass[39] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2356 ps, asdata:2466 ps, 186 ps );
+#    Time: 2466 ps  Iteration: 1  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Read_Data_2_EX[30] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2359 ps, asdata:2479 ps, 186 ps );
+#    Time: 2479 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0_bypass[39] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(282): $hold( posedge clk &&& nosloadsclr:2332 ps, d:2479 ps, 186 ps );
+#    Time: 2479 ps  Iteration: 0  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Instruction_EX[5] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2355 ps, asdata:2491 ps, 186 ps );
+#    Time: 2491 ps  Iteration: 0  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Instruction_EX[20] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2365 ps, asdata:2500 ps, 186 ps );
+#    Time: 2500 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0_bypass[0] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2360 ps, asdata:2509 ps, 186 ps );
+#    Time: 2509 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_1_bypass[29] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2360 ps, asdata:2515 ps, 186 ps );
+#    Time: 2515 ps  Iteration: 1  Instance: /testbench/DUT/\ID_Registers|register_rtl_0_bypass[29] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(282): $hold( posedge clk &&& nosloadsclr:2351 ps, d:2517 ps, 186 ps );
+#    Time: 2517 ps  Iteration: 0  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Read_Data_2_EX[26] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2353 ps, asdata:2521 ps, 186 ps );
+#    Time: 2521 ps  Iteration: 0  Instance: /testbench/DUT/\ID_EX_Pipeline_Stage|Instruction_EX[15] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2739 ps, d[0]:2753 ps, 222 ps );
+#    Time: 2753 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_1|auto_generated|ram_block1a0 /we_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2726 ps, d:2765 ps, 222 ps );
+#    Time: 2765 ps  Iteration: 1  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0|auto_generated|ram_block1a18 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2723 ps, d[0]:2770 ps, 222 ps );
+#    Time: 2770 ps  Iteration: 0  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0|auto_generated|ram_block1a0 /we_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2743 ps, d:2774 ps, 222 ps );
+#    Time: 2774 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2743 ps, d:2818 ps, 222 ps );
+#    Time: 2818 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2726 ps, d:2821 ps, 222 ps );
+#    Time: 2821 ps  Iteration: 0  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0|auto_generated|ram_block1a18 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2743 ps, d:2833 ps, 222 ps );
+#    Time: 2833 ps  Iteration: 1  Instance: /testbench/DUT/\ID_Registers|register_rtl_1|auto_generated|ram_block1a0 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2783 ps, asdata:2833 ps, 186 ps );
+#    Time: 2833 ps  Iteration: 1  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0_bypass[47] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2726 ps, d:2843 ps, 222 ps );
+#    Time: 2843 ps  Iteration: 0  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0|auto_generated|ram_block1a18 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(282): $hold( posedge clk &&& nosloadsclr:2811 ps, d:2850 ps, 186 ps );
+#    Time: 2850 ps  Iteration: 0  Instance: /testbench/DUT/\EX_MEM_Pipeline_Stage|Write_Data_MEM[4] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(285): $hold( posedge clk &&& sloaddata:2785 ps, asdata:2853 ps, 186 ps );
+#    Time: 2853 ps  Iteration: 0  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0_bypass[73] 
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2743 ps, d:2866 ps, 222 ps );
+#    Time: 2866 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_1|auto_generated|ram_block1a0 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2743 ps, d:2890 ps, 222 ps );
+#    Time: 2890 ps  Iteration: 0  Instance: /testbench/DUT/\ID_Registers|register_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# ** Error: d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:2727 ps, d:2925 ps, 222 ps );
+#    Time: 2925 ps  Iteration: 0  Instance: /testbench/DUT/\MEM_Data_Memory|Data_Memory_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# Break in Module testbench at C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v line 98
+# Simulation Breakpoint: Break in Module testbench at C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Manchun/simulation/modelsim/testbench.v line 98
+# MACRO ./Mips_run_msim_gate_verilog.do PAUSED at line 17

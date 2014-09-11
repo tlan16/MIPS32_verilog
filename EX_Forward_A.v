@@ -1,4 +1,4 @@
-module EX_Reg_Read_Data_Forwarding(
+module EX_Forward_A(
 						input [31:0]	   Read_Data_1_EX,
 						input [31:0]		Write_Data_WB,
 						input [31:0]		ALU_Result_MEM,

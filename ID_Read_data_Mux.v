@@ -1,9 +1,9 @@
 // condition ? if true : if false
 
-module ID_Reg_Read_Data_Forwording_Mux(
+module ID_Read_data_Mux(
 		       input [31:0]  Read_Data_1_ID,
 				 input [31:0]	Read_Data_2_ID,
-		       input [31:0]  Write_Data_WB,
+		       input [31:0]  ALU_Result_MEM,
 		       input 	      Forward_C_ID,
 				 input 	      Forward_D_ID,
 		       output 		  Comparetor_ID
@@ -11,8 +11,8 @@ module ID_Reg_Read_Data_Forwording_Mux(
 
 wire [31:0] Read_Data_1_MUX_ID;
 wire [31:0] Read_Data_2_MUX_ID;
-assign Read_Data_1_MUX_ID = Forward_C_ID ? Write_Data_WB : Read_Data_1_ID;
-assign Read_Data_2_MUX_ID = Forward_D_ID ? Write_Data_WB : Read_Data_2_ID;
+assign Read_Data_1_MUX_ID = Forward_C_ID ? ALU_Result_MEM : Read_Data_1_ID;
+assign Read_Data_2_MUX_ID = Forward_D_ID ? ALU_Result_MEM : Read_Data_2_ID;
 
 assign Comparetor_ID = (Read_Data_1_MUX_ID == Read_Data_2_MUX_ID);
 

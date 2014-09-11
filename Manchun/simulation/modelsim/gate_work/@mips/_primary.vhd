@@ -1,0 +1,43 @@
+library verilog;
+use verilog.vl_types.all;
+entity Mips is
+    port(
+        Clk             : in     vl_logic;
+        clkout          : out    vl_logic_vector(5 downto 0);
+        Instruction_IF  : out    vl_logic_vector(31 downto 0);
+        Next_PC_IF      : out    vl_logic_vector(31 downto 0);
+        Instruction_ID  : out    vl_logic_vector(31 downto 0);
+        Read_Address_1_ID: out    vl_logic_vector(4 downto 0);
+        Read_Data_1_ID  : out    vl_logic_vector(31 downto 0);
+        ALUOp_ID        : out    vl_logic_vector(1 downto 0);
+        ALUSrc_ID       : out    vl_logic;
+        Branch_ID       : out    vl_logic;
+        MemRead_ID      : out    vl_logic;
+        MemWrite_ID     : out    vl_logic;
+        MemtoReg_ID     : out    vl_logic;
+        PCSrc_ID        : out    vl_logic;
+        Instruction_EX  : out    vl_logic_vector(31 downto 0);
+        ALU_Data_2_EX   : out    vl_logic_vector(31 downto 0);
+        ALU_Control_EX  : out    vl_logic_vector(3 downto 0);
+        ALU_Result_EX   : out    vl_logic_vector(31 downto 0);
+        Write_Register_EX: out    vl_logic_vector(4 downto 0);
+        Zero_EX         : out    vl_logic;
+        ALU_Result_MEM  : out    vl_logic_vector(31 downto 0);
+        Write_Data_MEM  : out    vl_logic_vector(31 downto 0);
+        Read_Data_MEM   : out    vl_logic_vector(31 downto 0);
+        Read_Data_WB    : out    vl_logic_vector(31 downto 0);
+        ALU_Result_WB   : out    vl_logic_vector(31 downto 0);
+        Write_Data_WB   : out    vl_logic_vector(31 downto 0);
+        Forward_A       : out    vl_logic_vector(1 downto 0);
+        Forward_B       : out    vl_logic_vector(1 downto 0);
+        Forward_MEM     : out    vl_logic;
+        Read_Data_forward_MEM_MEM: out    vl_logic_vector(31 downto 0);
+        IF_ID_pipeline_stall: out    vl_logic;
+        pc_stall        : out    vl_logic;
+        ID_Control_Noop : out    vl_logic;
+        Forward_Reg_Delay: out    vl_logic_vector(1 downto 0);
+        Forward_C       : out    vl_logic;
+        Forward_D       : out    vl_logic;
+        Zero_ID         : out    vl_logic
+    );
+end Mips;

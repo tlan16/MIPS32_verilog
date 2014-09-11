@@ -6,7 +6,7 @@ module IF_PC_Add(
 		    output [31:0] PC_Plus_4_IF
 		    );
 
-   assign PC_Plus_4_IF=PC_IF + 3'd4;
+   assign PC_Plus_4_IF=PC_IF + 4;
 
 endmodule // IF_PC_Add
 
