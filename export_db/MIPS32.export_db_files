@@ -2,6 +2,7 @@ MIPS32.archive.qmsg
 MIPS32.asm.qmsg
 MIPS32.cmp.atm
 MIPS32.cmp.bpm
+MIPS32.cmp.eco2
 MIPS32.cmp.hdbx
 MIPS32.cmp.kpt
 MIPS32.cmp.logdb
@@ -25,6 +26,7 @@ MIPS32.map.hdbx
 MIPS32.map.kpt
 MIPS32.map.logdb
 MIPS32.map.qmsg
+MIPS32.map.rcf
 MIPS32.map.sci
 MIPS32.map.scidsc
 MIPS32.map_bb.atm
@@ -32,7 +34,9 @@ MIPS32.map_bb.hdbx
 MIPS32.map_bb.logdb
 MIPS32.map_bb.sci
 MIPS32.map_bb.scidsc
+MIPS32.merge.qmsg
 MIPS32.pre_map.hdbx
+MIPS32.restore.qmsg
 MIPS32.root_partition.cmp.atm
 MIPS32.root_partition.cmp.dfp
 MIPS32.root_partition.cmp.hdbx

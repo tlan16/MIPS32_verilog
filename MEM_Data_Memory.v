@@ -1,5 +1,8 @@
 // Main data_Memory
 // 32 bit width, 512 bit depth
+// location 0 is always 0.
+// invalid location get reading of 0.
+
 
 
 module MEM_Data_Memory(

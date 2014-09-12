@@ -1,8 +1,9 @@
-// Comparator ourputs the equivalent EX_zero signal
-// contains a mux, then a conparator
-// mux chode data from ALU_Result_MEM and read_data from register, then feed output to comparator
-// comparator outputs high when two data are identical
-// selection signal Forward_C_ID and Forward_D_ID are from Hazard handling unit
+// ID_Read_data_Mux helps handling branch hazard. 
+// Since the branch unit is relocated from MEM stage to ID stage, the output Comparator_ID is the equivalent of EX_zero signal
+// Firstly, Forward_C_ID and Forward_D_ID are the select signal of two mux, selecting which of Read_Data_ID or ALU_Result_MEM is feed to comparator.
+// Forward_C_ID and Forward_D_ID are from Hazard handling unit.
+// Secondly, the comparator outputs logic high when two inputs are identical
+
 
 module ID_Read_data_Mux(
 		       input [31:0]  Read_Data_1_ID,

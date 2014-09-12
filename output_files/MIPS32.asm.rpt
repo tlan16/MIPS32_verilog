@@ -1,5 +1,5 @@
 Assembler report for MIPS32
-Fri Sep 12 15:28:17 2014
+Fri Sep 12 22:41:53 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -9,7 +9,10 @@ Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Messages
+  4. Assembler Generated Files
+  5. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof
+  6. Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof
+  7. Assembler Messages
 
 
 
@@ -35,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Sep 12 15:28:17 2014 ;
+; Assembler Status      ; Successful - Fri Sep 12 22:41:53 2014 ;
 ; Revision Name         ; MIPS32                                ;
 ; Top-level Entity Name ; MIPS32                                ;
 ; Family                ; Cyclone II                            ;
@@ -75,19 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
++-------------------------------------------------------------------------+
+; Assembler Generated Files                                               ;
++-------------------------------------------------------------------------+
+; File Name                                                               ;
++-------------------------------------------------------------------------+
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof ;
++-------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.sof ;
++----------------+----------------------------------------------------------------------------------+
+; Option         ; Setting                                                                          ;
++----------------+----------------------------------------------------------------------------------+
+; Device         ; EP2C70F672C6                                                                     ;
+; JTAG usercode  ; 0x0073B349                                                                       ;
+; Checksum       ; 0x0073B349                                                                       ;
++----------------+----------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Frank-Desktop/Documents/MIPS32_verilog/output_files/MIPS32.pof ;
++--------------------+------------------------------------------------------------------------------+
+; Option             ; Setting                                                                      ;
++--------------------+------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                       ;
+; JTAG usercode      ; 0x00000000                                                                   ;
+; Checksum           ; 0x186310F9                                                                   ;
+; Compression Ratio  ; 3                                                                            ;
++--------------------+------------------------------------------------------------------------------+
+
+
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Fri Sep 12 15:28:16 2014
+    Info: Processing started: Fri Sep 12 22:41:50 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
-Warning (292011): Can't generate programming files because you are currently using the Quartus II software in Evaluation Mode
-Info: Quartus II 64-Bit Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 380 megabytes
-    Info: Processing ended: Fri Sep 12 15:28:17 2014
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 420 megabytes
+    Info: Processing ended: Fri Sep 12 22:41:53 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

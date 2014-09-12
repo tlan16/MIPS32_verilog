@@ -1,4 +1,4 @@
-// add the pc by digital four
+// IF_PC_Add add the pc by digital four.
 
 module IF_PC_Add(
 		    input [31:0]  PC_IF,

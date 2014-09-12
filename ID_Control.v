@@ -1,7 +1,11 @@
-// outputs the control signals according to opcode
+// ID_Control outputs important control signals, most of these signals will be feed into flowing 
+// pipeline, hence into other stages.
 // Rtype, lw, sw, beq, nop and jump are handled.
-// A nop is forced regardless opcode, when ID_Control_NOP is high.
+// Control signal is based on opcode, which is [31:26] of Instruction_ID.
+// When ID_Control_NOP  is logic one, nop control signals are forced to the outputs regardless 
+// opcode.
 // ID_Control_NOP is from Hazard handling unit.
+
 
 module ID_Control(
 		  input [5:0] 		 Instruction_ID,

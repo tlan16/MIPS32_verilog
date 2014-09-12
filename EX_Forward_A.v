@@ -1,6 +1,11 @@
-// A mux choses data been feed into Read_Data_1 on EX_ALU from Read_Data_1_EX form ID/EX pipeline, or Write_Data_WB from write back stage, or ALU_Result_MEM form MEM stage
-// Selection signel ForwardA_EX is feeded in from Hazard handling unit
-// This module alse been used as another instance for data output to EX_ALU_Mux
+// EX_Forward_A is a 3-to-1 mux.
+// Selection signal ForwardA_EX from Hazard handling unit.
+// ForwardA_EX of 2’b00 is the default case, it forwards Read_Data_1_EX from ID/EX pipeline to the output.
+// ForwardA_EX of 2’b01 forwards Write_Data_WB to the output.
+// ForwardA_EX of 2’b10 forwards ALU_Result_MEM to the output.
+// Selection signal ForwardA_EX is from Hazard handling unit
+// This module also been used as another instance as EX_Forward_B, which output data output to EX_ALU_Mux
+
 
 module EX_Forward_A(
 						input [31:0]	   Read_Data_1_EX,

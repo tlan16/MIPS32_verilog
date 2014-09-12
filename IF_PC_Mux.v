@@ -1,6 +1,11 @@
-// chose what is next pc, normally pc_plus_4, but brach and jump are handled, and coresponding pc is passed over.
-// PCSrc_MEM trigles the branch response, it is from logic and of zero and ID_Branch
-// Jump_Control_ID trigles the jump response, it is from ID_Control
+// The IF_PC_Mux chooses what is next pc, normally pc_plus_4 is outputted to be next_pc_if, but in case of branch and jump, and corresponding next_pc_if is passed over.
+// PCSrc_MEM triggers the branch response, forwarding Branch_Dest_MEM to Next_PC_IF.
+// PCSrc_MEM is from MEM_Branch_AND, Branch_Dest_MEM is from EX_PC_Add
+// Note PCSrc_MEM, MEM_Branch_AND,  Branch_Dest_MEM and EX_PC_Add is actually been 
+// relocated from MEM stage to ID stage.
+// Jump_Control_ID triggers the jump response, forwarding Jump_Dest_ID  to Next_PC_IF.
+// Jump_Control_ID is from ID_Control, Jump_Dest_ID  is from ID_Jump.
+
 
 module IF_PC_Mux(
 		 input [31:0] PC_Plus_4_IF,
@@ -12,25 +17,7 @@ module IF_PC_Mux(
 		 );
 	
    assign Next_PC_IF = Jump_Control_ID ? Jump_Dest_ID : (PCSrc_MEM ? Branch_Dest_MEM : PC_Plus_4_IF);
-/*
-initial
-	begin
-		Next_PC_IF <= 32'd0;
-	end
-	
-wire [1:0] IF_PC_Mux_temp;
-assign IF_PC_Mux_temp = {PCSrc_MEM,Jump_Control_ID};
 
-always@(*)
-	begin
-		case(IF_PC_Mux_temp)
-			2'b00: Next_PC_IF <= PC_Plus_4_IF;
-			2'b01: Next_PC_IF <= Jump_Dest_ID;
-			2'b10: Next_PC_IF <= Branch_Dest_MEM;
-			default: Next_PC_IF <= PC_Plus_4_IF;
-		endcase
-	end
-*/
 endmodule // IF_PC_Mux
 
 
