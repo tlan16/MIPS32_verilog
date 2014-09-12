@@ -1,4 +1,7 @@
-// condition ? if true : if false
+// Main instruction memory
+// output zero (flush) when eighter IF_Flush or Jump_Control_ID is highz0
+// Jump_Control_ID is from ID_Control
+// IF_Flush is the PC_Src in ID stage
 
 module IF_Instruction_Memory(
 		 input [31:0]PC_IF,

@@ -1,4 +1,14 @@
-module EX_Forward_Unit(
+// ForwardA_EX and ForwardB_EX:  handles data hazard, they forwards ALU_Result_MEM to mux before ALU if needed, which controls the data been feeded into ALU.
+// Forward_Mem_to_Mem			:  handles mem to mem copy hazard, it forwards Read_Data_WB to Write_Data_MUX_MEM if needed, which controls data been writen to mem.
+// PC_Enable, IF_ID_Pipeline_Enable and ID_Control_NOP:
+//											these signals will stall PC and IF/ID pipeline, and simutaneousl force a nop is ID_Control signals
+// ID_Register_Write_to_Read  :  handles when the clock delay due to write register is not affordable,
+//										   it forwards the Write_Data_WB(data will be writen to register) to Read_Data(read data from register) when needed.
+// ForwardC and ForwardD		:  handles brach hazard,
+//											it forward ALU_Result_MEM to Read_data from register if needed, choses the data for comparator to generate 'Zero' for BEQ.
+
+
+module Hazard_Handling_Unit(
 						input	[4:0]			IF_ID_Reg_Rs,
 						input	[4:0]			IF_ID_Reg_Rt,
 						
@@ -31,125 +41,49 @@ module EX_Forward_Unit(
 						output 				ForwardC,
 						output 				ForwardD
 			     );
-/*
-	initial 
-	begin
-		ForwardA_EX <= 2'd0;
-		ForwardB_EX <= 2'd0;
-		Forward_Mem_to_Mem <= 0;
-		PC_Enable 	<=1;
-		IF_ID_Pipeline_Enable <= 1;
-		ID_Control_NOP <= 0;
-		ID_Register_Write_to_Read <= 2'b00;
-	end
 
-   always@(*) begin
-	//// DATA HAZARD
-		if( (EX_MEM_RegWrite == 1) && (EX_MEM_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd == ID_EX_Reg_Rs) )
-			begin
-				ForwardA_EX <= 2'b10;
-			end
-		else if( (MEM_WB_RegWrite == 1) && (MEM_WB_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd != ID_EX_Reg_Rs) && (MEM_WB_Reg_Rd == ID_EX_Reg_Rs) 
-						|| ( (MEM_WB_MemtoReg == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rs) ) )
-			begin
-				ForwardA_EX <= 2'b01;
-			end
-		else
-			begin
-				ForwardA_EX <= 2'b00;
-			end
-
-		if( (EX_MEM_RegWrite == 1) && (EX_MEM_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd == ID_EX_Reg_Rt) )
-			begin
-				ForwardB_EX <= 2'b10;
-			end
-		else if( (MEM_WB_RegWrite == 1) && (MEM_WB_Reg_Rd != 5'd0) && (EX_MEM_Reg_Rd != ID_EX_Reg_Rt) && (MEM_WB_Reg_Rd == ID_EX_Reg_Rt) 
-						|| ( (MEM_WB_MemtoReg == 1) && (ID_EX_RegWrite == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == ID_EX_Reg_Rt) ) )
-			begin
-				ForwardB_EX <= 2'b01;
-			end
-		else
-			begin
-				ForwardB_EX <= 2'b00;
-			end
-
-	//// MEM OT MEM COPY
-	if( (EX_MEM_Reg_Rt == MEM_WB_Reg_Rt) && (MEM_WB_MemtoReg == 1) && (EX_MEM_MemWrite == 1) )
-		begin
-			Forward_Mem_to_Mem <= 1;
-		end
-	else
-		begin
-			Forward_Mem_to_Mem <= 0;
-		end
-
-	//// LOAD-USE DATA HAZARD
-	if( (ID_EX_MemRead == 1) && ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) || (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ) )
-		begin
-			PC_Enable <= 0;
-			IF_ID_Pipeline_Enable <= 0;
-			ID_Control_NOP <= 1;
-		end
-	else
-		begin
-			PC_Enable <= 1;
-			IF_ID_Pipeline_Enable <= 1;
-			ID_Control_NOP <= 0;
-		end
-	
-	if( (MEM_WB_MemtoReg == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == IF_ID_Reg_Rs) )
-		begin
-			ID_Register_Write_to_Read <= 2'b01;
-		end
-	else if ( (MEM_WB_MemtoReg == 1) && (MEM_WB_Reg_Rt != 5'd0) && (MEM_WB_Reg_Rt == IF_ID_Reg_Rt) )
-		begin
-			ID_Register_Write_to_Read <= 2'b10;
-		end
-	else
-		begin
-			ID_Register_Write_to_Read <= 2'b00;
-		end
-	end //always
-*/
-
+				  
 // DATA HAZARD
 wire Data_Hazard_temp_1;
 wire Data_Hazard_temp_2;
-wire Data_Hazard_temp_3;
-assign Data_Hazard_temp_1 = ( EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) );
-assign Data_Hazard_temp_2 = ( MEM_WB_RegWrite & (MEM_WB_Reg_Rd != 5'd0) );
-assign Data_Hazard_temp_3 = ( MEM_WB_MemtoReg & ID_EX_RegWrite & (MEM_WB_Reg_Rt != 5'd0) );
-assign ForwardA_EX = { ( Data_Hazard_temp_1 & (EX_MEM_Reg_Rd == ID_EX_Reg_Rs) ) 
-								,( ( Data_Hazard_temp_2 & (EX_MEM_Reg_Rd != ID_EX_Reg_Rs) & (MEM_WB_Reg_Rd == ID_EX_Reg_Rs) )
+wire Data_Hazard_temp_3;	
+assign Data_Hazard_temp_1 = ( EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) );						  //common logic temp
+assign Data_Hazard_temp_2 = ( MEM_WB_RegWrite & (MEM_WB_Reg_Rd != 5'd0) );						  //common logic temp
+assign Data_Hazard_temp_3 = ( MEM_WB_MemtoReg & ID_EX_RegWrite & (MEM_WB_Reg_Rt != 5'd0) ); //common logic temp
+assign ForwardA_EX = { ( Data_Hazard_temp_1 & (EX_MEM_Reg_Rd == ID_EX_Reg_Rs) ) 	//EX forward
+								,( ( Data_Hazard_temp_2 & (EX_MEM_Reg_Rd != ID_EX_Reg_Rs) & (MEM_WB_Reg_Rd == ID_EX_Reg_Rs) ) //MEM forward
 									| ( Data_Hazard_temp_3 & (MEM_WB_Reg_Rt == ID_EX_Reg_Rs) )
 							)};
-assign ForwardB_EX = { ( Data_Hazard_temp_1 & (EX_MEM_Reg_Rd == ID_EX_Reg_Rt) ) 
-								,( ( Data_Hazard_temp_2 & (EX_MEM_Reg_Rd != ID_EX_Reg_Rt) & (MEM_WB_Reg_Rd == ID_EX_Reg_Rt) )
+assign ForwardB_EX = { ( Data_Hazard_temp_1 & (EX_MEM_Reg_Rd == ID_EX_Reg_Rt) )  //EX forward
+								,( ( Data_Hazard_temp_2 & (EX_MEM_Reg_Rd != ID_EX_Reg_Rt) & (MEM_WB_Reg_Rd == ID_EX_Reg_Rt) ) //MEM forward
 									| ( Data_Hazard_temp_3 & (MEM_WB_Reg_Rt == ID_EX_Reg_Rt) )
 							)};
+	
 	
 // MEM OT MEM COPY
 assign Forward_Mem_to_Mem = ( (EX_MEM_Reg_Rt == MEM_WB_Reg_Rt) & MEM_WB_MemtoReg & EX_MEM_MemWrite );
 	
+	
 // LOAD-USE DATA HAZARD
 assign PC_Enable = !( (ID_EX_MemRead & ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) | (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ))
-								| ( ID_Branch & ID_EX_RegWrite /*& !ID_EX_MEMtoReg*/ & ((ID_EX_Reg_Rd == IF_ID_Reg_Rs)|(ID_EX_Reg_Rd == IF_ID_Reg_Rt)) ) );
-assign IF_ID_Pipeline_Enable = !( (ID_EX_MemRead & ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) | (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ))
-								| ( ID_Branch & ID_EX_RegWrite /*& !ID_EX_MEMtoReg*/ & ((ID_EX_Reg_Rd == IF_ID_Reg_Rs)|(ID_EX_Reg_Rd == IF_ID_Reg_Rt)) ) );
-assign ID_Control_NOP = ( (ID_EX_MemRead & ( (ID_EX_Reg_Rt == IF_ID_Reg_Rs) | (ID_EX_Reg_Rt == IF_ID_Reg_Rt) ))
-								| ( ID_Branch & ID_EX_RegWrite /*& !ID_EX_MEMtoReg*/ & ((ID_EX_Reg_Rd == IF_ID_Reg_Rs)|(ID_EX_Reg_Rd == IF_ID_Reg_Rt)) ) );
+								| ( ID_Branch & ID_EX_RegWrite & ((ID_EX_Reg_Rd == IF_ID_Reg_Rs)|(ID_EX_Reg_Rd == IF_ID_Reg_Rt)) ) );
+assign IF_ID_Pipeline_Enable = PC_Enable;
+assign ID_Control_NOP = !PC_Enable;
+
 wire Load_use_temp_1;
 wire Load_use_temp_2;
-assign Load_use_temp_1 = ( MEM_WB_MemtoReg & (MEM_WB_Reg_Rt != 5'd0) );
-assign Load_use_temp_2 = ( MEM_WB_RegWrite & !MEM_WB_MemtoReg );
+assign Load_use_temp_1 = ( MEM_WB_MemtoReg & (MEM_WB_Reg_Rt != 5'd0) ); //common logic temp
+assign Load_use_temp_2 = ( MEM_WB_RegWrite & !MEM_WB_MemtoReg );			//common logic temp
+
 assign ID_Register_Write_to_Read = {( (Load_use_temp_1 & (MEM_WB_Reg_Rt == IF_ID_Reg_Rt)) | (Load_use_temp_2 & (MEM_WB_Reg_Rd == IF_ID_Reg_Rt)) )
 												,( (Load_use_temp_1 & (MEM_WB_Reg_Rt == IF_ID_Reg_Rs)) | (Load_use_temp_2 & (MEM_WB_Reg_Rd == IF_ID_Reg_Rs)) )};
+	
 	
 // BRANCH HAZARD
 assign ForwardC = ( ID_Branch & EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) & (EX_MEM_Reg_Rd == IF_ID_Reg_Rs) );
 assign ForwardD = ( ID_Branch & EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) & (EX_MEM_Reg_Rd == IF_ID_Reg_Rt) );
 	
-endmodule // EX_Forward_Unit
+endmodule // Hazard_Handling_Unit
 
 
 

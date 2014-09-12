@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// shift the sign extended instruction left by two
 
 module EX_Shift_Left_2(
 		       input [31:0] Sign_Extend_Instruction_EX,

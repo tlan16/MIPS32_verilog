@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// sign exted the immidiate part of instruction
 
 module ID_Sign_Extension(
 		    input [15:0] Instruction_ID,

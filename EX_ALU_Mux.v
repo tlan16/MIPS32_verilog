@@ -1,7 +1,5 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
-
-// condition ? if true : if false
+// EX_ALU_Mux choses what data feed into ALU_Data_2_EX
+// used when doing lw,sw, sign extended offset need to be feeded in, instead of Read_Data_2 from register.
 
 module EX_ALU_Mux(
 		 input [31:0]  Read_Data_2_EX,

@@ -2257,7 +2257,7 @@ Clk => MemtoReg_EX~reg0.CLK
 Clk => RegWrite_EX~reg0.CLK
 
 
-|MIPS32|EX_Forward_Unit:EX_Forward_Unit
+|MIPS32|Hazard_Handling_Unit:Hazard_Handling_Unit
 IF_ID_Reg_Rs[0] => Equal10.IN4
 IF_ID_Reg_Rs[0] => Equal12.IN4
 IF_ID_Reg_Rs[0] => Equal16.IN4

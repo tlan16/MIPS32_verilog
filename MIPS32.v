@@ -299,8 +299,8 @@ module MIPS32(
 		  .Instruction_ID	(Instruction_ID[31:0]),
 		  .Clk		(Clk));
 
-	// EX_Forward_Unit
-	EX_Forward_Unit EX_Forward_Unit(
+	// Hazard_Handling_Unit
+	Hazard_Handling_Unit Hazard_Handling_Unit(
 			// Outputs
 			.ForwardA_EX(ForwardA_EX[1:0]),
 			.ForwardB_EX(ForwardB_EX[1:0]),

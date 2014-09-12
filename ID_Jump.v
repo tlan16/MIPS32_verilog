@@ -1,4 +1,4 @@
-// condition ? if true : if false
+// calculate the jump destination
 
 module ID_Jump(
 		input [31:0]  		Instruction_ID,

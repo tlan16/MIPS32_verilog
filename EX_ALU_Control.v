@@ -1,5 +1,7 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// EX_ALU_Control decideds the operation need to be done is EX_ALU, depending on the opcode within the instruction.
+// R type: and, sub, and, or, slt, mul
+// I type: lw, sw, beq
+// J type: jump and branch are handled in other sub modules
 
 module EX_ALU_Control(
 		      input [5:0] Sign_Extend_Instruction_EX, // Note: You only need 6 bits of this.

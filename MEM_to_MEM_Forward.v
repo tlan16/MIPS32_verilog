@@ -1,3 +1,6 @@
+// when Forward_Mem_to_Mem is high, Write_Data_MEM is fowarded to Write_Data_MUX_MEM.
+// selection signal Forward_Mem_to_Mem is from Hazard handling unit
+
 module MEM_to_MEM_Forward(
 						input [31:0]	   Write_Data_MEM,
 						input [31:0]		Read_Data_WB,

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MIPS32
-Fri Sep 12 02:27:57 2014
+Fri Sep 12 11:38:48 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -101,7 +101,7 @@ applicable agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; MIPS32.sdc    ; OK     ; Fri Sep 12 02:27:56 2014 ;
+; MIPS32.sdc    ; OK     ; Fri Sep 12 11:38:47 2014 ;
 +---------------+--------+--------------------------+
 
 
@@ -2989,7 +2989,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Fri Sep 12 02:27:55 2014
+    Info: Processing started: Fri Sep 12 11:38:47 2014
 Info: Command: quartus_sta MIPS32 -c MIPS32
 Info: qsta_default_script.tcl version: #4
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -3039,12 +3039,12 @@ Info (332115): Path #1: Setup slack is 58.347
     Info (332115):      3.318      3.318  R        clock network delay
     Info (332115):      3.622      0.304     uTco  EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|Instruction_MEM[11]
     Info (332115):      3.622      0.000 FF  CELL  EX_MEM_Pipeline_Stage|Instruction_MEM[11]|regout
-    Info (332115):      4.775      1.153 FF    IC  EX_Forward_Unit|Equal6~0|dataa
-    Info (332115):      5.426      0.651 FF  CELL  EX_Forward_Unit|Equal6~0|combout
-    Info (332115):      5.818      0.392 FF    IC  EX_Forward_Unit|Equal6~2|dataa
-    Info (332115):      6.432      0.614 FF  CELL  EX_Forward_Unit|Equal6~2|combout
-    Info (332115):      6.807      0.375 FF    IC  EX_Forward_Unit|ForwardB_EX[1]~8|datab
-    Info (332115):      7.431      0.624 FF  CELL  EX_Forward_Unit|ForwardB_EX[1]~8|combout
+    Info (332115):      4.775      1.153 FF    IC  Hazard_Handling_Unit|Equal6~0|dataa
+    Info (332115):      5.426      0.651 FF  CELL  Hazard_Handling_Unit|Equal6~0|combout
+    Info (332115):      5.818      0.392 FF    IC  Hazard_Handling_Unit|Equal6~2|dataa
+    Info (332115):      6.432      0.614 FF  CELL  Hazard_Handling_Unit|Equal6~2|combout
+    Info (332115):      6.807      0.375 FF    IC  Hazard_Handling_Unit|ForwardB_EX[1]~8|datab
+    Info (332115):      7.431      0.624 FF  CELL  Hazard_Handling_Unit|ForwardB_EX[1]~8|combout
     Info (332115):      7.843      0.412 FF    IC  EX_ALU_Mux|ALU_Data_2_EX[3]~1|dataa
     Info (332115):      8.490      0.647 FF  CELL  EX_ALU_Mux|ALU_Data_2_EX[3]~1|combout
     Info (332115):      9.667      1.177 FF    IC  EX_ALU_Mux|ALU_Data_2_EX[4]~10|datab
@@ -3343,9 +3343,9 @@ Info (332113): Path #1: slack is 97.778
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 417 megabytes
-    Info: Processing ended: Fri Sep 12 02:27:57 2014
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Fri Sep 12 11:38:48 2014
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

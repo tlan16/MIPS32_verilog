@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// Instruction decode stage to excution stage pipeline, passing data on posedge of globle clock
 
 module ID_EX_Pipeline_Stage(
 

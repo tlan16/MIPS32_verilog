@@ -1,13 +1,12 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
-
-// condition ? if true : if false
+// chose what is next pc, normally pc_plus_4, but brach and jump are handled, and coresponding pc is passed over.
+// PCSrc_MEM trigles the branch response, it is from logic and of zero and ID_Branch
+// Jump_Control_ID trigles the jump response, it is from ID_Control
 
 module IF_PC_Mux(
 		 input [31:0] PC_Plus_4_IF,
 		 input [31:0] Branch_Dest_MEM,
 		 input [31:0] Jump_Dest_ID,
-		 input 		  PCSrc_MEM,
+		 input 		  PCSrc_MEM, // actually ID stage
 		 input 		  Jump_Control_ID,
 		 output [31:0]Next_PC_IF
 		 );

@@ -1,4 +1,4 @@
-// condition ? if true : if false
+// push next_PC_IF to PC_IF on posedge of Clk
 
 module IF_PC_Reg(
 		 input [31:0]Next_PC_IF,
@@ -9,13 +9,10 @@ module IF_PC_Reg(
 		 
    always@(posedge Clk)
 		begin
-
 			if(PC_Enable)
 				begin
 					PC_IF <= Next_PC_IF;
 				end
-
-			//PC_IF <= PC_Enable ? Next_PC_IF : PC_IF;
 		end
 
 endmodule // IF_PC_Reg

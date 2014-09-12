@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// Execution to memory stage pipeline, passing data on posedge of globle clock
 
 module EX_MEM_Pipeline_Stage(
 			     input 	   RegWrite_EX,
@@ -8,8 +7,6 @@ module EX_MEM_Pipeline_Stage(
 			     input 	   Branch_EX,
 			     input 	   MemRead_EX,
 			     input 	   MemWrite_EX,
-		  
-			     //input [31:0]  Branch_Dest_EX,
 
 			     input 	   Zero_EX, 
 			     input [31:0]  ALU_Result_EX,
@@ -25,8 +22,6 @@ module EX_MEM_Pipeline_Stage(
 			     output reg 	   Branch_MEM,
 			     output reg 	   MemRead_MEM,
 			     output reg 	   MemWrite_MEM,
-		  
-			     //output reg [31:0] Branch_Dest_MEM,
 			     
 			     output reg 	   Zero_MEM,
 			     output reg [31:0] ALU_Result_MEM,
@@ -46,8 +41,6 @@ module EX_MEM_Pipeline_Stage(
 		Branch_MEM			<= Branch_EX;
 		MemRead_MEM			<= MemRead_EX;
 		MemWrite_MEM		<= MemWrite_EX;
-		
-		//Branch_Dest_MEM	<= Branch_Dest_EX;
 		
 		Zero_MEM				<= Zero_EX;
 		ALU_Result_MEM		<= ALU_Result_EX;

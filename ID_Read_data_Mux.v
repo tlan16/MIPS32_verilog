@@ -1,4 +1,8 @@
-// condition ? if true : if false
+// Comparator ourputs the equivalent EX_zero signal
+// contains a mux, then a conparator
+// mux chode data from ALU_Result_MEM and read_data from register, then feed output to comparator
+// comparator outputs high when two data are identical
+// selection signal Forward_C_ID and Forward_D_ID are from Hazard handling unit
 
 module ID_Read_data_Mux(
 		       input [31:0]  Read_Data_1_ID,

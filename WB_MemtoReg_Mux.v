@@ -1,7 +1,5 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
-
-// condition ? if true : if false
+// Choses which one of ALU_Result_WB and Read_Data_WB need to be writen back to register
+// selection signe MemtoReg_WB is from ID_Control
 
 module WB_MemtoReg_Mux(
 		       input [31:0]  ALU_Result_WB,

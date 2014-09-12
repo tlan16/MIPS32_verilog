@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// add the pc by digital four
 
 module IF_PC_Add(
 		    input [31:0]  PC_IF,

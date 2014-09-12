@@ -1,4 +1,4 @@
-// condition ? if true : if false
+// Instruction fetch stage to instruction decode stage pipeline, passing data on posedge of globle clock
 
 module IF_ID_Pipeline_Stage(
 			     input [31:0]  Instruction_IF,

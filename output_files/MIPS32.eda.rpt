@@ -1,5 +1,5 @@
 EDA Netlist Writer report for MIPS32
-Fri Sep 12 02:28:00 2014
+Fri Sep 12 11:38:51 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Sep 12 02:28:00 2014 ;
+; EDA Netlist Writer Status ; Successful - Fri Sep 12 11:38:51 2014 ;
 ; Revision Name             ; MIPS32                                ;
 ; Top-level Entity Name     ; MIPS32                                ;
 ; Family                    ; Cyclone II                            ;
@@ -80,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Fri Sep 12 02:27:59 2014
+    Info: Processing started: Fri Sep 12 11:38:50 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off MIPS32 -c MIPS32
 Warning (202000): An incorrect timescale is selected for the Verilog Output (.VO) file of this PLL design. It's required that the timescale should be 1 ps when simulating a PLL design in a third party EDA tool.
 Info (204019): Generated file MIPS32.vo in folder "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 401 megabytes
-    Info: Processing ended: Fri Sep 12 02:28:00 2014
+    Info: Peak virtual memory: 399 megabytes
+    Info: Processing ended: Fri Sep 12 11:38:51 2014
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

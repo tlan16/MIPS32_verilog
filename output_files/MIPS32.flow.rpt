@@ -1,5 +1,5 @@
 Flow report for MIPS32
-Fri Sep 12 02:28:00 2014
+Fri Sep 12 11:38:51 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 12 02:28:00 2014     ;
+; Flow Status                        ; Successful - Fri Sep 12 11:38:51 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/12/2014 02:27:29 ;
+; Start date & time ; 09/12/2014 11:38:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS32              ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                                                                                                                       ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 220314643107714.141045284919516                                                                                                             ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 220314643107714.141048590215060                                                                                                             ; --            ; --          ; --               ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE     ; Speed                                                                                                                                       ; Balanced      ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                                                                          ; --            ; --          ; testbench        ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; On                                                                                                                                          ; --            ; --          ; eda_simulation   ;
@@ -133,12 +133,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 520 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:17     ; 2.0                     ; 703 MB              ; 00:00:28                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 417 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 422 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 396 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:39                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 525 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:17     ; 2.6                     ; 696 MB              ; 00:00:27                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 428 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 422 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 387 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:38                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

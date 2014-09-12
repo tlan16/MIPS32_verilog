@@ -1,11 +1,11 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
-
-// condition ? if true : if false
+// outputs the control signals according to opcode
+// Rtype, lw, sw, beq, nop and jump are handled.
+// A nop is forced regardless opcode, when ID_Control_NOP is high.
+// ID_Control_NOP is from Hazard handling unit.
 
 module ID_Control(
-		  input [5:0] Instruction_ID,
-		  input		  ID_Control_NOP,
+		  input [5:0] 		 Instruction_ID,
+		  input		  		 ID_Control_NOP,
 		  output reg       RegWrite_ID,
 		  output reg       MemtoReg_ID,
 		  

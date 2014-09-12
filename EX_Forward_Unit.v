@@ -1,4 +1,4 @@
-module EX_Forward_Unit(
+module Hazard_Handling_Unit(
 						input	[4:0]			IF_ID_Reg_Rs,
 						input	[4:0]			IF_ID_Reg_Rt,
 						
@@ -149,7 +149,7 @@ assign ID_Register_Write_to_Read = {( (Load_use_temp_1 & (MEM_WB_Reg_Rt == IF_ID
 assign ForwardC = ( ID_Branch & EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) & (EX_MEM_Reg_Rd == IF_ID_Reg_Rs) );
 assign ForwardD = ( ID_Branch & EX_MEM_RegWrite & (EX_MEM_Reg_Rd != 5'd0) & (EX_MEM_Reg_Rd == IF_ID_Reg_Rt) );
 	
-endmodule // EX_Forward_Unit
+endmodule // Hazard_Handling_Unit
 
 
 

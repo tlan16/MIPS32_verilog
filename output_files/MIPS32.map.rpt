@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS32
-Fri Sep 12 02:27:36 2014
+Fri Sep 12 11:38:28 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 12 02:27:36 2014     ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 12 11:38:28 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
@@ -218,11 +218,11 @@ applicable agreement for further details.
 ; register_file.list                                                     ; yes             ; User Unspecified File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/register_file.list                              ;         ;
 ; instruction_memory.list                                                ; yes             ; User Unspecified File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/instruction_memory.list                         ;         ;
 ; data_memory.list                                                       ; yes             ; User Unspecified File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/data_memory.list                                ;         ;
-; EX_Forward_Unit.v                                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v                               ;         ;
 ; EX_Forward_A.v                                                         ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_A.v                                  ;         ;
 ; MEM_to_MEM_Forward.v                                                   ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/MEM_to_MEM_Forward.v                            ;         ;
 ; ID_Read_data_Mux.v                                                     ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Read_data_Mux.v                              ;         ;
 ; ID_Jump.v                                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/ID_Jump.v                                       ;         ;
+; Hazard_Handling_Unit.v                                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/Hazard_Handling_Unit.v                          ;         ;
 ; sld_signaltap.vhd                                                      ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_signaltap.vhd                                ;         ;
 ; sld_ela_control.vhd                                                    ; yes             ; Encrypted Megafunction                                ; d:/altera/12.0/quartus/libraries/megafunctions/sld_ela_control.vhd                              ;         ;
 ; lpm_shiftreg.tdf                                                       ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                 ;         ;
@@ -272,10 +272,11 @@ applicable agreement for further details.
 ; db/altsyncram_boi1.tdf                                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_boi1.tdf                          ;         ;
 ; db/mips32.ram0_id_registers_ada8f4a0.hdl.mif                           ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_id_registers_ada8f4a0.hdl.mif    ;         ;
 ; db/altsyncram_lfh1.tdf                                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_lfh1.tdf                          ;         ;
-; db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif                        ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif ;         ;
+; db/mips32.ram0_mem_data_memory_3250c012.hdl.mif                        ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mips32.ram0_mem_data_memory_3250c012.hdl.mif ;         ;
 ; lpm_mult.tdf                                                           ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/lpm_mult.tdf                                     ;         ;
 ; multcore.inc                                                           ; yes             ; Megafunction                                          ; d:/altera/12.0/quartus/libraries/megafunctions/multcore.inc                                     ;         ;
 ; db/mult_i1t.tdf                                                        ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mult_i1t.tdf                                 ;         ;
+; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v      ; yes             ; User Verilog HDL File                                 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/EX_Forward_Unit.v                               ;         ;
 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_pqg1.tdf ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/altsyncram_pqg1.tdf                          ;         ;
 ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mult_l8t.tdf        ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/mult_l8t.tdf                                 ;         ;
 +------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------+---------+
@@ -325,9 +326,9 @@ applicable agreement for further details.
 ;    |EX_ALU_Mux:EX_ALU_Mux|                                                                           ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_ALU_Mux:EX_ALU_Mux                                                                                                                                                                                                                                                                         ;              ;
 ;    |EX_Dest_Mux:EX_Dest_Mux|                                                                         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Dest_Mux:EX_Dest_Mux                                                                                                                                                                                                                                                                       ;              ;
 ;    |EX_Forward_A:EX_Forward_A|                                                                       ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_A:EX_Forward_A                                                                                                                                                                                                                                                                     ;              ;
-;    |EX_Forward_Unit:EX_Forward_Unit|                                                                 ; 73 (73)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_Forward_Unit:EX_Forward_Unit                                                                                                                                                                                                                                                               ;              ;
 ;    |EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage|                                                     ; 0 (0)             ; 82 (82)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_MEM_Pipeline_Stage:EX_MEM_Pipeline_Stage                                                                                                                                                                                                                                                   ;              ;
 ;    |EX_PC_Add:EX_PC_Add|                                                                             ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|EX_PC_Add:EX_PC_Add                                                                                                                                                                                                                                                                           ;              ;
+;    |Hazard_Handling_Unit:Hazard_Handling_Unit|                                                       ; 73 (73)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|Hazard_Handling_Unit:Hazard_Handling_Unit                                                                                                                                                                                                                                                     ;              ;
 ;    |ID_Control:ID_Control|                                                                           ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Control:ID_Control                                                                                                                                                                                                                                                                         ;              ;
 ;    |ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage|                                                       ; 1 (1)             ; 92 (92)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage                                                                                                                                                                                                                                                     ;              ;
 ;    |ID_Read_data_Mux:ID_Read_data_Mux|                                                               ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS32|ID_Read_data_Mux:ID_Read_data_Mux                                                                                                                                                                                                                                                             ;              ;
@@ -1349,7 +1350,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1434,7 +1435,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Full Version
-    Info: Processing started: Fri Sep 12 02:27:29 2014
+    Info: Processing started: Fri Sep 12 11:38:21 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS32 -c MIPS32
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wb_memtoreg_mux.v
@@ -1481,8 +1482,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file ex_alu_
     Info (12023): Found entity 1: EX_ALU_Control
 Info (12021): Found 1 design units, including 1 entities, in source file ex_alu.v
     Info (12023): Found entity 1: EX_ALU
-Info (12021): Found 1 design units, including 1 entities, in source file ex_forward_unit.v
-    Info (12023): Found entity 1: EX_Forward_Unit
 Info (12021): Found 1 design units, including 1 entities, in source file ex_forward_a.v
     Info (12023): Found entity 1: EX_Forward_A
 Info (12021): Found 1 design units, including 1 entities, in source file ex_forward_b.v
@@ -1495,27 +1494,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file id_jump
     Info (12023): Found entity 1: ID_Jump
 Info (12021): Found 1 design units, including 1 entities, in source file simulation/modelsim/testbench.v
     Info (12023): Found entity 1: testbench
+Info (12021): Found 1 design units, including 1 entities, in source file hazard_handling_unit.v
+    Info (12023): Found entity 1: Hazard_Handling_Unit
 Warning (10236): Verilog HDL Implicit Net warning at MIPS_Top.v(26): created implicit net for "Clk"
 Info (12127): Elaborating entity "MIPS32" for the top level hierarchy
 Info (12128): Elaborating entity "IF_PC_Mux" for hierarchy "IF_PC_Mux:IF_PC_Mux"
 Info (12128): Elaborating entity "IF_PC_Reg" for hierarchy "IF_PC_Reg:IF_PC_Reg"
 Info (12128): Elaborating entity "IF_PC_Add" for hierarchy "IF_PC_Add:IF_PC_Add"
 Info (12128): Elaborating entity "IF_Instruction_Memory" for hierarchy "IF_Instruction_Memory:IF_Instruction_Memory"
-Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(13): number of words (104) in memory file does not match the number of elements in the address range [0:1023]
-Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10850): Verilog HDL warning at IF_Instruction_Memory.v(16): number of words (104) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10030): Net "Instruction_Memory.data_a" at IF_Instruction_Memory.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Instruction_Memory.waddr_a" at IF_Instruction_Memory.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Instruction_Memory.we_a" at IF_Instruction_Memory.v(13) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "IF_ID_Pipeline_Stage" for hierarchy "IF_ID_Pipeline_Stage:IF_ID_Pipeline_Stage"
 Info (12128): Elaborating entity "ID_Jump" for hierarchy "ID_Jump:ID_Jump"
 Info (12128): Elaborating entity "ID_Read_data_Mux" for hierarchy "ID_Read_data_Mux:ID_Read_data_Mux"
 Info (12128): Elaborating entity "ID_Registers" for hierarchy "ID_Registers:ID_Registers"
-Warning (10850): Verilog HDL warning at ID_Registers.v(18): number of words (33) in memory file does not match the number of elements in the address range [0:31]
-Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(35): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(59): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10850): Verilog HDL warning at ID_Registers.v(22): number of words (33) in memory file does not match the number of elements in the address range [0:31]
+Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(37): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ID_Registers.v(56): variable "Write_Data_WB" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info (12128): Elaborating entity "ID_Sign_Extension" for hierarchy "ID_Sign_Extension:ID_Sign_Extension"
 Info (12128): Elaborating entity "ID_Control" for hierarchy "ID_Control:ID_Control"
 Info (12128): Elaborating entity "ID_EX_Pipeline_Stage" for hierarchy "ID_EX_Pipeline_Stage:ID_EX_Pipeline_Stage"
-Info (12128): Elaborating entity "EX_Forward_Unit" for hierarchy "EX_Forward_Unit:EX_Forward_Unit"
+Info (12128): Elaborating entity "Hazard_Handling_Unit" for hierarchy "Hazard_Handling_Unit:Hazard_Handling_Unit"
 Info (12128): Elaborating entity "EX_Forward_A" for hierarchy "EX_Forward_A:EX_Forward_A"
 Info (12128): Elaborating entity "EX_Shift_Left_2" for hierarchy "EX_Shift_Left_2:EX_Shift_Left_2"
 Info (12128): Elaborating entity "EX_PC_Add" for hierarchy "EX_PC_Add:EX_PC_Add"
@@ -1527,39 +1528,39 @@ Info (12128): Elaborating entity "EX_MEM_Pipeline_Stage" for hierarchy "EX_MEM_P
 Info (12128): Elaborating entity "MEM_to_MEM_Forward" for hierarchy "MEM_to_MEM_Forward:MEM_to_MEM_Forward"
 Info (12128): Elaborating entity "MEM_Branch_AND" for hierarchy "MEM_Branch_AND:MEM_Branch_AND"
 Info (12128): Elaborating entity "MEM_Data_Memory" for hierarchy "MEM_Data_Memory:MEM_Data_Memory"
-Warning (10850): Verilog HDL warning at MEM_Data_Memory.v(14): number of words (450) in memory file does not match the number of elements in the address range [0:511]
-Info (10041): Inferred latch for "Read_Data_MEM[0]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[1]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[2]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[3]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[4]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[5]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[6]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[7]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[8]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[9]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[10]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[11]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[12]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[13]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[14]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[15]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[16]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[17]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[18]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[19]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[20]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[21]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[22]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[23]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[24]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[25]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[26]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[27]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[28]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[29]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[30]" at MEM_Data_Memory.v(18)
-Info (10041): Inferred latch for "Read_Data_MEM[31]" at MEM_Data_Memory.v(18)
+Warning (10850): Verilog HDL warning at MEM_Data_Memory.v(16): number of words (450) in memory file does not match the number of elements in the address range [0:511]
+Info (10041): Inferred latch for "Read_Data_MEM[0]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[1]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[2]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[3]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[4]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[5]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[6]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[7]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[8]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[9]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[10]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[11]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[12]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[13]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[14]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[15]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[16]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[17]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[18]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[19]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[20]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[21]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[22]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[23]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[24]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[25]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[26]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[27]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[28]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[29]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[30]" at MEM_Data_Memory.v(19)
+Info (10041): Inferred latch for "Read_Data_MEM[31]" at MEM_Data_Memory.v(19)
 Info (12128): Elaborating entity "MEM_WB_Pipeline_Stage" for hierarchy "MEM_WB_Pipeline_Stage:MEM_WB_Pipeline_Stage"
 Info (12128): Elaborating entity "WB_MemtoReg_Mux" for hierarchy "WB_MemtoReg_Mux:WB_MemtoReg_Mux"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qp14.tdf
@@ -1678,8 +1679,6 @@ Info (12133): Instantiated megafunction "MEM_Data_Memory:MEM_Data_Memory|altsync
     Info (12134): Parameter "INIT_FILE" = "db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lfh1.tdf
     Info (12023): Found entity 1: altsyncram_lfh1
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Frank-Desktop/Documents/MIPS32_verilog/db/MIPS32.ram0_MEM_Data_Memory_3250c012.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (12130): Elaborated megafunction instantiation "EX_ALU:EX_ALU|lpm_mult:Mult0"
 Info (12133): Instantiated megafunction "EX_ALU:EX_ALU|lpm_mult:Mult0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "32"
@@ -1711,11 +1710,11 @@ Info (21057): Implemented 3020 device resources after synthesis - the final reso
     Info (21061): Implemented 2527 logic cells
     Info (21064): Implemented 129 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 520 megabytes
-    Info: Processing ended: Fri Sep 12 02:27:36 2014
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 525 megabytes
+    Info: Processing ended: Fri Sep 12 11:38:28 2014
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

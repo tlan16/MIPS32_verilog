@@ -1,8 +1,7 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// perform an logig and of branch_ID and zero_ID
 
 module MEM_Branch_AND(
-		      input Branch_MEM,
+		      input Branch_MEM, // actually is ID stage signal
 		      input  Zero_MEM,
 		      output PCSrc_MEM
 		      );

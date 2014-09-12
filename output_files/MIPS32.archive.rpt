@@ -1,5 +1,5 @@
 Archive Project report for MIPS32
-Fri Sep 12 02:46:30 2014
+Fri Sep 12 11:44:37 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Fri Sep 12 02:46:30 2014 ;
+; Archive Project Status ; Successful - Fri Sep 12 11:44:37 2014 ;
 ; Revision Name          ; MIPS32                                ;
 ; Top-level Entity Name  ; MIPS32                                ;
 ; Family                 ; Cyclone II                            ;
@@ -50,15 +50,15 @@ Info: File Set 'Source control' contains:
     Info: Automatically detected source files
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/Users/Frank-Desktop/Documents/MIPS32_verilog/my_final08.qar'
+Info: Generated archive 'C:/Users/Frank-Desktop/Documents/MIPS32_verilog/my_final09.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'MIPS32.archive.rpt'
 Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 299 megabytes
-    Info: Processing ended: Fri Sep 12 02:46:30 2014
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Fri Sep 12 11:44:37 2014
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -83,6 +83,7 @@ Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
 ; EX_MEM_Pipeline_Stage.v                           ;
 ; EX_PC_Add.v                                       ;
 ; EX_Shift_Left_2.v                                 ;
+; Hazard_Handling_Unit.v                            ;
 ; ID_Control.v                                      ;
 ; ID_EX_Pipeline_Stage.v                            ;
 ; ID_Jump.v                                         ;

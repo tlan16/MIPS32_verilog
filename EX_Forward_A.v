@@ -1,3 +1,7 @@
+// A mux choses data been feed into Read_Data_1 on EX_ALU from Read_Data_1_EX form ID/EX pipeline, or Write_Data_WB from write back stage, or ALU_Result_MEM form MEM stage
+// Selection signel ForwardA_EX is feeded in from Hazard handling unit
+// This module alse been used as another instance for data output to EX_ALU_Mux
+
 module EX_Forward_A(
 						input [31:0]	   Read_Data_1_EX,
 						input [31:0]		Write_Data_WB,

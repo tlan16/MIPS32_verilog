@@ -1,4 +1,8 @@
-// condition ? if true : if false
+// Main register, 32 bit wide, 32 bit deep
+// A  logic 1 of ID_Register_Write_to_Read will triger the write_Data_WB been forwarded to Read_Data,
+// when next instruction need the result from last instruction
+// Trigler condition: ID_Register_Write_to_Read.
+// Trigler controled by Hazard_Handling_Unit
 
 module ID_Registers(
 		    input [4:0]   Read_Address_1_ID,
@@ -20,9 +24,7 @@ module ID_Registers(
 		Read_Data_2_ID <= 32'd0;
 	end
 	
-	//assign Read_Data_1_ID = (Read_Address_1_ID==5'd0) ? 32'd0 : (ID_Register_Write_to_Read[0] ? Write_Data_WB : Register_File[Read_Address_1_ID]);
-	//assign Read_Data_2_ID = (Read_Address_2_ID==5'd0) ? 32'd0 : (ID_Register_Write_to_Read[1] ? Write_Data_WB : Register_File[Read_Address_2_ID]);
-	
+	// Forwarding Write_Data_WB to Read_Data_1_ID
 	always@(Read_Address_1_ID or Register_File[Read_Address_1_ID] or ID_Register_Write_to_Read) begin
 		if(Read_Address_1_ID==5'd0)
 			begin
@@ -38,14 +40,10 @@ module ID_Registers(
 					begin
 						Read_Data_1_ID <= Register_File[Read_Address_1_ID];
 					end
-//				case(ID_Register_Write_to_Read)
-//					2'b00: Read_Data_1_ID <= Register_File[Read_Address_1_ID];
-//					2'b01: Read_Data_1_ID <= Write_Data_WB;
-//					default: Read_Data_1_ID <= Register_File[Read_Address_1_ID];
-//				endcase
-			end
+			end //else
 	end
 	
+	// Forwarding Write_Data_WB to Read_Data_2_ID
 	always@(Read_Address_2_ID or Register_File[Read_Address_2_ID] or ID_Register_Write_to_Read) begin
 		if(Read_Address_2_ID==5'd0)
 			begin
@@ -53,7 +51,6 @@ module ID_Registers(
 			end
 		else 
 			begin
-				//Read_Data_2_ID <= ID_Register_Write_to_Read[1] ? Write_Data_WB : Register_File[Read_Address_2_ID];
 				if(ID_Register_Write_to_Read == 2'b10)
 					begin
 						Read_Data_2_ID <= Write_Data_WB;
@@ -62,19 +59,13 @@ module ID_Registers(
 					begin
 						Read_Data_2_ID <= Register_File[Read_Address_2_ID];
 					end
-//				case(ID_Register_Write_to_Read)
-//					2'b00: Read_Data_2_ID <= Register_File[Read_Address_2_ID];
-//					2'b10: Read_Data_2_ID <= Write_Data_WB;
-//					default: Read_Data_2_ID <= Register_File[Read_Address_2_ID];
-//				endcase
-			end
+			end //else
 	end
 
 	always@(posedge Clk) begin
 		if( RegWrite_WB & (Write_Register_WB != 5'd0) ) begin
 			Register_File[Write_Register_WB] <= Write_Data_WB;
 		end //if
-		//Register_File[Write_Register_WB] <= ( RegWrite_WB & (Write_Register_WB!=4'd0)) ? Write_Data_WB : Register_File[Write_Register_WB];
 	end //always
 
 endmodule // ID_Registers

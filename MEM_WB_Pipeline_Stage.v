@@ -1,5 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
+// memtory stage to write back stage pipeline, passing data on posedge of globle clock
 
 module MEM_WB_Pipeline_Stage(
 			     input 	  Clk,
