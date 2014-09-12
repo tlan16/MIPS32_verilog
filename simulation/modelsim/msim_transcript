@@ -1,13 +1,13 @@
-# Reading D:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading C:/altera/12.0/modelsim_ase/tcl/vsim/pref.tcl 
 # do MIPS32_run_msim_gate_verilog.do 
 # if {[file exists gate_work]} {
 # 	vdel -lib gate_work -all
 # }
 # vlib gate_work
 # vmap work gate_work
-# Copying d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying C:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied d:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied C:\altera\12.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
 # vlog -vlog01compat -work work +incdir+. {MIPS32.vo}
@@ -17,7 +17,7 @@
 # Top level modules:
 # 	MIPS32
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim {C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module testbench
 # 
@@ -31,8 +31,8 @@
 # Loading cycloneii_ver.cycloneii_ram_block
 # Loading cycloneii_ver.cycloneii_ram_register
 # Loading cycloneii_ver.cycloneii_ram_pulse_generator
-# Loading cycloneii_ver.cycloneii_mac_out
 # Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.cycloneii_mac_out
 # Loading cycloneii_ver.cycloneii_lcell_ff
 # Loading cycloneii_ver.cycloneii_jtag
 # Loading cycloneii_ver.cycloneii_clkctrl
@@ -46,20 +46,19 @@
 # Loading cycloneii_ver.cycloneii_mac_data_reg
 # Loading cycloneii_ver.cycloneii_mac_sign_reg
 # Loading cycloneii_ver.cycloneii_mac_mult_internal
-# ** Warning: (vsim-3017) C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Too few port connections. Expected 36, found 32.
+# ** Warning: (vsim-3017) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(45): [TFMPC] - Too few port connections. Expected 10, found 6.
 #         Region: /testbench/DUT
-# ** Warning: (vsim-3722) C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
-# ** Warning: (vsim-3722) C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
-# ** Warning: (vsim-3722) C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
-# ** Warning: (vsim-3722) C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(70): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(45): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(45): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(45): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(45): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
-# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
-# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
-# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
-# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
-# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
-# ** Warning: (vsim-8607) d:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
-# WARNING: No extended dataflow license exists
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
 # 
 # add wave *
 # view structure
@@ -67,6 +66,6 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Break in Module testbench at C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 88
-# Simulation Breakpoint: Break in Module testbench at C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 88
+# Break in Module testbench at C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 63
+# Simulation Breakpoint: Break in Module testbench at C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 63
 # MACRO ./MIPS32_run_msim_gate_verilog.do PAUSED at line 17

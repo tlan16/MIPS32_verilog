@@ -7,7 +7,7 @@ vmap work gate_work
 
 vlog -vlog01compat -work work +incdir+. {MIPS32.vo}
 
-vlog -vlog01compat -work work +incdir+C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim {C:/Users/Frank-Desktop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim {C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v}
 
 vsim -t 1ps -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  testbench
 

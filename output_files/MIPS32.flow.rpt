@@ -1,5 +1,5 @@
 Flow report for MIPS32
-Fri Sep 12 11:38:51 2014
+Fri Sep 12 12:33:58 2014
 Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version
 
 
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 12 11:38:51 2014     ;
+; Flow Status                        ; Successful - Fri Sep 12 12:33:58 2014     ;
 ; Quartus II 64-Bit Version          ; 12.0 Build 178 05/31/2012 SJ Full Version ;
 ; Revision Name                      ; MIPS32                                    ;
 ; Top-level Entity Name              ; MIPS32                                    ;
 ; Family                             ; Cyclone II                                ;
-; Device                             ; EP2C70F896I8                              ;
+; Device                             ; EP2C70F672C6                              ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 2,076 / 68,416 ( 3 % )                    ;
-;     Total combinational functions  ; 1,609 / 68,416 ( 2 % )                    ;
+; Total logic elements               ; 2,091 / 68,416 ( 3 % )                    ;
+;     Total combinational functions  ; 1,625 / 68,416 ( 2 % )                    ;
 ;     Dedicated logic registers      ; 1,257 / 68,416 ( 2 % )                    ;
 ; Total registers                    ; 1257                                      ;
-; Total pins                         ; 353 / 622 ( 57 % )                        ;
+; Total pins                         ; 130 / 422 ( 31 % )                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 22,656 / 1,152,000 ( 2 % )                ;
 ; Embedded Multiplier 9-bit elements ; 6 / 300 ( 2 % )                           ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/12/2014 11:38:22 ;
+; Start date & time ; 09/12/2014 12:33:16 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS32              ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                                                                                                                       ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 220314643107714.141048590215060                                                                                                             ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 145170143279.141048919606468                                                                                                                ; --            ; --          ; --               ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE     ; Speed                                                                                                                                       ; Balanced      ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                                                                          ; --            ; --          ; testbench        ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; On                                                                                                                                          ; --            ; --          ; eda_simulation   ;
@@ -87,8 +87,8 @@ applicable agreement for further details.
 ; EDA_TIME_SCALE                       ; 1 ns                                                                                                                                        ; --            ; --          ; eda_simulation   ;
 ; ENABLE_SIGNALTAP                     ; On                                                                                                                                          ; --            ; --          ; --               ;
 ; FITTER_EFFORT                        ; Standard Fit                                                                                                                                ; Auto Fit      ; --          ; --               ;
-; MAX_CORE_JUNCTION_TEMP               ; 125                                                                                                                                         ; --            ; --          ; --               ;
-; MIN_CORE_JUNCTION_TEMP               ; -40                                                                                                                                         ; --            ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                                                                                                          ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                                                                                                           ; --            ; --          ; --               ;
 ; PARTITION_COLOR                      ; 16764057                                                                                                                                    ; --            ; --          ; Top              ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                                                                                                                       ; --            ; --          ; Top              ;
 ; PARTITION_NETLIST_TYPE               ; SOURCE                                                                                                                                      ; --            ; --          ; Top              ;
@@ -133,12 +133,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 525 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:17     ; 2.6                     ; 696 MB              ; 00:00:27                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 428 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 422 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 387 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:38                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 519 MB              ; 00:00:09                           ;
+; Fitter                    ; 00:00:23     ; 3.0                     ; 702 MB              ; 00:00:38                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 427 MB              ; 00:00:02                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 414 MB              ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 377 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:41     ; --                      ; --                  ; 00:00:54                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -147,11 +147,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; Frank-Desktop-N  ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; Frank-Laptop-PC  ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
