@@ -1,5 +1,5 @@
 
-`timescale 1ns / 1ns
+`timescale 1ns / 10ps
 module testbench  ; 
  
   wire    ForwardC   ; 
@@ -50,15 +50,15 @@ module testbench  ;
 // Start Time = 0 ns, End Time = 5 us, Period = 100 ns
   initial
   begin
-	 repeat(10000)
+	 repeat(1000000000)
 		begin
 			Clk = 1'b1;
-			#50 Clk  = 1'b0  ;
-			#50;
+			#20 Clk  = 1'b0  ;
+			#20;
 		end
 // dumped values till 5 ns
   end
 
   initial
-	#200000 $stop;
+	#4200000000 $stop;
 endmodule

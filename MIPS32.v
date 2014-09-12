@@ -17,8 +17,8 @@ module MIPS32(
 		
 	  // probed output
 	  //output [31:0]   PC_Plus_4_IF,
-	  output [31:0]   Instruction_IF,
-	  output [31:0] 	Next_PC_IF,
+	  //output [31:0]   Instruction_IF,
+	  //output [31:0] 	Next_PC_IF,
 	  //output				PC_Enable,
 	  
 	  //output [31:0]   Instruction_ID,
@@ -46,7 +46,7 @@ module MIPS32(
 	  //output				ForwardD,
 	  //output [31:0]	ALU_Data_2_EX,
 	  //output [3:0]		ALU_Control_EX,
-	  output [31:0]	ALU_Result_EX,
+	  //output [31:0]	ALU_Result_EX,
 	  //output [31:0]	Branch_Dest_EX,
 	  //output [4:0]		Write_Register_EX,
 	  //output 			Zero_EX,
@@ -55,8 +55,8 @@ module MIPS32(
 	  //output [31:0]	Write_Data_MEM,
 	  //output [31:0]	Read_Data_MEM,
 	  //output				PCSrc_MEM,
-	  output 			MemWrite_MEM,
-	  output [31:0]	Write_Data_MUX_MEM
+	  output 			MemWrite_MEM
+	  //output [31:0]	Write_Data_MUX_MEM
 	  
 	  //output [31:0]	Read_Data_WB,
 	  //output [31:0]	ALU_Result_WB
@@ -67,8 +67,8 @@ module MIPS32(
 //wire Clk;
 //assign Clk = CLOCK_50;
    // IF Origin Variables:
-		// probed wire [31:0] 	Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
-		// probed wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
+		wire [31:0] 	Instruction_IF;		// From IF_Instruction_Memory of IF_Instruction_Memory.v
+		wire [31:0] 	Next_PC_IF;		// From IF_PC_Mux of IF_PC_Mux.v
 		wire [31:0] 	PC_Plus_4_IF;		// From IF_PC_Add of IF_PC_Add.v
 		wire [31:0]		PC_IF;			// From IF_PC_Reg of IF_PC_Reg.v
 		wire				PC_Enable;
@@ -107,7 +107,7 @@ module MIPS32(
 		wire				ALUSrc_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire [3:0]		ALU_Control_EX;		// From EX_ALU_Control of EX_ALU_Control.v
 		wire [31:0]		ALU_Data_2_EX;		// From EX_ALU_Mux of EX_ALU_Mux.v
-		// probed wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
+		wire [31:0]		ALU_Result_EX;		// From EX_ALU of EX_ALU.v   
 		wire [31:0]		Branch_Dest_EX;		// From EX_PC_Add of EX_PC_Add.v
 		wire				Branch_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
 		wire [31:0] 	Instruction_EX;		// From ID_EX_Pipeline_Stage of ID_EX_Pipeline_Stage.v
@@ -125,7 +125,7 @@ module MIPS32(
 		wire				Zero_EX;		// From EX_ALU of EX_ALU.v
 
    // MEM Origin Variables:
-		// probed wire [31:0]		Write_Data_MUX_MEM;
+		wire [31:0]		Write_Data_MUX_MEM;
 		wire [31:0]		Instruction_MEM;
 		wire [31:0]		ALU_Result_MEM;		// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v
 		wire [31:0]		Branch_Dest_MEM;	// From EX_MEM_Pipeline_Stage of EX_MEM_Pipeline_Stage.v

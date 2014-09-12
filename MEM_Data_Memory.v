@@ -11,12 +11,12 @@ module MEM_Data_Memory(
 			     input 	   Clk
 			     );
 	
-	reg [31:0]Data_Memory[0:511];
+	reg [31:0]Data_Memory[0:1023];
 	initial begin
 		$readmemh("data_memory.list", Data_Memory);
 	end
 	
-assign Read_Data_MEM = MemRead_MEM ? ( (ALU_Result_MEM == 0 || ALU_Result_MEM > 32'd511) ? 32'd0 : Data_Memory[ALU_Result_MEM]) : Read_Data_MEM;
+assign Read_Data_MEM = MemRead_MEM ? ( (ALU_Result_MEM == 0 || ALU_Result_MEM > 32'd1023) ? 32'd0 : Data_Memory[ALU_Result_MEM]) : Read_Data_MEM;
 
 	always@(posedge Clk) 
 		begin

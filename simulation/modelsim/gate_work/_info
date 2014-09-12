@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\Frank-Laptop\Documents\MIPS32_verilog\simulation\modelsim
 vMIPS32
-Ii@BlKWNGY?d:A1AUcRF9;2
+I:kdEcK^V0e@CW8KP@^;dL3
 V@mf7l@HHTL?cP>WmkCdSQ1
 Z1 dC:\Users\Frank-Laptop\Documents\MIPS32_verilog\simulation\modelsim
-w1410489029
+w1410497015
 8MIPS32.vo
 FMIPS32.vo
 L0 31
@@ -16,19 +16,19 @@ r1
 31
 Z3 o-vlog01compat -work work -O0
 n@m@i@p@s32
-!s100 H^1YC4ZFIX;YKPVOk`mh`0
+!s100 ?2>Y>8>>Qb3nZVlPCXU6E0
 !s85 0
-!s108 1410489037.221000
+!s108 1410497029.744000
 !s107 MIPS32.vo|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|MIPS32.vo|
 !s101 -O0
 !s92 -vlog01compat -work work +incdir+. -O0
 vtestbench
-!s100 jl4^BaXjgKY3QBVPh@F]E0
-I?W6N]o:gIabl3OOQ0Z??n1
+!s100 RdWQP<T]e[dgML>z[o9[g0
+InbH69DW<HI;AfX<G8;5?U3
 VhGfW:390DM[oDMzegDH9`2
 R1
-w1410488985
+w1410496971
 8C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v
 FC:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v
 L0 3
@@ -36,7 +36,7 @@ R2
 r1
 !s85 0
 31
-!s108 1410489037.881000
+!s108 1410497030.364000
 !s107 C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim|C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v|
 !s101 -O0

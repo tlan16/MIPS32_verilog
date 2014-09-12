@@ -20,6 +20,7 @@
 # vlog -vlog01compat -work work +incdir+C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim {C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v}
 # Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
 # -- Compiling module testbench
+# ** Warning: C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v(63): (vlog-2597) '4200000000' is being treated as 32-bit signed integer and will overflow.
 # 
 # Top level modules:
 # 	testbench
@@ -59,6 +60,7 @@
 # ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
 # ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
 # ** Warning: (vsim-8607) C:/altera/12.0/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
+# WARNING: No extended dataflow license exists
 # 
 # add wave *
 # view structure
@@ -66,6 +68,7 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Break in Module testbench at C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 63
-# Simulation Breakpoint: Break in Module testbench at C:/Users/Frank-Laptop/Documents/MIPS32_verilog/simulation/modelsim/testbench.v line 63
-# MACRO ./MIPS32_run_msim_gate_verilog.do PAUSED at line 17
+add wave  \
+sim:/testbench/DUT/Next_PC_IF
+# Break key hit 
+# Simulation stop requested.
