@@ -1,5 +1,5 @@
-// ForwardA_EX and ForwardB_EX:  handles data hazard, they forwards ALU_Result_MEM to mux before ALU if needed, which controls the data been feeded into ALU.
-// Forward_Mem_to_Mem			:  handles mem to mem copy hazard, it forwards Read_Data_WB to Write_Data_MUX_MEM if needed, which controls data been writen to mem.
+// ForwardA_EX and ForwardB_EX:  handles data hazard, they forwards ALU_Result_MEM to mux before ALU if needed, which controls the data been feed into ALU.
+// Forward_Mem_to_Mem			:  handles mem to mem copy hazard, it forwards Read_Data_WB to Write_Data_MUX_MEM if needed, which controls data been written to mem.
 // PC_Enable, IF_ID_Pipeline_Enable and ID_Control_NOP:
 //											these signals will stall PC and IF/ID pipeline, and simutaneousl force a nop is ID_Control signals
 // ID_Register_Write_to_Read  :  handles when the clock delay due to write register is not affordable,
@@ -9,38 +9,38 @@
 
 
 module Hazard_Handling_Unit(
-						input	[4:0]			IF_ID_Reg_Rs,
-						input	[4:0]			IF_ID_Reg_Rt,
-						
-						input					ID_Branch,
-						input					ID_EX_MemRead,
-						input					ID_EX_RegWrite,
-						input					ID_EX_MEMtoReg,
-						input [4:0]			ID_EX_Reg_Rs,
-						input [4:0]			ID_EX_Reg_Rt,
-						input [4:0]			ID_EX_Reg_Rd,
-						
-						input 	   		EX_MEM_RegWrite,
-						input					EX_MEM_MemWrite,
-						input [4:0]			EX_MEM_Reg_Rs,
-						input [4:0]	   	EX_MEM_Reg_Rt,
-						input [4:0]	   	EX_MEM_Reg_Rd,
-						
-						input					MEM_WB_MemtoReg,
-						input					MEM_WB_RegWrite,
-						input [4:0]			MEM_WB_Reg_Rd,
-						input [4:0]			MEM_WB_Reg_Rt,
-						
-						output  [1:0]		ForwardA_EX,
-						output  [1:0]		ForwardB_EX,
-						output  				Forward_Mem_to_Mem,
-						output 				PC_Enable,
-						output 				IF_ID_Pipeline_Enable,
-						output 				ID_Control_NOP,
-						output  [1:0]		ID_Register_Write_to_Read,
-						output 				ForwardC,
-						output 				ForwardD
-			     );
+	input	[4:0]			IF_ID_Reg_Rs,
+	input	[4:0]			IF_ID_Reg_Rt,
+	
+	input					ID_Branch,
+	input					ID_EX_MemRead,
+	input					ID_EX_RegWrite,
+	input					ID_EX_MEMtoReg,
+	input [4:0]			ID_EX_Reg_Rs,
+	input [4:0]			ID_EX_Reg_Rt,
+	input [4:0]			ID_EX_Reg_Rd,
+	
+	input 	   		EX_MEM_RegWrite,
+	input					EX_MEM_MemWrite,
+	input [4:0]			EX_MEM_Reg_Rs,
+	input [4:0]	   	EX_MEM_Reg_Rt,
+	input [4:0]	   	EX_MEM_Reg_Rd,
+	
+	input					MEM_WB_MemtoReg,
+	input					MEM_WB_RegWrite,
+	input [4:0]			MEM_WB_Reg_Rd,
+	input [4:0]			MEM_WB_Reg_Rt,
+	
+	output  [1:0]		ForwardA_EX,
+	output  [1:0]		ForwardB_EX,
+	output  				Forward_Mem_to_Mem,
+	output 				PC_Enable,
+	output 				IF_ID_Pipeline_Enable,
+	output 				ID_Control_NOP,
+	output  [1:0]		ID_Register_Write_to_Read,
+	output 				ForwardC,
+	output 				ForwardD
+  );
 
 				  
 // DATA HAZARD

@@ -7,6 +7,8 @@ MIPS32.export_db_report_files
 MIPS32.fit.qmsg
 MIPS32.fnsim.qmsg
 MIPS32.map.qmsg
+MIPS32.merge.qmsg
+MIPS32.restore.qmsg
 MIPS32.rpp.qmsg
 MIPS32.sim.qmsg
 MIPS32.sim.vwf

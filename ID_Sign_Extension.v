@@ -1,4 +1,4 @@
-// sign exted the immidiate part of instruction
+// ID_Sign_Extension sign extend the immediate part of Instruction_ID
 
 module ID_Sign_Extension(
 		    input [15:0] Instruction_ID,

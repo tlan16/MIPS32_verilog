@@ -1,4 +1,4 @@
-// Execution to memory stage pipeline, passing data on posedge of globle clock
+// Execution to memory stage pipeline, passing data on positive edge of global clock
 
 module EX_MEM_Pipeline_Stage(
 			     input 	   RegWrite_EX,

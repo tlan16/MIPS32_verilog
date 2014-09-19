@@ -1,7 +1,8 @@
-// ALU do the folowing operation
-// addition, subtraction, bitwise logic and, bitwise logic or, set less then by comparasion, multiplication
-// signed calulation is considerded and handled.
-// sign mismatch for set less than is considerded and handled.
+// ALU do the following operation
+// addition, subtraction, bitwise logic and, bitwise logic or, set less than by comparison, multiplication
+// signed calculation is considered and handled.
+// sign mismatch for set less than is considered and handled.
+
 
 module EX_ALU(
 	      input signed [31:0]  Read_Data_1_EX,

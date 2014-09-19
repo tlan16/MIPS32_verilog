@@ -1,7 +1,4 @@
-// Comments and desciption of modules have been deliberately ommitted.
-// It is up to the student to document and describe the system.
-
-// condition ? if true : if false
+// EX_Dest_Mux determines which register will be written to. 
 
 module EX_Dest_Mux(
 		 input [20:0] Instruction_EX,

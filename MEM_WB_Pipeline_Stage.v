@@ -1,4 +1,4 @@
-// memtory stage to write back stage pipeline, passing data on posedge of globle clock
+// memory stage to write back stage pipeline, passing data on positive edge of global clock
 
 module MEM_WB_Pipeline_Stage(
 			     input 	  Clk,

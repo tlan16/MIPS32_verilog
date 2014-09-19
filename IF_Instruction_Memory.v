@@ -1,7 +1,10 @@
-// Main instruction memory
-// output zero (flush) when eighter IF_Flush or Jump_Control_ID is highz0
-// Jump_Control_ID is from ID_Control
-// IF_Flush is the PC_Src in ID stage
+// IF_Instruction_Memory  is the main instruction memory, which is 32 bits wide, and have a depth of 1024.
+// Once the PC_IF eceeds the depth of instruction memory, it will output zero.
+// A logic high of IF_Flush triggers the flush response, the output will be zero.
+// IF_Flush is from Mem_Brach_AND, note Mem_Brach_AND is been relocated from MEM stage to // ID stage.
+// A logic high of Jump_Control_ID triggers the flush response, the output will be zero.
+//  Jump_Control_ID is from ID_Control
+
 
 module IF_Instruction_Memory(
 		 input [31:0]PC_IF,
@@ -16,12 +19,7 @@ module IF_Instruction_Memory(
 			$readmemh("instruction_memory.list", Instruction_Memory);
 			//Instruction_IF <= 32'd0;
 		 end
-/*
-		 always@(PC_IF) begin
-			if(PC_IF>1023)		Instruction_IF <= 32'd0;
-			else					Instruction_IF <= Instruction_Memory[PC_IF];
-		 end
-*/
+		 
 		 assign Instruction_IF = ((PC_IF>32'd1023) | IF_Flush | Jump_Control_ID) ? 32'd0 : Instruction_Memory[PC_IF];
    
 endmodule // IF_Instruction_Memory

@@ -1,4 +1,4 @@
-// calculate the jump destination
+// ID_Jump  calculates the jump destination based on Instruction_ID and PC_Plus_4_ID.
 
 module ID_Jump(
 		input [31:0]  		Instruction_ID,

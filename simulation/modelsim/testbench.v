@@ -1,5 +1,5 @@
 
-`timescale 1ns / 1ns
+`timescale 1ns / 10ps
 module testbench  ; 
  
   wire    ForwardC   ; 
@@ -34,40 +34,15 @@ module testbench  ;
   wire    ALUSrc_ID   ; 
   wire    MemWrite_ID   ; 
   wire  [31:0]  PC_Plus_4_IF   ; 
+  wire	 MemWrite_MEM ;
   MIPS32  
    DUT  ( 
-       .ForwardC (ForwardC ) ,
-      .ID_Register_Write_to_Read (ID_Register_Write_to_Read ) ,
-      .PCSrc_MEM (PCSrc_MEM ) ,
-      .Branch_Dest_EX (Branch_Dest_EX ) ,
-      .ForwardD (ForwardD ) ,
-      .PC_Enable (PC_Enable ) ,
-      .ForwardA_EX (ForwardA_EX ) ,
-      .Branch_ID (Branch_ID ) ,
-      .Write_Data_MUX_MEM (Write_Data_MUX_MEM ) ,
-      .Zero_EX (Zero_EX ) ,
-      .MemtoReg_ID (MemtoReg_ID ) ,
-      .RegDst_ID (RegDst_ID ) ,
-      .ALUOp_ID (ALUOp_ID ) ,
-      .Next_PC_IF (Next_PC_IF ) ,
-      .MemRead_ID (MemRead_ID ) ,
-      .ALU_Result_WB (ALU_Result_WB ) ,
-      .ALU_Data_2_EX (ALU_Data_2_EX ) ,
-      .Comparetor_ID (Comparetor_ID ) ,
-      .Instruction_IF (Instruction_IF ) ,
-      .ID_Control_NOP (ID_Control_NOP ) ,
-      .Clk (Clk ) ,
-      .Read_Data_MEM (Read_Data_MEM ) ,
-      .Write_Register_EX (Write_Register_EX ) ,
-      .Forward_Mem_to_Mem (Forward_Mem_to_Mem ) ,
-      .ForwardB_EX (ForwardB_EX ) ,
-      .ALU_Result_EX (ALU_Result_EX ) ,
-      .Sign_Extend_Instruction_ID (Sign_Extend_Instruction_ID ) ,
-      .RegWrite_ID (RegWrite_ID ) ,
-      .ALU_Control_EX (ALU_Control_EX ) ,
-      .ALUSrc_ID (ALUSrc_ID ) ,
-      .MemWrite_ID (MemWrite_ID ) ,
-      .PC_Plus_4_IF (PC_Plus_4_IF ) ); 
+			.MemWrite_MEM(MemWrite_MEM),
+			.Write_Data_MUX_MEM (Write_Data_MUX_MEM ) ,
+			.Next_PC_IF (Next_PC_IF ) ,
+			.Instruction_IF (Instruction_IF ) ,
+			.Clk (Clk ) ,
+			.ALU_Result_EX (ALU_Result_EX ) ); 
 
 
 
@@ -75,15 +50,15 @@ module testbench  ;
 // Start Time = 0 ns, End Time = 5 us, Period = 100 ns
   initial
   begin
-	 repeat(10000)
+	 repeat(1000000000)
 		begin
 			Clk = 1'b1;
-			#50 Clk  = 1'b0  ;
-			#50;
+			#20 Clk  = 1'b0  ;
+			#20;
 		end
 // dumped values till 5 ns
   end
 
   initial
-	#200000 $stop;
+	#4200000000 $stop;
 endmodule

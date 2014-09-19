@@ -1,4 +1,4 @@
-// Instruction decode stage to excution stage pipeline, passing data on posedge of globle clock
+// Instruction decode stage to execution stage pipeline, passing data on positive edge of global clock
 
 module ID_EX_Pipeline_Stage(
 
