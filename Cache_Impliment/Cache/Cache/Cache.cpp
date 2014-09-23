@@ -29,8 +29,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	const int Address_Size = 32; // Number of bits used in the memory address
 	const int Column_Bits = 3; // Number of bits used to dereference a coloumn in SDRAM
 	const int Words_Per_Bus_Transfer = 2; // Number of words transfered per CAS.
-	const int CAS = 24; // CAS time in clock cycles
-	const int RAS = 72; // RAS time in clock cycles
+	const int CAS = 10; // CAS time in clock cycles
+	const int RAS = 10; // RAS time in clock cycles
 
 	// Redifined Input Aruguments
 	const int Data_Size = Data_Size_kB * 1024 * 8; // bits
@@ -55,9 +55,9 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	cerr << "Address_Bits_Per_Block: " << Address_Bits_Per_Block << "bit" << endl;
 	cerr << "=====================================" << endl;
 
-	int** Valid = new int*[Ways];	// Array to store Valid Bits
+	boolean** Valid = new boolean*[Ways];	// Array to store Valid Bits
 	for (int i = 0; i < Ways; i++)
-		Valid[i] = new int[Lines];
+		Valid[i] = new boolean[Lines];
 
 	int** Tag = new int*[Ways];		// Array to store Tag bits.
 	for (int i = 0; i < Ways; i++)
@@ -66,6 +66,16 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	int** LRU = new int*[Ways];	// Array to store LRU Bits
 	for (int i = 0; i < Ways; i++)
 		LRU[i] = new int[Lines];
+	for (int i = 0; i < Lines; i++)
+	{
+		for (int j = 0; j < Ways; j++)
+			LRU[j][i] = j;
+	}
+
+	int** LRU_Previous = new int*[Ways];	// Array to store LRU Bits
+	for (int i = 0; i < Ways; i++)
+		LRU_Previous[i] = new int[Lines];
+
 
 	// Declare any required variables in this section
 	int time = 0;
@@ -87,6 +97,21 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		int Start_Pointer_B = 200000;
 		int Start_Pointer_C = 300000;
 		const int DRAM_Row_Size = 10240;
+		boolean hit_A = false;
+		boolean hit_B = false;
+		boolean hit_C = false;
+		int hit_A_counter = 0;
+		int hit_B_counter = 0;
+		int hit_C_counter = 0;
+		boolean Previous_RAM_Row_Valid_A = false;
+		boolean Previous_RAM_Row_Valid_B = false;
+		boolean Previous_RAM_Row_Valid_C = false;
+		int Current_RAM_Row_A = 0;
+		int Previous_RAM_Row_A = 0;
+		int Current_RAM_Row_B = 0;
+		int Previous_RAM_Row_B = 0;
+		int Current_RAM_Row_C = 0;
+		int Previous_RAM_Row_C = 0;
 
 		time += 10; // Add delay that exists before entering main loop
 		for (int i = 0; i < Matrix_Size; i++)
@@ -122,35 +147,27 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 					int Index_C = (Read_Address_C / (Block_size / 8)) % Sets;
 
 					// Deference Index for each way and check each tag and valid bit.
-					boolean hit_A = false;
-					boolean hit_B = false;
-					boolean hit_C = false;
-					int hit_A_counter=0;
-					int hit_B_counter=0;
-					int hit_C_counter=0;
-					boolean Previous_RAM_Row_Valid_A = false;
-					int Current_RAM_Row_A;
-					int Previous_RAM_Row_A;
 					for (int l = 0; l<Ways; l = l + 1) // Check each way
 					{
 						if (Valid[l][Index_A] & (Tag[l][Index_A] == Read_Tag_A))
-						{
 							hit_A = true;
-						}
-						if (Valid[l][Index_B] & (Tag[l][Index_B] == Read_Tag_A))
-						{
+						else if (!Valid[l][Index_A] | (Tag[l][Index_A] != Read_Tag_A))
+							hit_A = false;
+						if (Valid[l][Index_B] & (Tag[l][Index_B] == Read_Tag_B))
 							hit_B = true;
-						}
+						else if (!Valid[l][Index_B] | (Tag[l][Index_B] != Read_Tag_B))
+							hit_B = false;
 						if (Valid[l][Index_C] & (Tag[l][Index_C] == Write_Tag_C))
-						{
 							hit_C = true;
-						}
+						else if (!Valid[l][Index_C] | (Tag[l][Index_C] != Write_Tag_C))
+							hit_C = false;
 					}
 
 					if (hit_A)
 					{
-						time += 10;// If hit, add hit time
+						time += Hit_Time;// If hit, add hit time
 						hit_A_counter++;
+						cerr << "A Hit! " << "hit_A_counter: " << hit_A_counter << endl;
 					}
 					else
 					{
@@ -159,44 +176,119 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 						Current_RAM_Row_A = Read_Address_A / DRAM_Row_Size;
 						if (Previous_RAM_Row_Valid_A & (Current_RAM_Row_A == Previous_RAM_Row_A) )
 						{
-							time += 10; // Caculate number of CAS delays needed.
+							time += CAS; // Caculate number of CAS delays needed.
+							cerr << "A Miss! " << "CAS Only" << endl;
 						}
 						else // Need RAS and CAS
 						{
 							Previous_RAM_Row_A = Current_RAM_Row_A; // Update RAM row
-							time += 10; // Calculate RAS and CAS delays needed.
+							time += (CAS+RAS); // Calculate RAS and CAS delays needed.
+							cerr << "A Miss! " << "CAS & RAS" << endl;
 						}
 						Previous_RAM_Row_Valid_A = true; // On power up, a RAS is always needed.
 
 						// Update Cache with new data
 						int Update_Way = LRU[Ways - 1][Index_A];// Choose your way strategy (random,LRU, ~LRU)
+						cerr << "Update_Way: " << Update_Way << endl;
 
 						Valid[Update_Way][Index_A] = true; // Write to the way you chose in previous line
 						Tag[Update_Way][Index_A] = Read_Tag_A; // Write to the way you chose in previous line
 
-						for (int i = 1; i < Ways; i++)	// Update LRU order
-						{
-							LRU[i][Index_A] = LRU[i - 1][Index_A];
-							LRU[0][Index_A] = Update_Way;
-						}
+						cerr << "LRU[" << Index_A << "] :";
+						for (int i = 0; i < Ways; i++)
+							cerr << " " << LRU[i][Index_A] << " ";
+						cerr << endl;
 
+						if (LRU[0][Index_A] != Update_Way)
+						{
+							for (int i = 0; i < Ways; i++) {
+								LRU_Previous[i][Index_A] = LRU[i][Index_A];
+							}
+							for (int i = 0; i < Ways; i++)	// Update LRU order
+							{
+								if (!i)
+									LRU[i][Index_A] = Update_Way;
+								else if ( (LRU_Previous[i][Index_A] != Update_Way) | (Update_Way==(Ways-1)) )
+									LRU[i][Index_A] = LRU_Previous[i - 1][Index_A];
+								else
+									LRU[i][Index_A] = LRU_Previous[i][Index_A];
+
+							}
+						}
+						cerr << "LRU[" << Index_A << "] :";
+						for (int i = 0; i < Ways;i++)
+							cerr << " " << LRU[i][Index_A] << " ";
+						cerr << endl;
 					}
+
 					if (hit_B)
 					{
-						time += 10;// If hit, add hit time
+						time += Hit_Time;// If hit, add hit time
 						hit_B_counter++;
+						cerr << "B Hit! " << "hit_B_counter: " << hit_B_counter << endl;
+					}
+					else
+					{
+						// If miss calculate miss time.
+						// Calculate RAM row.
+						Current_RAM_Row_B = Read_Address_B / DRAM_Row_Size;
+						if (Previous_RAM_Row_Valid_B & (Current_RAM_Row_B == Previous_RAM_Row_B))
+						{
+							time += CAS; // Caculate number of CAS delays needed.
+							cerr << "B Miss! " << "CAS Only" << endl;
+						}
+						else // Need RAS and CAS
+						{
+							Previous_RAM_Row_B = Current_RAM_Row_B; // Update RAM row
+							time += (CAS+RAS); // Calculate RAS and CAS delays needed.
+							cerr << "B Miss! " << "CAS & RAS" << endl;
+						}
+						Previous_RAM_Row_Valid_B = true; // On power up, a RAS is always needed.
+
+						// Update Cache with new data
+						int Update_Way = LRU[Ways - 1][Index_B];// Choose your way strategy (random,LRU, ~LRU)
+						cerr << "Update_Way: " << Update_Way << endl;
+
+						Valid[Update_Way][Index_B] = true; // Write to the way you chose in previous line
+						Tag[Update_Way][Index_B] = Read_Tag_B; // Write to the way you chose in previous line
+
+						cerr << "LRU[" << Index_B << "] :";
+						for (int i = 0; i < Ways; i++)
+							cerr << " " << LRU[i][Index_B] << " ";
+						cerr << endl;
+
+						if (LRU[0][Index_B] != Update_Way)
+						{
+							for (int i = 0; i < Ways; i++) {
+								LRU_Previous[i][Index_B] = LRU[i][Index_B];
+							}
+							for (int i = 0; i < Ways; i++)	// Update LRU order
+							{
+								if (!i)
+									LRU[i][Index_B] = Update_Way;
+								else if ((LRU_Previous[i][Index_B] != Update_Way) | (Update_Way == (Ways - 1)))
+									LRU[i][Index_B] = LRU_Previous[i - 1][Index_B];
+								else
+									LRU[i][Index_B] = LRU_Previous[i][Index_B];
+
+							}
+						}
+						cerr << "LRU[" << Index_B << "] :";
+						for (int i = 0; i < Ways; i++)
+							cerr << " " << LRU[i][Index_B] << " ";
+						cerr << endl;
 					}
 					if (hit_C)
 					{
-						time += 10;// If hit, add hit time
-						hit_C_counter++;
+						time += Hit_Time;// If hit, add hit time
+						hit_A_counter++;
+						cerr << "C Hit! " << "hit_C_counter: " << hit_C_counter << endl;
 					}
 
 				}
-				cerr << endl;
+				cerr << "------------------------------------------" << endl;
 			}
-			cerr << endl;
-			cerr << endl;
+			cerr << "================================================" << endl;
 		}
 	}
 
@@ -208,7 +300,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 {
 
 	// Ways, Data_Size_kB, Words_Per_Bock, Hit_Time
-	cache_simulator(4, 4, 1, 1);
+	cache_simulator(4, 4, 1, 10);
 	/*
 	cache_simulator(1, 32, 2, 2);
 	cache_simulator(1, 512, 2, 3);
