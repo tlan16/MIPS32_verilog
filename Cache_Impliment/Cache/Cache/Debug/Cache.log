@@ -1,12 +1,18 @@
-﻿Build started 23/09/2014 1:52:24 PM.
+﻿Build started 28/09/2014 7:42:23 PM.
      1>Project "C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Cache\Cache.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Cache.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cache.cpp
          Cache.cpp
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(13): warning C4005: '_WIN32_WINNT' : macro redefinition
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(14): warning C4005: '_WIN32_WINNT' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\shared\sdkddkver.h(200) : see previous definition of '_WIN32_WINNT'
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(42): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
      1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(43): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(44): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(159): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(162): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(166): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(194): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(243): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(313): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
        Link:
          D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.lib" /MACHINE:X86 Debug\Cache.obj
          Debug\stdafx.obj
@@ -15,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.79
+Time Elapsed 00:00:01.06
