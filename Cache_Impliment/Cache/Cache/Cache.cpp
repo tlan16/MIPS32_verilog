@@ -81,7 +81,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	// Declare any required variables in this section
 	unsigned long long int time = 0;
 	unsigned long long int instruction_counter = 0;
-	int Matrix_Size_fixed = 3;
+	int Matrix_Size_fixed = 4;
 	ofstream Result_File("Cache_Sim.csv", ios::app);
 	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
 	Result_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
@@ -116,7 +116,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int C_RAS_total = 0;
 	unsigned long long int C_CAS_total = 0;
 
-	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode?Matrix_Size_fixed:256); Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode?Matrix_Size_fixed:100); Matrix_Size++) // Step through all matrix sizes
 	//for (int Matrix_Size = Matrix_Size_fixed; Matrix_Size <= Matrix_Size_fixed; Matrix_Size++) // Step through all matrix sizes
 	{
 		// Initialize Cache as being empty
@@ -154,6 +154,9 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		unsigned long long int Previous_RAM_Row_B = 0;
 		unsigned long long int Current_RAM_Row_C = 0;
 		unsigned long long int Previous_RAM_Row_C = 0;
+		int Update_Way = 0;
+		boolean LRU_Enable = false;
+		boolean Random_Ways = true;
 
 		time += 10; // Add delay that exists before entering main loop
 		for (unsigned long int i = 0; i < Matrix_Size; i++)
@@ -235,21 +238,25 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 						Previous_RAM_Row_Valid_A = true; // On power up, a RAS is always needed.
 
 						// Update Cache with new data
-						int Update_Way = LRU[Ways - 1][Index_A];// Choose your way strategy (random,LRU, ~LRU)
+						
+						if (LRU_Enable)
+							Update_Way = LRU[Ways - 1][Index_A];// Choose your way strategy (random,LRU, ~LRU)
+						if (Random_Ways)
+							Update_Way = rand() % Ways; // range 0 to Ways
 						if (Debug_Mode)
 							cout << "Update_Way: " << Update_Way << endl;
 
 						Valid[Update_Way][Index_A] = true; // Write to the way you chose in previous line
 						Tag[Update_Way][Index_A] = Read_Tag_A; // Write to the way you chose in previous line
 
-						if (Debug_Mode)
+						if (Debug_Mode & LRU_Enable)
 						{
 							cout << "LRU[" << Index_A << "] :";
 							for (int i = 0; i < Ways; i++)
 								cout << " " << LRU[i][Index_A] << " ";
 							cout << endl;
 						}
-						if (LRU[0][Index_A] != Update_Way)
+						if ( (LRU[0][Index_A] != Update_Way) & LRU_Enable)
 						{
 							for (int i = 0; i < Ways; i++) {
 								LRU_Previous[i][Index_A] = LRU[i][Index_A];
@@ -265,8 +272,9 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 
 							}
 						}
-						if (Debug_Mode)
+						if (Debug_Mode  & LRU_Enable)
 						{
+							if (LRU)
 							cout << "LRU[" << Index_A << "] :";
 							for (int i = 0; i < Ways; i++)
 								cout << " " << LRU[i][Index_A] << " ";
@@ -305,21 +313,24 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 						Previous_RAM_Row_Valid_B = true; // On power up, a RAS is always needed.
 
 						// Update Cache with new data
-						int Update_Way = LRU[Ways - 1][Index_B];// Choose your way strategy (random,LRU, ~LRU)
+						if (LRU_Enable)
+							Update_Way = LRU[Ways - 1][Index_B];// Choose your way strategy (random,LRU, ~LRU)
+						if (Random_Ways)
+							Update_Way = rand() % Ways; // range 0 to Ways
 						if (Debug_Mode)
 							cout << "Update_Way: " << Update_Way << endl;
 
 						Valid[Update_Way][Index_B] = true; // Write to the way you chose in previous line
 						Tag[Update_Way][Index_B] = Read_Tag_B; // Write to the way you chose in previous line
 
-						if (Debug_Mode)
+						if (Debug_Mode & LRU_Enable)
 						{
 							cout << "LRU[" << Index_B << "] :";
 							for (int i = 0; i < Ways; i++)
 								cout << " " << LRU[i][Index_B] << " ";
 							cout << endl;
 						}
-						if (LRU[0][Index_B] != Update_Way)
+						if ((LRU[0][Index_B] != Update_Way)  & LRU_Enable)
 						{
 							for (int i = 0; i < Ways; i++) {
 								LRU_Previous[i][Index_B] = LRU[i][Index_B];
@@ -335,7 +346,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 
 							}
 						}
-						if (Debug_Mode)
+						if (Debug_Mode & LRU_Enable)
 						{
 							cout << "LRU[" << Index_B << "] :";
 							for (int i = 0; i < Ways; i++)
@@ -444,6 +455,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 		cache_simulator(4, 4, 1, 10, Debug_Mode);
 	else
 	{
+		
 		cache_simulator(1, 8, 2, 2, Debug_Mode);
 		cache_simulator(1, 32, 2, 2, Debug_Mode);
 		cache_simulator(1, 512, 2, 3, Debug_Mode);
@@ -451,7 +463,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 		cache_simulator(1, 8, 8, 1, Debug_Mode);
 		cache_simulator(1, 32, 8, 2, Debug_Mode);
 		cache_simulator(1, 512, 8, 3, Debug_Mode);
-
+		
 		cache_simulator(4, 8, 2, 1, Debug_Mode);
 		cache_simulator(4, 32, 2, 2, Debug_Mode);
 		cache_simulator(4, 512, 2, 3, Debug_Mode);
