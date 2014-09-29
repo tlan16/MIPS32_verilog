@@ -116,7 +116,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int C_RAS_total = 0;
 	unsigned long long int C_CAS_total = 0;
 
-	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode?Matrix_Size_fixed:100); Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode?Matrix_Size_fixed:256); Matrix_Size++) // Step through all matrix sizes
 	//for (int Matrix_Size = Matrix_Size_fixed; Matrix_Size <= Matrix_Size_fixed; Matrix_Size++) // Step through all matrix sizes
 	{
 		// Initialize Cache as being empty
