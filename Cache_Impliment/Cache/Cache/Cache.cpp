@@ -81,7 +81,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	// Declare any required variables in this section
 	unsigned long long int time = 0;
 	unsigned long long int instruction_counter = 0;
-	int Matrix_Size_fixed = 4;
+	int Matrix_Size_fixed = 3;
+	int Matrix_Size_max = 100;
 	ofstream Result_File("Cache_Sim.csv", ios::app);
 	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
 	Result_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
@@ -116,7 +117,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int C_RAS_total = 0;
 	unsigned long long int C_CAS_total = 0;
 
-	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode?Matrix_Size_fixed:256); Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode ? Matrix_Size_fixed : Matrix_Size_max); Matrix_Size++) // Step through all matrix sizes
 	//for (int Matrix_Size = Matrix_Size_fixed; Matrix_Size <= Matrix_Size_fixed; Matrix_Size++) // Step through all matrix sizes
 	{
 		// Initialize Cache as being empty
@@ -413,7 +414,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 					<< C_CAS_total << "," << C_RAS_total << ","
 					<< endl;
 
-		if (Matrix_Size == 256)
+		if (Matrix_Size == Matrix_Size_max)
 		{
 			cout << endl;
 			cout << "Total:"
@@ -452,7 +453,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 
 	// Ways, Data_Size_kB, Words_Per_Bock, Hit_Time
 	if (Debug_Mode)
-		cache_simulator(4, 4, 1, 10, Debug_Mode);
+		cache_simulator(1, 8, 2, 10, Debug_Mode);
 	else
 	{
 		
