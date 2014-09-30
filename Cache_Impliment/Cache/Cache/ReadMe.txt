@@ -25,6 +25,19 @@ Cache.cpp
     This is the main application source file.
 
 /////////////////////////////////////////////////////////////////////////////
+AppWizard has created the following resources:
+
+Cache.rc
+    This is a listing of all of the Microsoft Windows resources that the
+    program uses.  It includes the icons, bitmaps, and cursors that are stored
+    in the RES subdirectory.  This file can be directly edited in Microsoft
+    Visual C++.
+
+Resource.h
+    This is the standard header file, which defines new resource IDs.
+    Microsoft Visual C++ reads and updates this file.
+
+/////////////////////////////////////////////////////////////////////////////
 Other standard files:
 
 StdAfx.h, StdAfx.cpp
