@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Manchun", "Manchun\Manchun.vcxproj", "{363F1501-335D-4DFB-A108-A562A5C354C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{363F1501-335D-4DFB-A108-A562A5C354C8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{363F1501-335D-4DFB-A108-A562A5C354C8}.Debug|Win32.Build.0 = Debug|Win32
+		{363F1501-335D-4DFB-A108-A562A5C354C8}.Release|Win32.ActiveCfg = Release|Win32
+		{363F1501-335D-4DFB-A108-A562A5C354C8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

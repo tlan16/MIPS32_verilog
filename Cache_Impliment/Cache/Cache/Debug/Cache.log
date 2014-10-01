@@ -1,21 +1,21 @@
-﻿Build started 30/09/2014 9:06:12 PM.
-     1>Project "C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Cache\Cache.vcxproj" on node 2 (Build target(s)).
+﻿Build started 1/10/2014 12:19:02 PM.
+     1>Project "C:\Users\Frank-Laptop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Cache\Cache.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Cache.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cache.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Cache.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cache.cpp
          Cache.cpp
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(16): warning C4005: '_WIN32_WINNT' : macro redefinition
+     1>c:\users\frank-laptop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(16): warning C4005: '_WIN32_WINNT' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\shared\sdkddkver.h(200) : see previous definition of '_WIN32_WINNT'
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(45): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(46): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(265): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(314): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
+     1>c:\users\frank-laptop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(45): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\frank-laptop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(46): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\frank-laptop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(261): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
+     1>c:\users\frank-laptop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(310): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
        Link:
-         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Program Files\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.lib" /MACHINE:X86 Debug\Cache.res
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Frank-Laptop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\Frank-Laptop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Frank-Laptop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.lib" /MACHINE:X86 Debug\Cache.res
          Debug\Cache.obj
          Debug\stdafx.obj
-         Cache.vcxproj -> C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.exe
-     1>Done Building Project "C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Cache\Cache.vcxproj" (Build target(s)).
+         Cache.vcxproj -> C:\Users\Frank-Laptop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.exe
+     1>Done Building Project "C:\Users\Frank-Laptop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Cache\Cache.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.54
+Time Elapsed 00:00:02.99

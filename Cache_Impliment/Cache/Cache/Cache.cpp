@@ -84,7 +84,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int time = 0;
 	unsigned long long int instruction_counter = 0;
 	int Matrix_Size_fixed = 3;
-	int Matrix_Size_max = 256;
+	int Matrix_Size_max = 50;
 	ofstream Result_File("Cache_Sim.csv", ios::app);
 	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
 	Result_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
@@ -180,9 +180,9 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 					time += 10;
 
 					// Calculate Read Address for Matrix A[i][k]
-					Read_Address_A = (Start_Pointer_A + k + i*Matrix_Size) << 2;// Calculate next lw address for matrix A
-					Read_Address_B = (Start_Pointer_B + k*Matrix_Size + j) << 2;// Calculate next lw address for matrix B
-					Read_Address_C = (Start_Pointer_C + j + i*Matrix_Size) << 2;// Calculate next lw address for matrix C
+					Read_Address_A = Start_Pointer_A + ((k + i*Matrix_Size) << 2);// Calculate next lw address for matrix A
+					Read_Address_B = Start_Pointer_B + ((k*Matrix_Size + j) << 2);// Calculate next lw address for matrix B
+					Read_Address_C = Start_Pointer_C + ((j + i*Matrix_Size) << 2);// Calculate next lw address for matrix C
 
 					if (Debug_Mode)
 						cout << "A: " << Read_Address_A << ", Tag: " << Read_Address_A / ((Block_size / 8) * Sets) << ", Index: " << (Read_Address_A / (Block_size / 8)) % Sets
@@ -201,25 +201,21 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 					Index_C = (Read_Address_C / (Block_size / 8)) % Sets;
 
 					// Deference Index for each way and check each tag and valid bit.
+					hit_A = false;
 					for (int l = 0; l<Ways; l = l + 1) // Check each way
 					{
 						if (Valid[l][Index_A] & (Tag[l][Index_A] == Read_Tag_A))
 						{
 							hit_A = true;
-							break;
-						}
-						else
-							hit_A = false;
+						}	
 					}
+					hit_B = false;
 					for (int l = 0; l < Ways; l = l + 1) // Check each way
 					{
 						if (Valid[l][Index_B] & (Tag[l][Index_B] == Read_Tag_B))
 						{
 							hit_B = true;
-							break;
-						}
-						else
-							hit_B = false;
+						}	
 					}
 					hit_C = false;
 
