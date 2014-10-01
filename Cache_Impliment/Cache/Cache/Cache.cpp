@@ -21,7 +21,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 {
 	boolean no_display = true;
 	int Matrix_Size_fixed = 3;
-	int Matrix_Size_max = 256;
+	int Matrix_Size_max = 100;
 
 	// Print input auguments
 	cout << "Data_Size: " << Data_Size_kB << "kB" << endl;
@@ -358,10 +358,10 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		A_CAS_total += A_CAS_counter;
 		A_RAS_total += A_RAS_counter;
 		B_hit_total += hit_B_counter;
-		B_CAS_total += A_CAS_counter;
-		B_RAS_total += A_RAS_counter;
-		C_CAS_total += A_CAS_counter;
-		C_RAS_total += A_RAS_counter;
+		B_CAS_total += B_CAS_counter;
+		B_RAS_total += B_RAS_counter;
+		C_CAS_total += C_CAS_counter;
+		C_RAS_total += C_RAS_counter;
 
 		if (!no_display)
 			cout << "Matrix_Size: " << Matrix_Size
