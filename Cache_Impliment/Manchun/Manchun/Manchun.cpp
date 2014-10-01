@@ -6,8 +6,17 @@
 // diverging from the structure presented below.
 
 
+#include "stdafx.h"
+#include "Manchun.h"
+#include <stdio.h>
 #include <iostream>
+#include <sstream>
 #include <fstream>
+#include <bitset>
+#include <iomanip>
+#define _WIN32_WINNT 0x0602
+#include <windows.h>
+using namespace std;
 
 using namespace std;
 
@@ -78,7 +87,7 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 	int total_AB_count = 0;
 
 	// Variable for debugging
-	bool address_check = false;
+	bool address_check = 0;
 
 	// Output result to excel
 	ofstream Result_File("Cache_Sim.csv", ios::app);
@@ -108,7 +117,7 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 		<< endl;
 
 	// Loop for whole calculation
-	for (int Matrix_Size = 2; Matrix_Size <= 255; Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size =2; Matrix_Size <= 50; Matrix_Size++) // Step through all matrix sizes
 	{
 
 		// Initialize Cache as being empty
@@ -220,7 +229,8 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 
 						// Update Cache with new data
 						// Update_Way was initialized to 0, way 0 would be updated first
-						// cerr << "Update_Way" << Update_Way << " Index_A" << Index_A << endl;
+						if (address_check)
+							cerr << "Update_Way" << Update_Way << " Index_A" << Index_A << endl;
 						Valid[Update_Way][Index_A] = true; // Write to the way you chose in previous line
 						Tag[Update_Way][Index_A] = Read_Tag_A; // Write to the way you chose in previous line
 						if (Update_Way < Ways - 1){
@@ -231,13 +241,19 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 
 
 					// Repeat for B; B[k][j]
-					Read_Address_B = (Start_Pointer_B + j + k*Matrix_Size); // Calculate Next LW address for matrix B
-
+					Read_Address_B = Start_Pointer_B + ((j + k*Matrix_Size)<<2); // Calculate Next LW address for matrix B
+					
 					// Calculate Tag
 					Read_Tag_B = Read_Address_B >> (2 + Address_Bits_Per_Block + Index_Size);
 
 					// Calculate Index
 					Index_B = (Read_Address_B - (Read_Tag_B << (2 + Address_Bits_Per_Block + Index_Size))) >> (2 + Address_Bits_Per_Block);
+					
+					if (address_check){
+						cerr << "Read_Address_B:" << Read_Address_B << endl;
+						cerr << "Read_Tag_B:" << Read_Tag_B << endl;
+						cerr << "Index_B:" << Index_B << "\n" << endl;
+					}	// end address_check
 
 					// Deference Index for each way and check each tag and valid bit.
 					hit_B = false;
@@ -359,8 +375,11 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 					}
 					else Update_Way = 0;
 				}
-
+				if (address_check)
+					cout << "-----------" << endl;
 			}
+			if (address_check)
+				cout << "=======================" << endl;
 		}
 
 
@@ -388,8 +407,8 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 			<< endl;
 	}
 
-	Result_File << total_hit_A << "," << (double)total_hit_A / (double)total_AB_count * 100 << ","
-		<< total_hit_B << "," << (double)total_hit_B / (double)total_AB_count * 100 << ","
+	Result_File << total_hit_A << "," << "," << "," << (double)total_hit_A / (double)total_AB_count * 100 << ","
+		<< total_hit_B << "," << "," << "," << (double)total_hit_B / (double)total_AB_count * 100 << ","
 		<< total_hit_C << ","
 		<< total_CAS << "," << total_RAS << ","
 		<< endl;
@@ -399,8 +418,17 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 }
 
 int main(){
+	HWND console = GetConsoleWindow();
+	RECT r;
+	GetWindowRect(console, &r); //stores the console's current dimensions
+
+	MoveWindow(console, r.left, r.top, 1000, 400, TRUE); // 800 width, 100 height
+
+
 	remove("Cache_Sim.csv");
 	remove("Cache_Sim_Detail.csv");
+	//sim(13, 2, 1, 1);
+	
 	sim(13, 0, 1, 1);
 	sim(15, 0, 1, 2);
 	sim(19, 0, 1, 3);
@@ -413,6 +441,7 @@ int main(){
 	sim(13, 2, 3, 1);
 	sim(15, 2, 3, 2);
 	sim(19, 2, 3, 3);
+	
 	std::cin.get();
 
 
