@@ -19,10 +19,11 @@ using namespace std;
 
 int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time, int Debug_Mode)
 {
-	boolean no_display = true;
-	int Matrix_Size_fixed = 3;
-	int Matrix_Size_max = 100;
-
+	boolean Quick_Mode = 1;
+	int Matrix_Size_fixed = 256;
+	int Matrix_Size_max = 256;
+	boolean Address_Output_Enable = 0;
+	Debug_Mode = 0;
 	// Print input auguments
 	cout << "Data_Size: " << Data_Size_kB << "kB" << endl;
 	cout << "Ways: " << Ways << endl;
@@ -53,7 +54,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	const int Block_size = Words_Per_Bock * Word_Size;
 	const int Cache_Size = Blocks * Block_size;
 
-	if (!no_display)
+	if (!Quick_Mode)
 	{
 		// Verify Cache Size with Data Size
 		cout << "Cache Size: " << (Cache_Size / 8 / 1024) << "kB" << endl;
@@ -90,6 +91,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int instruction_counter = 0;
 	ofstream Result_File("Cache_Sim.csv", ios::app);
 	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
+	ofstream Address_File("Cache_Sim_Address.csv", ios::app);
 	Result_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
 		<< endl
@@ -111,6 +113,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		<< "Hit_B" << "," << "Miss_B_CAS" << "," << "Miss_B_RAS" << "," << "Hit_B_Percentage" << ","
 		<< "Miss_C_CAS" << "," << "Miss_C_RAS" << ","
 		<< endl;
+	Address_File << "A_Address" << "," << "B_Address" << "," << "C_Address" << ","
+		<< endl;
 	// For counting result
 	unsigned long long int total_instruction = 0;
 	unsigned long long int A_hit_total = 0;
@@ -122,8 +126,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int C_RAS_total = 0;
 	unsigned long long int C_CAS_total = 0;
 
-	for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode ? Matrix_Size_fixed : Matrix_Size_max); Matrix_Size++) // Step through all matrix sizes
-		//for (int Matrix_Size = Matrix_Size_fixed; Matrix_Size <= Matrix_Size_fixed; Matrix_Size++) // Step through all matrix sizes
+	//for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode ? Matrix_Size_fixed : Matrix_Size_max); Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size = 2; Matrix_Size <= Matrix_Size_fixed; Matrix_Size++) // Step through all matrix sizes
 	{
 		// Initialize Cache as being empty
 		for (int i = 0; i < Ways; i++)
@@ -138,7 +142,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		unsigned long long int Start_Pointer_A = 100000;
 		unsigned long long int Start_Pointer_B = 200000;
 		unsigned long long int Start_Pointer_C = 300000;
-		const int DRAM_Row_Size = 2 * 32 * 8;
+		const int DRAM_Row_Size = 2 * 4 * 8;
+		const int DRAM_Row_Offset = log(2 * 4 * 8)/log(2);
 		boolean hit_A = false;
 		boolean hit_B = false;
 		boolean hit_C = false;
@@ -160,7 +165,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		int fifo = 0;
 		unsigned long long int Read_Address_A;
 		unsigned long long int Read_Address_B;
-		unsigned long long int Read_Address_C;
+		unsigned long long int Write_Address_C;
 		unsigned long long int Read_Tag_A;
 		unsigned long long int Read_Tag_B;
 		unsigned long long int Write_Tag_C;
@@ -168,40 +173,41 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		unsigned long long int Index_B;
 		unsigned long long int Index_C;
 
-		time += 10; // Add delay that exists before entering main loop
+		time += 1; // Add delay that exists before entering main loop
 		for (int i = 0; i < Matrix_Size; i++)
 		{
-			time += 10; // Add outer loop delay 
+			time += 1; // Add outer loop delay 
 			for (int j = 0; j < Matrix_Size; j++)
 			{
-				time += 10; // Add middle loop delay 
+				time += 1; // Add middle loop delay 
 
 				for (int k = 0; k < Matrix_Size; k = k++)
 				{
 					instruction_counter++;
-					// Add inner loop delay.
-					time += 10;
+					time += 1; // Add inner loop delay.
 
-					// Calculate Read Address for Matrix A[i][k]
+					// Calculate Read Address for Matrix
 					Read_Address_A = Start_Pointer_A + ((k + i*Matrix_Size) << 2);// Calculate next lw address for matrix A
 					Read_Address_B = Start_Pointer_B + ((k*Matrix_Size + j) << 2);// Calculate next lw address for matrix B
-					Read_Address_C = Start_Pointer_C + ((j + i*Matrix_Size) << 2);// Calculate next lw address for matrix C
+					Write_Address_C = Start_Pointer_C + ((j + i*Matrix_Size) << 2);// Calculate next lw address for matrix C
+					if (Address_Output_Enable)
+						Address_File << Read_Address_A << "," << Read_Address_B << "," << Write_Address_C << "," << endl;
 
-					if (Debug_Mode & !no_display)
+					if (Debug_Mode & !Quick_Mode)
 						cout << "A: " << Read_Address_A << ", Tag: " << Read_Address_A / ((Block_size / 8) * Sets) << ", Index: " << (Read_Address_A / (Block_size / 8)) % Sets
 						<< ". B: " << Read_Address_B << ", Tag: " << Read_Address_B / ((Block_size / 8) * Sets) << ", Index: " << (Read_Address_B / (Block_size / 8)) % Sets
-						<< ". C: " << Read_Address_C << ", Tag: " << Read_Address_B / ((Block_size / 8) * Sets) << ", Index: " << (Read_Address_B / (Block_size / 8)) % Sets
+						<< ". C: " << Write_Address_C << ", Tag: " << Read_Address_B / ((Block_size / 8) * Sets) << ", Index: " << (Read_Address_B / (Block_size / 8)) % Sets
 						<< endl;
 
 					// Calculate Tag
 					Read_Tag_A = Read_Address_A / ((Block_size / 8) * Sets);
 					Read_Tag_B = Read_Address_B / ((Block_size / 8) * Sets);
-					Write_Tag_C = Read_Address_C / ((Block_size / 8) * Sets);
+					Write_Tag_C = Write_Address_C / ((Block_size / 8) * Sets);
 
 					// Calculate Index
 					Index_A = (Read_Address_A / (Block_size / 8)) % Sets;
 					Index_B = (Read_Address_B / (Block_size / 8)) % Sets;
-					Index_C = (Read_Address_C / (Block_size / 8)) % Sets;
+					Index_C = (Write_Address_C / (Block_size / 8)) % Sets;
 
 					// Deference Index for each way and check each tag and valid bit.
 					hit_A = false;
@@ -221,33 +227,40 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 						}	
 					}
 					hit_C = false;
+					for (int l = 0; l < Ways; l = l + 1) // Check each way
+					{
+						if (Valid[l][Index_C] & (Tag[l][Index_C] == Write_Tag_C))
+						{
+							hit_C = true;
+						}
+					}
 
 					if (hit_A)
 					{
 						time += Hit_Time;// If hit, add hit time
 						hit_A_counter++;
-						if (Debug_Mode & !no_display)
+						if (Debug_Mode & !Quick_Mode)
 							cout << "A Hit! " << "hit_A_counter: " << hit_A_counter << endl;
 					}
 					else
 					{
 						// If miss calculate miss time.
 						// Calculate RAM row.
-						Current_RAM_Row = Read_Address_A / DRAM_Row_Size;
+						Current_RAM_Row = Read_Address_A >> DRAM_Row_Offset;
 						if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 						{
-							time += CAS; // Caculate number of CAS delays needed.
+							time += (2+CAS); // Caculate number of CAS delays needed.
 							A_CAS_counter++;
-							if (Debug_Mode & !no_display)
+							if (Debug_Mode & !Quick_Mode)
 								cout << "A Miss! " << "CAS Only" << endl;
 						}
 						else // Need RAS and CAS
 						{
 							Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-							time += (CAS + RAS); // Calculate RAS and CAS delays needed.
+							time += (2+CAS + RAS); // Calculate RAS and CAS delays needed.
 							A_CAS_counter++;
 							A_RAS_counter++;
-							if (Debug_Mode & !no_display)
+							if (Debug_Mode & !Quick_Mode)
 								cout << "A Miss! " << "CAS & RAS" << endl;
 						}
 						Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
@@ -257,7 +270,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 							Update_Way = rand() % Ways; // range 0 to Ways
 						if (fifo_Enable)
 							Update_Way = fifo;
-						if (Debug_Mode & !no_display)
+						if (Debug_Mode & !Quick_Mode)
 							cout << "Update_Way: " << Update_Way << endl;
 
 						Valid[Update_Way][Index_A] = true; // Write to the way you chose in previous line
@@ -276,28 +289,28 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 					{
 						time += Hit_Time;// If hit, add hit time
 						hit_B_counter++;
-						if (Debug_Mode & !no_display)
+						if (Debug_Mode & !Quick_Mode)
 							cout << "B Hit! " << "hit_B_counter: " << hit_B_counter << endl;
 					}
 					else
 					{
 						// If miss calculate miss time.
 						// Calculate RAM row.
-						Current_RAM_Row = Read_Address_B / DRAM_Row_Size;
+						Current_RAM_Row = Read_Address_B >> DRAM_Row_Offset;
 						if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 						{
-							time += CAS; // Caculate number of CAS delays needed.
+							time += (2+CAS); // Caculate number of CAS delays needed.
 							B_CAS_counter++;
-							if (Debug_Mode & !no_display)
+							if (Debug_Mode & !Quick_Mode)
 								cout << "B Miss! " << "CAS Only" << endl;
 						}
 						else // Need RAS and CAS
 						{
 							Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-							time += (CAS + RAS); // Calculate RAS and CAS delays needed.
+							time += (2+CAS + RAS); // Calculate RAS and CAS delays needed.
 							B_CAS_counter++;
 							B_RAS_counter++;
-							if (Debug_Mode & !no_display)
+							if (Debug_Mode & !Quick_Mode)
 								cout << "B Miss! " << "CAS & RAS" << endl;
 						}
 
@@ -306,7 +319,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 							Update_Way = rand() % Ways; // range 0 to Ways
 						if (fifo_Enable)
 							Update_Way = fifo;
-						if (Debug_Mode & !no_display)
+						if (Debug_Mode & !Quick_Mode)
 							cout << "Update_Way: " << Update_Way << endl;
 
 						Valid[Update_Way][Index_B] = true; // Write to the way you chose in previous line
@@ -319,37 +332,61 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 							else
 								fifo++;
 						}
+						time += 1; // Take 1 clock cycle to perform Sum
 					}
-					if (hit_C)
+
+				} // end k
+				if (hit_C)
+				{
+					time += Hit_Time;// If hit, add hit time
+					hit_C_counter++;
+
+					// As write through there is always some DRAW interaction
+					// Calculate RAM row.
+					Current_RAM_Row = Write_Address_C >> DRAM_Row_Offset;
+					if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 					{
-						cerr << "ERROR! C cannot be hit!" << endl;
+						time += (2 * CAS); // Caculate number of CAS delays needed.
+						C_CAS_counter += 2;
+						if (Debug_Mode & !Quick_Mode)
+							cout << "C Hit! " << "CAS Only" << endl;
 					}
 					else
 					{
-						// Calculate miss time.
-						// Calculate RAM row.
-						Current_RAM_Row = Read_Address_C / DRAM_Row_Size;
-						if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
-						{
-							time += 2 * CAS; // Caculate number of CAS delays needed.
-							C_CAS_counter += 2;
-							if (Debug_Mode & !no_display)
-								cout << "C Miss! " << "CAS Only" << endl;
-						}
-						else // Need RAS and CAS
-						{
-							Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-							time += (2 * CAS + RAS); // Calculate RAS and CAS delays needed.
-							C_CAS_counter += 2;
-							C_RAS_counter++;
-							if (Debug_Mode & !no_display)
-								cout << "C Miss! " << "CAS & RAS" << endl;
-						}
+						Previous_RAM_Row = Current_RAM_Row; // Update RAM row
+						time += (2 * CAS + RAS); // Calculate RAS and CAS delays needed.
+						C_CAS_counter += 2;
+						C_RAS_counter++;
+						if (Debug_Mode & !Quick_Mode)
+							cout << "C Hit! " << "CAS & RAS" << endl;
 					}
-
 				}
-				if (Debug_Mode & !no_display)
+				else
+				{
+					// Calculate miss time.
+					// Calculate RAM row.
+					Current_RAM_Row = Write_Address_C >> DRAM_Row_Offset;
+					if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+					{
+						time += (2 + 2*CAS); // Caculate number of CAS delays needed.
+						C_CAS_counter += 2;
+						if (Debug_Mode & !Quick_Mode)
+							cout << "C Miss! " << "CAS Only" << endl;
+					}
+					else // Need RAS and CAS
+					{
+						Previous_RAM_Row = Current_RAM_Row; // Update RAM row
+						time += (2 + 2*CAS + RAS); // Calculate RAS and CAS delays needed.
+						C_CAS_counter += 2;
+						C_RAS_counter++;
+						if (Debug_Mode & !Quick_Mode)
+							cout << "C Miss! " << "CAS & RAS" << endl;
+					}
+				}
+				if (Debug_Mode & !Quick_Mode)
 					cout << "------------------------------------------" << endl;
+				if (Address_Output_Enable)
+					Address_File << endl;
 			}
 
 		}
@@ -363,24 +400,25 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		C_CAS_total += C_CAS_counter;
 		C_RAS_total += C_RAS_counter;
 
-		if (!no_display)
+		if (!Quick_Mode)
 			cout << "Matrix_Size: " << Matrix_Size
 				<< ", hit_A=" << hit_A_counter << "/" << instruction_counter << "=" << std::fixed << std::setprecision(3) << ((double)hit_A_counter / (double)instruction_counter) * 100 << "%"
 				<< " CAS=" << A_CAS_counter << "/" << instruction_counter << " RAS=" << A_RAS_counter << "/" << instruction_counter
 				<< ", hit_B=" << hit_B_counter << "/" << instruction_counter << "=" << std::fixed << std::setprecision(3) << ((double)hit_B_counter / (double)instruction_counter) * 100 << "%"
 				<< " CAS=" << B_CAS_counter << "/" << instruction_counter << " RAS=" << B_RAS_counter << "/" << instruction_counter
 				<< endl;
-		Detail_File << Matrix_Size << ","
-			<< A_hit_total << "," << A_CAS_total << "," << A_RAS_total << "," << (double)A_hit_total / (double)total_instruction * 100 << ","
-			<< B_hit_total << "," << B_CAS_total << "," << B_RAS_total << "," << (double)B_hit_total / (double)total_instruction * 100 << ","
-			<< C_CAS_total << "," << C_RAS_total << ","
-			<< endl;
+		if (!Quick_Mode)
+			Detail_File << Matrix_Size << ","
+				<< A_hit_total << "," << A_CAS_total << "," << A_RAS_total << "," << (double)A_hit_total / (double)total_instruction * 100 << ","
+				<< B_hit_total << "," << B_CAS_total << "," << B_RAS_total << "," << (double)B_hit_total / (double)total_instruction * 100 << ","
+				<< C_CAS_total << "," << C_RAS_total << ","
+				<< endl;
 
 		if (Matrix_Size == Matrix_Size_max)
 		{
-			if (!no_display)
+			if (!Quick_Mode)
 				cout << endl;
-			if (!no_display)
+			if (!Quick_Mode)
 				cout << "Total:"
 					<< ", hit_A=" << A_hit_total << "/" << total_instruction << "=" << std::fixed << std::setprecision(3) << (double)A_hit_total / (double)total_instruction * 100 << "%"
 					<< ", hit_B=" << B_hit_total << "/" << total_instruction << "=" << std::fixed << std::setprecision(3) << (double)B_hit_total / (double)total_instruction * 100 << "%"
@@ -401,10 +439,13 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		C_CAS_counter = 0;
 		C_RAS_counter = 0;
 
-		if (Debug_Mode &!no_display)
+		if (Debug_Mode &!Quick_Mode)
 			cout << "================================================" << endl;
+		if (Address_Output_Enable)
+			Address_File << endl << endl;
 	} // end matrix size interation
-
+	if (Address_Output_Enable)
+		Address_File << endl << endl << endl;
 	return 0;
 }
 
@@ -413,11 +454,12 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 {
 	int Debug_Mode = 0;
 	remove("Cache_Sim.csv");
-	remove("Cache_Sim_Detail.csv");
+	remove("Cache_Sim_Detail.csv"); 
+	remove("Cache_Sim_Address.csv");
 
 	// Ways, Data_Size_kB, Words_Per_Bock, Hit_Time
 	if (Debug_Mode)
-		cache_simulator(4, 8, 2, 1, Debug_Mode);
+		cache_simulator(4, 8, 2, 2, Debug_Mode);
 	else
 	{
 
