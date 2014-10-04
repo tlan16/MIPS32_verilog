@@ -73,15 +73,15 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 
 	// Declare any required variables in this section
 	double time = 0;
-	int total_hit_A = 0;
-	int total_hit_B = 0;
-	int total_hit_C = 0;
-	int total_miss_A = 0;
-	int total_miss_B = 0;
-	int total_miss_C = 0;
-	int total_CAS = 0;
-	int total_RAS = 0;
-	int total_AB_count = 0;
+	unsigned long long int total_hit_A = 0;
+	unsigned long long int total_hit_B = 0;
+	unsigned long long int total_hit_C = 0;
+	unsigned long long int total_miss_A = 0;
+	unsigned long long int total_miss_B = 0;
+	unsigned long long int total_miss_C = 0;
+	unsigned long long int total_CAS = 0;
+	unsigned long long int total_RAS = 0;
+	unsigned long long int total_AB_count = 0;
 
 	// Variable for debugging
 	bool address_check = false;
@@ -136,27 +136,27 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 		int Start_Pointer_C = 300000;
 
 		// Initialize and declare variable 
-		int hit_A_count = 0;
-		int hit_B_count = 0;
-		int hit_C_count = 0;
-		int miss_A_count = 0;
-		int miss_B_count = 0;
-		int miss_C_count = 0;
-		int CAS_count = 0;
-		int RAS_count = 0;
-		int Current_RAM_Row = 0;
-		int Previous_RAM_Row = 0;
+		unsigned long long int hit_A_count = 0;
+		unsigned long long int hit_B_count = 0;
+		unsigned long long int hit_C_count = 0;
+		unsigned long long int miss_A_count = 0;
+		unsigned long long int miss_B_count = 0;
+		unsigned long long int miss_C_count = 0;
+		unsigned long long int CAS_count = 0;
+		unsigned long long int RAS_count = 0;
+		unsigned long long int Current_RAM_Row = 0;
+		unsigned long long int Previous_RAM_Row = 0;
 		bool Previous_RAM_Row_Valid = 0;
-		int Update_Way = 0;
-		unsigned int Read_Address_A;
-		unsigned int Read_Tag_A;
-		unsigned int Index_A;
-		unsigned int Read_Address_B;
-		unsigned int Read_Tag_B;
-		unsigned int Index_B;
-		unsigned int Write_Address_C;
-		unsigned int Write_Tag_C;
-		unsigned int Index_C;
+		unsigned long long int Update_Way = 0;
+		unsigned long long int Read_Address_A;
+		unsigned long long int Read_Tag_A;
+		unsigned long long int Index_A;
+		unsigned long long int Read_Address_B;
+		unsigned long long int Read_Tag_B;
+		unsigned long long int Index_B;
+		unsigned long long int Write_Address_C;
+		unsigned long long int Write_Tag_C;
+		unsigned long long int Index_C;
 		bool hit_A = false;
 		bool hit_B = false;
 		bool hit_C = false;
@@ -241,9 +241,9 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 
 
 					// Repeat for B; B[k][j]
-					Read_Address_B = Start_Pointer_B + (j + k*Matrix_Size << 2); // Calculate Next LW address for matrix B
+					Read_Address_B = Start_Pointer_B + ((j + k*Matrix_Size) << 2); // Calculate Next LW address for matrix B
 					if (address_check)
-						Address_File << Read_Address_A << "," << Read_Address_B << "," << endl;
+						Address_File << Read_Address_B << "," << Read_Address_B << "," << endl;
 
 					// Calculate Tag
 					Read_Tag_B = Read_Address_B >> (2 + Address_Bits_Per_Block + Index_Size);

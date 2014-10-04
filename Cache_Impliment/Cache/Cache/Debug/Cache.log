@@ -1,4 +1,4 @@
-﻿Build started 3/10/2014 2:13:25 PM.
+﻿Build started 4/10/2014 6:20:19 PM.
      1>Project "C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Cache\Cache.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Cache.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cache.cpp
@@ -7,9 +7,9 @@
                  c:\program files (x86)\windows kits\8.1\include\shared\sdkddkver.h(200) : see previous definition of '_WIN32_WINNT'
      1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(49): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
      1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(50): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(146): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(277): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
-     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(326): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(150): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(282): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\cache\cache\cache.cpp(331): warning C4244: '=' : conversion from 'unsigned __int64' to 'int', possible loss of data
        Link:
          D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Program Files\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Cache\Debug\Cache.lib" /MACHINE:X86 Debug\Cache.res
          Debug\Cache.obj
@@ -19,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.67
+Time Elapsed 00:00:02.29

@@ -19,7 +19,7 @@ using namespace std;
 
 int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time, int Debug_Mode)
 {
-	boolean Quick_Mode = 1;
+	boolean Quick_Mode = 0;
 	int Matrix_Size_fixed = 256;
 	int Matrix_Size_max = 256;
 	boolean Address_Output_Enable = 0;
@@ -36,8 +36,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	const int Address_Size = 32; // Number of bits used in the memory address
 	const int Column_Bits = 3; // Number of bits used to dereference a coloumn in SDRAM
 	const int Words_Per_Bus_Transfer = 2; // Number of words transfered per CAS.
-	const int CAS = 10; // CAS time in clock cycles
-	const int RAS = 10; // RAS time in clock cycles
+	const int CAS = 72; // CAS time in clock cycles
+	const int RAS = 24; // RAS time in clock cycles
 
 	// Redifined Input Aruguments
 	const int Data_Size = Data_Size_kB * 1024 * 8; // bits
@@ -100,7 +100,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		<< endl
 		<< "Hit_A" << "," << "Miss_A_CAS" << "," << "Miss_A_RAS" << "," << "Hit_A_Percentage" << ","
 		<< "Hit_B" << "," << "Miss_B_CAS" << "," << "Miss_B_RAS" << "," << "Hit_B_Percentage" << ","
-		<< "Miss_C_CAS" << "," << "Miss_C_RAS" << ","
+		<< "Hit_C" << "," << "Miss_C_CAS" << "," << "Miss_C_RAS" << "," << "Hit_C_Percentage" << ","
+		<< "Time" << ","
 		<< endl;
 	Detail_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
@@ -111,7 +112,8 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		<< "Matrix_Size" << ","
 		<< "Hit_A" << "," << "Miss_A_CAS" << "," << "Miss_A_RAS" << "," << "Hit_A_Percentage" << ","
 		<< "Hit_B" << "," << "Miss_B_CAS" << "," << "Miss_B_RAS" << "," << "Hit_B_Percentage" << ","
-		<< "Miss_C_CAS" << "," << "Miss_C_RAS" << ","
+		<< "Hit_C" << "," << "Miss_C_CAS" << "," << "Miss_C_RAS" << "," << "Hit_C_Percentage" << ","
+		<< "Time" << ","
 		<< endl;
 	Address_File << "A_Address" << "," << "B_Address" << "," << "C_Address" << ","
 		<< endl;
@@ -123,8 +125,10 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	unsigned long long int B_hit_total = 0;
 	unsigned long long int B_RAS_total = 0;
 	unsigned long long int B_CAS_total = 0;
+	unsigned long long int C_hit_total = 0;
 	unsigned long long int C_RAS_total = 0;
 	unsigned long long int C_CAS_total = 0;
+	unsigned long long int time_total = 0;
 
 	//for (int Matrix_Size = Debug_Mode ? Matrix_Size_fixed : 2; Matrix_Size <= (Debug_Mode ? Matrix_Size_fixed : Matrix_Size_max); Matrix_Size++) // Step through all matrix sizes
 	for (int Matrix_Size = 2; Matrix_Size <= Matrix_Size_fixed; Matrix_Size++) // Step through all matrix sizes
@@ -156,6 +160,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		unsigned long long int hit_C_counter = 0;
 		unsigned long long int C_RAS_counter = 0;
 		unsigned long long int C_CAS_counter = 0;
+
 		boolean Previous_RAM_Row_Valid = false;
 		unsigned long long int Current_RAM_Row = 0;
 		unsigned long long int Previous_RAM_Row = 0;
@@ -397,8 +402,10 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		B_hit_total += hit_B_counter;
 		B_CAS_total += B_CAS_counter;
 		B_RAS_total += B_RAS_counter;
+		C_hit_total += hit_C_counter;
 		C_CAS_total += C_CAS_counter;
 		C_RAS_total += C_RAS_counter;
+		time_total += time;
 
 		if (!Quick_Mode)
 			cout << "Matrix_Size: " << Matrix_Size
@@ -406,12 +413,16 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 				<< " CAS=" << A_CAS_counter << "/" << instruction_counter << " RAS=" << A_RAS_counter << "/" << instruction_counter
 				<< ", hit_B=" << hit_B_counter << "/" << instruction_counter << "=" << std::fixed << std::setprecision(3) << ((double)hit_B_counter / (double)instruction_counter) * 100 << "%"
 				<< " CAS=" << B_CAS_counter << "/" << instruction_counter << " RAS=" << B_RAS_counter << "/" << instruction_counter
+				<< ", hit_C=" << hit_C_counter << "/" << instruction_counter << "=" << std::fixed << std::setprecision(3) << ((double)hit_C_counter / (double)instruction_counter) * 100 << "%"
+				<< " CAS=" << C_CAS_counter << "/" << instruction_counter << " RAS=" << C_RAS_counter << "/" << instruction_counter
+				<< ", Time=" << time
 				<< endl;
 		if (!Quick_Mode)
 			Detail_File << Matrix_Size << ","
 				<< A_hit_total << "," << A_CAS_total << "," << A_RAS_total << "," << (double)A_hit_total / (double)total_instruction * 100 << ","
 				<< B_hit_total << "," << B_CAS_total << "," << B_RAS_total << "," << (double)B_hit_total / (double)total_instruction * 100 << ","
-				<< C_CAS_total << "," << C_RAS_total << ","
+				<< C_hit_total << "," << C_CAS_total << "," << C_RAS_total << "," << (double)C_hit_total / (double)total_instruction * 100 << ","
+				<< time << ","
 				<< endl;
 
 		if (Matrix_Size == Matrix_Size_max)
@@ -422,10 +433,13 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 				cout << "Total:"
 					<< ", hit_A=" << A_hit_total << "/" << total_instruction << "=" << std::fixed << std::setprecision(3) << (double)A_hit_total / (double)total_instruction * 100 << "%"
 					<< ", hit_B=" << B_hit_total << "/" << total_instruction << "=" << std::fixed << std::setprecision(3) << (double)B_hit_total / (double)total_instruction * 100 << "%"
+					<< ", hit_C=" << C_hit_total << "/" << total_instruction << "=" << std::fixed << std::setprecision(3) << (double)C_hit_total / (double)total_instruction * 100 << "%"
+					<< ", time=" << time_total
 					<< endl;
 			Result_File << A_hit_total << "," << A_CAS_total << "," << A_RAS_total << "," << (double)A_hit_total / (double)total_instruction * 100 << ","
 				<< B_hit_total << "," << B_CAS_total << "," << B_RAS_total << "," << (double)B_hit_total / (double)total_instruction * 100 << ","
-				<< C_CAS_total << "," << C_RAS_total << ","
+				<< C_hit_total << "," << C_CAS_total << "," << C_RAS_total << "," << (double)C_hit_total / (double)total_instruction * 100 << ","
+				<< time_total << ","
 				<< endl;
 		}
 
@@ -438,6 +452,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		B_RAS_counter = 0;
 		C_CAS_counter = 0;
 		C_RAS_counter = 0;
+		time = 0;
 
 		if (Debug_Mode &!Quick_Mode)
 			cout << "================================================" << endl;
@@ -463,7 +478,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 	else
 	{
 
-		cache_simulator(1, 8, 2, 2, Debug_Mode);
+		cache_simulator(1, 8, 2, 1, Debug_Mode);
 		cache_simulator(1, 32, 2, 2, Debug_Mode);
 		cache_simulator(1, 512, 2, 3, Debug_Mode);
 
