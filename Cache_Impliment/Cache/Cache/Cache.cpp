@@ -98,7 +98,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	ofstream Result_File("Cache_Sim.csv", ios::app);
 	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
 	ofstream Address_File("Cache_Sim_Address.csv", ios::app);
-	Result_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
+	Result_File << "Ways" << "," << "Cache Size" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
 		<< endl
 		<< Ways << "," << Data_Size_kB << "," << Words_Per_Bock << "," << Hit_Time << ","
@@ -109,7 +109,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		<< "Hit_C" << "," << "Miss_C_CAS" << "," << "Miss_C_RAS" << "," << "Hit_C_Percentage" << ","
 		<< "Time" << ","
 		<< endl;
-	Detail_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
+	Detail_File << "Ways" << "," << "Cache Size" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
 		<< endl
 		<< Ways << "," << Data_Size_kB << "," << Words_Per_Bock << "," << Hit_Time << ","
