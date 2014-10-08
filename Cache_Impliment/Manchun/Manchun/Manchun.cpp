@@ -73,25 +73,22 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 
 	// Declare any required variables in this section
 	double time = 0;
-	unsigned long long int total_hit_A = 0;
-	unsigned long long int total_hit_B = 0;
-	unsigned long long int total_hit_C = 0;
-	unsigned long long int total_miss_A = 0;
-	unsigned long long int total_miss_B = 0;
-	unsigned long long int total_miss_C = 0;
-	unsigned long long int total_CAS = 0;
-	unsigned long long int total_RAS = 0;
-	unsigned long long int total_AB_count = 0;
+	int total_hit_A = 0;
+	int total_hit_B = 0;
+	int total_hit_C = 0;
+	int total_miss_A = 0;
+	int total_miss_B = 0;
+	int total_miss_C = 0;
+	int total_CAS = 0;
+	int total_RAS = 0;
+	int total_AB_count = 0;
 
 	// Variable for debugging
-	bool address_check = false;
+	bool address_check = 1;
 
 	// Output result to excel
-	ofstream Result_File("Cache_Sim_2.csv", ios::app);
-	ofstream Detail_File("Cache_Sim_Detail_2.csv", ios::app);
-	ofstream Address_File("Cache_Sim_Address_2.csv", ios::app);
-	Address_File << "A_Address" << "," << "B_Address" << "," << "C_Address" << ","
-		<< endl;
+	ofstream Result_File("Cache_Sim.csv", ios::app);
+	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
 	Result_File << "Ways" << "," << "Data_Size_kB" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
 		<< endl
@@ -118,7 +115,7 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 		<< endl;
 
 	// Loop for whole calculation
-	for (int Matrix_Size = 2; Matrix_Size <= 256; Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size = 2; Matrix_Size <= 2; Matrix_Size++) // Step through all matrix sizes
 	{
 
 		// Initialize Cache as being empty
@@ -136,27 +133,27 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 		int Start_Pointer_C = 300000;
 
 		// Initialize and declare variable 
-		unsigned long long int hit_A_count = 0;
-		unsigned long long int hit_B_count = 0;
-		unsigned long long int hit_C_count = 0;
-		unsigned long long int miss_A_count = 0;
-		unsigned long long int miss_B_count = 0;
-		unsigned long long int miss_C_count = 0;
-		unsigned long long int CAS_count = 0;
-		unsigned long long int RAS_count = 0;
-		unsigned long long int Current_RAM_Row = 0;
-		unsigned long long int Previous_RAM_Row = 0;
+		int hit_A_count = 0;
+		int hit_B_count = 0;
+		int hit_C_count = 0;
+		int miss_A_count = 0;
+		int miss_B_count = 0;
+		int miss_C_count = 0;
+		int CAS_count = 0;
+		int RAS_count = 0;
+		int Current_RAM_Row = 0;
+		int Previous_RAM_Row = 0;
 		bool Previous_RAM_Row_Valid = 0;
-		unsigned long long int Update_Way = 0;
-		unsigned long long int Read_Address_A;
-		unsigned long long int Read_Tag_A;
-		unsigned long long int Index_A;
-		unsigned long long int Read_Address_B;
-		unsigned long long int Read_Tag_B;
-		unsigned long long int Index_B;
-		unsigned long long int Write_Address_C;
-		unsigned long long int Write_Tag_C;
-		unsigned long long int Index_C;
+		int Update_Way = 0;
+		unsigned int Read_Address_A;
+		unsigned int Read_Tag_A;
+		unsigned int Index_A;
+		unsigned int Read_Address_B;
+		unsigned int Read_Tag_B;
+		unsigned int Index_B;
+		unsigned int Write_Address_C;
+		unsigned int Write_Tag_C;
+		unsigned int Index_C;
 		bool hit_A = false;
 		bool hit_B = false;
 		bool hit_C = false;
@@ -241,9 +238,7 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 
 
 					// Repeat for B; B[k][j]
-					Read_Address_B = Start_Pointer_B + ((j + k*Matrix_Size) << 2); // Calculate Next LW address for matrix B
-					if (address_check)
-						Address_File << Read_Address_B << "," << Read_Address_B << "," << endl;
+					Read_Address_B = Start_Pointer_B + (j + k*Matrix_Size << 2); // Calculate Next LW address for matrix B
 
 					// Calculate Tag
 					Read_Tag_B = Read_Address_B >> (2 + Address_Bits_Per_Block + Index_Size);
@@ -417,11 +412,9 @@ int sim(int Data_size_in_bits, int Associative_in_bits, int Word_per_block_in_bi
 }
 
 int main(){
-	remove("Cache_Sim_2.csv");
-	remove("Cache_Sim_Detail_2.csv");
-	remove("Cache_Sim_Address_2.csv");
+	remove("Cache_Sim.csv");
+	remove("Cache_Sim_Detail.csv");
 
-	sim(13, 0, 1, 1);
 	sim(15, 0, 1, 2);
 	sim(19, 0, 1, 3);
 	sim(13, 0, 3, 1);
@@ -433,7 +426,7 @@ int main(){
 	sim(13, 2, 3, 1);
 	sim(15, 2, 3, 2);
 	sim(19, 2, 3, 3);
-
+	sim(19, 2, 4, 3);
 	cerr << "end" << endl;
 	std::cin.get();
 
