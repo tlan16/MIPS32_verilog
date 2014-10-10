@@ -17,7 +17,7 @@
 #include <windows.h>
 using namespace std;
 
-int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time, int Debug_Mode)
+int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Block, int Hit_Time, int Debug_Mode)
 {
 	// Debugging options
 	int Matrix_Size_Max = 64;
@@ -26,7 +26,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	// Print input auguments
 	cout << "Data_Size: " << Data_Size_kB << "kB" << endl;
 	cout << "Ways: " << Ways << endl;
-	cout << "Words_Per_Bock: " << Words_Per_Bock << endl;
+	cout << "Words_Per_Block: " << Words_Per_Block << endl;
 	cout << "Hit_Time: " << Hit_Time << endl;
 	cout << endl;
 
@@ -46,17 +46,17 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 
 	// Convert input to shift bits amount
 	const int Data_Size_bit_shift = log2(Data_Size_kB * 1024);
-	const int Words_Per_Bock_bit_shift = log2(Words_Per_Bock);
+	const int Words_Per_Block_bit_shift = log2(Words_Per_Block);
 	const int Associative_bit_shift = log2(Ways);
 
 	// Calculated Aruguments
-	const int Index_Size = Data_Size_bit_shift - 2 - Words_Per_Bock_bit_shift - Associative_bit_shift;
+	const int Index_Size = Data_Size_bit_shift - 2 - Words_Per_Block_bit_shift - Associative_bit_shift;
 	const int Lines = 1 << Index_Size; // Number of lines per way in the cache (derived from Index_Size)
-	const int Address_Bits_Per_Block = Words_Per_Bock_bit_shift; // Address bits used to derefence a word in a block
+	const int Address_Bits_Per_Block = Words_Per_Block_bit_shift; // Address bits used to derefence a word in a block
 	const int Tag_Bits = 32 - (Index_Size + Address_Bits_Per_Block + 2); // Number of bits used in the tag (derived from Address_Size, Index_Size and Address_Bits_Per_Block)
 
 	const int Blocks = Lines * Ways;
-	const int Block_size = Words_Per_Bock * Word_Size;
+	const int Block_size = Words_Per_Block * Word_Size;
 	const int Cache_Size = Blocks * Block_size;
 
 	// Verify Cache Size with Data Size
@@ -98,10 +98,10 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 	ofstream Result_File("Cache_Sim.csv", ios::app);
 	ofstream Detail_File("Cache_Sim_Detail.csv", ios::app);
 	ofstream Address_File("Cache_Sim_Address.csv", ios::app);
-	Result_File << "Ways" << "," << "Cache Size" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
+	Result_File << "Ways" << "," << "Cache Size" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
 		<< endl
-		<< Ways << "," << Data_Size_kB << "," << Words_Per_Bock << "," << Hit_Time << ","
+		<< Ways << "," << Data_Size_kB << "," << Words_Per_Block << "," << Hit_Time << ","
 		<< Lines << "," << Index_Size << "," << Tag_Bits << "," << Hit_Time << ","
 		<< endl
 		<< "Hit_A" << "," << "Miss_A_CAS" << "," << "Miss_A_RAS" << "," << "Hit_A_Percentage" << ","
@@ -109,10 +109,10 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Bock, int Hit_Time
 		<< "Hit_C" << "," << "Miss_C_CAS" << "," << "Miss_C_RAS" << "," << "Hit_C_Percentage" << ","
 		<< "Time" << ","
 		<< endl;
-	Detail_File << "Ways" << "," << "Cache Size" << "," << "Words_Per_Bock" << "," << "Hit_Time" << ","
+	Detail_File << "Ways" << "," << "Cache Size" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << "," << "Hit_Time" << ","
 		<< endl
-		<< Ways << "," << Data_Size_kB << "," << Words_Per_Bock << "," << Hit_Time << ","
+		<< Ways << "," << Data_Size_kB << "," << Words_Per_Block << "," << Hit_Time << ","
 		<< Lines << "," << Index_Size << "," << Tag_Bits << "," << Hit_Time << ","
 		<< endl
 		<< "Matrix_Size" << ","
@@ -473,7 +473,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 	//std::cin.get();
 
 
-	// Ways, Data_Size_kB, Words_Per_Bock, Hit_Time
+	// Ways, Data_Size_kB, Words_Per_Block, Hit_Time
 	if (Debug_Mode)
 		cache_simulator(1, 8, 2, 1, Debug_Mode);
 	else
