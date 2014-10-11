@@ -124,7 +124,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Block, int Hit_Tim
 	Address_File << "A_Address" << "," << "B_Address" << "," << "C_Address" << ","
 		<< endl;
 
-	for (int Matrix_Size = 2; Matrix_Size <= 256; Matrix_Size++) // Step through all matrix sizes
+	for (int Matrix_Size = 2; Matrix_Size <= 2; Matrix_Size++) // Step through all matrix sizes
 	{
 		// Initialize Cache as being empty
 		for (int i = 0; i < Ways; i++)
@@ -463,7 +463,7 @@ int cache_simulator(int Ways, int Data_Size_kB, int Words_Per_Block, int Hit_Tim
 
 int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might want to pass as program arguments
 {
-	int Debug_Mode = 0;
+	int Debug_Mode = 1;
 	remove("Cache_Sim.csv");
 	remove("Cache_Sim_Detail.csv");
 	remove("Cache_Sim_Address.csv");
@@ -475,7 +475,7 @@ int _tmain(int argc, _TCHAR* argv[]) // Some of the below constants you might wa
 
 	// Ways, Data_Size_kB, Words_Per_Block, Hit_Time
 	if (Debug_Mode)
-		cache_simulator(1, 8, 2, 1, Debug_Mode);
+		cache_simulator(4, 32, 4, 1, Debug_Mode);
 	else
 	{
 
