@@ -18,106 +18,64 @@ using namespace std;
 
 // Debug
 bool debug_mode = 1;
+bool debug_check_address = 1;
 
 void sim(int np, int cache_size_kB)
 {
-	// Initialise
-	const int No_Multi = 50 * 50 * 50;
-	int Remain_Multi = No_Multi;
-	const int Num_Addition = 50 * 50;
-	int Remain_Addition = Num_Addition;
-
+	// Initialise output files
 	ofstream Result_File("Cache_Sim.csv", ios::app);
+	ofstream Address_File("Addresses.csv", ios::app);
 
-	// Initial Processor Assignment Array
-	int** ProcessorArray = new int*[np];
-	for (int i = 0; i < np; i++)
-		ProcessorArray[i] = new int[Num_Addition];
+	// Initial processor state array (1:accessing matrix A, 2:accessing matrix B, 3:accessing matrix C, 4:finished)
+	int *ProcessorStateArray = new int[np];
+	bool All_processor_finished;
 
 	for (int i = 0; i < np; i++)
+		ProcessorStateArray[i] = 1;
+
+	// Initial processor position array
+	int *ProcessorPositionArray = new int[np];
+
+	for (int i = 0; i < np; i++)
+		ProcessorPositionArray[i] = 0;
+
+	// Distrubute tasks and assign addresses to each processor
+	int** address_cal(int num_p);
+	int** AddressArray = address_cal(np);
+
+	// Check addresses distribusion
+	if (debug_check_address)
 	{
-		for (int j = 0; j < Num_Addition; j++)
-		{
-			ProcessorArray[i][j] = 0;
-			if (debug_mode)
-				Result_File << ProcessorArray[i][j] << ",";
-		}
-		Result_File << endl;
-	}
-	Result_File << endl;
-
-	// Initial Processor state array
-	int** ProcessorStateArray = new int*[np];
-	for (int i = 0; i < np; i++)
-		ProcessorStateArray[i] = new int[1];
-
-	for (int i = 0; i < np; i++)
-		ProcessorStateArray[i][0] = 0;
-
-	// Initial Processor finished array
-	bool** ProcessorFinishedArray = new bool*[np];
-	for (int i = 0; i < np; i++)
-		ProcessorFinishedArray[i] = new bool[1];
-
-	for (int i = 0; i < np; i++)
-		ProcessorFinishedArray[i][0] = 0;
-
-	// Distribute Task
-	int position = 0;
-	int matrix_c_element_num = 0;
-	int processor_num = 0;
-
-	while (matrix_c_element_num != Num_Addition)
-	{
-		ProcessorArray[processor_num][position] = matrix_c_element_num + 300000;
-		matrix_c_element_num++;
-		if (processor_num < (np - 1))
-		{
-			processor_num++;
-		}
-		else
-		{
-			processor_num = 0;
-			position++;
-		}
-	}
-
-	if (debug_mode)
-	{
-		Result_File << "C elements" << endl;
 		for (int i = 0; i < np; i++)
 		{
-			for (int j = 0; j < Num_Addition; j++)
-				Result_File << ProcessorArray[i][j] << ",";
-			Result_File << endl;
+			Address_File << "P" << i << ",";
+			if (i == (np - 1))
+				Address_File << endl;
 		}
-		Result_File << endl;
-	}
-	
-	if (debug_mode)
-	{
-		Result_File << "Assign : which row of A" << endl;
-		for (int i = 0; i < np; i++)
+		for (int i = 0; i < 300000; i++)
 		{
-			for (int j = 0; j < Num_Addition; j++)
-				Result_File << (ProcessorArray[i][j] % 300000 / 50)  << ",";
-			Result_File << endl;
+			for (int p = 0; p < np; p++)
+			{
+				Address_File << AddressArray[p][i] << ",";
+			}
+			Address_File << endl;
 		}
-		Result_File << endl;
 	}
 
-	if (debug_mode)
-	{
-		Result_File << "Assign : which collumn of B" << endl;
-		for (int i = 0; i < np; i++)
-		{
-			for (int j = 0; j < Num_Addition; j++)
-				Result_File << (ProcessorArray[i][j] % 300000 % 50) << ",";
-			Result_File << endl;
-		}
-		Result_File << endl;
-	}
+	// Initialise Address, Index, Tag
+	int Current_Address;
+	int Current_Index;
+	int Current_Tag;
 
+	// Initial result timers
+	unsigned long long int Globle_Counter = 0;
+	unsigned long long int DRAM_Time = Globle_Counter;
+	int *Resume_Time = new int[np];
+	for (int i = 0; i < np; i++)
+		Resume_Time[i] = Globle_Counter; // Initially not locked
+
+	// Initial delays
+	int DRAM_access_delay = 20;
 
 	// Initial cache Constants
 	const int Ways = 4;
@@ -150,7 +108,7 @@ void sim(int np, int cache_size_kB)
 	const int Block_size = Words_Per_Block * Word_Size;
 	const int Cache_Size = Blocks * Block_size;
 
-	cout << "Number of Processors=" << np << ", Cache Size=" << Cache_Size / 1024 << endl 
+	cout << "Number of Processors=" << np << ", Cache Size=" << Cache_Size / 1024 << endl
 		<< "Ways=" << Ways << ", Words_Per_Block=" << Words_Per_Block << ", Hit_Time=" << Hit_Time << endl
 		<< "Sets=" << Lines << ", Index_Size=" << Index_Size << ", Tag_Size=" << Tag_Bits
 		<< endl;
@@ -161,143 +119,69 @@ void sim(int np, int cache_size_kB)
 		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
 		<< endl;
 
-	// Three Dimentsional Valid Array
-	bool*** Valid = new bool**[np];
-	for (int i = 0; i < np; i++)
-	{
-		Valid[i] = new bool*[Ways];
-		for (int j = 0; j < Ways; j++)
-			Valid[i][j] = new bool[Lines];
-	}
-	for (int i = 0; i < np; i++)
-	{
-		for (int j = 0; j < Ways; j++)
-		{
-			for (int k = 0; k < Lines; k++)
-				Valid[i][j][k] = 0;
-		}
-	}
-
-	// Three Dimentsional Tag Array
-	bool*** Tag = new bool**[np];
-	for (int i = 0; i < np; i++)
-	{
-		Tag[i] = new bool*[Ways];
-		for (int j = 0; j < Ways; j++)
-			Tag[i][j] = new bool[Lines];
-	}
-	for (int i = 0; i < np; i++)
-	{
-		for (int j = 0; j < Ways; j++)
-		{
-			for (int k = 0; k < Lines; k++)
-				Tag[i][j][k] = 0;
-		}
-	}
-
-	// Declare any required variables in this section
-	unsigned long long int **time_total = new unsigned long long int*[np];
-	for (int i = 0; i < np; i++)
-		time_total[i] = new unsigned long long int[1];
-
-	unsigned long long int **total_instruction = new unsigned long long int*[np];
-	for (int i = 0; i < np; i++)
-		total_instruction[i] = new unsigned long long int[1];
-
-	unsigned long long int **A_hit_total = new unsigned long long int*[np];
-	for (int i = 0; i < np; i++)
-		A_hit_total[i] = new unsigned long long int[1];
-
-	unsigned long long int **B_hit_total = new unsigned long long int*[np];
-	for (int i = 0; i < np; i++)
-		B_hit_total[i] = new unsigned long long int[1];
-
-	unsigned long long int **C_hit_total = new unsigned long long int*[np];
-	for (int i = 0; i < np; i++)
-		C_hit_total[i] = new unsigned long long int[1];
-	const unsigned int Read_Address_Base_A = 100000;
-	const unsigned int Read_Address_Base_B = 200000;
-	const unsigned int Write_Address_Base_C = 300000;
-	unsigned long long int Read_Address_A = 0;
-	unsigned long long int Read_Tag_A = 0;
-	unsigned long long int Read_Index_A = 0;
-	unsigned long long int Read_Address_B = 0;
-	unsigned long long int Read_Tag_B = 0;
-	unsigned long long int Read_Index_B = 0;
-	unsigned long long int Write_Address_C = 0;
-	unsigned long long int Write_Tag_C = 0;
-	unsigned long long int Write_Index_C = 0;
-	int state;
-	int row_of_A;
-	int col_of_A;
-	int row_of_B;
-	int col_of_B;
-	int row_of_C = 0;
-	int col_of_C = 0;
-	bool All_Processor_Finished = 0;
-	Result_File << "p" << "," << "state" << "," 
-		<< "row_of_A" << "," << "col_of_A" << "," << "Read_Address_A" << "," << "Read_Tag_A" << "," << "Read_Index_A" << "," 
-		<< "row_of_B" << "," << "col_of_B" << "," << "Read_Address_B" << "," << "Read_Tag_B" << "," << "Read_Index_B" << ","
-		<< "row_of_C" << "," << "col_of_C" << "," << "Write_Address_C" << "," << "Write_Tag_C" << "," << "Write_Index_C" << ","
-		<< endl;
-
-	while (!All_Processor_Finished)
+	while (!All_processor_finished)
 	{
 		for (int p = 0; p < np; p++)
 		{
-			state = ProcessorStateArray[p][0] / 50;
-			if (ProcessorArray[p][state])
+			switch (ProcessorStateArray[p])
 			{
-				row_of_A = (ProcessorArray[p][state] % Write_Address_Base_C / 50);
-				col_of_A = ProcessorStateArray[p][0] % 50;
-				Read_Address_A = Read_Address_Base_A + 50 * row_of_A + col_of_A;
-				Read_Tag_A = Read_Address_A / (Block_size * Lines);
-				Read_Index_A = (Read_Address_A / Block_size) % Lines;
-
-				row_of_B = col_of_A;
-				col_of_B = row_of_A;
-				Read_Address_B = Read_Address_Base_B + 50 * row_of_B + col_of_B;
-				Read_Tag_B = Read_Address_B / (Block_size * Lines);
-				Read_Index_B = (Read_Address_B / Block_size) % Lines;
-
-				if ((ProcessorStateArray[p][0] % 50) == 49)
+			case 1:
+				// Check if resumed
+				if (Resume_Time[p] == Globle_Counter) // resumed
 				{
-					row_of_C = row_of_A;
-					col_of_C = (ProcessorArray[p][state] % Write_Address_Base_C % 50);
-					Write_Address_C = ProcessorArray[p][state];
-					Write_Tag_C = Write_Address_C / (Block_size * Lines);
-					Write_Index_C = (Write_Address_C / Block_size) % Lines;
-				}
-				else if (debug_mode)
-				{
-					row_of_C = 0;
-					col_of_C = 0;
-					Write_Address_C = 0;
-					Write_Tag_C = 0;
-					Write_Index_C = 0;
+					// check if this processor finished
+					if (!ProcessorPositionArray) // finished
+						ProcessorStateArray[p] = 4;
+					else // not finished
+					{
+						// get address, index, tag
+						Current_Address = AddressArray[p][ProcessorPositionArray[p]];
+						Current_Index = (Current_Address / Block_size) % Lines;
+						Current_Tag = Current_Address / (Block_size * Lines);
+						ProcessorPositionArray[p]++;
+
+						// check if chace hit
+						bool if_hit = 0;
+						if (if_hit) // hit
+						{
+							// time delay
+						}
+						else // not hit
+						{
+							Resume_Time[p] = DRAM_Time + DRAM_access_delay;
+							DRAM_Time = Resume_Time[p];
+						}
+					}
 				}
 
-				Result_File << p << "," << ProcessorStateArray[p][0] << "," 
-					<< row_of_A << "," << col_of_A << "," << Read_Address_A << "," << Read_Tag_A << "," << Read_Index_A << "," 
-					<< row_of_B << "," << col_of_B << "," << Read_Address_B << "," << Read_Tag_B << "," << Read_Index_B << ","
-					<< row_of_C << "," << col_of_C << "," << Write_Address_C << "," << Write_Tag_C << "," << Write_Index_C << ","
-					<< endl;
 
-				ProcessorStateArray[p][0] ++;
+
+
+				
+				break;
+			case 2:
+
+				break;
+
+			case 3:
+
+				break;
 			}
-			else
-				ProcessorFinishedArray[p][0] = 1;
 
-			All_Processor_Finished = 1;
-			for (int pp = 0; pp < np; pp++)
+
+			// Check if all processor finished
+			All_processor_finished = 1;
+			for (int p = 0; p < np; p++)
 			{
-				if (!ProcessorFinishedArray[p][0])
-					All_Processor_Finished = 0;
+				if (ProcessorStateArray[p] != 4)
+					All_processor_finished = 0;
 			}
-			if (All_Processor_Finished)
+			if (All_processor_finished)
 				break;
 		} // end for
 	}
+
+
 }
 
 
@@ -305,10 +189,64 @@ void sim(int np, int cache_size_kB)
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
 	remove("Cache_Sim.csv");
+	remove("Addresses.csv");
+
 	// sim number of processer, cache size in kB
 	sim(10,32);
 
 	if (debug_mode)
 		//std::cin.get();
 	return 0;
+}
+
+int** address_cal(int num_p){
+	cerr << "Calculating Addresses.." << endl;
+	int **address = new int*[num_p];
+	int Start_Pointer_A = 100000;
+	int Start_Pointer_B = 200000;
+	int Start_Pointer_C = 300000;
+	int m = 0;	// row of c
+	int n = 0;  // column of c
+	int p = 0;
+	int *add_pos = new int[num_p];
+
+	for (int i = 0; i < num_p; i++){
+		address[i] = new int[300000]; // The worse case is 1 core
+		// would need to access 50x50x101 = 252500 address
+		// make the array for address for each core be 300000 for safty
+		add_pos[i] = 0;
+	}
+
+	// Initialise result
+	for (int p = 0; p < num_p; p++)
+	{
+		for (int i = 0; i < 300000; i++)
+			address[p][i] = 0;
+	}
+
+	for (int c = 0; c < 2500; c++){
+		m = c / 50;
+		n = c % 50;
+		for (int i = 0; i < 50; i++){
+			address[p][add_pos[p]] = Start_Pointer_A + ((m * 50 + i) << 2); // matrix A address
+			//cerr << address[p][add_pos[p]] << "  ";
+			add_pos[p]++;
+			address[p][add_pos[p]] = Start_Pointer_B + ((n + i * 50) << 2); // matrix B address
+			//cerr << p << ":" << add_pos[p] << " " << address[p][add_pos[p]] << endl;
+			add_pos[p]++;
+			//std::cin.get();
+		}
+		address[p][add_pos[p]] = Start_Pointer_C + (c << 2);//matrix C address
+		//cerr << endl;
+		//cerr << address[p][add_pos[p]] << endl;
+		//cerr << "p = " << p << endl;
+		//cerr << endl;
+		add_pos[p]++;
+		//std::cin.get();
+		p++;
+		if (p == num_p) p = 0;
+	}
+
+	return address;
+
 }
