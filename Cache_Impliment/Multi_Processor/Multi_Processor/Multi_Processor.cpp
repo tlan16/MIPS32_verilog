@@ -28,16 +28,12 @@ void sim(int np, int cache_size_kB)
 
 	// Initial processor state array (1:accessing matrix A, 2:accessing matrix B, 3:accessing matrix C, 4:finished)
 	int *ProcessorStateArray = new int[np];
+	memset(ProcessorStateArray, 1, np);
 	bool All_processor_finished = 0;
-
-	for (int i = 0; i < np; i++)
-		ProcessorStateArray[i] = 1;
 
 	// Initial processor position array
 	int *ProcessorPositionArray = new int[np];
-
-	for (int i = 0; i < np; i++)
-		ProcessorPositionArray[i] = 0;
+	memset(ProcessorPositionArray, 0, np);
 
 	// Distrubute tasks and assign addresses to each processor
 	int** address_cal(int num_p);
@@ -68,11 +64,11 @@ void sim(int np, int cache_size_kB)
 	int Current_Tag;
 
 	// Initial result timers
-	unsigned long long int Globle_Counter = 0;
-	unsigned long long int DRAM_Time = Globle_Counter;
+	unsigned long long int Global_Counter = 0;
+	unsigned long long int DRAM_Time = Global_Counter;
 	unsigned long long int *Resume_Time = new unsigned long long int[np];
 	for (int i = 0; i < np; i++)
-		Resume_Time[i] = Globle_Counter; // Initially not locked
+		Resume_Time[i] = Global_Counter; // Initially not locked
 
 	// Initial delays
 	int DRAM_access_delay = 20;
@@ -119,6 +115,66 @@ void sim(int np, int cache_size_kB)
 		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
 		<< endl;
 
+	// Three Dimentsional Valid Array
+	bool*** Valid = new bool**[np];
+	for (int i = 0; i < np; i++)
+	{
+		Valid[i] = new bool*[Ways];
+		for (int j = 0; j < Ways; j++)
+			Valid[i][j] = new bool[Lines];
+	}
+	for (int i = 0; i < np; i++)
+	{
+		for (int j = 0; j < Ways; j++)
+		{
+			for (int k = 0; k < Lines; k++)
+				Valid[i][j][k] = 0;
+		}
+	}
+
+	// Three Dimentsional Tag Array
+	int*** Tag = new int**[np];
+	for (int i = 0; i < np; i++)
+	{
+		Tag[i] = new int*[Ways];
+		for (int j = 0; j < Ways; j++)
+			Tag[i][j] = new int[Lines];
+	}
+	for (int i = 0; i < np; i++)
+	{
+		for (int j = 0; j < Ways; j++)
+		{
+			for (int k = 0; k < Lines; k++)
+				Tag[i][j][k] = 0;
+		}
+	}
+
+	// Declare any required variables in this section
+	unsigned long long int *time_total = new unsigned long long int[np];
+	memset(time_total, 0, np);
+
+	// Array to store total miss
+	int** miss_total = new int*[np];
+	for (int i = 0; i < Ways; i++)
+		miss_total[i] = new int[3];
+	for (int i = 0; i < np; i++)
+		memset(miss_total[i], 0, 3);
+
+	// Array to store total hit
+	int** hit_total = new int*[np];
+	for (int i = 0; i < Ways; i++)
+		hit_total[i] = new int[3];
+	for (int i = 0; i < np; i++)
+		memset(hit_total[i], 0, 3);
+
+	bool hit = 0;
+	int which_matrix;
+	unsigned long long int Current_RAM_Row = 0;
+	unsigned long long int Previous_RAM_Row = 0;
+	bool Previous_RAM_Row_Valid = false;
+	int *Update_Way = new int[np]; // Update way using fifo method
+	memset(Update_Way, 0, np);
+
 	while (!All_processor_finished)
 	{
 		for (int p = 0; p < np; p++)
@@ -128,11 +184,11 @@ void sim(int np, int cache_size_kB)
 			case 1:
 				// Check if resumed
 				if (debug_mode)
-					Result_File << "p=" << "," << p << "," << "GC" << "," << Globle_Counter  << "," << endl;
-				if (Resume_Time[p] <= Globle_Counter) // resumed
+					Result_File << "p=" << "," << p << "," << "GC" << "," << Global_Counter  << "," << endl;
+				if (Resume_Time[p] <= Global_Counter) // resumed
 				{
 					// check if this processor finished
-					if (!ProcessorPositionArray[p] & Globle_Counter & Resume_Time[p]) // finished
+					if (!AddressArray[p][ProcessorPositionArray[p]] & Global_Counter & Resume_Time[p]) // finished
 						ProcessorStateArray[p] = 4;
 					else // not finished
 					{
@@ -144,14 +200,17 @@ void sim(int np, int cache_size_kB)
 						switch (Current_Address/100000)
 						{
 						case 1: // accessing matrix A
+							which_matrix = 0;
 							if (debug_mode)
 								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						case 2: // accessing matrix B
+							which_matrix = 1;
 							if (debug_mode)
 								Result_File << "B:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						case 3: // accessing matrix C
+							which_matrix = 2;
 							if (debug_mode)
 								Result_File << "C:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
@@ -160,13 +219,44 @@ void sim(int np, int cache_size_kB)
 						ProcessorPositionArray[p]++;
 
 						// check if chace hit
-						bool if_hit = 0;
-						if (if_hit) // hit
+						hit = 0;
+						for (int l = 0; l < Ways; l++)
 						{
-							// time delay
+							if (Valid[p][l][Current_Index] & (Tag[p][l][Current_Index] == Current_Tag))
+								hit = 1;
+						}
+
+						if (hit) // hit
+						{
+							hit_total[p][which_matrix]++;
+							if (debug_mode)
+								Result_File << "Matrix" << which_matrix << "Hit" << endl;
 						}
 						else // not hit
 						{
+							miss_total[p][which_matrix]++;
+							Current_RAM_Row = Current_Address >> DRAM_Row_Offset;
+							if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+							{
+								if (debug_mode)
+									Result_File << "Matrix" << which_matrix << "CAS Miss" << endl;
+							}
+							else // Need RAS and CAS
+							{
+								Previous_RAM_Row = Current_RAM_Row; // Update RAM row
+								if (debug_mode)
+									Result_File << "Matrix" << which_matrix << "CAS & RAS Miss" << endl;
+							}
+							Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
+
+							Valid[p][Update_Way[p]][Current_Index] = true; // Write to the way you chose in previous line
+							Tag[p][Update_Way[p]][Current_Index] = Current_Tag; // Write to the way you chose in previous line
+
+							if (Update_Way[p] == (Ways - 1))
+								Update_Way[p] = 0;
+							else
+								Update_Way[p]++;
+
 							Resume_Time[p] = DRAM_Time + DRAM_access_delay;
 							DRAM_Time = Resume_Time[p];
 							if (debug_mode)
@@ -200,7 +290,7 @@ void sim(int np, int cache_size_kB)
 			if (All_processor_finished)
 				break;
 			else
-				Globle_Counter++;
+				Global_Counter++;
 		} // end for
 	}
 
