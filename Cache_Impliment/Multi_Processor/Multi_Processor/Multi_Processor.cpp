@@ -129,10 +129,10 @@ void sim(int np, int cache_size_kB)
 				// Check if resumed
 				if (debug_mode)
 					Result_File << "p=" << "," << p << "," << "GC" << "," << Globle_Counter  << "," << endl;
-				if (Resume_Time[p] == Globle_Counter) // resumed
+				if (Resume_Time[p] <= Globle_Counter) // resumed
 				{
 					// check if this processor finished
-					if (!ProcessorPositionArray[p]) // finished
+					if (!ProcessorPositionArray[p] & Globle_Counter & Resume_Time[p]) // finished
 						ProcessorStateArray[p] = 4;
 					else // not finished
 					{
