@@ -208,7 +208,7 @@ void sim(int np, int cache_size_kB)
 	unsigned long long int Previous_RAM_Row = 0;
 	bool Previous_RAM_Row_Valid = false;
 	int *Update_Way = new int[np]; // Update way using fifo method
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < np; i++)
 	{
 		Update_Way[i] = 0;
 	}
@@ -277,13 +277,13 @@ void sim(int np, int cache_size_kB)
 							if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 							{
 								if (debug_mode)
-									Detail_file << "Matrix" << which_matrix << "CAS Miss" << endl;
+									Detail_file << "Matrix" << which_matrix << "," << "CAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
 							}
 							else // Need RAS and CAS
 							{
 								Previous_RAM_Row = Current_RAM_Row; // Update RAM row
 								if (debug_mode)
-									Detail_file << "Matrix" << which_matrix << "CAS & RAS Miss" << endl;
+									Detail_file << "Matrix" << which_matrix << "," << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
 							}
 							Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
 
@@ -369,7 +369,6 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 	// sim: number of processor, cache size in kB
 	if (debug_mode)
 	{
-		//sim(2, 8);
 		for (int np = 2; np < 50; np++)
 			sim(np, 8);
 		for (int np = 2; np < 50; np++)
