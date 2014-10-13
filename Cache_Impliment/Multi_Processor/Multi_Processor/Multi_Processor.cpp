@@ -180,7 +180,7 @@ void sim(int np, int cache_size_kB)
 
 	// Array to store total miss
 	int** miss_total = new int*[np];
-	for (int i = 0; i < Ways; i++)
+	for (int i = 0; i < np; i++)
 		miss_total[i] = new int[3];
 	for (int i = 0; i < np; i++)
 	{
@@ -192,7 +192,7 @@ void sim(int np, int cache_size_kB)
 
 	// Array to store total hit
 	int** hit_total = new int*[np];
-	for (int i = 0; i < Ways; i++)
+	for (int i = 0; i < np; i++)
 		hit_total[i] = new int[3];
 	for (int i = 0; i < np; i++)
 	{
