@@ -132,7 +132,7 @@ void sim(int np, int cache_size_kB)
 				if (Resume_Time[p] == Globle_Counter) // resumed
 				{
 					// check if this processor finished
-					if (!ProcessorPositionArray) // finished
+					if (!ProcessorPositionArray[p]) // finished
 						ProcessorStateArray[p] = 4;
 					else // not finished
 					{
@@ -149,11 +149,11 @@ void sim(int np, int cache_size_kB)
 							break;
 						case 2: // accessing matrix B
 							if (debug_mode)
-								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+								Result_File << "B:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						case 3: // accessing matrix C
 							if (debug_mode)
-								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+								Result_File << "C:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						}
 
