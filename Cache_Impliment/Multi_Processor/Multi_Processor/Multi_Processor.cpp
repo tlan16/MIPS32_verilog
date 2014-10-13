@@ -28,7 +28,7 @@ void sim(int np, int cache_size_kB)
 
 	// Initial processor state array (1:accessing matrix A, 2:accessing matrix B, 3:accessing matrix C, 4:finished)
 	int *ProcessorStateArray = new int[np];
-	bool All_processor_finished;
+	bool All_processor_finished = 0;
 
 	for (int i = 0; i < np; i++)
 		ProcessorStateArray[i] = 1;
@@ -70,7 +70,7 @@ void sim(int np, int cache_size_kB)
 	// Initial result timers
 	unsigned long long int Globle_Counter = 0;
 	unsigned long long int DRAM_Time = Globle_Counter;
-	int *Resume_Time = new int[np];
+	unsigned long long int *Resume_Time = new unsigned long long int[np];
 	for (int i = 0; i < np; i++)
 		Resume_Time[i] = Globle_Counter; // Initially not locked
 
@@ -127,6 +127,8 @@ void sim(int np, int cache_size_kB)
 			{
 			case 1:
 				// Check if resumed
+				if (debug_mode)
+					Result_File << "p=" << "," << p << "," << "GC" << "," << Globle_Counter  << "," << endl;
 				if (Resume_Time[p] == Globle_Counter) // resumed
 				{
 					// check if this processor finished
@@ -138,6 +140,23 @@ void sim(int np, int cache_size_kB)
 						Current_Address = AddressArray[p][ProcessorPositionArray[p]];
 						Current_Index = (Current_Address / Block_size) % Lines;
 						Current_Tag = Current_Address / (Block_size * Lines);
+
+						switch (Current_Address/100000)
+						{
+						case 1: // accessing matrix A
+							if (debug_mode)
+								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+							break;
+						case 2: // accessing matrix B
+							if (debug_mode)
+								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+							break;
+						case 3: // accessing matrix C
+							if (debug_mode)
+								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+							break;
+						}
+
 						ProcessorPositionArray[p]++;
 
 						// check if chace hit
@@ -150,6 +169,8 @@ void sim(int np, int cache_size_kB)
 						{
 							Resume_Time[p] = DRAM_Time + DRAM_access_delay;
 							DRAM_Time = Resume_Time[p];
+							if (debug_mode)
+								Result_File << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
 						}
 					}
 				}
@@ -178,6 +199,8 @@ void sim(int np, int cache_size_kB)
 			}
 			if (All_processor_finished)
 				break;
+			else
+				Globle_Counter++;
 		} // end for
 	}
 
@@ -192,7 +215,7 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 	remove("Addresses.csv");
 
 	// sim number of processer, cache size in kB
-	sim(10,32);
+	sim(2,32);
 
 	if (debug_mode)
 		//std::cin.get();
