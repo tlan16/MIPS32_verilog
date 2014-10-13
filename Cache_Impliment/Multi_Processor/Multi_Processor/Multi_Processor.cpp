@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
+#include <cstring>
+#include <string>
 #include <fstream>
 #include <bitset>
 #include <iomanip>
@@ -23,38 +25,52 @@ bool debug_check_address = 1;
 void sim(int np, int cache_size_kB)
 {
 	// Initialise output files
+	string detail_file_name = "Detail_" + to_string(np) + "P" + "_" + to_string(cache_size_kB) + "kB" + ".csv";
+	remove(detail_file_name.c_str());
 	ofstream Result_File("Cache_Sim.csv", ios::app);
-	ofstream Address_File("Addresses.csv", ios::app);
+	ofstream Detail_file(detail_file_name.c_str(), ios::app);
 
-	// Initial processor state array (1:accessing matrix A, 2:accessing matrix B, 3:accessing matrix C, 4:finished)
+	// Initial processor state array (1:not finished 4:finished)
 	int *ProcessorStateArray = new int[np];
-	memset(ProcessorStateArray, 1, np);
+	for (int i = 0; i < np; i++)
+	{
+		ProcessorStateArray[i] = 1;
+	}
 	bool All_processor_finished = 0;
 
 	// Initial processor position array
 	int *ProcessorPositionArray = new int[np];
-	memset(ProcessorPositionArray, 0, np);
+	for (int i = 0; i < np; i++)
+	{
+		ProcessorPositionArray[i] = 0;
+	}
 
-	// Distrubute tasks and assign addresses to each processor
+	// Distribute tasks and assign addresses to each processor
 	int** address_cal(int num_p);
 	int** AddressArray = address_cal(np);
 
-	// Check addresses distribusion
+	// Check addresses distribution
 	if (debug_check_address)
 	{
+		bool all_zero;
 		for (int i = 0; i < np; i++)
 		{
-			Address_File << "P" << i << ",";
+			Detail_file << "P" << i << ",";
 			if (i == (np - 1))
-				Address_File << endl;
+				Detail_file << endl;
 		}
 		for (int i = 0; i < 300000; i++)
 		{
 			for (int p = 0; p < np; p++)
 			{
-				Address_File << AddressArray[p][i] << ",";
+				Detail_file << AddressArray[p][i] << ",";
+				all_zero = 1;
+				if (AddressArray[p][i])
+					all_zero = 0;
 			}
-			Address_File << endl;
+			Detail_file << endl;
+			if (all_zero)
+				break;
 		}
 	}
 
@@ -94,7 +110,7 @@ void sim(int np, int cache_size_kB)
 	const int Data_Size_bit_shift = log2(cache_size_kB * 1024);
 	const int Words_Per_Block_bit_shift = log2(Words_Per_Block);
 	const int Associative_bit_shift = log2(Ways);
-	// Calculated Cache Aruguments
+	// Calculated Cache Arguments
 	const int Index_Size = Data_Size_bit_shift - 2 - Words_Per_Block_bit_shift - Associative_bit_shift;
 	const int Lines = 1 << Index_Size; // Number of lines per way in the cache (derived from Index_Size)
 	const int Address_Bits_Per_Block = Words_Per_Block_bit_shift; // Address bits used to derefence a word in a block
@@ -108,6 +124,12 @@ void sim(int np, int cache_size_kB)
 		<< "Ways=" << Ways << ", Words_Per_Block=" << Words_Per_Block << ", Hit_Time=" << Hit_Time << endl
 		<< "Sets=" << Lines << ", Index_Size=" << Index_Size << ", Tag_Size=" << Tag_Bits
 		<< endl;
+	Detail_file << "Number of Processors" << "," << "Cache Size" << "," << "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
+		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << ","
+		<< endl
+		<< np << "," << Cache_Size / 1024 << "," << Ways << "," << Words_Per_Block << "," << Hit_Time << ","
+		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
+		<< endl;
 	Result_File << "Number of Processors" << "," << "Cache Size" << "," << "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << ","
 		<< endl
@@ -115,7 +137,7 @@ void sim(int np, int cache_size_kB)
 		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
 		<< endl;
 
-	// Three Dimentsional Valid Array
+	// Three Dimensional Valid Array
 	bool*** Valid = new bool**[np];
 	for (int i = 0; i < np; i++)
 	{
@@ -132,7 +154,7 @@ void sim(int np, int cache_size_kB)
 		}
 	}
 
-	// Three Dimentsional Tag Array
+	// Three Dimensional Tag Array
 	int*** Tag = new int**[np];
 	for (int i = 0; i < np; i++)
 	{
@@ -151,21 +173,34 @@ void sim(int np, int cache_size_kB)
 
 	// Declare any required variables in this section
 	unsigned long long int *time_total = new unsigned long long int[np];
-	memset(time_total, 0, np);
+	for (int i = 0; i < np; i++)
+	{
+		time_total[i] = 0;
+	}
 
 	// Array to store total miss
 	int** miss_total = new int*[np];
 	for (int i = 0; i < Ways; i++)
 		miss_total[i] = new int[3];
 	for (int i = 0; i < np; i++)
-		memset(miss_total[i], 0, 3);
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			miss_total[i][j] = 0;
+		}
+	}
 
 	// Array to store total hit
 	int** hit_total = new int*[np];
 	for (int i = 0; i < Ways; i++)
 		hit_total[i] = new int[3];
 	for (int i = 0; i < np; i++)
-		memset(hit_total[i], 0, 3);
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			hit_total[i][j] = 0;
+		}
+	}
 
 	bool hit = 0;
 	int which_matrix;
@@ -173,7 +208,10 @@ void sim(int np, int cache_size_kB)
 	unsigned long long int Previous_RAM_Row = 0;
 	bool Previous_RAM_Row_Valid = false;
 	int *Update_Way = new int[np]; // Update way using fifo method
-	memset(Update_Way, 0, np);
+	for (int i = 0; i < 3; i++)
+	{
+		Update_Way[i] = 0;
+	}
 
 	while (!All_processor_finished)
 	{
@@ -184,11 +222,11 @@ void sim(int np, int cache_size_kB)
 			case 1:
 				// Check if resumed
 				if (debug_mode)
-					Result_File << "p=" << "," << p << "," << "GC" << "," << Global_Counter  << "," << endl;
+					Detail_file << "p=" << "," << p << "," << "GC" << "," << Global_Counter << "," << endl;
 				if (Resume_Time[p] <= Global_Counter) // resumed
 				{
 					// check if this processor finished
-					if (!AddressArray[p][ProcessorPositionArray[p]] & Global_Counter & Resume_Time[p]) // finished
+					if (!AddressArray[p][ProcessorPositionArray[p]]) // finished
 						ProcessorStateArray[p] = 4;
 					else // not finished
 					{
@@ -197,22 +235,22 @@ void sim(int np, int cache_size_kB)
 						Current_Index = (Current_Address / Block_size) % Lines;
 						Current_Tag = Current_Address / (Block_size * Lines);
 
-						switch (Current_Address/100000)
+						switch (Current_Address / 100000)
 						{
 						case 1: // accessing matrix A
 							which_matrix = 0;
 							if (debug_mode)
-								Result_File << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+								Detail_file << "A:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						case 2: // accessing matrix B
 							which_matrix = 1;
 							if (debug_mode)
-								Result_File << "B:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+								Detail_file << "B:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						case 3: // accessing matrix C
 							which_matrix = 2;
 							if (debug_mode)
-								Result_File << "C:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
+								Detail_file << "C:" << "," << Current_Address << "," << "index:" << "," << Current_Index << "," << "tag:" << "," << Current_Tag << "," << endl;
 							break;
 						}
 
@@ -230,7 +268,7 @@ void sim(int np, int cache_size_kB)
 						{
 							hit_total[p][which_matrix]++;
 							if (debug_mode)
-								Result_File << "Matrix" << which_matrix << "Hit" << endl;
+								Detail_file << "Matrix" << which_matrix << "Hit" << endl;
 						}
 						else // not hit
 						{
@@ -239,13 +277,13 @@ void sim(int np, int cache_size_kB)
 							if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 							{
 								if (debug_mode)
-									Result_File << "Matrix" << which_matrix << "CAS Miss" << endl;
+									Detail_file << "Matrix" << which_matrix << "CAS Miss" << endl;
 							}
 							else // Need RAS and CAS
 							{
 								Previous_RAM_Row = Current_RAM_Row; // Update RAM row
 								if (debug_mode)
-									Result_File << "Matrix" << which_matrix << "CAS & RAS Miss" << endl;
+									Detail_file << "Matrix" << which_matrix << "CAS & RAS Miss" << endl;
 							}
 							Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
 
@@ -260,22 +298,10 @@ void sim(int np, int cache_size_kB)
 							Resume_Time[p] = DRAM_Time + DRAM_access_delay;
 							DRAM_Time = Resume_Time[p];
 							if (debug_mode)
-								Result_File << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
+								Detail_file << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
 						}
 					}
 				}
-
-
-
-
-				
-				break;
-			case 2:
-
-				break;
-
-			case 3:
-
 				break;
 			}
 
@@ -289,12 +315,50 @@ void sim(int np, int cache_size_kB)
 			}
 			if (All_processor_finished)
 				break;
-			else
-				Global_Counter++;
 		} // end for
+		if (All_processor_finished)
+			break;
+		else
+			Global_Counter++;
 	}
 
-
+	// Output results
+	Result_File << endl;
+	Result_File << "P" << "," << "A_Hit Rate" << "," << "A_Total Instruction" << "," 
+		<< "B_Hit Rate" << "," << "B_Total Instruction" << "," 
+		<< "C_Hit Rate" << "," << "C_Total Instruction" << "," 
+		<< "Time" << "," << endl;
+	for (int p = 0; p < np; p++)
+	{
+		Result_File << p << ","
+			<< (double)hit_total[p][0] / (double)(hit_total[p][0] + miss_total[p][0]) * 100 << "," << (hit_total[p][0] + miss_total[p][0]) << ","
+			<< (double)hit_total[p][1] / (double)(hit_total[p][1] + miss_total[p][1]) * 100 << "," << (hit_total[p][1] + miss_total[p][1]) << ","
+			<< (double)hit_total[p][2] / (double)(hit_total[p][2] + miss_total[p][2]) * 100 << "," << (hit_total[p][2] + miss_total[p][2]) << ","
+			<< "N/A" << "," << endl;
+	}
+	
+	//Delete variables
+	Detail_file.close();
+	delete[] ProcessorStateArray;
+	delete[] ProcessorPositionArray;
+	for (int p = 0; p < np; p++)
+		delete[] AddressArray[p];
+	delete[] AddressArray;
+	delete[] Resume_Time;
+	for (int i = 0; i < np; i++)
+	{
+		for (int j = 0; j < Ways; j++)
+			delete[] Valid[i][j];
+		delete[] Valid[i];
+	}
+	delete[] Valid;
+	for (int i = 0; i < np; i++)
+	{
+		for (int j = 0; j < Ways; j++)
+			delete[] Tag[i][j];
+		delete[] Tag[i];
+	}
+	delete[] Tag;
 }
 
 
@@ -302,13 +366,24 @@ void sim(int np, int cache_size_kB)
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
 	remove("Cache_Sim.csv");
-	remove("Addresses.csv");
-
-	// sim number of processer, cache size in kB
-	sim(2,32);
-
+	// sim: number of processor, cache size in kB
 	if (debug_mode)
-		//std::cin.get();
+	{
+		//sim(2, 8);
+		for (int np = 2; np < 50; np++)
+			sim(np, 8);
+		for (int np = 2; np < 50; np++)
+			sim(np, 32);
+	}
+	else
+	{
+		for (int np = 2; np < 50; np++)
+			sim(np, 8);
+		for (int np = 2; np < 50; np++)
+			sim(np, 32);
+	}
+
+	//std::cin.get();
 	return 0;
 }
 
