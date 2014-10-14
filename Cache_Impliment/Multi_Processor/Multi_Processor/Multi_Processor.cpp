@@ -70,7 +70,10 @@ void sim(int np, int cache_size_kB)
 			}
 			Detail_file << endl;
 			if (all_zero)
+			{
+				cout << "done" << endl;
 				break;
+			}
 		}
 	}
 
@@ -124,6 +127,7 @@ void sim(int np, int cache_size_kB)
 		<< "Ways=" << Ways << ", Words_Per_Block=" << Words_Per_Block << ", Hit_Time=" << Hit_Time << endl
 		<< "Sets=" << Lines << ", Index_Size=" << Index_Size << ", Tag_Size=" << Tag_Bits
 		<< endl;
+	cout << "Simulation in process ... ";
 	Detail_file << "Number of Processors" << "," << "Cache Size" << "," << "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << ","
 		<< endl
@@ -212,6 +216,11 @@ void sim(int np, int cache_size_kB)
 	{
 		Update_Way[i] = 0;
 	}
+	bool *priviously_waiting = new bool[np]; // Update way using fifo method
+	for (int i = 0; i < np; i++)
+	{
+		priviously_waiting[i] = 0;
+	}
 
 	while (!All_processor_finished)
 	{
@@ -221,8 +230,8 @@ void sim(int np, int cache_size_kB)
 			{
 			case 1:
 				// Check if resumed
-				if (debug_mode)
-					Detail_file << "p=" << "," << p << "," << "GC" << "," << Global_Counter << "," << endl;
+				if (debug_mode & !priviously_waiting[p])
+					Detail_file << "p=" << p << "," << "GC" << "," << Global_Counter << "," << endl;
 				if (Resume_Time[p] <= Global_Counter) // resumed
 				{
 					// check if this processor finished
@@ -298,9 +307,17 @@ void sim(int np, int cache_size_kB)
 							Resume_Time[p] = DRAM_Time + DRAM_access_delay;
 							DRAM_Time = Resume_Time[p];
 							if (debug_mode)
+							{
+								priviously_waiting[p] = 0;
 								Detail_file << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
+							}
 						}
 					}
+				}
+				else
+				{
+					if (debug_mode)
+						priviously_waiting[p] = 1;
 				}
 				break;
 			}
@@ -323,12 +340,30 @@ void sim(int np, int cache_size_kB)
 	}
 
 	// Output results
-	Result_File << endl;
-	Result_File << "P" << "," << "A_Hit Rate" << "," << "A_Total Instruction" << "," 
-		<< "B_Hit Rate" << "," << "B_Total Instruction" << "," 
-		<< "C_Hit Rate" << "," << "C_Total Instruction" << "," 
+	Result_File
+		<< "A_Average_Hit Rate" << "," << "A_Total Instruction" << "," 
+		<< "B_Average_Hit Rate" << "," << "B_Total Instruction" << "," 
+		<< "C_Average_Hit Rate" << "," << "C_Total Instruction" << "," 
 		<< "Time" << "," << endl;
-	for (int p = 0; p < np; p++)
+
+	unsigned long long int *sum_hit_total = new unsigned long long int[3];
+	for (int i = 0; i < 3; i++)
+		sum_hit_total[i] = 0;
+	unsigned long long int *sum_miss_total = new unsigned long long int[3];
+	for (int i = 0; i < 3; i++)
+		sum_miss_total[i] = 0;
+	for (int p = 1; p < np; p++)
+	{
+		sum_hit_total[0] += hit_total[p][0];
+		sum_hit_total[1] += hit_total[p][1];
+		sum_hit_total[2] += hit_total[p][2];
+		sum_miss_total[0] += miss_total[p][0];
+		sum_miss_total[1] += miss_total[p][1];
+		sum_miss_total[2] += miss_total[p][2];
+	}
+
+	/*
+	for (int p = 1; p < np; p++)
 	{
 		Result_File << p << ","
 			<< (double)hit_total[p][0] / (double)(hit_total[p][0] + miss_total[p][0]) * 100 << "," << (hit_total[p][0] + miss_total[p][0]) << ","
@@ -336,6 +371,13 @@ void sim(int np, int cache_size_kB)
 			<< (double)hit_total[p][2] / (double)(hit_total[p][2] + miss_total[p][2]) * 100 << "," << (hit_total[p][2] + miss_total[p][2]) << ","
 			<< "N/A" << "," << endl;
 	}
+	*/
+
+	Result_File << setprecision(2)
+		<< (double)sum_hit_total[0] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[0] + sum_miss_total[0]) << ","
+		<< (double)sum_hit_total[1] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[1] + sum_miss_total[1]) << ","
+		<< (double)sum_hit_total[2] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[2] + sum_miss_total[2]) << ","
+		<< "N/A" << "," << endl << endl;
 	
 	//Delete variables
 	Detail_file.close();
@@ -359,6 +401,7 @@ void sim(int np, int cache_size_kB)
 		delete[] Tag[i];
 	}
 	delete[] Tag;
+	cout << "done" << endl << endl;
 }
 
 
@@ -367,18 +410,19 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
 	remove("Cache_Sim.csv");
 	// sim: number of processor, cache size in kB
+
 	if (debug_mode)
 	{
-		for (int np = 2; np < 50; np++)
+		for (int np = 2; np <= 50; np++)
 			sim(np, 8);
-		for (int np = 2; np < 50; np++)
+		for (int np = 2; np <= 50; np++)
 			sim(np, 32);
 	}
 	else
 	{
-		for (int np = 2; np < 50; np++)
+		for (int np = 2; np <= 50; np++)
 			sim(np, 8);
-		for (int np = 2; np < 50; np++)
+		for (int np = 2; np <= 50; np++)
 			sim(np, 32);
 	}
 
@@ -387,7 +431,7 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 }
 
 int** address_cal(int num_p){
-	cerr << "Calculating Addresses.." << endl;
+	cout << "Calculating Addresses ... ";
 	int **address = new int*[num_p];
 	int Start_Pointer_A = 100000;
 	int Start_Pointer_B = 200000;
@@ -416,24 +460,22 @@ int** address_cal(int num_p){
 		n = c % 50;
 		for (int i = 0; i < 50; i++){
 			address[p][add_pos[p]] = Start_Pointer_A + ((m * 50 + i) << 2); // matrix A address
-			//cerr << address[p][add_pos[p]] << "  ";
+			//cout << address[p][add_pos[p]] << "  ";
 			add_pos[p]++;
 			address[p][add_pos[p]] = Start_Pointer_B + ((n + i * 50) << 2); // matrix B address
-			//cerr << p << ":" << add_pos[p] << " " << address[p][add_pos[p]] << endl;
+			//cout << p << ":" << add_pos[p] << " " << address[p][add_pos[p]] << endl;
 			add_pos[p]++;
 			//std::cin.get();
 		}
 		address[p][add_pos[p]] = Start_Pointer_C + (c << 2);//matrix C address
-		//cerr << endl;
-		//cerr << address[p][add_pos[p]] << endl;
-		//cerr << "p = " << p << endl;
-		//cerr << endl;
+		//cout << endl;
+		//cout << address[p][add_pos[p]] << endl;
+		//cout << "p = " << p << endl;
+		//cout << endl;
 		add_pos[p]++;
 		//std::cin.get();
 		p++;
 		if (p == num_p) p = 0;
 	}
-
 	return address;
-
 }
