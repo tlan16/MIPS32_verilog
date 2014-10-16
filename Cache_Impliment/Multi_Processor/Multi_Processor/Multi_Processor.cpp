@@ -19,22 +19,23 @@ using std::vector;
 using namespace std;
 
 // Debug
-bool debug_mode = 1;
-bool debug_check_address = 1;
+bool debug_mode = 0;
+bool debug_check_address = debug_mode ? 1 : 0;
 
 void sim(int np, int cache_size_kB)
 {
 	// Initialise output files
-	string detail_file_name = "Detail_" + to_string(np) + "P" + "_" + to_string(cache_size_kB) + "kB" + ".csv";
-	remove(detail_file_name.c_str());
 	ofstream Result_File("Cache_Sim.csv", ios::app);
+	string detail_file_name = "Detail_" + to_string(np) + "P" + "_" + to_string(cache_size_kB) + "kB" + ".csv";
 	ofstream Detail_file(detail_file_name.c_str(), ios::app);
+	if (debug_mode)
+		remove(detail_file_name.c_str());
 
-	// Initial processor state array (1:not finished 4:finished)
-	int *ProcessorStateArray = new int[np];
+	// Initial processor state array (0:not finished 1:finished)
+	bool *ProcessorFinishFlagArray = new bool[np];
 	for (int i = 0; i < np; i++)
 	{
-		ProcessorStateArray[i] = 1;
+		ProcessorFinishFlagArray[i] = 0;
 	}
 	bool All_processor_finished = 0;
 
@@ -70,10 +71,7 @@ void sim(int np, int cache_size_kB)
 			}
 			Detail_file << endl;
 			if (all_zero)
-			{
-				cout << "done" << endl;
 				break;
-			}
 		}
 	}
 
@@ -123,11 +121,7 @@ void sim(int np, int cache_size_kB)
 	const int Block_size = Words_Per_Block * Word_Size;
 	const int Cache_Size = Blocks * Block_size;
 
-	cout << "Number of Processors=" << np << ", Cache Size=" << Cache_Size / 1024 << endl
-		<< "Ways=" << Ways << ", Words_Per_Block=" << Words_Per_Block << ", Hit_Time=" << Hit_Time << endl
-		<< "Sets=" << Lines << ", Index_Size=" << Index_Size << ", Tag_Size=" << Tag_Bits
-		<< endl;
-	cout << "Simulation in process ... ";
+	cout << "Number of Processors=" << np << ", Cache Size=" << Cache_Size / 1024; (np < 10) ? cout << "   |  " : cout << "  |  ";
 	Detail_file << "Number of Processors" << "," << "Cache Size" << "," << "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << ","
 		<< endl
@@ -141,7 +135,7 @@ void sim(int np, int cache_size_kB)
 		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
 		<< endl;
 
-	// Three Dimensional Valid Array
+	// Three Dimensional Valid Array, Valid[p][Ways][Lines]
 	bool*** Valid = new bool**[np];
 	for (int i = 0; i < np; i++)
 	{
@@ -158,7 +152,7 @@ void sim(int np, int cache_size_kB)
 		}
 	}
 
-	// Three Dimensional Tag Array
+	// Three Dimensional Tag Array, Tag[p][Ways][Lines]
 	int*** Tag = new int**[np];
 	for (int i = 0; i < np; i++)
 	{
@@ -216,7 +210,7 @@ void sim(int np, int cache_size_kB)
 	{
 		Update_Way[i] = 0;
 	}
-	bool *priviously_waiting = new bool[np]; // Update way using fifo method
+	bool *priviously_waiting = new bool[np]; // Just for debug use
 	for (int i = 0; i < np; i++)
 	{
 		priviously_waiting[i] = 0;
@@ -226,9 +220,8 @@ void sim(int np, int cache_size_kB)
 	{
 		for (int p = 0; p < np; p++)
 		{
-			switch (ProcessorStateArray[p])
+			if (!ProcessorFinishFlagArray[p])
 			{
-			case 1:
 				// Check if resumed
 				if (debug_mode & !priviously_waiting[p])
 					Detail_file << "p=" << p << "," << "GC" << "," << Global_Counter << "," << endl;
@@ -236,13 +229,14 @@ void sim(int np, int cache_size_kB)
 				{
 					// check if this processor finished
 					if (!AddressArray[p][ProcessorPositionArray[p]]) // finished
-						ProcessorStateArray[p] = 4;
+						ProcessorFinishFlagArray[p] = 1;
 					else // not finished
 					{
 						// get address, index, tag
 						Current_Address = AddressArray[p][ProcessorPositionArray[p]];
 						Current_Index = (Current_Address / Block_size) % Lines;
 						Current_Tag = Current_Address / (Block_size * Lines);
+						Current_RAM_Row = Current_Address >> DRAM_Row_Offset;
 
 						switch (Current_Address / 100000)
 						{
@@ -276,50 +270,162 @@ void sim(int np, int cache_size_kB)
 						if (hit) // hit
 						{
 							hit_total[p][which_matrix]++;
-							if (debug_mode)
-								Detail_file << "Matrix" << which_matrix << "Hit" << endl;
+							switch (which_matrix)
+							{
+							case 0: // Matrix A
+								Resume_Time[p] = Global_Counter + Hit_Time;
+								if (debug_mode)
+									Detail_file << "Matrix A Hit" << endl;
+								break;
+							case 1: // Matrix B
+								Resume_Time[p] = Global_Counter + Hit_Time + 1; // Extra delay for multiplication
+								if (debug_mode)
+									Detail_file << "Matrix B Hit" << endl;
+								break;
+							case 2: // Matrix C
+								// Cache write through
+								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+								{
+									Resume_Time[p] = DRAM_Time + (2 * CAS);
+									if (debug_mode)
+										Detail_file << "Matrix C CAS Hit" << endl;
+								}
+								else
+								{
+									Previous_RAM_Row = Current_RAM_Row;// Update RAM row
+									Resume_Time[p] = DRAM_Time + (2 * CAS) + RAS;
+									if (debug_mode)
+										Detail_file << "Matrix C CAS & RAS Hit" << endl;
+								}
+								DRAM_Time = Resume_Time[p];
+								break;
+
+							default: // iff error
+								cerr << "error in cache hit" << endl;
+								cerr << "Global_clk:" << Global_Counter << endl;
+								cerr << "Core:" << p << " address:" << Current_Address << " Position:" << ProcessorPositionArray[p] << endl;
+								std::cin.get();
+								break;
+							}
+							
 						}
 						else // not hit
 						{
 							miss_total[p][which_matrix]++;
-							Current_RAM_Row = Current_Address >> DRAM_Row_Offset;
-							if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+							switch (which_matrix)
 							{
-								if (debug_mode)
-									Detail_file << "Matrix" << which_matrix << "," << "CAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
-							}
-							else // Need RAS and CAS
-							{
-								Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-								if (debug_mode)
-									Detail_file << "Matrix" << which_matrix << "," << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
-							}
-							Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
+							case 0: // Matrix A
+								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+								{
+									Resume_Time[p] = DRAM_Time + CAS + 2;
+									DRAM_Time = Resume_Time[p];
+									if (debug_mode)
+									{
+										Detail_file << "Matrix A " << "CAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
+										priviously_waiting[p] = 0;
+										Detail_file << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
+									}
+								}
+								else // Need RAS and CAS
+								{
+									Previous_RAM_Row = Current_RAM_Row; // Update RAM row
+									Resume_Time[p] = DRAM_Time + CAS + RAS + 2;
+									DRAM_Time = Resume_Time[p];
+									if (debug_mode)
+										Detail_file << "Matrix A " << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
+								}
+								Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
 
-							Valid[p][Update_Way[p]][Current_Index] = true; // Write to the way you chose in previous line
-							Tag[p][Update_Way[p]][Current_Index] = Current_Tag; // Write to the way you chose in previous line
+								// Update cache
+								Valid[p][Update_Way[p]][Current_Index] = true; // Write to the way you chose in previous line
+								Tag[p][Update_Way[p]][Current_Index] = Current_Tag; // Write to the way you chose in previous line
 
-							if (Update_Way[p] == (Ways - 1))
-								Update_Way[p] = 0;
-							else
-								Update_Way[p]++;
+								if (Update_Way[p] == (Ways - 1))
+									Update_Way[p] = 0;
+								else
+									Update_Way[p]++;
 
-							Resume_Time[p] = DRAM_Time + DRAM_access_delay;
-							DRAM_Time = Resume_Time[p];
-							if (debug_mode)
-							{
-								priviously_waiting[p] = 0;
-								Detail_file << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
+								break;
+							case 1: // Matrix B
+								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+								{
+									Resume_Time[p] = DRAM_Time + CAS + 2 + 1; // extra delay for multilication
+									DRAM_Time = Resume_Time[p];
+									if (debug_mode)
+									{
+										Detail_file << "Matrix B " << "CAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
+										priviously_waiting[p] = 0;
+										Detail_file << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
+									}
+								}
+								else // Need RAS and CAS
+								{
+									Previous_RAM_Row = Current_RAM_Row; // Update RAM row
+									Resume_Time[p] = DRAM_Time + CAS + RAS + 2 + 1;// extra delay for multilication
+									DRAM_Time = Resume_Time[p];
+									if (debug_mode)
+										Detail_file << "Matrix B " << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
+								}
+								Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
+
+								// Update cache
+								Valid[p][Update_Way[p]][Current_Index] = true; // Write to the way you chose in previous line
+								Tag[p][Update_Way[p]][Current_Index] = Current_Tag; // Write to the way you chose in previous line
+
+								if (Update_Way[p] == (Ways - 1))
+									Update_Way[p] = 0;
+								else
+									Update_Way[p]++;
+
+								break;
+							case 2: // Matrix C
+								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
+								{
+									Resume_Time[p] = DRAM_Time + 2*CAS + 2; 
+									DRAM_Time = Resume_Time[p];
+									if (debug_mode)
+									{
+										Detail_file << "Matrix C " << "CAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
+										priviously_waiting[p] = 0;
+										Detail_file << "Resume_Time" << "," << Resume_Time[p] << "," << "DRAM_Time" << "," << DRAM_Time << "," << endl;
+									}
+								}
+								else // Need RAS and CAS
+								{
+									Previous_RAM_Row = Current_RAM_Row; // Update RAM row
+									Resume_Time[p] = DRAM_Time + 2*CAS + RAS + 2;
+									DRAM_Time = Resume_Time[p];
+									if (debug_mode)
+										Detail_file << "Matrix C " << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
+								}
+								Previous_RAM_Row_Valid = true; // On power up, a RAS is always needed.
+
+								// Update cache
+								Valid[p][Update_Way[p]][Current_Index] = true; // Write to the way you chose in previous line
+								Tag[p][Update_Way[p]][Current_Index] = Current_Tag; // Write to the way you chose in previous line
+
+								if (Update_Way[p] == (Ways - 1))
+									Update_Way[p] = 0;
+								else
+									Update_Way[p]++;
+
+								break;
+
+							default: // iff error
+								cerr << "error in cache miss" << endl;
+								cerr << "Global_clk:" << Global_Counter << endl;
+								cerr << "Core:" << p << " address:" << Current_Address << " Position:" << ProcessorPositionArray[p] << endl;
+								std::cin.get();
+								break;
 							}
-						}
-					}
-				}
+						} // end checking hit
+					} // end cheching finished
+				} // end if resumed
 				else
 				{
 					if (debug_mode)
 						priviously_waiting[p] = 1;
 				}
-				break;
 			}
 
 
@@ -327,7 +433,7 @@ void sim(int np, int cache_size_kB)
 			All_processor_finished = 1;
 			for (int p = 0; p < np; p++)
 			{
-				if (ProcessorStateArray[p] != 4)
+				if (!ProcessorFinishFlagArray[p])
 					All_processor_finished = 0;
 			}
 			if (All_processor_finished)
@@ -344,7 +450,7 @@ void sim(int np, int cache_size_kB)
 		<< "A_Average_Hit Rate" << "," << "A_Total Instruction" << "," 
 		<< "B_Average_Hit Rate" << "," << "B_Total Instruction" << "," 
 		<< "C_Average_Hit Rate" << "," << "C_Total Instruction" << "," 
-		<< "Time" << "," << endl;
+		<< "Time(G-cycles)" << "," << endl;
 
 	unsigned long long int *sum_hit_total = new unsigned long long int[3];
 	for (int i = 0; i < 3; i++)
@@ -373,15 +479,18 @@ void sim(int np, int cache_size_kB)
 	}
 	*/
 
-	Result_File << setprecision(2)
+	Result_File << std::fixed << std::setprecision(2)
 		<< (double)sum_hit_total[0] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[0] + sum_miss_total[0]) << ","
 		<< (double)sum_hit_total[1] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[1] + sum_miss_total[1]) << ","
 		<< (double)sum_hit_total[2] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[2] + sum_miss_total[2]) << ","
-		<< "N/A" << "," << endl << endl;
-	
+		<< (double)Global_Counter / (double)1000000 << "," << endl << endl;
+	cout << std::fixed << std::setprecision(2)
+		<< "A_hit: " << (double)sum_hit_total[0] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << ","
+		<< "B_hit: " << (double)sum_hit_total[1] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[1] + sum_miss_total[1]) << ","
+		<< "Time: "  << (double)Global_Counter / (double)1000000 << "," << endl;
 	//Delete variables
 	Detail_file.close();
-	delete[] ProcessorStateArray;
+	delete[] ProcessorFinishFlagArray;
 	delete[] ProcessorPositionArray;
 	for (int p = 0; p < np; p++)
 		delete[] AddressArray[p];
@@ -401,7 +510,6 @@ void sim(int np, int cache_size_kB)
 		delete[] Tag[i];
 	}
 	delete[] Tag;
-	cout << "done" << endl << endl;
 }
 
 
@@ -426,12 +534,11 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 			sim(np, 32);
 	}
 
-	//std::cin.get();
+	std::cin.get();
 	return 0;
 }
 
 int** address_cal(int num_p){
-	cout << "Calculating Addresses ... ";
 	int **address = new int*[num_p];
 	int Start_Pointer_A = 100000;
 	int Start_Pointer_B = 200000;
