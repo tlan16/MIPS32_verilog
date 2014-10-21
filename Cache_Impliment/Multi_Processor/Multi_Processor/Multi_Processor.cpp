@@ -22,7 +22,7 @@ using namespace std;
 bool debug_mode = 0;
 bool debug_check_address = debug_mode ? 1 : 0;
 
-void sim(int np, int cache_size_kB)
+void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 {
 	// Initialise output files
 	ofstream Result_File("Cache_Sim.csv", ios::app);
@@ -47,8 +47,8 @@ void sim(int np, int cache_size_kB)
 	}
 
 	// Distribute tasks and assign addresses to each processor
-	int** address_cal(int num_p);
-	int** AddressArray = address_cal(np);
+	int** address_cal(int num_p, char method);
+	int** AddressArray = address_cal(np, address_distribute_method);
 
 	// Check addresses distribution
 	if (debug_check_address)
@@ -102,8 +102,8 @@ void sim(int np, int cache_size_kB)
 	const int Address_Size = 32; // Number of bits used in the memory address
 	const int Column_Bits = 3; // Number of bits used to dereference a coloumn in SDRAM
 	const int Words_Per_Bus_Transfer = 2; // Number of words transfered per CAS.
-	const int CAS = 72; // CAS time in clock cycles
-	const int RAS = 24; // RAS time in clock cycles
+	const int CAS = 24; // CAS time in clock cycles
+	const int RAS = 72; // RAS time in clock cycles
 	const int DRAM_Word_per_column = 2;
 	const int DRAM_Columns_per_row = 8;
 	const int DRAM_Row_Offset = log2(DRAM_Word_per_column * DRAM_Columns_per_row * 4);
@@ -204,6 +204,8 @@ void sim(int np, int cache_size_kB)
 	int which_matrix;
 	unsigned long long int Current_RAM_Row = 0;
 	unsigned long long int Previous_RAM_Row = 0;
+	unsigned long long int DRAM_free_count = 0;
+	unsigned long long int DRAM_Access_count = 0;
 	bool Previous_RAM_Row_Valid = false;
 	int *Update_Way = new int[np]; // Update way using fifo method
 	for (int i = 0; i < np; i++)
@@ -218,6 +220,13 @@ void sim(int np, int cache_size_kB)
 
 	while (!All_processor_finished)
 	{
+		if (DRAM_Time <= Global_Counter)
+		{
+			DRAM_Time = Global_Counter;
+			if (debug_mode) 
+				Detail_file << "DRAM is free" << "," << "GC=" << "," << Global_Counter << "," << endl;
+			DRAM_free_count++;
+		}
 		for (int p = 0; p < np; p++)
 		{
 			if (!ProcessorFinishFlagArray[p])
@@ -225,7 +234,7 @@ void sim(int np, int cache_size_kB)
 				// Check if resumed
 				if (debug_mode & !priviously_waiting[p])
 					Detail_file << "p=" << p << "," << "GC" << "," << Global_Counter << "," << endl;
-				if (Resume_Time[p] <= Global_Counter) // resumed
+				if (Resume_Time[p] == Global_Counter) // resumed
 				{
 					// check if this processor finished
 					if (!AddressArray[p][ProcessorPositionArray[p]]) // finished
@@ -238,7 +247,7 @@ void sim(int np, int cache_size_kB)
 						Current_Tag = Current_Address / (Block_size * Lines);
 						Current_RAM_Row = Current_Address >> DRAM_Row_Offset;
 
-						switch (Current_Address / 100000)
+						switch (Current_Address / 100000) // accessing which matrix
 						{
 						case 1: // accessing matrix A
 							which_matrix = 0;
@@ -260,11 +269,11 @@ void sim(int np, int cache_size_kB)
 						ProcessorPositionArray[p]++;
 
 						// check if chace hit
-						hit = 0;
+						hit = false;
 						for (int l = 0; l < Ways; l++)
 						{
 							if (Valid[p][l][Current_Index] & (Tag[p][l][Current_Index] == Current_Tag))
-								hit = 1;
+								hit = true;
 						}
 
 						if (hit) // hit
@@ -303,7 +312,7 @@ void sim(int np, int cache_size_kB)
 							default: // iff error
 								cerr << "error in cache hit" << endl;
 								cerr << "Global_clk:" << Global_Counter << endl;
-								cerr << "Core:" << p << " address:" << Current_Address << " Position:" << ProcessorPositionArray[p] << endl;
+								cerr << "Core:" << p << " address:" << Current_Address << " Position:" << ProcessorPositionArray[p]-1 << endl;
 								std::cin.get();
 								break;
 							}
@@ -312,6 +321,7 @@ void sim(int np, int cache_size_kB)
 						else // not hit
 						{
 							miss_total[p][which_matrix]++;
+							DRAM_Access_count++;
 							switch (which_matrix)
 							{
 							case 0: // Matrix A
@@ -414,7 +424,7 @@ void sim(int np, int cache_size_kB)
 							default: // iff error
 								cerr << "error in cache miss" << endl;
 								cerr << "Global_clk:" << Global_Counter << endl;
-								cerr << "Core:" << p << " address:" << Current_Address << " Position:" << ProcessorPositionArray[p] << endl;
+								cerr << "Core:" << p << " address:" << Current_Address << " Position:" << ProcessorPositionArray[p]-1 << endl;
 								std::cin.get();
 								break;
 							}
@@ -458,7 +468,7 @@ void sim(int np, int cache_size_kB)
 	unsigned long long int *sum_miss_total = new unsigned long long int[3];
 	for (int i = 0; i < 3; i++)
 		sum_miss_total[i] = 0;
-	for (int p = 1; p < np; p++)
+	for (int p = 0; p < np; p++)
 	{
 		sum_hit_total[0] += hit_total[p][0];
 		sum_hit_total[1] += hit_total[p][1];
@@ -512,33 +522,24 @@ void sim(int np, int cache_size_kB)
 	delete[] Tag;
 }
 
+// Function to calculating all the address needed to be compute for all cores.
+int** address_cal(int num_p, char method){
+	// The address_cal is a function to calculate the address for each core to access in a 50x50 matrix
+	// num_p is the number of processor 
+	// method can only be 'r' for row increament or 'c' for column increament or 'o' for one by one
+	bool address_file_enable = false;
+	remove("address_cal.csv");
 
+	ofstream Address_File("address_cal.csv", ios::app);
+	if (address_file_enable){
 
-int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
-{
-	remove("Cache_Sim.csv");
-	// sim: number of processor, cache size in kB
-
-	if (debug_mode)
-	{
-		for (int np = 2; np <= 50; np++)
-			sim(np, 8);
-		for (int np = 2; np <= 50; np++)
-			sim(np, 32);
-	}
-	else
-	{
-		for (int np = 2; np <= 50; np++)
-			sim(np, 8);
-		for (int np = 2; np <= 50; np++)
-			sim(np, 32);
+		for (int i = 0; i < num_p; i++){
+			Address_File << i << ",";
+		}
+		Address_File << endl;
 	}
 
-	std::cin.get();
-	return 0;
-}
-
-int** address_cal(int num_p){
+	// cerr << "Calculating Address for " << num_p << " processor"<< endl;
 	int **address = new int*[num_p];
 	int Start_Pointer_A = 100000;
 	int Start_Pointer_B = 200000;
@@ -555,34 +556,102 @@ int** address_cal(int num_p){
 		add_pos[i] = 0;
 	}
 
-	// Initialise result
-	for (int p = 0; p < num_p; p++)
-	{
-		for (int i = 0; i < 300000; i++)
-			address[p][i] = 0;
+	// initialize all address
+	for (int i = 0; i < num_p; i++){
+		for (int j = 0; j < 300000; j++){
+			address[i][j] = 0;
+		}
 	}
-
 	for (int c = 0; c < 2500; c++){
 		m = c / 50;
 		n = c % 50;
+
+		if (method == 'r') {
+			if ((c != 0) && (c % 50 == 0)) p++;
+			if (p == num_p) p = 0;
+		}
+		if ((c != 0) && (method == 'c') && (c % 50 == 0))
+		{
+			p = 0;
+		}
+
 		for (int i = 0; i < 50; i++){
 			address[p][add_pos[p]] = Start_Pointer_A + ((m * 50 + i) << 2); // matrix A address
-			//cout << address[p][add_pos[p]] << "  ";
+			//cerr << address[p][add_pos[p]] << "  ";
 			add_pos[p]++;
 			address[p][add_pos[p]] = Start_Pointer_B + ((n + i * 50) << 2); // matrix B address
-			//cout << p << ":" << add_pos[p] << " " << address[p][add_pos[p]] << endl;
+			//cerr << p << ":" << add_pos[p] << " " << address[p][add_pos[p]] << endl;
 			add_pos[p]++;
 			//std::cin.get();
 		}
 		address[p][add_pos[p]] = Start_Pointer_C + (c << 2);//matrix C address
-		//cout << endl;
-		//cout << address[p][add_pos[p]] << endl;
-		//cout << "p = " << p << endl;
-		//cout << endl;
+		//cerr << endl;
+		//cerr << address[p][add_pos[p]] << endl;
+		//cerr << "p = " << p << endl;
+		//cerr << endl;
 		add_pos[p]++;
 		//std::cin.get();
-		p++;
-		if (p == num_p) p = 0;
+
+		if ((method == 'o') || (method == 'c'))
+		{
+			p++;
+			if (p == num_p) p = 0;
+		}
+
+		if (!((method == 'c') || (method == 'r') || (method == 'o')))
+		{
+			cerr << "No such method, error occur" << endl;
+			std::cin.get();
+			break;
+		}
+
+
+	}
+
+
+	for (int i = 0; i < num_p; i++){
+		add_pos[i] = 0;
+	}
+
+	if (address_file_enable){
+		for (int j = 0; j < 300000; j++){
+
+			for (int i = 0; i < num_p; i++){
+				Address_File << address[i][add_pos[i]] << ",";
+				add_pos[i]++;
+			}
+			Address_File << endl;
+		}
 	}
 	return address;
+
 }
+
+int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
+{
+	remove("Cache_Sim.csv");
+	// sim: number of processor, cache size in kB
+
+	if (debug_mode)
+	{
+		sim(1, 8);
+	}
+	else
+	{
+		for (int np = 1; np <= 50; np++)
+			sim(np, 8);
+		for (int np = 1; np <= 50; np++)
+			sim(np, 32);
+		/*
+		for (int np = 2; np <= 50; np++)
+			sim(np, 8);
+		for (int np = 2; np <= 50; np++)
+			sim(np, 32);
+		*/
+	}
+
+	cout << endl << "ALL DONE!";
+	std::cin.get();
+	return 0;
+}
+

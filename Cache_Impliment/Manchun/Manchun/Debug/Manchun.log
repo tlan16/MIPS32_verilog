@@ -1,0 +1,19 @@
+﻿Build started 7/10/2014 9:51:43 PM.
+     1>Project "C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Manchun\Manchun\Manchun.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Manchun.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Manchun.cpp
+         Manchun.cpp
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\manchun\manchun\manchun.cpp(16): warning C4005: '_WIN32_WINNT' : macro redefinition
+                 c:\program files (x86)\windows kits\8.1\include\shared\sdkddkver.h(200) : see previous definition of '_WIN32_WINNT'
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\manchun\manchun\manchun.cpp(46): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\frank-desktop\documents\mips32_verilog\cache_impliment\manchun\manchun\manchun.cpp(241): warning C4554: '<<' : check operator precedence for possible error; use parentheses to clarify precedence
+       Link:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Manchun\Debug\Manchun.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Program Files\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Manchun\Debug\Manchun.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Manchun\Debug\Manchun.lib" /MACHINE:X86 Debug\Manchun.res
+         Debug\Manchun.obj
+         Debug\stdafx.obj
+         Manchun.vcxproj -> C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Manchun\Debug\Manchun.exe
+     1>Done Building Project "C:\Users\Frank-Desktop\Documents\MIPS32_verilog\Cache_Impliment\Manchun\Manchun\Manchun.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.63
