@@ -102,11 +102,13 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 	const int Address_Size = 32; // Number of bits used in the memory address
 	const int Column_Bits = 3; // Number of bits used to dereference a coloumn in SDRAM
 	const int Words_Per_Bus_Transfer = 2; // Number of words transfered per CAS.
-	const int CAS = 24; // CAS time in clock cycles
-	const int RAS = 72; // RAS time in clock cycles
+	const int CAS = 24 / 5; // CAS time in clock cycles
+	const int RAS = 72 / 5; // RAS time in clock cycles
 	const int DRAM_Word_per_column = 2;
+	const int DRAM_Word_per_block = 1 << 2;
 	const int DRAM_Columns_per_row = 8;
 	const int DRAM_Row_Offset = log2(DRAM_Word_per_column * DRAM_Columns_per_row * 4);
+	const int DRAM_Column_per_block = DRAM_Word_per_block / DRAM_Word_per_column;
 	// Convert input to shift bits amount
 	const int Data_Size_bit_shift = log2(cache_size_kB * 1024);
 	const int Words_Per_Block_bit_shift = log2(Words_Per_Block);
@@ -122,16 +124,20 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 	const int Cache_Size = Blocks * Block_size;
 
 	cout << "Number of Processors=" << np << ", Cache Size=" << Cache_Size / 1024; (np < 10) ? cout << "   |  " : cout << "  |  ";
-	Detail_file << "Number of Processors" << "," << "Cache Size" << "," << "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
+	Detail_file << "Number of Processors" << "," << "Cache Size" << "," << "Method" << ","
+		<< "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << ","
 		<< endl
-		<< np << "," << Cache_Size / 1024 << "," << Ways << "," << Words_Per_Block << "," << Hit_Time << ","
+		<< np << "," << Cache_Size / 1024 << "," << address_distribute_method << ","
+		<< Ways << "," << Words_Per_Block << "," << Hit_Time << ","
 		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
 		<< endl;
-	Result_File << "Number of Processors" << "," << "Cache Size" << "," << "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << ","
+	Result_File << "Number of Processors" << "," << "Cache Size" << "," 
+		<< "Ways" << "," << "Words_Per_Block" << "," << "Hit_Time" << "," << "Method" << ","
 		<< "Sets" << "," << "Index_Size" << "," << "Tag_Size" << ","
 		<< endl
-		<< np << "," << Cache_Size / 1024 << "," << Ways << "," << Words_Per_Block << "," << Hit_Time << ","
+		<< np << "," << Cache_Size / 1024 << "," << address_distribute_method << ","
+		<< Ways << "," << Words_Per_Block << "," << Hit_Time << ","
 		<< Lines << "," << Index_Size << "," << Tag_Bits << ","
 		<< endl;
 
@@ -293,16 +299,17 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 								break;
 							case 2: // Matrix C
 								// Cache write through
+								DRAM_Access_count++;
 								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 								{
-									Resume_Time[p] = DRAM_Time + (2 * CAS);
+									Resume_Time[p] = DRAM_Time + (CAS + CAS*DRAM_Column_per_block);
 									if (debug_mode)
 										Detail_file << "Matrix C CAS Hit" << endl;
 								}
 								else
 								{
 									Previous_RAM_Row = Current_RAM_Row;// Update RAM row
-									Resume_Time[p] = DRAM_Time + (2 * CAS) + RAS;
+									Resume_Time[p] = DRAM_Time + (CAS + CAS*DRAM_Column_per_block) + RAS;
 									if (debug_mode)
 										Detail_file << "Matrix C CAS & RAS Hit" << endl;
 								}
@@ -327,7 +334,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 							case 0: // Matrix A
 								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 								{
-									Resume_Time[p] = DRAM_Time + CAS + 2;
+									Resume_Time[p] = DRAM_Time + CAS*DRAM_Column_per_block + 2;
 									DRAM_Time = Resume_Time[p];
 									if (debug_mode)
 									{
@@ -339,7 +346,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 								else // Need RAS and CAS
 								{
 									Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-									Resume_Time[p] = DRAM_Time + CAS + RAS + 2;
+									Resume_Time[p] = DRAM_Time + CAS*DRAM_Column_per_block + RAS + 2;
 									DRAM_Time = Resume_Time[p];
 									if (debug_mode)
 										Detail_file << "Matrix A " << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
@@ -359,7 +366,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 							case 1: // Matrix B
 								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 								{
-									Resume_Time[p] = DRAM_Time + CAS + 2 + 1; // extra delay for multilication
+									Resume_Time[p] = DRAM_Time + CAS*DRAM_Column_per_block + 2 + 1; // extra delay for multilication
 									DRAM_Time = Resume_Time[p];
 									if (debug_mode)
 									{
@@ -371,7 +378,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 								else // Need RAS and CAS
 								{
 									Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-									Resume_Time[p] = DRAM_Time + CAS + RAS + 2 + 1;// extra delay for multilication
+									Resume_Time[p] = DRAM_Time + CAS*DRAM_Column_per_block + RAS + 2 + 1;// extra delay for multilication
 									DRAM_Time = Resume_Time[p];
 									if (debug_mode)
 										Detail_file << "Matrix B " << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
@@ -391,7 +398,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 							case 2: // Matrix C
 								if (Previous_RAM_Row_Valid & (Current_RAM_Row == Previous_RAM_Row))
 								{
-									Resume_Time[p] = DRAM_Time + 2*CAS + 2; 
+									Resume_Time[p] = DRAM_Time + CAS + CAS*DRAM_Column_per_block + 2;
 									DRAM_Time = Resume_Time[p];
 									if (debug_mode)
 									{
@@ -403,7 +410,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 								else // Need RAS and CAS
 								{
 									Previous_RAM_Row = Current_RAM_Row; // Update RAM row
-									Resume_Time[p] = DRAM_Time + 2*CAS + RAS + 2;
+									Resume_Time[p] = DRAM_Time + CAS + CAS*DRAM_Column_per_block + RAS + 2;
 									DRAM_Time = Resume_Time[p];
 									if (debug_mode)
 										Detail_file << "Matrix C " << "CAS & RAS Miss" << "," << "Update_Way" << "," << Update_Way[p] << endl;
@@ -460,7 +467,7 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 		<< "A_Average_Hit Rate" << "," << "A_Total Instruction" << "," 
 		<< "B_Average_Hit Rate" << "," << "B_Total Instruction" << "," 
 		<< "C_Average_Hit Rate" << "," << "C_Total Instruction" << "," 
-		<< "Time(G-cycles)" << "," << endl;
+		<< "Time(G-cycles)" << "," << "DRAM Access" << "," << endl;
 
 	unsigned long long int *sum_hit_total = new unsigned long long int[3];
 	for (int i = 0; i < 3; i++)
@@ -478,22 +485,11 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 		sum_miss_total[2] += miss_total[p][2];
 	}
 
-	/*
-	for (int p = 1; p < np; p++)
-	{
-		Result_File << p << ","
-			<< (double)hit_total[p][0] / (double)(hit_total[p][0] + miss_total[p][0]) * 100 << "," << (hit_total[p][0] + miss_total[p][0]) << ","
-			<< (double)hit_total[p][1] / (double)(hit_total[p][1] + miss_total[p][1]) * 100 << "," << (hit_total[p][1] + miss_total[p][1]) << ","
-			<< (double)hit_total[p][2] / (double)(hit_total[p][2] + miss_total[p][2]) * 100 << "," << (hit_total[p][2] + miss_total[p][2]) << ","
-			<< "N/A" << "," << endl;
-	}
-	*/
-
 	Result_File << std::fixed << std::setprecision(2)
 		<< (double)sum_hit_total[0] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[0] + sum_miss_total[0]) << ","
 		<< (double)sum_hit_total[1] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[1] + sum_miss_total[1]) << ","
 		<< (double)sum_hit_total[2] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[2] + sum_miss_total[2]) << ","
-		<< (double)Global_Counter / (double)1000000 << "," << endl << endl;
+		<< (double)Global_Counter / (double)1000000 << "," << DRAM_Access_count << endl << endl;
 	cout << std::fixed << std::setprecision(2)
 		<< "A_hit: " << (double)sum_hit_total[0] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << ","
 		<< "B_hit: " << (double)sum_hit_total[1] / (double)(sum_hit_total[0] + sum_miss_total[0]) * 100 << "," << (sum_hit_total[1] + sum_miss_total[1]) << ","
@@ -523,10 +519,9 @@ void sim(int np, int cache_size_kB, char address_distribute_method = 'c')
 }
 
 // Function to calculating all the address needed to be compute for all cores.
+// 'r' -> row major, 'c' -> column major, 'e' -> element major
 int** address_cal(int num_p, char method){
-	// The address_cal is a function to calculate the address for each core to access in a 50x50 matrix
-	// num_p is the number of processor 
-	// method can only be 'r' for row increament or 'c' for column increament or 'o' for one by one
+
 	bool address_file_enable = false;
 	remove("address_cal.csv");
 
@@ -550,9 +545,7 @@ int** address_cal(int num_p, char method){
 	int *add_pos = new int[num_p];
 
 	for (int i = 0; i < num_p; i++){
-		address[i] = new int[300000]; // The worse case is 1 core
-		// would need to access 50x50x101 = 252500 address
-		// make the array for address for each core be 300000 for safty
+		address[i] = new int[300000]; 
 		add_pos[i] = 0;
 	}
 
@@ -577,30 +570,22 @@ int** address_cal(int num_p, char method){
 
 		for (int i = 0; i < 50; i++){
 			address[p][add_pos[p]] = Start_Pointer_A + ((m * 50 + i) << 2); // matrix A address
-			//cerr << address[p][add_pos[p]] << "  ";
 			add_pos[p]++;
 			address[p][add_pos[p]] = Start_Pointer_B + ((n + i * 50) << 2); // matrix B address
-			//cerr << p << ":" << add_pos[p] << " " << address[p][add_pos[p]] << endl;
 			add_pos[p]++;
-			//std::cin.get();
 		}
 		address[p][add_pos[p]] = Start_Pointer_C + (c << 2);//matrix C address
-		//cerr << endl;
-		//cerr << address[p][add_pos[p]] << endl;
-		//cerr << "p = " << p << endl;
-		//cerr << endl;
 		add_pos[p]++;
-		//std::cin.get();
 
-		if ((method == 'o') || (method == 'c'))
+		if ((method == 'e') || (method == 'c'))
 		{
 			p++;
 			if (p == num_p) p = 0;
 		}
 
-		if (!((method == 'c') || (method == 'r') || (method == 'o')))
+		if (!((method == 'c') || (method == 'r') || (method == 'e')))
 		{
-			cerr << "No such method, error occur" << endl;
+			cerr << "Error: Method" << method << "not allowed!" << endl;
 			std::cin.get();
 			break;
 		}
@@ -639,15 +624,17 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 	else
 	{
 		for (int np = 1; np <= 50; np++)
-			sim(np, 8);
+			sim(np, 8,'c');
 		for (int np = 1; np <= 50; np++)
-			sim(np, 32);
-		/*
-		for (int np = 2; np <= 50; np++)
-			sim(np, 8);
-		for (int np = 2; np <= 50; np++)
-			sim(np, 32);
-		*/
+			sim(np, 32,'c');
+		for (int np = 1; np <= 50; np++)
+			sim(np, 8, 'r');
+		for (int np = 1; np <= 50; np++)
+			sim(np, 32, 'r');
+		for (int np = 1; np <= 50; np++)
+			sim(np, 8, 'e');
+		for (int np = 1; np <= 50; np++)
+			sim(np, 32, 'e');
 	}
 
 	cout << endl << "ALL DONE!";

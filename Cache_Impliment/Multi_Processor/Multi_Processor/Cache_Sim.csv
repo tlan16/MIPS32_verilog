@@ -1,500 +1,1500 @@
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-1,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-99.05,125000,86.45,125000,1.50,2500,2.37,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-2,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-98.09,125000,73.24,125000,0.94,2500,2.47,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-3,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-97.31,125000,63.59,125000,0.50,2500,5.10,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-4,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-96.59,125000,54.55,125000,0.04,2500,4.04,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-5,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-96.57,125000,77.85,125000,0.00,2500,3.37,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-6,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-95.87,125000,69.03,125000,0.04,2500,3.24,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-7,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-95.70,125000,87.07,125000,0.02,2500,2.34,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-8,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-95.33,125000,90.80,125000,0.04,2500,1.72,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-9,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-94.89,125000,90.38,125000,0.00,2500,1.97,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-10,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-94.41,125000,92.93,125000,0.00,2500,1.60,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-11,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-93.85,125000,89.02,125000,0.00,2500,2.27,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-12,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-93.15,125000,69.52,125000,0.04,2500,3.09,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-13,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-92.68,125000,74.45,125000,0.00,2500,4.23,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-14,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-92.41,125000,88.84,125000,0.00,2500,2.23,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-15,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-92.01,125000,92.93,125000,0.00,2500,2.00,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-16,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-91.52,125000,94.28,125000,0.03,2500,1.72,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-17,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-91.07,125000,94.45,125000,0.00,2500,1.86,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-18,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-90.55,125000,93.70,125000,0.00,2500,1.91,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-19,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-90.06,125000,93.58,125000,0.00,2500,2.10,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-20,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-89.59,125000,94.45,125000,0.00,2500,1.85,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-21,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-89.12,125000,94.45,125000,0.00,2500,2.11,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-22,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-88.59,125000,94.16,125000,0.00,2500,2.07,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-23,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-88.12,125000,93.19,125000,0.00,2500,2.41,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-24,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-87.65,125000,92.73,125000,0.04,2500,2.25,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-25,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-87.14,125000,92.51,125000,0.00,2500,2.55,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-26,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-86.63,125000,92.53,125000,0.00,2500,2.32,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-27,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-86.16,125000,93.41,125000,0.00,2500,2.54,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-28,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-85.70,125000,94.29,125000,0.00,2500,2.21,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-29,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-85.22,125000,94.65,125000,0.00,2500,2.37,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-30,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-84.73,125000,95.00,125000,0.00,2500,2.21,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-31,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-84.25,125000,94.99,125000,0.00,2500,2.35,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-32,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-83.76,125000,94.97,125000,0.00,2500,2.21,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-33,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-83.29,125000,94.82,125000,0.00,2500,2.43,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-34,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-82.82,125000,94.67,125000,0.00,2500,2.24,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-35,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-82.32,125000,94.26,125000,0.00,2500,2.45,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-36,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-81.82,125000,93.84,125000,0.00,2500,2.34,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-37,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-81.32,125000,93.77,125000,0.00,2500,2.47,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-38,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-80.82,125000,93.70,125000,0.00,2500,2.38,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-39,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-80.34,125000,94.15,125000,0.00,2500,2.48,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-40,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-79.87,125000,94.60,125000,0.00,2500,2.34,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-41,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-79.39,125000,94.82,125000,0.00,2500,2.40,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-42,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-78.90,125000,95.03,125000,0.00,2500,2.30,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-43,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-78.43,125000,95.03,125000,0.00,2500,2.36,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-44,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-77.95,125000,95.03,125000,0.00,2500,2.31,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-45,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-77.44,125000,95.02,125000,0.00,2500,2.38,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-46,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-76.94,125000,95.02,125000,0.00,2500,2.34,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-47,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-76.46,125000,95.08,125000,0.02,2500,2.39,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-48,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-75.97,125000,95.14,125000,0.04,2500,2.30,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-49,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-75.49,125000,95.08,125000,0.02,2500,2.34,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-50,8,4,4,1,128,7,21,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-75.00,125000,95.01,125000,0.00,2500,2.28,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-1,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-99.45,125000,99.17,125000,1.50,2500,0.92,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-2,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-98.91,125000,98.38,125000,1.00,2500,0.66,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-3,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-98.38,125000,97.52,125000,0.52,2500,0.80,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-4,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-97.85,125000,96.81,125000,0.04,2500,0.83,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-5,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-97.38,125000,96.90,125000,0.00,2500,0.85,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-6,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-96.92,125000,97.01,125000,0.04,2500,0.87,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-7,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-96.39,125000,97.19,125000,0.02,2500,0.94,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-8,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-95.86,125000,96.99,125000,0.04,2500,0.98,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-9,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-95.38,125000,97.11,125000,0.00,2500,1.04,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-10,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-94.86,125000,97.34,125000,0.00,2500,1.02,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-11,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-94.39,125000,97.21,125000,0.00,2500,1.14,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-12,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-93.89,125000,97.04,125000,0.04,2500,1.18,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-13,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-93.42,125000,97.02,125000,0.00,2500,1.27,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-14,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-92.93,125000,97.25,125000,0.00,2500,1.24,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-15,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-92.42,125000,97.31,125000,0.00,2500,1.31,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-16,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-91.91,125000,97.32,125000,0.04,2500,1.27,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-17,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-91.42,125000,97.29,125000,0.00,2500,1.38,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-18,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-90.94,125000,97.34,125000,0.00,2500,1.36,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-19,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-90.46,125000,97.30,125000,0.00,2500,1.53,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-20,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-89.96,125000,97.28,125000,0.00,2500,1.52,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-21,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-89.47,125000,97.22,125000,0.00,2500,1.61,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-22,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-88.98,125000,97.19,125000,0.00,2500,1.66,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-23,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-88.47,125000,96.99,125000,0.00,2500,1.75,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-24,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-87.98,125000,96.93,125000,0.04,2500,1.69,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-25,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-87.46,125000,96.87,125000,0.00,2500,1.76,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-26,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-86.96,125000,96.87,125000,0.00,2500,1.80,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-27,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-86.46,125000,97.04,125000,0.00,2500,1.84,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-28,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-85.96,125000,97.20,125000,0.00,2500,1.79,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-29,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-85.46,125000,97.27,125000,0.00,2500,1.87,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-30,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-84.97,125000,97.33,125000,0.00,2500,1.86,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-31,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-84.46,125000,97.33,125000,0.00,2500,1.95,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-32,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-83.96,125000,97.34,125000,0.00,2500,1.92,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-33,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-83.46,125000,97.37,125000,0.00,2500,1.96,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-34,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-82.97,125000,97.39,125000,0.00,2500,1.98,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-35,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-82.46,125000,97.38,125000,0.00,2500,2.07,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-36,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-81.96,125000,97.37,125000,0.00,2500,2.06,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-37,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-81.47,125000,97.41,125000,0.00,2500,2.10,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-38,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-80.98,125000,97.44,125000,0.00,2500,2.06,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-39,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-80.48,125000,97.42,125000,0.00,2500,2.12,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-40,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-79.99,125000,97.40,125000,0.00,2500,2.08,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-41,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-79.48,125000,97.42,125000,0.00,2500,2.14,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-42,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-78.98,125000,97.44,125000,0.00,2500,2.07,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-43,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-78.48,125000,97.44,125000,0.00,2500,2.13,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-44,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-77.98,125000,97.44,125000,0.00,2500,2.11,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-45,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-77.48,125000,97.45,125000,0.00,2500,2.16,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-46,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-76.99,125000,97.46,125000,0.00,2500,2.13,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-47,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-76.49,125000,97.49,125000,0.02,2500,2.17,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-48,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-75.99,125000,97.53,125000,0.04,2500,2.10,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-49,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-75.50,125000,97.52,125000,0.02,2500,2.10,
-
-Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,
-50,32,4,4,2,512,9,19,
-A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),
-75.00,125000,97.52,125000,0.00,2500,2.04,
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+1,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.05,125000,86.45,125000,1.50,2500,0.85,20627
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+2,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.09,125000,73.24,125000,0.94,2500,0.94,38348
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+3,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+97.31,125000,63.59,125000,0.50,2500,1.28,51373
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+4,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.59,125000,54.55,125000,0.04,2500,1.55,63584
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+5,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.57,125000,77.85,125000,0.00,2500,0.85,34477
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+6,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.87,125000,69.03,125000,0.04,2500,1.11,46370
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+7,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.70,125000,87.07,125000,0.02,2500,0.59,24031
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+8,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.33,125000,90.80,125000,0.04,2500,0.46,19848
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+9,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.89,125000,90.38,125000,0.00,2500,0.50,20909
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+10,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.41,125000,92.93,125000,0.00,2500,0.42,18324
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+11,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.85,125000,89.02,125000,0.00,2500,0.57,23909
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+12,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.15,125000,69.52,125000,0.04,2500,1.17,49158
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+13,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.68,125000,74.45,125000,0.00,2500,1.06,43580
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+14,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.41,125000,88.84,125000,0.00,2500,0.61,25948
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+15,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.01,125000,92.93,125000,0.00,2500,0.50,21325
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+16,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.52,125000,94.28,125000,0.03,2500,0.46,20248
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+17,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.07,125000,94.45,125000,0.00,2500,0.47,20596
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+18,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.55,125000,93.70,125000,0.00,2500,0.50,22186
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+19,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.06,125000,93.58,125000,0.00,2500,0.53,22947
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+20,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.59,125000,94.45,125000,0.00,2500,0.50,22448
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+21,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.12,125000,94.45,125000,0.00,2500,0.53,23040
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+22,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.59,125000,94.16,125000,0.00,2500,0.53,24064
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+23,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.12,125000,93.19,125000,0.00,2500,0.60,25870
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+24,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.65,125000,92.73,125000,0.04,2500,0.61,27028
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+25,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.14,125000,92.51,125000,0.00,2500,0.64,27936
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+26,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.63,125000,92.53,125000,0.00,2500,0.64,28556
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+27,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.16,125000,93.41,125000,0.00,2500,0.64,28036
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+28,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.70,125000,94.29,125000,0.00,2500,0.61,27516
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+29,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.22,125000,94.65,125000,0.00,2500,0.62,27672
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+30,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.73,125000,95.00,125000,0.00,2500,0.61,27828
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+31,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.25,125000,94.99,125000,0.00,2500,0.62,28458
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+32,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.76,125000,94.97,125000,0.00,2500,0.61,29088
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+33,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.29,125000,94.82,125000,0.00,2500,0.64,29861
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+34,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.82,125000,94.67,125000,0.00,2500,0.65,30634
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+35,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.32,125000,94.26,125000,0.00,2500,0.67,31776
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+36,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.82,125000,93.84,125000,0.00,2500,0.69,32918
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+37,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.32,125000,93.77,125000,0.00,2500,0.70,33630
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+38,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.82,125000,93.70,125000,0.00,2500,0.70,34342
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+39,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.34,125000,94.15,125000,0.00,2500,0.70,34376
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+40,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.87,125000,94.60,125000,0.00,2500,0.66,34410
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+41,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.39,125000,94.82,125000,0.00,2500,0.69,34744
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+42,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.90,125000,95.03,125000,0.00,2500,0.68,35078
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+43,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.43,125000,95.03,125000,0.00,2500,0.69,35677
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+44,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.95,125000,95.03,125000,0.00,2500,0.68,36276
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+45,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.44,125000,95.02,125000,0.00,2500,0.71,36916
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+46,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.94,125000,95.02,125000,0.00,2500,0.71,37556
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+47,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.46,125000,95.08,125000,0.02,2500,0.73,38085
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+48,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.97,125000,95.14,125000,0.04,2500,0.73,38614
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+49,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.49,125000,95.08,125000,0.02,2500,0.74,39299
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+50,8,c,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.00,125000,95.01,125000,0.00,2500,0.73,39984
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+1,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.45,125000,99.17,125000,1.50,2500,0.70,4215
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+2,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.91,125000,98.38,125000,1.00,2500,0.37,5888
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+3,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.38,125000,97.52,125000,0.52,2500,0.31,7631
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+4,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+97.85,125000,96.81,125000,0.04,2500,0.27,9174
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+5,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+97.38,125000,96.90,125000,0.00,2500,0.24,9653
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+6,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.92,125000,97.01,125000,0.04,2500,0.24,10092
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+7,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.39,125000,97.19,125000,0.02,2500,0.25,10531
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+8,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.86,125000,96.99,125000,0.04,2500,0.26,11442
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+9,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.38,125000,97.11,125000,0.00,2500,0.26,11894
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+10,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.86,125000,97.34,125000,0.00,2500,0.26,12256
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+11,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.39,125000,97.21,125000,0.00,2500,0.29,13001
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+12,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.89,125000,97.04,125000,0.04,2500,0.30,13842
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+13,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.42,125000,97.02,125000,0.00,2500,0.32,14449
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+14,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.93,125000,97.25,125000,0.00,2500,0.32,14778
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+15,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.42,125000,97.31,125000,0.00,2500,0.33,15340
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+16,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.91,125000,97.32,125000,0.04,2500,0.33,15964
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+17,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.42,125000,97.29,125000,0.00,2500,0.35,16611
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+18,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.94,125000,97.34,125000,0.00,2500,0.35,17142
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+19,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.46,125000,97.30,125000,0.00,2500,0.39,17801
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+20,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.96,125000,97.28,125000,0.00,2500,0.40,18448
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+21,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.47,125000,97.22,125000,0.00,2500,0.42,19135
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+22,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.98,125000,97.19,125000,0.00,2500,0.42,19790
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+23,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.47,125000,96.99,125000,0.00,2500,0.45,20674
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+24,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.98,125000,96.93,125000,0.04,2500,0.45,21362
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+25,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.46,125000,96.87,125000,0.00,2500,0.45,22089
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+26,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.96,125000,96.87,125000,0.00,2500,0.47,22716
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+27,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.46,125000,97.04,125000,0.00,2500,0.49,23129
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+28,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.96,125000,97.20,125000,0.00,2500,0.48,23542
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+29,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.46,125000,97.27,125000,0.00,2500,0.51,24088
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+30,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.97,125000,97.33,125000,0.00,2500,0.51,24634
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+31,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.46,125000,97.33,125000,0.00,2500,0.53,25253
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+32,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.96,125000,97.34,125000,0.00,2500,0.54,25872
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+33,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.46,125000,97.37,125000,0.00,2500,0.54,26462
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+34,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.97,125000,97.39,125000,0.00,2500,0.56,27052
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+35,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.46,125000,97.38,125000,0.00,2500,0.58,27691
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+36,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.96,125000,97.37,125000,0.00,2500,0.58,28330
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+37,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.47,125000,97.41,125000,0.00,2500,0.60,28903
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+38,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.98,125000,97.44,125000,0.00,2500,0.62,29476
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+39,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.48,125000,97.42,125000,0.00,2500,0.62,30123
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+40,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.99,125000,97.40,125000,0.00,2500,0.61,30770
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+41,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.48,125000,97.42,125000,0.00,2500,0.65,31374
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+42,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.98,125000,97.44,125000,0.00,2500,0.64,31978
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+43,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.48,125000,97.44,125000,0.00,2500,0.64,32605
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+44,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.98,125000,97.44,125000,0.00,2500,0.66,33232
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+45,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.48,125000,97.45,125000,0.00,2500,0.68,33837
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+46,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.99,125000,97.46,125000,0.00,2500,0.68,34442
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+47,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.49,125000,97.49,125000,0.02,2500,0.69,35020
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+48,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.99,125000,97.53,125000,0.04,2500,0.68,35598
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+49,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.50,125000,97.52,125000,0.02,2500,0.69,36225
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+50,32,c,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.00,125000,97.52,125000,0.00,2500,0.68,36852
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+1,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.05,125000,86.45,125000,1.50,2500,0.85,20627
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+2,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.01,125000,86.10,125000,1.48,2500,0.58,21112
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+3,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.98,125000,85.76,125000,1.48,2500,0.55,21571
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+4,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.99,125000,85.24,125000,1.47,2500,0.56,22221
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+5,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.94,125000,84.78,125000,1.48,2500,0.57,22842
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+6,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.97,125000,84.24,125000,1.47,2500,0.58,23481
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+7,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.93,125000,84.13,125000,1.47,2500,0.59,23678
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+8,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.98,125000,83.66,125000,1.47,2500,0.60,24204
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+9,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.94,125000,83.10,125000,1.47,2500,0.62,24939
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+10,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.93,125000,83.17,125000,1.47,2500,0.62,24873
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+11,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.93,125000,82.53,125000,1.47,2500,0.63,25679
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+12,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.94,125000,82.11,125000,1.47,2500,0.65,26188
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+13,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.89,125000,81.62,125000,1.47,2500,0.66,26869
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+14,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.93,125000,81.55,125000,1.48,2500,0.66,26901
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+15,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.92,125000,80.86,125000,1.47,2500,0.68,27766
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+16,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.94,125000,80.57,125000,1.47,2500,0.69,28117
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+17,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.92,125000,80.22,125000,1.47,2500,0.70,28577
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+18,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.92,125000,80.08,125000,1.47,2500,0.71,28756
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+19,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.90,125000,79.69,125000,1.47,2500,0.72,29261
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+20,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.89,125000,79.35,125000,1.47,2500,0.73,29695
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+21,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.90,125000,79.06,125000,1.47,2500,0.74,30049
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+22,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.89,125000,78.76,125000,1.47,2500,0.75,30435
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+23,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.90,125000,78.40,125000,1.47,2500,0.76,30884
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+24,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.88,125000,78.04,125000,1.47,2500,0.77,31352
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+25,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.89,125000,77.82,125000,1.47,2500,0.77,31614
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+26,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.90,125000,77.55,125000,1.47,2500,0.78,31930
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+27,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.89,125000,77.36,125000,1.47,2500,0.78,32183
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+28,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.90,125000,77.22,125000,1.47,2500,0.79,32357
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+29,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.87,125000,77.07,125000,1.47,2500,0.80,32577
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+30,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.88,125000,76.85,125000,1.47,2500,0.80,32835
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+31,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.88,125000,76.77,125000,1.47,2500,0.81,32944
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+32,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.89,125000,76.44,125000,1.47,2500,0.82,33334
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+33,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.88,125000,76.31,125000,1.47,2500,0.82,33515
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+34,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.87,125000,76.03,125000,1.47,2500,0.83,33877
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+35,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.85,125000,75.93,125000,1.47,2500,0.83,34025
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+36,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.85,125000,75.67,125000,1.47,2500,0.84,34346
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+37,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.84,125000,75.55,125000,1.47,2500,0.84,34517
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+38,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.84,125000,75.35,125000,1.47,2500,0.85,34754
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+39,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.83,125000,75.23,125000,1.47,2500,0.85,34922
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+40,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.84,125000,75.02,125000,1.47,2500,0.86,35176
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+41,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.84,125000,74.82,125000,1.47,2500,0.86,35437
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+42,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.84,125000,74.65,125000,1.47,2500,0.87,35648
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+43,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.84,125000,74.40,125000,1.47,2500,0.87,35954
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+44,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.82,125000,74.21,125000,1.47,2500,0.88,36211
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+45,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.82,125000,73.97,125000,1.47,2500,0.89,36516
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+46,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.83,125000,73.79,125000,1.47,2500,0.89,36728
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+47,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.82,125000,73.59,125000,1.47,2500,0.90,36985
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+48,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.82,125000,73.42,125000,1.47,2500,0.90,37196
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+49,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.82,125000,73.18,125000,1.47,2500,0.92,37500
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+50,8,r,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.81,125000,73.01,125000,1.47,2500,0.91,37724
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+1,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.45,125000,99.17,125000,1.50,2500,0.70,4215
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+2,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.43,125000,98.66,125000,1.48,2500,0.38,4887
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+3,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.42,125000,98.13,125000,1.48,2500,0.29,5552
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+4,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.42,125000,97.59,125000,1.48,2500,0.25,6242
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+5,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.41,125000,97.09,125000,1.48,2500,0.22,6871
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+6,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.42,125000,96.56,125000,1.48,2500,0.23,7537
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+7,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.41,125000,96.07,125000,1.48,2500,0.23,8160
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+8,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.40,125000,95.54,125000,1.48,2500,0.24,8822
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+9,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.41,125000,95.04,125000,1.48,2500,0.25,9442
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+10,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.41,125000,94.55,125000,1.48,2500,0.25,10053
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+11,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.40,125000,94.07,125000,1.48,2500,0.27,10663
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+12,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.39,125000,93.54,125000,1.48,2500,0.29,11340
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+13,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.39,125000,93.04,125000,1.48,2500,0.30,11954
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+14,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.39,125000,92.50,125000,1.48,2500,0.32,12637
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+15,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.37,125000,91.99,125000,1.48,2500,0.33,13298
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+16,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.37,125000,91.47,125000,1.48,2500,0.35,13955
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+17,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.35,125000,91.00,125000,1.48,2500,0.36,14558
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+18,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.36,125000,90.49,125000,1.48,2500,0.37,15188
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+19,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.36,125000,89.98,125000,1.48,2500,0.39,15828
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+20,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.36,125000,89.45,125000,1.48,2500,0.41,16486
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+21,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.35,125000,88.93,125000,1.48,2500,0.42,17148
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+22,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.35,125000,88.41,125000,1.48,2500,0.44,17804
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+23,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.35,125000,87.92,125000,1.48,2500,0.46,18419
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+24,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.34,125000,87.38,125000,1.48,2500,0.47,19103
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+25,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.35,125000,86.91,125000,1.48,2500,0.48,19672
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+26,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.34,125000,86.38,125000,1.48,2500,0.49,20342
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+27,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.34,125000,85.88,125000,1.48,2500,0.51,20974
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+28,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.34,125000,85.37,125000,1.48,2500,0.53,21613
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+29,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,84.86,125000,1.48,2500,0.54,22260
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+30,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,84.32,125000,1.48,2500,0.55,22931
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+31,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,83.81,125000,1.48,2500,0.57,23579
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+32,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,83.31,125000,1.48,2500,0.59,24206
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+33,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,82.82,125000,1.48,2500,0.60,24820
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+34,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,82.29,125000,1.48,2500,0.62,25479
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+35,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,81.79,125000,1.48,2500,0.63,26099
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+36,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.33,125000,81.27,125000,1.48,2500,0.65,26752
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+37,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.32,125000,80.79,125000,1.48,2500,0.66,27366
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+38,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.32,125000,80.26,125000,1.48,2500,0.68,28034
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+39,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.32,125000,79.75,125000,1.48,2500,0.69,28672
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+40,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.31,125000,79.23,125000,1.48,2500,0.71,29320
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+41,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.31,125000,78.74,125000,1.48,2500,0.72,29930
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+42,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.31,125000,78.21,125000,1.48,2500,0.74,30597
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+43,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.31,125000,77.71,125000,1.48,2500,0.75,31219
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+44,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.31,125000,77.19,125000,1.48,2500,0.78,31879
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+45,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.30,125000,76.69,125000,1.48,2500,0.79,32511
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+46,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.30,125000,76.17,125000,1.48,2500,0.81,33164
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+47,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.30,125000,75.67,125000,1.48,2500,0.82,33788
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+48,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.30,125000,75.14,125000,1.48,2500,0.84,34450
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+49,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.30,125000,74.65,125000,1.48,2500,0.85,35073
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+50,32,r,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.29,125000,74.12,125000,1.48,2500,0.86,35736
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+1,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.05,125000,86.45,125000,1.50,2500,0.85,20627
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+2,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.09,125000,73.24,125000,0.94,2500,0.94,38348
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+3,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+97.29,125000,61.86,125000,0.47,2500,1.33,53559
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+4,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.53,125000,52.58,125000,0.00,2500,1.59,66104
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+5,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.57,125000,77.85,125000,0.00,2500,0.85,34477
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+6,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.69,125000,50.22,125000,0.00,2500,1.67,70104
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+7,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.42,125000,63.33,125000,0.00,2500,1.33,54062
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+8,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.82,125000,59.64,125000,0.00,2500,1.36,59422
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+9,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.26,125000,48.39,125000,0.00,2500,1.81,74191
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+10,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.41,125000,92.93,125000,0.00,2500,0.42,18324
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+11,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.37,125000,49.68,125000,0.00,2500,1.80,73685
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+12,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.74,125000,44.99,125000,0.00,2500,1.73,80338
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+13,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.37,125000,46.23,125000,0.00,2500,1.94,79247
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+14,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.05,125000,55.51,125000,0.00,2500,1.55,68054
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+15,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.75,125000,63.11,125000,0.00,2500,1.42,58918
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+16,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.18,125000,61.38,125000,0.00,2500,1.36,61804
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+17,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.71,125000,70.64,125000,0.00,2500,1.22,50810
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+18,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.94,125000,39.12,125000,0.00,2500,2.07,91182
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+19,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.48,125000,37.84,125000,0.00,2500,2.26,93353
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+20,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.59,125000,87.93,125000,0.00,2500,0.68,30602
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+21,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.54,125000,40.72,125000,0.00,2500,2.19,90923
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+22,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.07,125000,38.97,125000,0.00,2500,1.96,93700
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+23,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.58,125000,35.96,125000,0.00,2500,2.36,98076
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+24,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.18,125000,50.36,125000,0.00,2500,1.57,80564
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+25,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.14,125000,92.51,125000,0.00,2500,0.64,27936
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+26,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.25,125000,46.82,125000,0.00,2500,1.65,86164
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+27,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.70,125000,33.90,125000,0.00,2500,2.44,102992
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+28,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.18,125000,33.39,125000,0.00,2500,2.01,104288
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+29,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.79,125000,35.69,125000,0.00,2500,2.42,101903
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+30,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.69,125000,82.53,125000,0.00,2500,0.94,43476
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+31,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.82,125000,31.29,125000,0.00,2500,2.59,108618
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+32,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.28,125000,29.26,125000,0.00,2500,2.12,111814
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+33,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.07,125000,65.27,125000,0.00,2500,1.58,67069
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+34,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.44,125000,51.11,125000,0.00,2500,1.66,85572
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+35,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.03,125000,44.65,125000,0.00,2500,2.20,94150
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+36,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.51,125000,41.03,125000,0.00,2500,1.89,99328
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+37,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.01,125000,33.62,125000,0.00,2500,2.58,109205
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+38,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.57,125000,28.36,125000,0.00,2500,2.11,116346
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+39,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.09,125000,31.81,125000,0.00,2500,2.60,112624
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+40,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.85,125000,78.70,125000,0.00,2500,1.13,54322
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+41,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.16,125000,25.90,125000,0.00,2500,2.76,121179
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+42,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.72,125000,36.61,125000,0.00,2500,1.96,108332
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+43,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.26,125000,41.15,125000,0.00,2500,2.35,103230
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+44,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.76,125000,24.87,125000,0.00,2500,2.18,124218
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+45,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.31,125000,37.87,125000,0.00,2500,2.39,108530
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+46,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.83,125000,22.55,125000,0.00,2500,2.38,128280
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+47,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.38,125000,36.51,125000,0.00,2500,2.68,111393
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+48,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.93,125000,52.27,125000,0.00,2500,1.65,92252
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+49,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.47,125000,70.24,125000,0.00,2500,1.64,70363
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+50,8,e,4,4,1,128,7,21,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.00,125000,95.01,125000,0.00,2500,0.73,39984
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+1,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+99.45,125000,99.17,125000,1.50,2500,0.70,4215
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+2,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.91,125000,98.38,125000,1.00,2500,0.37,5888
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+3,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+98.37,125000,97.46,125000,0.50,2500,0.31,7710
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+4,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+97.86,125000,96.72,125000,0.00,2500,0.26,9282
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+5,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+97.38,125000,96.90,125000,0.00,2500,0.24,9653
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+6,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.88,125000,95.32,125000,0.00,2500,0.27,12244
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+7,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+96.37,125000,94.54,125000,0.00,2500,0.32,13866
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+8,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.89,125000,93.94,125000,0.00,2500,0.32,15212
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+9,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+95.35,125000,93.21,125000,0.00,2500,0.35,16796
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+10,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.86,125000,97.34,125000,0.00,2500,0.26,12256
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+11,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+94.38,125000,91.95,125000,0.00,2500,0.43,19589
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+12,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.88,125000,91.29,125000,0.00,2500,0.43,21046
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+13,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+93.36,125000,90.48,125000,0.00,2500,0.52,22695
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+14,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.85,125000,89.88,125000,0.00,2500,0.49,24082
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+15,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+92.38,125000,91.52,125000,0.00,2500,0.47,22631
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+16,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.89,125000,88.48,125000,0.00,2500,0.55,27046
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+17,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+91.39,125000,88.33,125000,0.00,2500,0.65,27859
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+18,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.87,125000,87.16,125000,0.00,2500,0.59,29952
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+19,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+90.41,125000,86.60,125000,0.00,2500,0.67,31244
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+20,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.95,125000,94.74,125000,0.00,2500,0.44,21634
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+21,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+89.41,125000,85.32,125000,0.00,2500,0.74,34091
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+22,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.92,125000,84.74,125000,0.00,2500,0.68,35420
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+23,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+88.41,125000,83.93,125000,0.00,2500,0.76,37072
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+24,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.94,125000,83.56,125000,0.00,2500,0.76,38134
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+25,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+87.46,125000,96.87,125000,0.00,2500,0.45,22089
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+26,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.93,125000,82.20,125000,0.00,2500,0.83,41094
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+27,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+86.45,125000,81.46,125000,0.00,2500,0.85,42612
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+28,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.94,125000,80.76,125000,0.00,2500,0.84,44128
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+29,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+85.45,125000,80.12,125000,0.00,2500,0.97,45534
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+30,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.96,125000,92.10,125000,0.00,2500,0.60,31172
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+31,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+84.45,125000,79.02,125000,0.00,2500,0.98,48158
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+32,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.95,125000,78.44,125000,0.00,2500,0.93,49520
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+33,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+83.45,125000,79.49,125000,0.00,2500,1.10,48826
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+34,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.94,125000,77.37,125000,0.00,2500,1.00,52110
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+35,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+82.45,125000,81.24,125000,0.00,2500,0.91,47878
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+36,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.93,125000,75.93,125000,0.00,2500,1.03,55172
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+37,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+81.45,125000,75.69,125000,0.00,2500,1.20,56083
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+38,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.95,125000,74.76,125000,0.00,2500,1.10,57858
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+39,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+80.45,125000,74.15,125000,0.00,2500,1.18,59247
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+40,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.98,125000,89.49,125000,0.00,2500,0.76,40664
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+41,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+79.47,125000,72.57,125000,0.00,2500,1.20,62452
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+42,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.95,125000,72.27,125000,0.00,2500,1.16,63472
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+43,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+78.46,125000,72.47,125000,0.00,2500,1.32,63837
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+44,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.97,125000,70.78,125000,0.00,2500,1.21,66564
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+45,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+77.48,125000,76.24,125000,0.00,2500,1.10,60352
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+46,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.98,125000,69.85,125000,0.00,2500,1.22,68970
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+47,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+76.49,125000,69.64,125000,0.00,2500,1.63,69841
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+48,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.99,125000,70.54,125000,0.00,2500,1.28,69340
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+49,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.50,125000,72.42,125000,0.00,2500,1.58,67601
+
+Number of Processors,Cache Size,Ways,Words_Per_Block,Hit_Time,Method,Sets,Index_Size,Tag_Size,
+50,32,e,4,4,2,512,9,19,
+A_Average_Hit Rate,A_Total Instruction,B_Average_Hit Rate,B_Total Instruction,C_Average_Hit Rate,C_Total Instruction,Time(G-cycles),DRAM Access,
+75.00,125000,97.52,125000,0.00,2500,0.68,36852
 
