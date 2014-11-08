@@ -1,4 +1,0 @@
-Ways,Cache Size,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,Hit_Time,
-4,32,4,1,512,9,19,1,
-Hit_A,Miss_A_CAS,Miss_A_RAS,Hit_A_Percentage,Hit_B,Miss_B_CAS,Miss_B_RAS,Hit_B_Percentage,Hit_C,Miss_C_CAS,Miss_C_RAS,Hit_C_Percentage,Time,
-7,1,1,87.5,7,1,1,87.5,0,8,1,0,834,

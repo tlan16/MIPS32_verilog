@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="Mips">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|EX_ALU:EX_ALU|lpm_mult:Mult0" CBX_FILE_NAME="mult_7dt.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_0" CBX_FILE_NAME="altsyncram_fpi1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|ID_Registers:ID_Registers|altsyncram:register_rtl_1" CBX_FILE_NAME="altsyncram_fpi1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|MEM_Data_Memory:MEM_Data_Memory|altsyncram:Data_Memory_rtl_0" CBX_FILE_NAME="altsyncram_pgh1.tdf"/>
-	</PROJECT>
-</LOG_ROOT>

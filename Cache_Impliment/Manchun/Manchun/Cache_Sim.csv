@@ -1,4 +1,0 @@
-Ways,Data_Size_kB,Words_Per_Block,Hit_Time,Sets,Index_Size,Tag_Size,Hit_Time,
-4,8,2,1,256,8,21,1,
-Hit_A,Hit_A_Percentage,Hit_B,Hit_B_Percentage,Hit_C,Total_CAS,Total_RAS,Time,
-6,75,6,75,2,8,5,697,
