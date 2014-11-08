@@ -1,0 +1,14 @@
+﻿Build started 16/10/2014 下午 11:50:48.
+     1>Project "C:\Users\DS\OneDrive\2014_Semester\ECE4074_Advanced_computer_architecture\Assignment_3\Assignment3\Assignment3\Assignment3.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Assignment3.cpp
+         Assignment3.cpp
+     1>c:\users\ds\onedrive\2014_semester\ece4074_advanced_computer_architecture\assignment_3\assignment3\assignment3\assignment3.cpp(101): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\DS\OneDrive\2014_Semester\ECE4074_Advanced_computer_architecture\Assignment_3\Assignment3\Debug\Assignment3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\DS\OneDrive\2014_Semester\ECE4074_Advanced_computer_architecture\Assignment_3\Assignment3\Debug\Assignment3.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\DS\OneDrive\2014_Semester\ECE4074_Advanced_computer_architecture\Assignment_3\Assignment3\Debug\Assignment3.lib" /MACHINE:X86 Debug\Assignment3.obj
+         Assignment3.vcxproj -> C:\Users\DS\OneDrive\2014_Semester\ECE4074_Advanced_computer_architecture\Assignment_3\Assignment3\Debug\Assignment3.exe
+     1>Done Building Project "C:\Users\DS\OneDrive\2014_Semester\ECE4074_Advanced_computer_architecture\Assignment_3\Assignment3\Assignment3\Assignment3.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.67

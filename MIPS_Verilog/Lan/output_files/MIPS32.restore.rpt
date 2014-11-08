@@ -1,0 +1,125 @@
+Restore Archived Project report for MIPS32
+Sat Nov 08 18:39:45 2014
+Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Sat Nov 08 18:39:45 2014 ;
+; Revision Name                   ; MIPS32                                ;
+; Top-level Entity Name           ; MIPS32                                ;
+; Family                          ; Cyclone II                            ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/Users/Frank-Desktop/Documents/temp/My.qar' into the 'C:\\Users\\Frank-Desktop\\Documents\\GitHub\\MIPS\\MIPS_Verilog\\Lan/' directory
+Info: Generated report 'MIPS32.restore.rpt'
+Info (23030): Evaluation of Tcl script d:/altera/12.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 32-bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 223 megabytes
+    Info: Processing ended: Sat Nov 08 18:39:45 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++---------------------------------------------------+
+; Files Restored                                    ;
++---------------------------------------------------+
+; File Name                                         ;
++---------------------------------------------------+
+; Chain1.cdf                                        ;
+; EX_ALU.v                                          ;
+; EX_ALU_Control.v                                  ;
+; EX_ALU_Mux.v                                      ;
+; EX_Dest_Mux.v                                     ;
+; EX_Forward_A.v                                    ;
+; EX_Forward_B.v                                    ;
+; EX_MEM_Pipeline_Stage.v                           ;
+; EX_PC_Add.v                                       ;
+; EX_Shift_Left_2.v                                 ;
+; Hazard_Handling_Unit.v                            ;
+; ID_Control.v                                      ;
+; ID_EX_Pipeline_Stage.v                            ;
+; ID_Jump.v                                         ;
+; ID_Read_data_Mux.v                                ;
+; ID_Registers.v                                    ;
+; ID_Sign_Extension.v                               ;
+; IF_ID_EX_MEM_WB_testing.vwf                       ;
+; IF_ID_EX_MEM_testing.vwf                          ;
+; IF_ID_EX_testing.vwf                              ;
+; IF_ID_Pipeline_Stage.v                            ;
+; IF_ID_testing.vwf                                 ;
+; IF_Instruction_Memory.v                           ;
+; IF_PC_Add.v                                       ;
+; IF_PC_Mux.v                                       ;
+; IF_PC_Reg.v                                       ;
+; IF_testing.vwf                                    ;
+; MEM_Branch_AND.v                                  ;
+; MEM_Data_Memory.v                                 ;
+; MEM_WB_Pipeline_Stage.v                           ;
+; MEM_to_MEM_Forward.v                              ;
+; MIPS32.out.sdc                                    ;
+; MIPS32.qpf                                        ;
+; MIPS32.qsf                                        ;
+; MIPS32.sdc                                        ;
+; MIPS32.v                                          ;
+; MIPS_Top.v                                        ;
+; Manchun/IF_ID_EX_MEM_WB_testing.vwf               ;
+; Manchun/Mips.out.sdc                              ;
+; Manchun/Mips.sdc                                  ;
+; WB_MemtoReg_Mux.v                                 ;
+; assignment_defaults.qdf                           ;
+; before_fixing_bug.qsf                             ;
+; before_fixing_bug_assignment_defaults.qdf         ;
+; data_memory.list                                  ;
+; db/MIPS32.sim.vwf                                 ;
+; incremental_db/compiled_partitions/MIPS32.db_info ;
+; instruction_memory.list                           ;
+; output_files/stp1.stp                             ;
+; register_file.list                                ;
+; simulation/modelsim/testbench.v                   ;
+; stp1.stp                                          ;
++---------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
